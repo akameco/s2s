@@ -6,38 +6,59 @@
 ## Install
 
 ```
-$ npm install s2s
+$ npm install --save-dev s2s
 ```
 
 
 ## Usage
 
-```js
-const s2s = require('s2s');
+s2s.config.js
 
-s2s('unicorns');
-//=> 'unicorns & rainbows'
+```js
+const path = require('path')
+const prettier = require('prettier')
+
+const prettierHook = (eventPath, code) => {
+  if (path.extname(eventPath) === 'js') {
+    return prettier.format(code, {
+      semi: false,
+      singleQuote: true,
+      trailingComma: 'es5',
+    })
+  }
+  return code
+}
+
+const templateDir = path.resolve(__dirname, 'templates')
+
+module.exports = {
+  watch: path.resolve(__dirname, 'app'),
+  plugins: [
+    {
+      test: /actionType.js/,
+      plugin: 'action-type',
+      output: 'actions.js',
+    },
+  ],
+  templates: [
+    {
+      test: /reducer.js/,
+      input: path.join(templateDir, 'reducer.js'),
+    },
+    {
+      test: /reducer.test.js/,
+      input: path.join(templateDir, 'reducer.test.js'),
+    },
+  ],
+  after: [prettierHook],
+}
 ```
 
+### Run
 
-## API
-
-### s2s(input, [options])
-
-#### input
-
-Type: `string`
-
-Lorem ipsum.
-
-#### options
-
-##### foo
-
-Type: `boolean`<br>
-Default: `false`
-
-Lorem ipsum.
+```
+$ npm run s2s
+```
 
 
 ## License
