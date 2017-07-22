@@ -1,5 +1,4 @@
 // @flow
-import path from 'path'
 import m from '../index'
 import type { Opts } from '../types'
 
