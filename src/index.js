@@ -40,4 +40,6 @@ export default ({ watch, plugins, templates, afterHooks }: Opts) => {
   if (templates) {
     handleTemplates(watcher, templates, afterHooks)
   }
+
+  return watcher
 }

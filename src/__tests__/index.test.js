@@ -35,8 +35,9 @@ test('throw error when opts.after !== Array', () => {
 })
 
 test('not throw when plugins,templates,after == null', () => {
+  const watchers = []
   const wrap = (opts: $Shape<Opts>) => () => {
-    m({ watch: 'app', ...opts })
+    watchers.push(m({ watch: 'app', ...opts }))
   }
   expect(wrap()).not.toThrow()
   // $FlowFixMe
@@ -45,4 +46,8 @@ test('not throw when plugins,templates,after == null', () => {
   expect(wrap({ templates: null })).not.toThrow()
   // $FlowFixMe
   expect(wrap({ afterHooks: null })).not.toThrow()
+
+  for (const w of watchers) {
+    w.close()
+  }
 })
