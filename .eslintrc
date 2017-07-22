@@ -1,0 +1,6 @@
+{
+  "extends": "precure",
+  "env": {
+    "jest": true
+  }
+}

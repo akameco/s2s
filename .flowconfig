@@ -1,0 +1,8 @@
+[ignore]
+.*/examples/.*
+
+[include]
+
+[libs]
+
+[options]

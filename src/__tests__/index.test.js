@@ -1,0 +1,54 @@
+// @flow
+import path from 'path'
+import m from '../index'
+import type { Opts } from '../types'
+
+test('export function', () => {
+  expect(typeof m).toBe('function')
+})
+
+test('throw error when opts.watch == null', () => {
+  expect(() => {
+    // $FlowFixMe
+    m({ watch: null })
+  }).toThrowErrorMatchingSnapshot()
+})
+
+test('throw error when opts.plugins !== Array', () => {
+  expect(() => {
+    // $FlowFixMe
+    m({ watch: 'app', plugins: 'not array' })
+  }).toThrowErrorMatchingSnapshot()
+})
+
+test('throw error when opts.templates !== Array', () => {
+  expect(() => {
+    // $FlowFixMe
+    m({ watch: 'app', plugins: [], templates: 'string' })
+  }).toThrowErrorMatchingSnapshot()
+})
+
+test('throw error when opts.after !== Array', () => {
+  expect(() => {
+    // $FlowFixMe
+    m({ watch: 'app', plugins: [], templates: [], after: 'string' })
+  }).toThrowErrorMatchingSnapshot()
+})
+
+test('not throw when plugins,templates,after == null', () => {
+  const wrap = (opts: $Shape<Opts>) => () => {
+    m({ watch: 'app', ...opts })
+  }
+  expect(wrap()).not.toThrow()
+  // $FlowFixMe
+  expect(wrap({ plugins: null })).not.toThrow()
+  // $FlowFixMe
+  expect(wrap({ templates: null })).not.toThrow()
+  // $FlowFixMe
+  expect(wrap({ after: null })).not.toThrow()
+})
+
+test('watch file', () => {
+  const watchPath = path.resolve(__dirname, '__fixtures__')
+  expect(m({ watch: watchPath })).toEqual(`start watching ${watchPath}`)
+})
