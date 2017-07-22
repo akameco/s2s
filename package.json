@@ -23,8 +23,12 @@
     "test": "jest",
     "test:watch": "jest --watch"
   },
-  "files": ["dist"],
-  "keywords": ["s2s"],
+  "files": [
+    "dist"
+  ],
+  "keywords": [
+    "s2s"
+  ],
   "dependencies": {
     "babel-core": "^6.25.0",
     "chokidar": "^1.7.0",

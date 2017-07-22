@@ -31,7 +31,7 @@ test('throw error when opts.templates !== Array', () => {
 test('throw error when opts.after !== Array', () => {
   expect(() => {
     // $FlowFixMe
-    m({ watch: 'app', plugins: [], templates: [], after: 'string' })
+    m({ watch: 'app', plugins: [], templates: [], afterHooks: 'string' })
   }).toThrowErrorMatchingSnapshot()
 })
 
@@ -45,10 +45,5 @@ test('not throw when plugins,templates,after == null', () => {
   // $FlowFixMe
   expect(wrap({ templates: null })).not.toThrow()
   // $FlowFixMe
-  expect(wrap({ after: null })).not.toThrow()
-})
-
-test('watch file', () => {
-  const watchPath = path.resolve(__dirname, '__fixtures__')
-  expect(m({ watch: watchPath })).toEqual(`start watching ${watchPath}`)
+  expect(wrap({ afterHooks: null })).not.toThrow()
 })
