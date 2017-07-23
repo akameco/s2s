@@ -14,6 +14,18 @@ function runTemplate(input: Path, templateFile: string) {
   }
 }
 
+function isAlreadyExist(input: Path) {
+  try {
+    const code = fs.readFileSync(input, 'utf-8')
+    if (code.length === 0 || code.trim() === '') {
+      return false
+    }
+    return true
+  } catch (err) {
+    return false
+  }
+}
+
 export default function handleTemplates(
   watcher: Function,
   templates: Template[] = [],
@@ -25,15 +37,14 @@ export default function handleTemplates(
         continue
       }
 
+      if (isAlreadyExist(input)) {
+        continue
+      }
+
       try {
         runTemplate(input, template.input)
 
         const code = fs.readFileSync(input, 'utf-8')
-
-        if (code === '') {
-          continue
-        }
-
         const result = runHooks(input, code, hooks)
         write(input, result.trim())
 
