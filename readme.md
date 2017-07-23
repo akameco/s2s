@@ -1,6 +1,6 @@
 # s2s [![Build Status](https://travis-ci.org/akameco/s2s.svg?branch=master)](https://travis-ci.org/akameco/s2s)
 
-> Source To Source
+[![s2s](https://raw.githubusercontent.com/akameco/logos/master/s2s.png)](https://github.com/akameco/s2s)
 
 
 ## Install
