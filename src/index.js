@@ -2,8 +2,11 @@
 import type { Opts, Path } from './types'
 import handlePlugins from './handlePlugins'
 import handleTemplates from './handleTemplates'
+import * as hooks from './hooks'
 
 const chokidar = require('chokidar')
+
+export { hooks }
 
 function createWatcher(rootPath: Path) {
   const watcher = chokidar.watch(rootPath, {

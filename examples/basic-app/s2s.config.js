@@ -1,26 +1,11 @@
 // @flow
-import path from 'path'
-import { format } from 'prettier'
-
-import s2s from '../../src/index'
-
-const prettierOpts = {
-  semi: false,
-  singleQuote: true,
-  trailingComma: 'es5',
-}
-
-const prettierHook = (eventPath, code) => {
-  if (path.extname(eventPath) === '.js') {
-    return format(code, prettierOpts)
-  }
-  return code
-}
+const path = require('path')
+const s2s = require('../../dest/index')
 
 const templateDir = path.resolve(__dirname, 'templates')
 const setInput = p => path.join(templateDir, p)
 
-s2s({
+module.exports = {
   watch: './**/*.js',
   plugins: [
     {
@@ -33,5 +18,11 @@ s2s({
     { test: /reducer.js/, input: setInput('reducer.js') },
     { test: /reducer.test.js/, input: setInput('reducer.test.js') },
   ],
-  afterHooks: [prettierHook],
-})
+  afterHooks: [
+    s2s.hooks.prettier({
+      semi: false,
+      singleQuote: true,
+      trailingComma: 'es5',
+    }),
+  ],
+}

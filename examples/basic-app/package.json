@@ -4,14 +4,14 @@
   "description": "",
   "main": "index.js",
   "scripts": {
+    "s2s": "../../bin/s2s.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
   "author": "akameco <akameco.t@gmail.com>",
   "license": "MIT",
   "devDependencies": {
-    "babel-plugin-create-redux-action-func": "^0.1.4",
-    "prettier": "^1.5.3"
+    "babel-plugin-create-redux-action-func": "^0.1.4"
   },
   "dependencies": {}
 }

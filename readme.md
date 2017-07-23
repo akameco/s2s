@@ -16,18 +16,7 @@ s2s.config.js
 
 ```js
 const path = require('path')
-const prettier = require('prettier')
-
-const prettierHook = (eventPath, code) => {
-  if (path.extname(eventPath) === 'js') {
-    return prettier.format(code, {
-      semi: false,
-      singleQuote: true,
-      trailingComma: 'es5',
-    })
-  }
-  return code
-}
+const { hooks } = require('s2s')
 
 const templateDir = path.resolve(__dirname, 'templates')
 
@@ -50,7 +39,11 @@ module.exports = {
       input: path.join(templateDir, 'reducer.test.js'),
     },
   ],
-  after: [prettierHook],
+  afterHooks: [hooks.prettier({
+    semi: false,
+    singleQuote: true,
+    trailingComma: 'es5',
+  })],
 }
 ```
 
