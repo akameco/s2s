@@ -15,6 +15,7 @@
   "bin": {
     "s2s": "./bin/s2s.js"
   },
+  "main": "./dest/index.js",
   "scripts": {
     "build": "babel src -d dest --ignore *.test.js",
     "prepublishOnly": "npm run build",
