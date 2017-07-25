@@ -20,7 +20,7 @@ export default function handlePlugins(
   plugins: Plugin[] = [],
   hooks: AfterHook[] = []
 ) {
-  for (const type of ['add', 'change']) {
+  for (const type of ['add', 'change', 'unlink']) {
     watcher.on(type, (input: Path) => {
       for (const plugin of plugins) {
         if (!plugin.test.test(input)) {
