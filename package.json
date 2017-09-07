@@ -39,14 +39,14 @@
     "find-up": "^2.1.0"
   },
   "devDependencies": {
-    "babel-jest": "^20.0.3",
+    "babel-jest": "^21.0.0",
     "babel-plugin-transform-flow-strip-types": "^6.22.0",
     "babel-preset-env": "^1.6.0",
     "babel-preset-stage-2": "^6.24.1",
     "eslint": "^4.2.0",
-    "eslint-config-precure": "^0.7.1",
-    "flow-bin": "^0.51.0",
-    "jest": "^20.0.4",
+    "eslint-config-precure": "^0.8.0",
+    "flow-bin": "^0.54.1",
+    "jest": "^21.0.1",
     "prettier": "^1.5.3"
   }
 }
