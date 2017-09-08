@@ -20,7 +20,7 @@
     "build": "babel src -d dest --ignore *.test.js",
     "prepublishOnly": "npm run build",
     "build:watch": "npm run build -- --watch",
-    "prettier": "prettier --write --single-quote --no-semi '**/*.js'",
+    "prettier": "prettier --write '**/*.js'",
     "lint": "eslint src/",
     "test": "jest",
     "test:watch": "jest --watch"
