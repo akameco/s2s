@@ -17,7 +17,7 @@
   },
   "main": "./dest/index.js",
   "scripts": {
-    "build": "babel src -d dest --ignore *.test.js",
+    "build": "babel src -d dest --ignore *.test.js,__tests__",
     "prepare": "npm run build",
     "build:watch": "npm run build -- --watch",
     "prettier": "prettier --write '**/*.js'",
@@ -34,9 +34,11 @@
   ],
   "dependencies": {
     "babel-core": "^6.25.0",
+    "babel-polyfill": "^6.26.0",
     "chokidar": "^1.7.0",
     "cp-file": "^4.2.0",
-    "find-up": "^2.1.0"
+    "find-up": "^2.1.0",
+    "prettier": "^1.7.0"
   },
   "devDependencies": {
     "babel-cli": "^6.26.0",
@@ -47,7 +49,7 @@
     "eslint": "^4.2.0",
     "eslint-config-precure": "^0.8.0",
     "flow-bin": "^0.54.1",
-    "jest": "^21.0.1",
-    "prettier": "^1.5.3"
-  }
+    "jest": "^21.0.1"
+  },
+  "peerDependencies": {}
 }

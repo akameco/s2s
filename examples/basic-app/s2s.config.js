@@ -18,11 +18,5 @@ module.exports = {
     { test: /reducer.js/, input: setInput('reducer.js') },
     { test: /reducer.test.js/, input: setInput('reducer.test.js') },
   ],
-  afterHooks: [
-    s2s.hooks.prettier({
-      semi: false,
-      singleQuote: true,
-      trailingComma: 'es5',
-    }),
-  ],
+  afterHooks: [s2s.hooks.prettier()],
 }

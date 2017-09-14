@@ -11,7 +11,8 @@
   "author": "akameco <akameco.t@gmail.com>",
   "license": "MIT",
   "devDependencies": {
-    "babel-plugin-create-redux-action-func": "^0.1.4"
+    "babel-plugin-create-redux-action-func": "^0.1.4",
+    "prettier": "^1.7.0"
   },
   "dependencies": {}
 }

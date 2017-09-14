@@ -1,9 +1,11 @@
 // @flow
-import { format } from 'prettier'
+import { format, resolveConfig } from 'prettier'
 
-export default function prettierHook(opts: Object) {
+export default function prettierHook(inputOpts: ?Object = {}) {
   return (eventPath: string, code: string) => {
     try {
+      const rcOpts = resolveConfig.sync(process.cwd())
+      const opts = { ...rcOpts, ...inputOpts }
       return format(code, opts)
     } catch (err) {
       return code
