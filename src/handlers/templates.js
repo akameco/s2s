@@ -24,11 +24,11 @@ function isAlreadyExist(input: Path) {
   }
 }
 
-const defaultTemplatesDir = path.resolve(process.cwd(), 'templates')
+const DEFAULT_TEMPLATES_DIR = 'templates'
 
 export default function handleTemplates(
   watcher: Function,
-  templatesDir: string = defaultTemplatesDir,
+  templatesDir: string = DEFAULT_TEMPLATES_DIR,
   templates: Template[] = [],
   hooks: AfterHook[] = []
 ) {
