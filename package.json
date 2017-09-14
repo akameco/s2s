@@ -1,6 +1,6 @@
 {
   "name": "s2s",
-  "version": "0.2.1",
+  "version": "0.3.0",
   "description": "Source To Source",
   "license": "MIT",
   "repository": "akameco/s2s",
@@ -25,8 +25,13 @@
     "test": "jest",
     "test:watch": "jest --watch"
   },
-  "files": ["dest", "bin"],
-  "keywords": ["s2s"],
+  "files": [
+    "dest",
+    "bin"
+  ],
+  "keywords": [
+    "s2s"
+  ],
   "dependencies": {
     "babel-core": "^6.25.0",
     "babel-polyfill": "^6.26.0",
