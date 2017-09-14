@@ -39,11 +39,7 @@ module.exports = {
       input: path.join(templateDir, 'reducer.test.js'),
     },
   ],
-  afterHooks: [hooks.prettier({
-    semi: false,
-    singleQuote: true,
-    trailingComma: 'es5',
-  })],
+  afterHooks: [hooks.prettier()],
 }
 ```
 
