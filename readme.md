@@ -16,30 +16,23 @@ s2s.config.js
 
 ```js
 const path = require('path')
-const { hooks } = require('s2s')
-
-const templateDir = path.resolve(__dirname, 'templates')
+const s2s = require('s2s')
 
 module.exports = {
-  watch: path.resolve(__dirname, 'app'),
+  watch: './**/*.js',
   plugins: [
     {
-      test: /actionType.js/,
-      plugin: 'action-type',
+      test: /actionTypes.js$/,
       output: 'actions.js',
-    },
+      plugin: ['create-redux-action-func', { actionTypes: 'actionTypes.js' }]
+    }
   ],
+  templatesDir: 'templates',
   templates: [
-    {
-      test: /reducer.js/,
-      input: path.join(templateDir, 'reducer.js'),
-    },
-    {
-      test: /reducer.test.js/,
-      input: path.join(templateDir, 'reducer.test.js'),
-    },
+    { test: /reducer.js/, input: 'reducer.js' },
+    { test: /reducer.test.js/, input: 'reducer.test.js' }
   ],
-  afterHooks: [hooks.prettier()],
+  afterHooks: [s2s.hooks.prettier()]
 }
 ```
 
