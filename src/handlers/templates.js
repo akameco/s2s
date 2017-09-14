@@ -4,7 +4,7 @@ import path from 'path'
 import chalk from 'chalk'
 import cpFile from 'cp-file'
 import type { Path, Template, AfterHook } from '../types'
-import runHooks from '../runHooks'
+import runHooks from '../hooks/run'
 import { write, relativeFromCwd } from '../utils'
 import { formatText, trimAndFormatPath } from '../reporters/uitls'
 

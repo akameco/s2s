@@ -1,5 +1,5 @@
 // @flow
-import type { Path, AfterHook } from './types'
+import type { Path, AfterHook } from '../types'
 
 export default function runHooks(
   input: Path,
