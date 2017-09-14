@@ -1,13 +1,13 @@
 // @flow
 import path from 'path'
-import { compile, getOutputPath, write, toErrorStack } from './utils'
-import type { Path, AfterHook, Plugin, PluginOpts } from './types'
-import runHooks from './runHooks'
+import { compile, getOutputPath, write, toErrorStack } from '../utils'
+import type { Path, AfterHook, Plugin, PluginOpts } from '../types'
+import runHooks from '../runHooks'
 
 function runPlugin(input: Path, plugin: PluginOpts) {
   const { code } = compile(input, {
     babelrc: false,
-    plugins: [plugin],
+    plugins: [plugin]
   })
   if (code) {
     return code.trim()

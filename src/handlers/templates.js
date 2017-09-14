@@ -3,13 +3,11 @@ import fs from 'fs'
 import path from 'path'
 import chalk from 'chalk'
 import slash from 'slash'
-import type { Path, Template, AfterHook } from './types'
-import runHooks from './runHooks'
-import { write, relativeFromCwd } from './utils'
-
-import { relativePath } from './reporters/uitls'
-
-const cpFile = require('cp-file')
+import cpFile from 'cp-file'
+import type { Path, Template, AfterHook } from '../types'
+import runHooks from '../runHooks'
+import { write, relativeFromCwd } from '../utils'
+import { relativePath } from '../reporters/uitls'
 
 function runTemplate(input: Path, templateFile: string) {
   cpFile.sync(templateFile, input)

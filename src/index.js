@@ -2,8 +2,8 @@
 import 'babel-polyfill'
 import path from 'path'
 import type { Opts, Path } from './types'
-import handlePlugins from './handlePlugins'
-import handleTemplates from './handleTemplates'
+import handlePlugins from './handlers/plugins'
+import handleTemplates from './handlers/templates'
 import * as hooks from './hooks'
 
 const chokidar = require('chokidar')
