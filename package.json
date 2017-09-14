@@ -18,7 +18,7 @@
   "main": "./dest/index.js",
   "scripts": {
     "build": "babel src -d dest --ignore *.test.js",
-    "prepublishOnly": "npm run build",
+    "prepare": "npm run build",
     "build:watch": "npm run build -- --watch",
     "prettier": "prettier --write '**/*.js'",
     "lint": "eslint src/",
