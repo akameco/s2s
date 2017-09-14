@@ -1,8 +1,11 @@
 // @flow
 import path from 'path'
+import chalk from 'chalk'
 import { compile, getOutputPath, write, toErrorStack } from '../utils'
 import type { Path, AfterHook, Plugin, PluginOpts } from '../types'
+import { relativeFromCwd } from '../utils'
 import runHooks from '../runHooks'
+import { formatText } from '../reporters/uitls'
 
 function runPlugin(input: Path, plugin: PluginOpts) {
   const { code } = compile(input, {
@@ -38,7 +41,7 @@ export default function handlePlugins(
           const outputPath = getOutputPath(plugin.output, input)
           write(outputPath, result)
 
-          console.log(`${input} → ${path.relative(process.cwd(), outputPath)}`)
+          console.log(formatText('S2S', input, outputPath))
         } catch (err) {
           console.error(toErrorStack(err))
         }
