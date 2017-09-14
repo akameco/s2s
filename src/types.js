@@ -21,6 +21,7 @@ export type AfterHook = Function
 export type Opts = {|
   watch: Path, // file, dir, glob, or array
   plugins?: Plugin[],
+  templatesDir?: string,
   templates?: Template[],
   afterHooks?: AfterHook[],
 |}

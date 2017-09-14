@@ -1,5 +1,6 @@
 // @flow
 import 'babel-polyfill'
+import path from 'path'
 import type { Opts, Path } from './types'
 import handlePlugins from './handlePlugins'
 import handleTemplates from './handleTemplates'
@@ -12,13 +13,19 @@ export { hooks }
 function createWatcher(rootPath: Path) {
   const watcher = chokidar.watch(rootPath, {
     cwd: process.cwd(),
-    ignoreInitial: true,
+    ignoreInitial: true
   })
 
   return watcher
 }
 
-export default ({ watch, plugins, templates, afterHooks }: Opts) => {
+export default ({
+  watch,
+  plugins,
+  templates,
+  afterHooks,
+  templatesDir
+}: Opts) => {
   if (!watch) {
     throw new Error('required watch')
   }
@@ -42,7 +49,7 @@ export default ({ watch, plugins, templates, afterHooks }: Opts) => {
   }
 
   if (templates) {
-    handleTemplates(watcher, templates, afterHooks)
+    handleTemplates(watcher, templatesDir, templates, afterHooks)
   }
 
   return watcher
