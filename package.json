@@ -3,12 +3,8 @@
   "version": "0.3.2",
   "description": "Source To Source",
   "license": "MIT",
-  "repository": "akameco/s2s",
-  "author": {
-    "name": "akameco",
-    "email": "akameco.t@gmail.com",
-    "url": "akameco.github.io"
-  },
+  "repository": "https://github.com/akameco/s2s",
+  "author": "akameco <akameco.t@gmail.com> (akameco.github.io)",
   "engines": {
     "node": ">=4"
   },
