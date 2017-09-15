@@ -18,6 +18,8 @@ function runPlugin(input: Path, plugin: PluginOpts) {
   return ''
 }
 
+const lock = new Set()
+
 export default function handlePlugins(
   watcher: Function,
   plugins: Plugin[] = [],
@@ -25,10 +27,15 @@ export default function handlePlugins(
 ) {
   for (const type of ['add', 'change', 'unlink']) {
     watcher.on(type, (input: Path) => {
+      if (lock.has(input)) {
+        lock.delete(input)
+        return
+      }
       for (const plugin of plugins) {
         if (!plugin.test.test(input)) {
           continue
         }
+        lock.add(input)
         try {
           const code = runPlugin(input, plugin.plugin)
 
@@ -38,7 +45,9 @@ export default function handlePlugins(
 
           const result = runHooks(input, code, hooks)
 
-          const outputPath = getOutputPath(plugin.output, input)
+          const outputPath = plugin.output
+            ? getOutputPath(plugin.output, input)
+            : input
           write(outputPath, result)
 
           console.log(formatText('S2S', input, outputPath))
