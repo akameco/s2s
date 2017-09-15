@@ -10,7 +10,7 @@ export function relativePath(testPath: string) {
 
   return {
     dirname,
-    basename
+    basename,
   }
 }
 

@@ -13,7 +13,7 @@ export { hooks }
 function createWatcher(rootPath: Path) {
   const watcher = chokidar.watch(rootPath, {
     cwd: process.cwd(),
-    ignoreInitial: true
+    ignoreInitial: true,
   })
 
   return watcher
@@ -24,7 +24,7 @@ export default ({
   plugins,
   templates,
   afterHooks,
-  templatesDir
+  templatesDir,
 }: Opts) => {
   if (!watch) {
     throw new Error('required watch')

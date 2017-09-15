@@ -10,7 +10,7 @@ import { formatText } from '../reporters/uitls'
 function runPlugin(input: Path, plugin: PluginOpts) {
   const { code } = compile(input, {
     babelrc: false,
-    plugins: [plugin]
+    plugins: [plugin],
   })
   if (code) {
     return code.trim()

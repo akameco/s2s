@@ -8,13 +8,13 @@ module.exports = {
     {
       test: /actionTypes.js$/,
       output: 'actions.js',
-      plugin: ['create-redux-action-func', { actionTypes: 'actionTypes.js' }]
-    }
+      plugin: ['create-redux-action-func', { actionTypes: 'actionTypes.js' }],
+    },
   ],
   templatesDir: 'config/templates',
   templates: [
     { test: /reducer.js/, input: 'reducer.js' },
-    { test: /reducer.test.js/, input: 'reducer.test.js' }
+    { test: /reducer.test.js/, input: 'reducer.test.js' },
   ],
-  afterHooks: [s2s.hooks.prettier()]
+  afterHooks: [s2s.hooks.prettier()],
 }
