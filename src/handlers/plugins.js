@@ -1,9 +1,6 @@
 // @flow
-import path from 'path'
-import chalk from 'chalk'
 import { compile, getOutputPath, write, toErrorStack } from '../utils'
 import type { Path, AfterHook, Plugin, PluginOpts } from '../types'
-import { relativeFromCwd } from '../utils'
 import runHooks from '../hooks/run'
 import Lock from '../utils/lock'
 import { formatText } from '../reporters/uitls'

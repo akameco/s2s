@@ -8,7 +8,8 @@ export type PluginOpts = PluginName | [PluginName, Object]
 export type Plugin = {|
   test: RegExp,
   plugin: PluginOpts,
-  output: FileName,
+  input?: FileName,
+  output?: FileName,
 |}
 
 export type Template = {|
