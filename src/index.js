@@ -22,8 +22,9 @@ export default ({
   watch,
   plugins,
   templates,
-  afterHooks,
+  afterHooks = [],
   templatesDir,
+  prettier: isPrettier = true,
 }: Opts) => {
   if (!watch) {
     throw new Error('required watch')
@@ -37,11 +38,15 @@ export default ({
     throw new TypeError(`Expected a Array got ${typeof templates}`)
   }
 
-  if (afterHooks && !Array.isArray(afterHooks)) {
+  if (!Array.isArray(afterHooks)) {
     throw new TypeError(`Expected a Array got ${typeof afterHooks}`)
   }
 
   const watcher = createWatcher(watch)
+
+  if (isPrettier) {
+    afterHooks.push(hooks.prettier())
+  }
 
   if (plugins) {
     handlePlugins(watcher, plugins, afterHooks)

@@ -24,5 +24,6 @@ export type Opts = {|
   plugins?: Plugin[],
   templatesDir?: string,
   templates?: Template[],
-  afterHooks?: AfterHook[],
+  afterHooks: AfterHook[],
+  prettier: boolean,
 |}
