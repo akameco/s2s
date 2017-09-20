@@ -1,6 +1,5 @@
 // @flow
 import 'babel-polyfill'
-import path from 'path'
 import type { Opts, Path } from './types'
 import handlePlugins from './handlers/plugins'
 import handleTemplates from './handlers/templates'
