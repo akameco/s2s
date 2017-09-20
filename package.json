@@ -15,20 +15,20 @@
   "scripts": {
     "prebuild": "rimraf dest",
     "build": "babel src -d dest --ignore *.test.js,__tests__",
-    "prepare": "npm run build",
     "build:watch": "npm run build -- --watch",
-    "prettier": "prettier --write '**/*.js'",
     "lint": "eslint src/",
+    "precommit": "lint-staged",
+    "prepare": "npm run build",
+    "prettier": "prettier --write '**/*.{js,json}'",
     "test": "jest",
     "test:watch": "jest --watch"
   },
-  "files": [
-    "dest",
-    "bin"
-  ],
-  "keywords": [
-    "s2s"
-  ],
+  "lint-staged": {
+    "*.js": ["prettier", "lint", "test", "git add"],
+    "*.json": ["prettier", "git add"]
+  },
+  "files": ["dest", "bin"],
+  "keywords": ["s2s"],
   "dependencies": {
     "babel-core": "^6.25.0",
     "babel-polyfill": "^6.26.0",
@@ -48,7 +48,9 @@
     "eslint": "^4.7.0",
     "eslint-config-precure": "^0.8.1",
     "flow-bin": "^0.54.1",
+    "husky": "^0.14.3",
     "jest": "^21.1.0",
+    "lint-staged": "^4.2.1",
     "rimraf": "^2.6.2"
   },
   "peerDependencies": {}
