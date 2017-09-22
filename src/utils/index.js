@@ -7,6 +7,10 @@ type Path = string
 type Filename = string
 type Code = string
 
+export function log(msg: string) {
+  console.log(msg)
+}
+
 export function compile(
   filename: Filename,
   opts: Object

@@ -1,11 +1,12 @@
 // @flow
 import 'babel-polyfill'
+import chalk from 'chalk'
+import chokidar from 'chokidar'
 import type { Opts, Path } from './types'
 import handlePlugins from './handlers/plugins'
 import handleTemplates from './handlers/templates'
 import * as hooks from './hooks'
-
-const chokidar = require('chokidar')
+import { log } from './utils'
 
 export { hooks }
 
@@ -61,6 +62,12 @@ export default ({
       handleTemplates(input, templates, afterHooks, templatesDir)
     })
   }
+
+  log(
+    `${chalk.bold('s2s')} started monitoring. Enjoy coding with ${chalk.bold(
+      's2s'
+    )}.`
+  )
 
   return watcher
 }

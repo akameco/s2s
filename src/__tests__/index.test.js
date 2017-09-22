@@ -1,6 +1,18 @@
 // @flow
 import m from '../index'
 import type { Opts } from '../types'
+import * as utils from '../utils'
+
+const mock = jest.spyOn(utils, 'log')
+mock.mockImplementation(x => x)
+
+const watchers = []
+
+afterAll(() => {
+  for (const w of watchers) {
+    w.close()
+  }
+})
 
 test('export function', () => {
   expect(typeof m).toBe('function')
@@ -35,7 +47,6 @@ test('throw error when opts.after !== Array', () => {
 })
 
 test('not throw when plugins,templates == null', () => {
-  const watchers = []
   const wrap = (opts: $Shape<Opts>) => () => {
     watchers.push(m({ watch: 'app', ...opts }))
   }
@@ -44,8 +55,14 @@ test('not throw when plugins,templates == null', () => {
   expect(wrap({ plugins: null })).not.toThrow()
   // $FlowFixMe
   expect(wrap({ templates: null })).not.toThrow()
+})
 
-  for (const w of watchers) {
-    w.close()
+test('Displayed "start" on the Consle', () => {
+  mock.mockReset()
+  const wrap = (opts: $Shape<Opts>) => () => {
+    watchers.push(m({ watch: 'app', ...opts }))
   }
+  expect(wrap()).not.toThrow()
+  expect(mock.mock.calls.length).toBe(1)
+  expect(mock.mock.calls[0][0]).toMatch('start')
 })
