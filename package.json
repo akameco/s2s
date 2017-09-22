@@ -19,13 +19,13 @@
     "lint": "eslint src/",
     "precommit": "lint-staged",
     "prepare": "npm run build",
-    "prettier": "prettier --write '**/*.{js,json}'",
+    "fmt": "prettier --write '**/*.{js,json}'",
     "test": "jest",
     "test:watch": "jest --watch"
   },
   "lint-staged": {
-    "*.js": ["prettier", "lint", "test", "git add"],
-    "*.json": ["prettier", "git add"]
+    "*.js": ["fmt", "lint", "test", "git add"],
+    "*.json": ["fmt", "git add"]
   },
   "files": ["dest", "bin"],
   "keywords": ["s2s"],

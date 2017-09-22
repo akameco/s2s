@@ -8,7 +8,7 @@ mock.mockImplementation(x => x)
 
 const watchers = []
 
-afterAll(() => {
+afterEach(() => {
   for (const w of watchers) {
     w.close()
   }

@@ -1,6 +1,6 @@
 // @flow
 
-export default class Lock {
+class Lock {
   _lock: Set<string>
   _timer: ?number
 
@@ -27,3 +27,5 @@ export default class Lock {
     this._lock.clear()
   }
 }
+
+export default new Lock()

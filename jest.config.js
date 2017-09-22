@@ -3,5 +3,6 @@
 
 module.exports = {
   testEnvironment: 'node',
-  testPathIgnorePatterns: ['/node_modules/', '/__fixtures__/'],
+  watchPathIgnorePatterns: ['/fixtures/copy*'],
+  testPathIgnorePatterns: ['/node_modules/', '/fixtures/', '/helpers/'],
 }

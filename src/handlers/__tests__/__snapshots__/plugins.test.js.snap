@@ -1,0 +1,11 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`compileWithPlugin 1`] = `
+"// @flow
+const a = 'a';"
+`;
+
+exports[`handlePlugin write args 1`] = `
+"// @flow
+const a = 'a';"
+`;

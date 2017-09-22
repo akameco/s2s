@@ -2,6 +2,7 @@
 import path from 'path'
 import fs from 'fs'
 import { transformFileSync } from 'babel-core'
+import type { PluginOpts } from '../types'
 
 type Path = string
 type Filename = string
@@ -21,6 +22,14 @@ export function compile(
     console.error(toErrorStack(err))
     return { ignored: true }
   }
+}
+
+export function compileWithPlugin(input: Path, plugin: PluginOpts) {
+  const { code } = compile(input, {
+    babelrc: false,
+    plugins: [plugin],
+  })
+  return code ? code.trim() : ''
 }
 
 export function toErrorStack(err: Object) {

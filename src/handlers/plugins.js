@@ -2,21 +2,46 @@
 import { compile, getOutputPath, write, toErrorStack } from '../utils'
 import type { Path, AfterHook, Plugin, PluginOpts } from '../types'
 import runHooks from '../hooks/run'
-import Lock from '../utils/lock'
+import { log } from '../utils'
+import lock from '../utils/lock'
 import { formatText } from '../reporters/'
 
-function runPlugin(input: Path, plugin: PluginOpts) {
+export function compileWithPlugin(input: Path, plugin: PluginOpts) {
   const { code } = compile(input, {
     babelrc: false,
     plugins: [plugin],
   })
-  if (code) {
-    return code.trim()
-  }
-  return ''
+  return code ? code.trim() : ''
 }
 
-const lock = new Lock()
+export function handlePlugin(
+  eventPath: Path,
+  plugin: Plugin,
+  hooks: AfterHook[] = []
+) {
+  if (!plugin.test.test(eventPath)) {
+    return
+  }
+  lock.add(eventPath)
+
+  const input = plugin.input ? plugin.input : eventPath
+
+  const code = compileWithPlugin(input, plugin.plugin)
+
+  if (!code && code === '') {
+    return
+  }
+
+  const result = runHooks(input, code, hooks)
+
+  const outputPath = plugin.output
+    ? getOutputPath(plugin.output, eventPath)
+    : eventPath
+
+  write(outputPath, result)
+
+  log(formatText('S2S', input, outputPath))
+}
 
 export default function handlePlugins(
   input: Path,
@@ -29,29 +54,8 @@ export default function handlePlugins(
   }
 
   for (const plugin of plugins) {
-    if (!plugin.test.test(input)) {
-      continue
-    }
-
-    lock.add(input)
-
-    const lastInput = plugin.input ? plugin.input : input
-
     try {
-      const code = runPlugin(lastInput, plugin.plugin)
-
-      if (!code && code === '') {
-        continue
-      }
-
-      const result = runHooks(lastInput, code, hooks)
-
-      const outputPath = plugin.output
-        ? getOutputPath(plugin.output, input)
-        : input
-      write(outputPath, result)
-
-      console.log(formatText('S2S', input, outputPath))
+      handlePlugin(input, plugin, hooks)
     } catch (err) {
       console.error(toErrorStack(err))
     }

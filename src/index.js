@@ -59,7 +59,7 @@ export default ({
 
   if (templates) {
     watcher.on('add', (input: Path) => {
-      handleTemplates(input, templates, afterHooks, templatesDir)
+      handleTemplates(input, templates, templatesDir)
     })
   }
 

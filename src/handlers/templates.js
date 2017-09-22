@@ -3,14 +3,9 @@ import fs from 'fs'
 import path from 'path'
 import chalk from 'chalk'
 import cpFile from 'cp-file'
-import type { Path, Template, AfterHook } from '../types'
-import runHooks from '../hooks/run'
-import { write } from '../utils'
+import type { Path, Template } from '../types'
 import { formatText, trimAndFormatPath } from '../reporters'
-
-export function runTemplate(input: Path, templateFile: string) {
-  cpFile.sync(templateFile, input)
-}
+import { log } from '../utils'
 
 function isAlreadyExist(input: Path) {
   try {
@@ -24,43 +19,49 @@ function isAlreadyExist(input: Path) {
   }
 }
 
+function handleCopyError(err: Error & { path: string, code: string }) {
+  if (err.name === 'CpFileError' && err.code === 'ENOENT') {
+    const errorText = `${chalk.reset.inverse.bold.red(
+      'TEMPLATE'
+    )} ${trimAndFormatPath(err.path)}
+          no such file or directory`
+    log(errorText)
+  } else {
+    log(err.stack)
+  }
+}
+
 const DEFAULT_TEMPLATES_DIR = 'templates'
+
+function handleTemplate(
+  input: Path,
+  template: Template,
+  templatesDir: string = DEFAULT_TEMPLATES_DIR
+) {
+  if (!template.test.test(input)) {
+    return
+  }
+
+  if (isAlreadyExist(input)) {
+    return
+  }
+
+  const templatePath = path.join(templatesDir, template.input)
+  cpFile.sync(templatePath, input)
+
+  log(formatText('TEMPLATE', templatePath, input))
+}
 
 export default function handleTemplates(
   input: Path,
   templates: Template[] = [],
-  hooks: AfterHook[] = [],
   templatesDir: string = DEFAULT_TEMPLATES_DIR
 ) {
   for (const template of templates) {
-    if (!template.test.test(input)) {
-      continue
-    }
-
-    if (isAlreadyExist(input)) {
-      continue
-    }
-
-    const templatePath = path.join(templatesDir, template.input)
     try {
-      console.log(runTemplate)
-      runTemplate(input, templatePath)
-
-      const code = fs.readFileSync(input, 'utf-8')
-      const result = runHooks(input, code, hooks)
-      write(input, result.trim())
-
-      console.log(formatText('TEMPLATE', templatePath, input))
+      handleTemplate(input, template, templatesDir)
     } catch (err) {
-      if (err.name === 'CpFileError' && err.code === 'ENOENT') {
-        const errorText = `${chalk.reset.inverse.bold.red(
-          'TEMPLATE'
-        )} ${trimAndFormatPath(templatePath)}
-          no such file or directory`
-        console.log(errorText)
-      } else {
-        console.error(err.stack)
-      }
+      handleCopyError(err)
     }
   }
 }
