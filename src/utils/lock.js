@@ -1,18 +1,18 @@
 // @flow
 
-export default class Lock<T: string> {
-  _lock: Set<T>
+export default class Lock {
+  _lock: Set<string>
   _timer: ?number
 
   constructor() {
     this._lock = new Set()
   }
 
-  has(input: T) {
+  has(input: string) {
     return this._lock.has(input)
   }
 
-  add(input: T) {
+  add(input: string) {
     this.clear()
     clearTimeout(this._timer)
 
