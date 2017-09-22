@@ -21,7 +21,9 @@
     "prepare": "npm run build",
     "fmt": "prettier --write '**/*.{js,json}'",
     "test": "jest",
-    "test:watch": "jest --watch"
+    "test:watch": "jest --watch",
+    "test:ci":
+      "jest --coverage --ci --runInBand && cat ./coverage/lcov.info | coveralls"
   },
   "lint-staged": {
     "*.js": ["fmt", "lint", "test", "git add"],
@@ -45,6 +47,7 @@
     "babel-plugin-transform-flow-strip-types": "^6.22.0",
     "babel-preset-env": "^1.6.0",
     "babel-preset-stage-2": "^6.24.1",
+    "coveralls": "^2.13.1",
     "eslint": "^4.7.0",
     "eslint-config-precure": "^0.8.1",
     "flow-bin": "^0.54.1",
