@@ -1,8 +1,0 @@
-{
-  "scripts": {
-    "s2s": "../../bin/s2s.js"
-  },
-  "devDependencies": {
-    "babel-plugin-define-undefined-type": "^0.1.3"
-  }
-}
