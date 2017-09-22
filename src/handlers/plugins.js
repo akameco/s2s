@@ -16,48 +16,44 @@ function runPlugin(input: Path, plugin: PluginOpts) {
   return ''
 }
 
+const lock = new Lock()
+
 export default function handlePlugins(
-  watcher: Function,
+  input: Path,
   plugins: Plugin[] = [],
   hooks: AfterHook[] = []
 ) {
-  const lock = new Lock()
+  if (lock.has(input)) {
+    lock.clear()
+    return
+  }
 
-  for (const type of ['add', 'change', 'unlink']) {
-    watcher.on(type, (input: Path) => {
-      if (lock.has(input)) {
-        lock.clear()
-        return
+  for (const plugin of plugins) {
+    if (!plugin.test.test(input)) {
+      continue
+    }
+
+    lock.add(input)
+
+    const lastInput = plugin.input ? plugin.input : input
+
+    try {
+      const code = runPlugin(lastInput, plugin.plugin)
+
+      if (!code && code === '') {
+        continue
       }
 
-      for (const plugin of plugins) {
-        if (!plugin.test.test(input)) {
-          continue
-        }
+      const result = runHooks(lastInput, code, hooks)
 
-        lock.add(input)
+      const outputPath = plugin.output
+        ? getOutputPath(plugin.output, input)
+        : input
+      write(outputPath, result)
 
-        const lastInput = plugin.input ? plugin.input : input
-
-        try {
-          const code = runPlugin(lastInput, plugin.plugin)
-
-          if (!code && code === '') {
-            continue
-          }
-
-          const result = runHooks(lastInput, code, hooks)
-
-          const outputPath = plugin.output
-            ? getOutputPath(plugin.output, input)
-            : input
-          write(outputPath, result)
-
-          console.log(formatText('S2S', input, outputPath))
-        } catch (err) {
-          console.error(toErrorStack(err))
-        }
-      }
-    })
+      console.log(formatText('S2S', input, outputPath))
+    } catch (err) {
+      console.error(toErrorStack(err))
+    }
   }
 }

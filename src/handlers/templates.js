@@ -8,7 +8,7 @@ import runHooks from '../hooks/run'
 import { write } from '../utils'
 import { formatText, trimAndFormatPath } from '../reporters'
 
-function runTemplate(input: Path, templateFile: string) {
+export function runTemplate(input: Path, templateFile: string) {
   cpFile.sync(templateFile, input)
 }
 
@@ -27,41 +27,40 @@ function isAlreadyExist(input: Path) {
 const DEFAULT_TEMPLATES_DIR = 'templates'
 
 export default function handleTemplates(
-  watcher: Function,
-  templatesDir: string = DEFAULT_TEMPLATES_DIR,
+  input: Path,
   templates: Template[] = [],
-  hooks: AfterHook[] = []
+  hooks: AfterHook[] = [],
+  templatesDir: string = DEFAULT_TEMPLATES_DIR
 ) {
-  watcher.on('add', (input: Path) => {
-    for (const template of templates) {
-      if (!template.test.test(input)) {
-        continue
-      }
+  for (const template of templates) {
+    if (!template.test.test(input)) {
+      continue
+    }
 
-      if (isAlreadyExist(input)) {
-        continue
-      }
+    if (isAlreadyExist(input)) {
+      continue
+    }
 
-      const templatePath = path.join(templatesDir, template.input)
-      try {
-        runTemplate(input, templatePath)
+    const templatePath = path.join(templatesDir, template.input)
+    try {
+      console.log(runTemplate)
+      runTemplate(input, templatePath)
 
-        const code = fs.readFileSync(input, 'utf-8')
-        const result = runHooks(input, code, hooks)
-        write(input, result.trim())
+      const code = fs.readFileSync(input, 'utf-8')
+      const result = runHooks(input, code, hooks)
+      write(input, result.trim())
 
-        console.log(formatText('TEMPLATE', templatePath, input))
-      } catch (err) {
-        if (err.name === 'CpFileError' && err.code === 'ENOENT') {
-          const errorText = `${chalk.reset.inverse.bold.red(
-            'TEMPLATE'
-          )} ${trimAndFormatPath(templatePath)}
+      console.log(formatText('TEMPLATE', templatePath, input))
+    } catch (err) {
+      if (err.name === 'CpFileError' && err.code === 'ENOENT') {
+        const errorText = `${chalk.reset.inverse.bold.red(
+          'TEMPLATE'
+        )} ${trimAndFormatPath(templatePath)}
           no such file or directory`
-          console.log(errorText)
-        } else {
-          console.error(err.stack)
-        }
+        console.log(errorText)
+      } else {
+        console.error(err.stack)
       }
     }
-  })
+  }
 }

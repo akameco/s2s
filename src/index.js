@@ -49,11 +49,17 @@ export default ({
   }
 
   if (plugins) {
-    handlePlugins(watcher, plugins, afterHooks)
+    for (const type of ['add', 'change', 'unlink']) {
+      watcher.on(type, (input: Path) => {
+        handlePlugins(input, plugins, afterHooks)
+      })
+    }
   }
 
   if (templates) {
-    handleTemplates(watcher, templatesDir, templates, afterHooks)
+    watcher.on('add', (input: Path) => {
+      handleTemplates(input, templates, afterHooks, templatesDir)
+    })
   }
 
   return watcher
