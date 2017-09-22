@@ -1,5 +1,5 @@
 // @flow
-import { compile, getOutputPath, write, toErrorStack } from '../utils'
+import { compile, getOutputPath, writeFileSync, toErrorStack } from '../utils'
 import type { Path, AfterHook, Plugin, PluginOpts } from '../types'
 import runHooks from '../hooks/run'
 import { log } from '../utils'
@@ -38,8 +38,7 @@ export function handlePlugin(
     ? getOutputPath(plugin.output, eventPath)
     : eventPath
 
-  write(outputPath, result)
-
+  writeFileSync(outputPath, result)
   log(formatText('S2S', input, outputPath))
 }
 

@@ -2,7 +2,6 @@
 import path from 'path'
 import fs from 'fs'
 import { transformFileSync } from 'babel-core'
-import type { PluginOpts } from '../types'
 
 type Path = string
 type Filename = string
@@ -24,14 +23,6 @@ export function compile(
   }
 }
 
-export function compileWithPlugin(input: Path, plugin: PluginOpts) {
-  const { code } = compile(input, {
-    babelrc: false,
-    plugins: [plugin],
-  })
-  return code ? code.trim() : ''
-}
-
 export function toErrorStack(err: Object) {
   if (err._babel && err instanceof SyntaxError) {
     return `${err.name}: ${err.message}\n${err.codeFrame}`
@@ -47,7 +38,7 @@ export function getOutputPath(output: Path, input: Path): Path {
   return path.resolve(path.dirname(input), output)
 }
 
-export function write(outputPath: Path, code: string) {
+export function writeFileSync(outputPath: Path, code: string) {
   fs.writeFileSync(outputPath, code, 'utf-8')
 }
 
@@ -55,7 +46,7 @@ export function relativeFromCwd(input: Path) {
   return path.relative(process.cwd(), input)
 }
 
-export function relativePath(testPath: string) {
+export function getDirAndBaseName(testPath: string) {
   const dirname = path.dirname(testPath)
   const basename = path.basename(testPath)
 

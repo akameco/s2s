@@ -12,7 +12,7 @@ const fn = x => x
 beforeEach(() => {
   rimraf.sync(resolve(__dirname, 'fixtures', 'copy-result.js'))
   logSpy = jest.spyOn(utils, 'log').mockImplementation(fn)
-  writeSpy = jest.spyOn(utils, 'write').mockImplementation(fn)
+  writeSpy = jest.spyOn(utils, 'writeFileSync').mockImplementation(fn)
 })
 
 afterEach(() => {
