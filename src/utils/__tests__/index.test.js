@@ -81,3 +81,9 @@ test('compile with Error', () => {
   expect(errorSpy).toHaveBeenCalled()
   expect(errorSpy.mock.calls[0][0]).toMatch('test error')
 })
+
+test('isAlreadyExist returns false when a code is empty string', () => {
+  const spyFs = jest.spyOn(fs, 'readFileSync').mockReturnValue('')
+  expect(utils.isAlreadyExist('hoge')).toBe(false)
+  spyFs.mockRestore()
+})

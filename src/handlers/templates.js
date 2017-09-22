@@ -1,23 +1,10 @@
 // @flow
-import fs from 'fs'
 import path from 'path'
 import chalk from 'chalk'
 import cpFile from 'cp-file'
 import type { Path, Template } from '../types'
 import { formatText, trimAndFormatPath } from '../reporters'
-import { log } from '../utils'
-
-function isAlreadyExist(input: Path) {
-  try {
-    const code = fs.readFileSync(input, 'utf-8')
-    if (code.length === 0 || code.trim() === '') {
-      return false
-    }
-    return true
-  } catch (err) {
-    return false
-  }
-}
+import { log, isAlreadyExist } from '../utils'
 
 function handleCopyError(err: Error & { path: string, code: string }) {
   if (err.name === 'CpFileError' && err.code === 'ENOENT') {

@@ -55,3 +55,15 @@ export function getDirAndBaseName(testPath: string) {
     basename,
   }
 }
+
+export function isAlreadyExist(input: Path) {
+  try {
+    const code = fs.readFileSync(input, 'utf-8')
+    if (code.length === 0 || code.trim() === '') {
+      return false
+    }
+    return true
+  } catch (err) {
+    return false
+  }
+}
