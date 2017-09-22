@@ -20,11 +20,7 @@ function handleCopyError(err: Error & { path: string, code: string }) {
 
 const DEFAULT_TEMPLATES_DIR = 'templates'
 
-function handleTemplate(
-  input: Path,
-  template: Template,
-  templatesDir: string = DEFAULT_TEMPLATES_DIR
-) {
+function handleTemplate(input: Path, template: Template, templatesDir: string) {
   if (!template.test.test(input)) {
     return
   }
