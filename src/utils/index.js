@@ -41,3 +41,13 @@ export function write(outputPath: Path, code: string) {
 export function relativeFromCwd(input: Path) {
   return path.relative(process.cwd(), input)
 }
+
+export function relativePath(testPath: string) {
+  const dirname = path.dirname(testPath)
+  const basename = path.basename(testPath)
+
+  return {
+    dirname,
+    basename,
+  }
+}

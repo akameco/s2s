@@ -1,0 +1,5 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`formatText 1`] = `"[0m[7m[1m[32mS2S[39m[22m[27m[0m [2msrc/input/[22m[1minput.js[22m → [2msrc/output/[22m[1moutput.js[22m"`;
+
+exports[`trimAndFormatPath 1`] = `"[2m/src/user/hoge/[22m[1mindex.js[22m"`;

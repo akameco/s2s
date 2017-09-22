@@ -27,3 +27,5 @@ export type Opts = {|
   afterHooks: AfterHook[],
   prettier: boolean,
 |}
+
+export type HandlerType = 'S2S' | 'TEMPLATE'
