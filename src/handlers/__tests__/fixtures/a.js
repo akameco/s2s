@@ -1,2 +1,2 @@
 // @flow
-const a = 'a'
+const hello = 'hello'

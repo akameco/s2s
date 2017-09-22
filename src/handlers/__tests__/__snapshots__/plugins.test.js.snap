@@ -2,10 +2,10 @@
 
 exports[`compileWithPlugin 1`] = `
 "// @flow
-const a = 'a';"
+const olleh = 'hello';"
 `;
 
 exports[`handlePlugin write args 1`] = `
 "// @flow
-const a = 'a';"
+const olleh = 'hello';"
 `;
