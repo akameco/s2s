@@ -16,3 +16,8 @@ test('return formated code when run prettierHook', () => {
   const expected = `const hello = 'world'`
   expect(runHooks('', code, hooks).trim()).toEqual(expected)
 })
+
+test('run prettierHook with no hooks', () => {
+  const code = `const      hello =    'world'`
+  expect(runHooks('', code).trim()).toEqual(code)
+})
