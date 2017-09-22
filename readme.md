@@ -6,36 +6,54 @@
 [![styled with prettier](https://img.shields.io/badge/styled_with-prettier-ff69b4.svg)](https://github.com/prettier/prettier)
 
 
+## Ultra-fast coding by AST assist
+
+<img src="https://raw.githubusercontent.com/akameco/s2s-examples/master/media/demo.gif" />
+
+See Examples [akameco/s2s-examples](https://github.com/akameco/s2s-examples)
+
+## Quick Start
+
 ## Install
 
+#### yarn:
+```
+$ yarn add --dev s2s
+```
+
+#### npm: 
 ```
 $ npm install --save-dev s2s
+```
+
+And install the babel plugin as well.
+
+```
+$ yarn add --dev babel-plugin-s2s-action-creater babel-plugin-s2s-action-types
 ```
 
 
 ## Usage
 
-s2s.config.js
+create **`s2s.config.js`**
 
 ```js
-const path = require('path')
-const s2s = require('s2s')
-
 module.exports = {
   watch: './**/*.js',
   plugins: [
     {
       test: /actionTypes.js$/,
+      plugin: ['s2s-action-types', { removePrefix: 'src/containers' }],
+    },
+    {
+      test: /actionTypes.js$/,
       output: 'actions.js',
-      plugin: ['create-redux-action-func', { actionTypes: 'actionTypes.js' }]
-    }
+      plugin: ['s2s-action-creater'],
+    },
   ],
-  templatesDir: 'templates',
   templates: [
     { test: /reducer.js/, input: 'reducer.js' },
-    { test: /reducer.test.js/, input: 'reducer.test.js' }
   ],
-  afterHooks: [s2s.hooks.prettier()]
 }
 ```
 
