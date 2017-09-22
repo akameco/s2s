@@ -5,6 +5,11 @@ exports[`compileWithPlugin 1`] = `
 const olleh = 'hello';"
 `;
 
+exports[`handlePlugin with input option 1`] = `
+"// @flow
+const olleh = 'hello';"
+`;
+
 exports[`handlePlugin write args 1`] = `
 "// @flow
 const olleh = 'hello';"

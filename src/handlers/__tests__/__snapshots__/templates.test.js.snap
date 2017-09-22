@@ -1,3 +1,0 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
-
-exports[`called log with output result 1`] = `"[0m[7m[1m[36mTEMPLATE[39m[22m[27m[0m [2m/Users/akameco/src/github.com/akameco/s2s/src/handlers/__tests__/fixtures/[22m[1mcopy.js[22m → [2msrc/handlers/__tests__/fixtures/[22m[1mcopy-result.js[22m"`;

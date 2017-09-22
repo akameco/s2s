@@ -29,7 +29,9 @@ test('called log with output result', () => {
   const template = { test: /copy-result.js/, input: 'copy.js' }
 
   templates.default(eventPath, [template], fixturesPath)
-  expect(logSpy.mock.calls[0][0]).toMatchSnapshot()
+  expect(logSpy.mock.calls[0][0]).toMatch(
+    'copy.js[22m → [2msrc/handlers/__tests__/fixtures/[22m[1mcopy-result.js[22m'
+  )
 })
 
 test('already exist', () => {
