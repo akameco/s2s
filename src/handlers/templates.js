@@ -4,7 +4,7 @@ import chalk from 'chalk'
 import cpFile from 'cp-file'
 import type { Path, Template } from '../types'
 import { formatText, trimAndFormatPath } from '../reporters'
-import { log, isAlreadyExist } from '../utils'
+import { log, isAlreadyExist, relativeFromCwd } from '../utils'
 
 function handleCopyError(err: Error & { path: string, code: string }) {
   if (err.name === 'CpFileError' && err.code === 'ENOENT') {
@@ -32,7 +32,7 @@ function handleTemplate(input: Path, template: Template, templatesDir: string) {
   const templatePath = path.join(templatesDir, template.input)
   cpFile.sync(templatePath, input)
 
-  log(formatText('TEMPLATE', templatePath, input))
+  log(formatText('TEMPLATE', relativeFromCwd(templatePath), input))
 }
 
 export default function handleTemplates(

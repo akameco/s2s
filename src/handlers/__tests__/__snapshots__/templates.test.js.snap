@@ -1,0 +1,3 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`called log with output result 1`] = `"TEMPLATE src/handlers/__tests__/fixtures/copy.js → src/handlers/__tests__/fixtures/copy-result.js"`;

@@ -2,6 +2,7 @@
 import { resolve, join } from 'path'
 import rimraf from 'rimraf'
 import cpFile from 'cp-file'
+import stripAnsi from 'strip-ansi'
 import * as utils from '../../utils'
 import * as templates from '../templates'
 
@@ -28,9 +29,7 @@ test('called log with output result', () => {
   const template = { test: /copy-result.js/, input: 'copy.js' }
 
   templates.default(eventPath, [template], fixturesPath)
-  expect(logSpy.mock.calls[0][0]).toMatch(
-    'copy.js[22m → [2msrc/handlers/__tests__/fixtures/[22m[1mcopy-result.js[22m'
-  )
+  expect(stripAnsi(logSpy.mock.calls[0][0])).toMatchSnapshot()
 })
 
 test('already exist', () => {
