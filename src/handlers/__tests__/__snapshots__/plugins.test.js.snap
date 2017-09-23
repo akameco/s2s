@@ -5,6 +5,8 @@ exports[`compileWithPlugin 1`] = `
 const olleh = 'hello';"
 `;
 
+exports[`handlePlugin when eventPath match 1`] = `"S2S src/handlers/__tests__/fixtures/a.js → src/handlers/__tests__/fixtures/a.js"`;
+
 exports[`handlePlugin with input option 1`] = `
 "// @flow
 const olleh = 'hello';"

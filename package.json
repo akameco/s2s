@@ -55,7 +55,8 @@
     "jest": "^21.1.0",
     "lint-staged": "^4.2.1",
     "pretty-format": "^21.1.0",
-    "rimraf": "^2.6.2"
+    "rimraf": "^2.6.2",
+    "strip-ansi": "^4.0.0"
   },
   "peerDependencies": {}
 }

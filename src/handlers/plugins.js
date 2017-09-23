@@ -2,7 +2,7 @@
 import { compile, getOutputPath, writeFileSync, toErrorStack } from '../utils'
 import type { Path, AfterHook, Plugin, PluginOpts } from '../types'
 import runHooks from '../hooks/run'
-import { log } from '../utils'
+import { log, relativeFromCwd } from '../utils'
 import lock from '../utils/lock'
 import { formatText } from '../reporters/'
 
@@ -39,7 +39,7 @@ export function handlePlugin(
     : eventPath
 
   writeFileSync(outputPath, result)
-  log(formatText('S2S', input, outputPath))
+  log(formatText('S2S', relativeFromCwd(input), outputPath))
 }
 
 export default function handlePlugins(

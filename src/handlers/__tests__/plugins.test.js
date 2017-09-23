@@ -1,5 +1,6 @@
 // @flow
 import path from 'path'
+import stripAnsi from 'strip-ansi'
 import * as utils from '../../utils'
 import lock from '../../utils/lock'
 import * as plugins from '../plugins'
@@ -40,7 +41,7 @@ test('handlePlugin when eventPath not match', () => {
 test('handlePlugin when eventPath match', () => {
   const plugin = { test: /a.js/, plugin: _plugin }
   plugins.handlePlugin(getEventPath(), plugin)
-  expect(logSpy.mock.calls[0][0]).toMatch('S2S')
+  expect(stripAnsi(logSpy.mock.calls[0][0])).toMatchSnapshot()
 })
 
 test('handlePlugin with input option', () => {
