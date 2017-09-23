@@ -2,15 +2,11 @@
 import { resolve, join } from 'path'
 import rimraf from 'rimraf'
 import cpFile from 'cp-file'
-import chalk from 'chalk'
 import * as utils from '../../utils'
 import * as templates from '../templates'
 
 let writeSpy
 let logSpy
-
-jest.doMock('chalk', () => new chalk.constructor({ enabled: false }))
-
 const fn = x => x
 
 beforeEach(() => {
