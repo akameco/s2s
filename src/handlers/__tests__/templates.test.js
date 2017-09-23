@@ -1,9 +1,12 @@
 // @flow
 import { resolve, join } from 'path'
+import chalk from 'chalk'
 import rimraf from 'rimraf'
 import cpFile from 'cp-file'
 import * as utils from '../../utils'
 import * as templates from '../templates'
+
+jest.doMock('chalk', () => new chalk.constructor({ enabled: false }))
 
 let writeSpy
 let logSpy
