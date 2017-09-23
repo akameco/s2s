@@ -3,7 +3,6 @@ import chalk from 'chalk'
 import { formatText, trimAndFormatPath } from '../'
 
 jest.doMock('chalk', () => new chalk.constructor({ enabled: false }))
-jest.doMock('strip-ansi')
 
 test('trimAndFormatPath', () => {
   expect(trimAndFormatPath('/src/user/hoge/index.js')).toMatchSnapshot()
