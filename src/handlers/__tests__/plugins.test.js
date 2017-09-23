@@ -13,8 +13,10 @@ let writeSpy
 const fn = x => x
 
 const getEventPath = () => path.resolve(__dirname, 'fixtures', 'a.js')
+jest.useFakeTimers()
 
 beforeEach(() => {
+  jest.runAllTimers()
   errorSpy = jest.spyOn(console, 'error').mockImplementation(fn)
   logSpy = jest.spyOn(utils, 'log').mockImplementation(fn)
   writeSpy = jest.spyOn(utils, 'writeFileSync').mockImplementation(fn)

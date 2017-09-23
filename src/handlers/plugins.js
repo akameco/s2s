@@ -22,8 +22,6 @@ export function handlePlugin(
   if (!plugin.test.test(eventPath)) {
     return
   }
-  lock.add(eventPath)
-
   const input = plugin.input ? plugin.input : eventPath
 
   const code = compileWithPlugin(input, plugin.plugin)
@@ -32,6 +30,8 @@ export function handlePlugin(
     return
   }
 
+  lock.add(eventPath)
+
   const result = runHooks(input, code, hooks)
 
   const outputPath = plugin.output
@@ -39,7 +39,7 @@ export function handlePlugin(
     : eventPath
 
   writeFileSync(outputPath, result)
-  log(formatText('S2S', relativeFromCwd(input), outputPath))
+  log(formatText('S2S', relativeFromCwd(eventPath), outputPath))
 }
 
 export default function handlePlugins(
@@ -48,7 +48,6 @@ export default function handlePlugins(
   hooks: AfterHook[] = []
 ) {
   if (lock.has(input)) {
-    lock.clear()
     return
   }
 

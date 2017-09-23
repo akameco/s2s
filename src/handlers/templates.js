@@ -6,7 +6,7 @@ import type { Path, Template } from '../types'
 import { formatText, trimAndFormatPath } from '../reporters'
 import { log, isAlreadyExist, relativeFromCwd } from '../utils'
 
-function handleCopyError(err: Error & { path: string, code: string }) {
+function handleCopyError(err: Error & { path: string, code: string }): void {
   if (err.name === 'CpFileError' && err.code === 'ENOENT') {
     const errorText = `${chalk.reset.inverse.bold.red(
       'TEMPLATE'

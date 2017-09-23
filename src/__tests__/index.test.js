@@ -61,12 +61,8 @@ test('throw error when opts.after !== Array', () => {
   }).toThrowErrorMatchingSnapshot()
 })
 
-test('not throw when plugins,templates == null', () => {
+test('not throw when no args', () => {
   expect(addToWatchers()).not.toThrow()
-  // $FlowFixMe
-  expect(addToWatchers({ plugins: null })).not.toThrow()
-  // $FlowFixMe
-  expect(addToWatchers({ templates: null })).not.toThrow()
 })
 
 test('Displayed "start" on the Consle', () => {

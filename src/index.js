@@ -21,8 +21,8 @@ function createWatcher(rootPath: Path) {
 
 export default ({
   watch,
-  plugins,
-  templates,
+  plugins = [],
+  templates = [],
   afterHooks = [],
   templatesDir,
   prettier: isPrettier = true,
@@ -31,11 +31,11 @@ export default ({
     throw new Error('required watch')
   }
 
-  if (plugins && !Array.isArray(plugins)) {
+  if (!Array.isArray(plugins)) {
     throw new TypeError(`Expected a Array, got ${typeof plugins}`)
   }
 
-  if (templates && !Array.isArray(templates)) {
+  if (!Array.isArray(templates)) {
     throw new TypeError(`Expected a Array got ${typeof templates}`)
   }
 
@@ -49,7 +49,7 @@ export default ({
     afterHooks.push(hooks.prettier())
   }
 
-  if (plugins) {
+  if (plugins.length > 0) {
     for (const type of ['add', 'change', 'unlink']) {
       watcher.on(type, (input: Path) => {
         handlePlugins(input, plugins, afterHooks)
@@ -57,7 +57,7 @@ export default ({
     }
   }
 
-  if (templates) {
+  if (templates.length > 0) {
     watcher.on('add', (input: Path) => {
       handleTemplates(input, templates, templatesDir)
     })

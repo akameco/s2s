@@ -1,11 +1,10 @@
 // @flow
 
 class Lock {
-  _lock: Set<string>
-  _timer: ?number
+  _lock: Map<string, number>
 
   constructor() {
-    this._lock = new Set()
+    this._lock = new Map()
   }
 
   has(input: string) {
@@ -13,18 +12,23 @@ class Lock {
   }
 
   add(input: string) {
-    this.clear()
-    clearTimeout(this._timer)
+    if (this.has(input)) {
+      clearTimeout(this._lock.get(input))
+    }
 
-    this._lock.add(input)
-
-    this._timer = setTimeout(() => {
+    const timer = setTimeout(() => {
       this._lock.delete(input)
+      this.delete(input)
     }, 1000)
+
+    this._lock.set(input, timer)
   }
 
-  clear() {
-    this._lock.clear()
+  delete(input: string) {
+    if (this.has(input)) {
+      clearTimeout(this._lock.get(input))
+      this._lock.delete(input)
+    }
   }
 }
 
