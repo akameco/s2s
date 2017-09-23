@@ -1,11 +1,7 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`formatText when handlerType = s2s 1`] = `"</><bold><green>S2S</></> <dim>src/input/<bold>input.js → <dim>src/output/<bold>output.js"`;
+exports[`formatText when handlerType = s2s 1`] = `"S2S src/input/input.js → src/output/output.js"`;
 
-exports[`formatText when handlerType = s2s 2`] = `"S2S src/input/input.js → src/output/output.js"`;
+exports[`formatText when handlerType = template 1`] = `"TEMPLATE src/input/input.js → src/output/output.js"`;
 
-exports[`formatText when handlerType = template 1`] = `"</><bold><cyan>TEMPLATE</></> <dim>src/input/<bold>input.js → <dim>src/output/<bold>output.js"`;
-
-exports[`formatText when handlerType = template 2`] = `"TEMPLATE src/input/input.js → src/output/output.js"`;
-
-exports[`trimAndFormatPath 1`] = `"<dim>/src/user/hoge/<bold>index.js"`;
+exports[`trimAndFormatPath 1`] = `"/src/user/hoge/index.js"`;
