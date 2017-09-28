@@ -1,0 +1,32 @@
+{
+  "projectName": "s2s",
+  "projectOwner": "akameco",
+  "files": [
+    "readme.md"
+  ],
+  "imageSize": 100,
+  "commit": true,
+  "contributors": [
+    {
+      "login": "akameco",
+      "name": "akameco",
+      "avatar_url": "https://avatars2.githubusercontent.com/u/4002137?v=4",
+      "profile": "http://akameco.github.io",
+      "contributions": [
+        "code",
+        "test",
+        "question",
+        "ideas"
+      ]
+    },
+    {
+      "login": "elzup",
+      "name": "elzup",
+      "avatar_url": "https://avatars3.githubusercontent.com/u/2284908?v=4",
+      "profile": "https://elzup.com",
+      "contributions": [
+        "ideas"
+      ]
+    }
+  ]
+}

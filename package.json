@@ -13,11 +13,13 @@
   },
   "main": "./dest/index.js",
   "scripts": {
+    "add": "all-contributors add",
     "prebuild": "rimraf dest",
     "build": "babel src -d dest --ignore *.test.js,__tests__",
     "build:watch": "npm run build -- --watch",
     "lint": "eslint src/",
     "precommit": "lint-staged",
+    "postinstall": "npm run fmt",
     "prepare": "npm run build",
     "fmt": "prettier --write '**/*.{js,json}'",
     "test": "jest",
@@ -42,6 +44,7 @@
     "slash": "^1.0.0"
   },
   "devDependencies": {
+    "all-contributors-cli": "^4.5.0",
     "babel-cli": "^6.26.0",
     "babel-jest": "^21.0.2",
     "babel-plugin-transform-flow-strip-types": "^6.22.0",

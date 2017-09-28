@@ -21,7 +21,7 @@ See Examples [akameco/s2s-examples](https://github.com/akameco/s2s-examples)
 $ yarn add --dev s2s
 ```
 
-#### npm: 
+#### npm:
 ```
 $ npm install --save-dev s2s
 ```
@@ -63,6 +63,17 @@ module.exports = {
 $ npm run s2s
 ```
 
+
+## Contributors
+
+Thanks goes to these wonderful people ([emoji key](https://github.com/kentcdodds/all-contributors#emoji-key)):
+
+<!-- ALL-CONTRIBUTORS-LIST:START - Do not remove or modify this section -->
+| [<img src="https://avatars2.githubusercontent.com/u/4002137?v=4" width="100px;"/><br /><sub>akameco</sub>](http://akameco.github.io)<br />[💻](https://github.com/akameco/s2s/commits?author=akameco "Code") [⚠️](https://github.com/akameco/s2s/commits?author=akameco "Tests") [💬](#question-akameco "Answering Questions") [🤔](#ideas-akameco "Ideas, Planning, & Feedback") | [<img src="https://avatars3.githubusercontent.com/u/2284908?v=4" width="100px;"/><br /><sub>elzup</sub>](https://elzup.com)<br />[🤔](#ideas-elzup "Ideas, Planning, & Feedback") |
+| :---: | :---: |
+<!-- ALL-CONTRIBUTORS-LIST:END -->
+
+This project follows the [all-contributors](https://github.com/kentcdodds/all-contributors) specification. Contributions of any kind welcome!
 
 ## License
 
