@@ -66,6 +66,12 @@ test('handlePlugin with input option', () => {
   expect(writeSpy.mock.calls[0][1]).toMatchSnapshot()
 })
 
+test('handlePlugin with relative input path', () => {
+  const plugin = { test: /a.js/, plugin: _plugin, input: 'b.js' }
+  plugins.handlePlugin(getEventPath(), plugin)
+  expect(writeSpy.mock.calls[0][1]).toMatchSnapshot()
+})
+
 test('handlePlugin with output option', () => {
   const plugin = { test: /a.js/, plugin: _plugin, output: 'b.js' }
   plugins.handlePlugin(getEventPath(), plugin)

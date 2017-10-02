@@ -22,6 +22,11 @@ exports[`handlePlugin with input option 1`] = `
 const olleh = 'hello';"
 `;
 
+exports[`handlePlugin with relative input path 1`] = `
+"// @flow
+const dlroWolleh = 'hello world';"
+`;
+
 exports[`handlePlugin write args 1`] = `
 "// @flow
 const olleh = 'hello';"
