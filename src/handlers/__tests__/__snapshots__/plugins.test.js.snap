@@ -5,6 +5,16 @@ exports[`compileWithPlugin 1`] = `
 const olleh = 'hello';"
 `;
 
+exports[`from option works when plugin === Array 1`] = `
+"// @flow
+const hellofixtures = 'hello';"
+`;
+
+exports[`from option works when plugin === string 1`] = `
+"// @flow
+const hellofixtures = 'hello';"
+`;
+
 exports[`handlePlugin when eventPath match 1`] = `"S2S src/handlers/__tests__/fixtures/a.js → src/handlers/__tests__/fixtures/a.js"`;
 
 exports[`handlePlugin with input option 1`] = `
