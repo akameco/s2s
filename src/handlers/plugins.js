@@ -1,4 +1,5 @@
 // @flow
+import path from 'path'
 import { compile, getOutputPath, writeFileSync, toErrorStack } from '../utils'
 import type { Path, AfterHook, Plugin, PluginOpts } from '../types'
 import runHooks from '../hooks/run'
@@ -19,6 +20,18 @@ export function compileWithPlugin(input: Path, plugin: PluginOpts) {
   return code ? code.trim() : ''
 }
 
+function resolveInputPath(input: ?string, eventPath: Path): Path {
+  if (!input) {
+    return eventPath
+  }
+
+  if (path.isAbsolute(input)) {
+    return input
+  }
+
+  return path.resolve(path.dirname(eventPath), input)
+}
+
 export function handlePlugin(
   eventPath: Path,
   plugin: Plugin,
@@ -27,7 +40,7 @@ export function handlePlugin(
   if (!plugin.test.test(eventPath)) {
     return
   }
-  const input = plugin.input ? plugin.input : eventPath
+  const input = resolveInputPath(plugin.input, eventPath)
 
   const code = compileWithPlugin(input, plugin.plugin)
 
