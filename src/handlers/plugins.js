@@ -1,16 +1,19 @@
 // @flow
 import path from 'path'
 import { compile, getOutputPath, writeFileSync, toErrorStack } from '../utils'
-import type { Path, AfterHook, Plugin, PluginOpts } from '../types'
+import type { Path, AfterHook, Plugin } from '../types'
 import runHooks from '../hooks/run'
 import { log, relativeFromCwd } from '../utils'
 import lock from '../utils/lock'
 import { formatText } from '../reporters/'
 
-export function compileWithPlugin(input: Path, plugin: PluginOpts) {
-  const pluginWithFrom = Array.isArray(plugin)
-    ? [plugin[0], { ...plugin[1], from: input }]
-    : [plugin, { from: input }]
+export function compileWithPlugin(eventPath: Path, plugin: Plugin) {
+  const input = resolveInputPath(plugin.input, eventPath)
+  const opts = plugin.plugin
+
+  const pluginWithFrom = Array.isArray(opts)
+    ? [opts[0], { ...opts[1], from: eventPath }]
+    : [opts, { from: eventPath }]
 
   const { code } = compile(input, {
     babelrc: false,
@@ -40,9 +43,7 @@ export function handlePlugin(
   if (!plugin.test.test(eventPath)) {
     return
   }
-  const input = resolveInputPath(plugin.input, eventPath)
-
-  const code = compileWithPlugin(input, plugin.plugin)
+  const code = compileWithPlugin(eventPath, plugin)
 
   if (!code && code === '') {
     return
@@ -50,7 +51,11 @@ export function handlePlugin(
 
   lock.add(eventPath)
 
-  const result = runHooks(input, code, hooks)
+  const result = runHooks(
+    resolveInputPath(plugin.input, eventPath),
+    code,
+    hooks
+  )
 
   const outputPath = plugin.output
     ? getOutputPath(plugin.output, eventPath)
