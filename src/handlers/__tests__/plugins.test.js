@@ -30,20 +30,26 @@ afterEach(() => {
 })
 
 test('compileWithPlugin', () => {
-  const result = plugins.compileWithPlugin(getEventPath(), _plugin)
+  const result = plugins.compileWithPlugin(getEventPath(), {
+    test: /dummy/,
+    plugin: _plugin,
+  })
   expect(result).toMatchSnapshot()
 })
 
 test('from option works when plugin === string', () => {
-  const result = plugins.compileWithPlugin(getEventPath(), fromPlugin)
+  const result = plugins.compileWithPlugin(getEventPath(), {
+    test: /dummy/,
+    plugin: fromPlugin,
+  })
   expect(result).toMatchSnapshot()
 })
 
 test('from option works when plugin === Array', () => {
-  const result = plugins.compileWithPlugin(getEventPath(), [
-    fromPlugin,
-    { x: 1 },
-  ])
+  const result = plugins.compileWithPlugin(getEventPath(), {
+    test: /dummy/,
+    plugin: [fromPlugin, { x: 1 }],
+  })
   expect(result).toMatchSnapshot()
 })
 
