@@ -57,12 +57,34 @@ module.exports = {
 }
 ```
 
+
 ### Run
 
 ```
 $ npm run s2s
 ```
 
+
+## Examples
+
+[Shopping Cart (redux+flowtype+s2s)](https://github.com/akameco/s2s-examples)
+
+
+## Plugins
+
+
+- [**babel-plugin-s2s-action-types**<br>generate redux action types](https://github.com/akameco/s2s-plugins/tree/master/packages/babel-plugin-s2s-action-types)
+- [**babel-plugin-s2s-action-creater**<br>generate redux action creater](https://github.com/akameco/s2s-plugins/tree/master/packages/babel-plugin-s2s-action-creater)
+- [**babel-plugin-s2s-action-root**<br>compose flow + redux action types](https://github.com/akameco/s2s-plugins/tree/master/packages/babel-plugin-s2s-action-root)
+- [**babel-plugin-s2s-state-root**<br>compose flow + redux state types](https://github.com/akameco/s2s-plugins/tree/master/packages/babel-plugin-s2s-state-root)
+- [**babel-plugin-s2s-reducer-root**<br>compose redux reducer](https://github.com/akameco/s2s-plugins/tree/master/packages/babel-plugin-s2s-reducer-root)
+- [**babel-plugin-s2s-reducer-root**<br>create reducer test using switch/case](https://github.com/akameco/s2s-plugins/tree/master/packages/babel-plugin-s2s-reducer-test-case)
+
+## Articles
+### 日本語
+
+- [さよならボイラープレート。s2sによる高速reduxアプリケーション構築](https://qiita.com/akameco/items/e1489c6bbf3439ec6ca4)
+- [s2s: reduxにおけるreducerのテスト。あなたがテストを書く必要はないかも知れない](https://qiita.com/akameco/items/66a2232df0e95e5bfe31)
 
 ## Contributors
 
