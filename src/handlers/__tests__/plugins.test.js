@@ -5,6 +5,7 @@ import * as utils from '../../utils'
 import lock from '../../utils/lock'
 import * as plugins from '../plugins'
 import _plugin from './helpers/identifer-reverse-plugin'
+import fromPlugin from './helpers/from-plugin'
 
 let errorSpy
 let logSpy
@@ -30,6 +31,19 @@ afterEach(() => {
 
 test('compileWithPlugin', () => {
   const result = plugins.compileWithPlugin(getEventPath(), _plugin)
+  expect(result).toMatchSnapshot()
+})
+
+test('from option works when plugin === string', () => {
+  const result = plugins.compileWithPlugin(getEventPath(), fromPlugin)
+  expect(result).toMatchSnapshot()
+})
+
+test('from option works when plugin === Array', () => {
+  const result = plugins.compileWithPlugin(getEventPath(), [
+    fromPlugin,
+    { x: 1 },
+  ])
   expect(result).toMatchSnapshot()
 })
 

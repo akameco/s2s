@@ -7,10 +7,15 @@ import lock from '../utils/lock'
 import { formatText } from '../reporters/'
 
 export function compileWithPlugin(input: Path, plugin: PluginOpts) {
+  const pluginWithFrom = Array.isArray(plugin)
+    ? [plugin[0], { ...plugin[1], from: input }]
+    : [plugin, { from: input }]
+
   const { code } = compile(input, {
     babelrc: false,
-    plugins: [plugin],
+    plugins: [pluginWithFrom],
   })
+
   return code ? code.trim() : ''
 }
 
