@@ -57,6 +57,7 @@
     "husky": "^0.14.3",
     "jest": "^21.2.1",
     "lint-staged": "^4.2.3",
+    "path-exists": "^3.0.0",
     "pretty-format": "^21.2.1",
     "rimraf": "^2.6.2",
     "strip-ansi": "^4.0.0"

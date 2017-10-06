@@ -4,7 +4,7 @@ import chalk from 'chalk'
 import cpFile from 'cp-file'
 import type { Path, Template } from '../types'
 import { formatText, trimAndFormatPath } from '../reporters'
-import { log, isAlreadyExist, relativeFromCwd } from '../utils'
+import { log, isAlreadyExist, relativeFromCwd, getOutputPath } from '../utils'
 
 function handleCopyError(err: Error & { path: string, code: string }): void {
   if (err.name === 'CpFileError' && err.code === 'ENOENT') {
@@ -20,29 +20,37 @@ function handleCopyError(err: Error & { path: string, code: string }): void {
 
 const DEFAULT_TEMPLATES_DIR = 'templates'
 
-function handleTemplate(input: Path, template: Template, templatesDir: string) {
-  if (!template.test.test(input)) {
+function handleTemplate(
+  eventPath: Path,
+  template: Template,
+  templatesDir: string
+) {
+  if (!template.test.test(eventPath)) {
     return
   }
 
-  if (isAlreadyExist(input)) {
+  const outputPath = template.output
+    ? getOutputPath(template.output, eventPath)
+    : eventPath
+
+  if (isAlreadyExist(outputPath)) {
     return
   }
 
   const templatePath = path.join(templatesDir, template.input)
-  cpFile.sync(templatePath, input)
+  cpFile.sync(templatePath, outputPath)
 
-  log(formatText('TEMPLATE', relativeFromCwd(templatePath), input))
+  log(formatText('TEMPLATE', relativeFromCwd(templatePath), outputPath))
 }
 
 export default function handleTemplates(
-  input: Path,
+  eventPath: Path,
   templates: Template[] = [],
   templatesDir: string = DEFAULT_TEMPLATES_DIR
 ) {
   for (const template of templates) {
     try {
-      handleTemplate(input, template, templatesDir)
+      handleTemplate(eventPath, template, templatesDir)
     } catch (err) {
       handleCopyError(err)
     }
