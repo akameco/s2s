@@ -15,6 +15,7 @@ export type Plugin = {|
 export type Template = {|
   test: RegExp,
   input: Path,
+  output?: Path,
 |}
 
 export type AfterHook = Function
