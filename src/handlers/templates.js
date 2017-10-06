@@ -20,29 +20,33 @@ function handleCopyError(err: Error & { path: string, code: string }): void {
 
 const DEFAULT_TEMPLATES_DIR = 'templates'
 
-function handleTemplate(input: Path, template: Template, templatesDir: string) {
-  if (!template.test.test(input)) {
+function handleTemplate(
+  eventPath: Path,
+  template: Template,
+  templatesDir: string
+) {
+  if (!template.test.test(eventPath)) {
     return
   }
 
-  if (isAlreadyExist(input)) {
+  if (isAlreadyExist(eventPath)) {
     return
   }
 
   const templatePath = path.join(templatesDir, template.input)
-  cpFile.sync(templatePath, input)
+  cpFile.sync(templatePath, eventPath)
 
-  log(formatText('TEMPLATE', relativeFromCwd(templatePath), input))
+  log(formatText('TEMPLATE', relativeFromCwd(templatePath), eventPath))
 }
 
 export default function handleTemplates(
-  input: Path,
+  eventPath: Path,
   templates: Template[] = [],
   templatesDir: string = DEFAULT_TEMPLATES_DIR
 ) {
   for (const template of templates) {
     try {
-      handleTemplate(input, template, templatesDir)
+      handleTemplate(eventPath, template, templatesDir)
     } catch (err) {
       handleCopyError(err)
     }
