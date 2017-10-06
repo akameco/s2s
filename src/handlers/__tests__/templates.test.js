@@ -7,7 +7,6 @@ import pathExists from 'path-exists'
 import * as utils from '../../utils'
 import * as templates from '../templates'
 
-let writeSpy
 let logSpy
 const fn = x => x
 
@@ -19,12 +18,10 @@ beforeEach(() => {
   rimraf.sync(getEventPath('copy-result.js'))
   rimraf.sync(getEventPath('output.js'))
   logSpy = jest.spyOn(utils, 'log').mockImplementation(fn)
-  writeSpy = jest.spyOn(utils, 'writeFileSync').mockImplementation(fn)
 })
 
 afterEach(() => {
   logSpy.mockRestore()
-  writeSpy.mockRestore()
 })
 
 test('called log with output result', () => {
