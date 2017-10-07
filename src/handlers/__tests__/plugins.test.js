@@ -56,37 +56,37 @@ test('from option works when plugin === Array', () => {
 test('handlePlugin when eventPath not match', () => {
   const spyFn = jest.spyOn(plugins, 'compileWithPlugin')
   const plugin = { test: /hoge/, plugin: _plugin }
-  plugins.handlePlugin(getEventPath(), plugin)
+  plugins.handlePlugin(getEventPath(), 'add', plugin)
   expect(spyFn.mock.calls.length).toBe(0)
 })
 
 test('handlePlugin when eventPath match', () => {
   const plugin = { test: /a.js/, plugin: _plugin }
-  plugins.handlePlugin(getEventPath(), plugin)
+  plugins.handlePlugin(getEventPath(), 'add', plugin)
   expect(stripAnsi(logSpy.mock.calls[0][0])).toMatchSnapshot()
 })
 
 test('handlePlugin with input option', () => {
   const plugin = { test: /a.js/, plugin: _plugin, input: getEventPath() }
-  plugins.handlePlugin(getEventPath(), plugin)
+  plugins.handlePlugin(getEventPath(), 'add', plugin)
   expect(writeSpy.mock.calls[0][1]).toMatchSnapshot()
 })
 
 test('handlePlugin with relative input path', () => {
   const plugin = { test: /a.js/, plugin: _plugin, input: 'b.js' }
-  plugins.handlePlugin(getEventPath(), plugin)
+  plugins.handlePlugin(getEventPath(), 'add', plugin)
   expect(writeSpy.mock.calls[0][1]).toMatchSnapshot()
 })
 
 test('handlePlugin with output option', () => {
   const plugin = { test: /a.js/, plugin: _plugin, output: 'b.js' }
-  plugins.handlePlugin(getEventPath(), plugin)
+  plugins.handlePlugin(getEventPath(), 'add', plugin)
   expect(writeSpy.mock.calls[0][0]).toMatch('/fixtures/b.js')
 })
 
 test('handlePlugin write args', () => {
   const plugin = { test: /a.js/, plugin: _plugin }
-  plugins.handlePlugin(getEventPath(), plugin)
+  plugins.handlePlugin(getEventPath(), 'add', plugin)
   expect(writeSpy.mock.calls[0][0]).toBe(getEventPath())
   expect(writeSpy.mock.calls[0][1]).toMatchSnapshot()
 })
@@ -94,20 +94,20 @@ test('handlePlugin write args', () => {
 test('handlePlugin when compileWithPlugin returns empty code', () => {
   const spy = jest.spyOn(utils, 'compile').mockReturnValue('')
   const plugin = { test: /a.js/, plugin: _plugin }
-  plugins.handlePlugin(getEventPath(), plugin)
+  plugins.handlePlugin(getEventPath(), 'add', plugin)
   expect(logSpy).not.toHaveBeenCalled()
   spy.mockRestore()
 })
 
 test('handlePlugins when locked', () => {
   lock.add(getEventPath())
-  plugins.default(getEventPath(), [_plugin])
+  plugins.default(getEventPath(), 'add', [_plugin])
   expect(writeSpy).not.toHaveBeenCalled()
 })
 
 test('handlePlugins called write', () => {
   const opts = { test: /not-found.js/, plugin: _plugin }
-  plugins.default(getEventPath(), [opts])
+  plugins.default(getEventPath(), 'add', [opts])
   expect(logSpy).not.toHaveBeenCalled()
 })
 
@@ -116,11 +116,23 @@ test('handlePlugins handle error', () => {
   logSpy.mockImplementation(() => {
     throw new Error('hello')
   })
-  plugins.default(getEventPath(), [plugin])
+  plugins.default(getEventPath(), 'add', [plugin])
   expect(errorSpy).toHaveBeenCalled()
 })
 
 test('handlePlugin when plugins = undefined', () => {
-  plugins.default(getEventPath())
+  plugins.default(getEventPath(), 'add')
   expect(logSpy).not.toHaveBeenCalled()
+})
+
+test('call write handlePlugin when only === add', () => {
+  const plugin = { test: /a.js/, plugin: _plugin, only: ['add'] }
+  plugins.handlePlugin(getEventPath(), 'add', plugin)
+  expect(writeSpy).toHaveBeenCalled()
+})
+
+test('not call write handlePlugin when only != add', () => {
+  const plugin = { test: /a.js/, plugin: _plugin, only: ['unlink'] }
+  plugins.handlePlugin(getEventPath(), 'add', plugin)
+  expect(writeSpy).not.toHaveBeenCalled()
 })

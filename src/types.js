@@ -5,9 +5,13 @@ type PluginName = string
 
 export type PluginOpts = PluginName | [PluginName, Object]
 
+export type EventType = 'add' | 'change' | 'unlink'
+export type Only = EventType[]
+
 export type Plugin = {|
   test: RegExp,
   plugin: PluginOpts,
+  only?: Only,
   input?: FileName,
   output?: FileName,
 |}
