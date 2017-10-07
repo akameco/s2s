@@ -6,7 +6,7 @@
   "repository": "https://github.com/akameco/s2s",
   "author": "akameco <akameco.t@gmail.com> (akameco.github.io)",
   "engines": {
-    "node": ">=4"
+    "node": ">=6"
   },
   "bin": {
     "s2s": "./bin/s2s.js"
