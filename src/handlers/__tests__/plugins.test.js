@@ -29,6 +29,8 @@ afterEach(() => {
   writeSpy.mockRestore()
 })
 
+const setup = plugin => [getEventPath(), 'add', plugin]
+
 test('compileWithPlugin', () => {
   const result = plugins.compileWithPlugin(getEventPath(), {
     test: /dummy/,
@@ -56,37 +58,37 @@ test('from option works when plugin === Array', () => {
 test('handlePlugin when eventPath not match', () => {
   const spyFn = jest.spyOn(plugins, 'compileWithPlugin')
   const plugin = { test: /hoge/, plugin: _plugin }
-  plugins.handlePlugin(getEventPath(), 'add', plugin)
+  plugins.handlePlugin(...setup(plugin))
   expect(spyFn.mock.calls.length).toBe(0)
 })
 
 test('handlePlugin when eventPath match', () => {
   const plugin = { test: /a.js/, plugin: _plugin }
-  plugins.handlePlugin(getEventPath(), 'add', plugin)
+  plugins.handlePlugin(...setup(plugin))
   expect(stripAnsi(logSpy.mock.calls[0][0])).toMatchSnapshot()
 })
 
 test('handlePlugin with input option', () => {
   const plugin = { test: /a.js/, plugin: _plugin, input: getEventPath() }
-  plugins.handlePlugin(getEventPath(), 'add', plugin)
+  plugins.handlePlugin(...setup(plugin))
   expect(writeSpy.mock.calls[0][1]).toMatchSnapshot()
 })
 
 test('handlePlugin with relative input path', () => {
   const plugin = { test: /a.js/, plugin: _plugin, input: 'b.js' }
-  plugins.handlePlugin(getEventPath(), 'add', plugin)
+  plugins.handlePlugin(...setup(plugin))
   expect(writeSpy.mock.calls[0][1]).toMatchSnapshot()
 })
 
 test('handlePlugin with output option', () => {
   const plugin = { test: /a.js/, plugin: _plugin, output: 'b.js' }
-  plugins.handlePlugin(getEventPath(), 'add', plugin)
+  plugins.handlePlugin(...setup(plugin))
   expect(writeSpy.mock.calls[0][0]).toMatch('/fixtures/b.js')
 })
 
 test('handlePlugin write args', () => {
   const plugin = { test: /a.js/, plugin: _plugin }
-  plugins.handlePlugin(getEventPath(), 'add', plugin)
+  plugins.handlePlugin(...setup(plugin))
   expect(writeSpy.mock.calls[0][0]).toBe(getEventPath())
   expect(writeSpy.mock.calls[0][1]).toMatchSnapshot()
 })
@@ -94,7 +96,7 @@ test('handlePlugin write args', () => {
 test('handlePlugin when compileWithPlugin returns empty code', () => {
   const spy = jest.spyOn(utils, 'compile').mockReturnValue('')
   const plugin = { test: /a.js/, plugin: _plugin }
-  plugins.handlePlugin(getEventPath(), 'add', plugin)
+  plugins.handlePlugin(...setup(plugin))
   expect(logSpy).not.toHaveBeenCalled()
   spy.mockRestore()
 })
@@ -127,12 +129,12 @@ test('handlePlugin when plugins = undefined', () => {
 
 test('call write handlePlugin when only === add', () => {
   const plugin = { test: /a.js/, plugin: _plugin, only: ['add'] }
-  plugins.handlePlugin(getEventPath(), 'add', plugin)
+  plugins.handlePlugin(...setup(plugin))
   expect(writeSpy).toHaveBeenCalled()
 })
 
 test('not call write handlePlugin when only != add', () => {
   const plugin = { test: /a.js/, plugin: _plugin, only: ['unlink'] }
-  plugins.handlePlugin(getEventPath(), 'add', plugin)
+  plugins.handlePlugin(...setup(plugin))
   expect(writeSpy).not.toHaveBeenCalled()
 })
