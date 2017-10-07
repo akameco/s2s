@@ -52,7 +52,7 @@ export default ({
   if (plugins.length > 0) {
     for (const type of ['add', 'change', 'unlink']) {
       watcher.on(type, (input: Path) => {
-        handlePlugins(input, plugins, afterHooks)
+        handlePlugins(input, type, plugins, afterHooks)
       })
     }
   }

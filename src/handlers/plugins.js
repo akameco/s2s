@@ -1,7 +1,7 @@
 // @flow
 import path from 'path'
 import { compile, getOutputPath, writeFileSync, toErrorStack } from '../utils'
-import type { Path, AfterHook, Plugin } from '../types'
+import type { Path, AfterHook, Plugin, EventType } from '../types'
 import runHooks from '../hooks/run'
 import { log, relativeFromCwd } from '../utils'
 import lock from '../utils/lock'
@@ -37,12 +37,18 @@ function resolveInputPath(input: ?string, eventPath: Path): Path {
 
 export function handlePlugin(
   eventPath: Path,
+  eventType: EventType,
   plugin: Plugin,
   hooks: AfterHook[] = []
 ) {
   if (!plugin.test.test(eventPath)) {
     return
   }
+
+  if (plugin.only && !plugin.only.includes(eventType)) {
+    return
+  }
+
   const code = compileWithPlugin(eventPath, plugin)
 
   if (!code && code === '') {
@@ -67,6 +73,7 @@ export function handlePlugin(
 
 export default function handlePlugins(
   input: Path,
+  eventType: EventType,
   plugins: Plugin[] = [],
   hooks: AfterHook[] = []
 ) {
@@ -76,7 +83,7 @@ export default function handlePlugins(
 
   for (const plugin of plugins) {
     try {
-      handlePlugin(input, plugin, hooks)
+      handlePlugin(input, eventType, plugin, hooks)
     } catch (err) {
       console.error(toErrorStack(err))
     }
