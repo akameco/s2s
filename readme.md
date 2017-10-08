@@ -15,6 +15,17 @@
 
 See Examples [akameco/s2s-examples](https://github.com/akameco/s2s-examples)
 
+## Concept
+
+Monitor your coding and generate code in real time.  
+
+When the file names match, a single Babel plugin is executed and the formatted code is reflected in the editor.
+
+- You can use any editor.
+- Just Babel Plugin. No lock in.
+
+<img src="https://github.com/akameco/logos/blob/master/s2s/s2s-concept.png?raw=true" height=600 />
+
 ## Quick Start
 
 ## Install
