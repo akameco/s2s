@@ -86,6 +86,12 @@ test('handlePlugin with output option', () => {
   expect(writeSpy.mock.calls[0][0]).toMatch('/fixtures/b.js')
 })
 
+test('handlePlugin when output option is [name].test.js', () => {
+  const plugin = { test: /a.js/, plugin: _plugin, output: '[name].test.js' }
+  plugins.handlePlugin(...setup(plugin))
+  expect(writeSpy.mock.calls[0][0]).toMatch('/fixtures/a.test.js')
+})
+
 test('handlePlugin write args', () => {
   const plugin = { test: /a.js/, plugin: _plugin }
   plugins.handlePlugin(...setup(plugin))

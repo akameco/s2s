@@ -64,7 +64,10 @@ export function handlePlugin(
   )
 
   const outputPath = plugin.output
-    ? getOutputPath(plugin.output, eventPath)
+    ? getOutputPath(
+        plugin.output.replace('[name]', path.parse(eventPath).name),
+        eventPath
+      )
     : eventPath
 
   writeFileSync(outputPath, result)
