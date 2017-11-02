@@ -1,11 +1,13 @@
 // @flow
 import path from 'path'
+import KeyLocker from 'key-locker'
 import { compile, getOutputPath, writeFileSync, toErrorStack } from '../utils'
 import type { Path, AfterHook, Plugin, EventType } from '../types'
 import runHooks from '../hooks/run'
 import { log, relativeFromCwd } from '../utils'
-import lock from '../utils/lock'
 import { formatText } from '../reporters/'
+
+const lock = new KeyLocker()
 
 export function compileWithPlugin(eventPath: Path, plugin: Plugin) {
   const input = resolveInputPath(plugin.input, eventPath)

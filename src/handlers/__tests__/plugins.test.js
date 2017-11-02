@@ -1,8 +1,8 @@
 // @flow
 import path from 'path'
 import stripAnsi from 'strip-ansi'
+import KeyLocker from 'key-locker'
 import * as utils from '../../utils'
-import lock from '../../utils/lock'
 import * as plugins from '../plugins'
 import _plugin from './helpers/identifer-reverse-plugin'
 import fromPlugin from './helpers/from-plugin'
@@ -10,6 +10,8 @@ import fromPlugin from './helpers/from-plugin'
 let errorSpy
 let logSpy
 let writeSpy
+
+const lock = new KeyLocker()
 
 const fn = x => x
 
