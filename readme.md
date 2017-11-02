@@ -17,7 +17,7 @@ See Examples [akameco/s2s-examples](https://github.com/akameco/s2s-examples)
 
 ## Concept
 
-Monitor your coding and generate code in real time.  
+Monitor your coding and generate code in real time.
 
 When the file names match, a single Babel plugin is executed and the formatted code is reflected in the editor.
 
@@ -26,24 +26,44 @@ When the file names match, a single Babel plugin is executed and the formatted c
 
 <img src="https://github.com/akameco/logos/blob/master/s2s/s2s-concept.png?raw=true" height=600 />
 
+
+## Articles
+### 日本語
+
+- [さよならボイラープレート。s2sによる高速reduxアプリケーション構築](https://qiita.com/akameco/items/e1489c6bbf3439ec6ca4)
+- [s2s: reduxにおけるreducerのテスト。あなたがテストを書く必要はないかも知れない](https://qiita.com/akameco/items/66a2232df0e95e5bfe31)
+
+
+## Users
+[SSconnect/ssconnect]( https://github.com/SSconnect/ssconnect)
+
+> If your company or project is using s2s, please open a PR and add yourself to this list (in alphabetical order please)
+
 ## Quick Start
+This is super small example.
+However Useful :)
+It is that initializing variable with flow information.
+
+[![https://gyazo.com/c6de73c7c9044520fbbca95881c2a927](https://i.gyazo.com/c6de73c7c9044520fbbca95881c2a927.gif)](https://gyazo.com/c6de73c7c9044520fbbca95881c2a927)
 
 ## Install
 
-#### yarn:
+yarn:
+
 ```
 $ yarn add --dev s2s
 ```
 
-#### npm:
+npm:
+
 ```
 $ npm install --save-dev s2s
 ```
 
-And install the babel plugin as well.
+And install the babel plugin.
 
 ```
-$ yarn add --dev babel-plugin-s2s-action-creater babel-plugin-s2s-action-types
+$ yarn add --dev babel-plugin-s2s-variable-initializing flow-bin
 ```
 
 
@@ -56,36 +76,34 @@ module.exports = {
   watch: './**/*.js',
   plugins: [
     {
-      test: /actionTypes.js$/,
-      plugin: ['s2s-action-types', { removePrefix: 'src/containers' }],
+      test: /.*.js$/,
+      plugin: ['s2s-variable-initializing'],
     },
-    {
-      test: /actionTypes.js$/,
-      output: 'actions.js',
-      plugin: ['s2s-action-creater'],
-    },
-  ],
-  templates: [
-    { test: /reducer.js/, input: 'reducer.js' },
   ],
 }
 ```
 
-
 ### Run
 
 ```
-$ npm run s2s
+$ yarn run flow init
+$ yarn run flow
+$ yarn run s2s
 ```
 
+See [Getting Started Exmaple](https://github.com/akameco/s2s-plugins/tree/master/examples/getting-started)
 
-## Examples
+## Combine plugins
+![plugins](https://camo.qiitausercontent.com/2b3fc744eda2c6e569f437d8006c765c78bc9f20/68747470733a2f2f71696974612d696d6167652d73746f72652e73332e616d617a6f6e6177732e636f6d2f302f31353331392f37306239386664642d373338622d646464322d663866352d3932343435353763643734322e676966)
+
+More Info? See Examples.
+
+## More Examples
 
 [Shopping Cart (redux+flowtype+s2s)](https://github.com/akameco/s2s-examples)
 
 
-## Plugins
-
+## Official Plugins
 
 - [**babel-plugin-s2s-action-types**<br>generate redux action types](https://github.com/akameco/s2s-plugins/tree/master/packages/babel-plugin-s2s-action-types)
 - [**babel-plugin-s2s-action-creater**<br>generate redux action creater](https://github.com/akameco/s2s-plugins/tree/master/packages/babel-plugin-s2s-action-creater)
@@ -93,12 +111,6 @@ $ npm run s2s
 - [**babel-plugin-s2s-state-root**<br>compose flow + redux state types](https://github.com/akameco/s2s-plugins/tree/master/packages/babel-plugin-s2s-state-root)
 - [**babel-plugin-s2s-reducer-root**<br>compose redux reducer](https://github.com/akameco/s2s-plugins/tree/master/packages/babel-plugin-s2s-reducer-root)
 - [**babel-plugin-s2s-reducer-root**<br>create reducer test using switch/case](https://github.com/akameco/s2s-plugins/tree/master/packages/babel-plugin-s2s-reducer-test-case)
-
-## Articles
-### 日本語
-
-- [さよならボイラープレート。s2sによる高速reduxアプリケーション構築](https://qiita.com/akameco/items/e1489c6bbf3439ec6ca4)
-- [s2s: reduxにおけるreducerのテスト。あなたがテストを書く必要はないかも知れない](https://qiita.com/akameco/items/66a2232df0e95e5bfe31)
 
 ## Contributors
 
