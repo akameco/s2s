@@ -2,6 +2,9 @@
 import runHooks from '../run'
 import prettierHook from '../prettier'
 
+const code = `const      hello =    'world'`
+const expected = `const hello = 'world'`
+
 test('call hooks', () => {
   const mockHook = jest.fn()
   const hooks = [mockHook]
@@ -12,12 +15,14 @@ test('call hooks', () => {
 
 test('return formated code when run prettierHook', () => {
   const hooks = [prettierHook()]
-  const code = `const      hello =    'world'`
-  const expected = `const hello = 'world'`
   expect(runHooks('', code, hooks).trim()).toEqual(expected)
 })
 
 test('run prettierHook with no hooks', () => {
-  const code = `const      hello =    'world'`
   expect(runHooks('', code).trim()).toEqual(code)
+})
+
+test('run prettierHook with some hooks', () => {
+  const hooks = [prettierHook(), prettierHook()]
+  expect(runHooks('', code, hooks).trim()).toEqual(expected)
 })
