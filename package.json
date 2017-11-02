@@ -39,6 +39,7 @@
     "chokidar": "^1.7.0",
     "cp-file": "^5.0.0",
     "find-up": "^2.1.0",
+    "key-locker": "^0.1.0",
     "prettier": "^1.7.4",
     "slash": "^1.0.0"
   },
