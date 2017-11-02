@@ -67,3 +67,15 @@ export function isAlreadyExist(input: Path) {
     return false
   }
 }
+
+export function resolveInputPath(input: ?string, eventPath: Path): Path {
+  if (!input) {
+    return eventPath
+  }
+
+  if (path.isAbsolute(input)) {
+    return input
+  }
+
+  return path.resolve(path.dirname(eventPath), input)
+}

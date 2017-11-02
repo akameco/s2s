@@ -4,7 +4,7 @@ import KeyLocker from 'key-locker'
 import { compile, getOutputPath, writeFileSync, toErrorStack } from '../utils'
 import type { Path, AfterHook, Plugin, EventType } from '../types'
 import runHooks from '../hooks/run'
-import { log, relativeFromCwd } from '../utils'
+import { log, relativeFromCwd, resolveInputPath } from '../utils'
 import { formatText } from '../reporters/'
 
 const lock = new KeyLocker()
@@ -23,18 +23,6 @@ export function compileWithPlugin(eventPath: Path, plugin: Plugin) {
   })
 
   return code ? code.trim() : ''
-}
-
-function resolveInputPath(input: ?string, eventPath: Path): Path {
-  if (!input) {
-    return eventPath
-  }
-
-  if (path.isAbsolute(input)) {
-    return input
-  }
-
-  return path.resolve(path.dirname(eventPath), input)
 }
 
 export function handlePlugin(
