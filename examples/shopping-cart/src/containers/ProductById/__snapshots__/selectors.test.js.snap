@@ -1,0 +1,19 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`contains the products from the action 1`] = `
+Object {
+  "id": 1,
+  "inventory": 2,
+  "price": 100,
+  "title": "Product 1",
+}
+`;
+
+exports[`contains the products from the action 2`] = `
+Object {
+  "id": 2,
+  "inventory": 1,
+  "price": 100,
+  "title": "Product 2",
+}
+`;

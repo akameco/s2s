@@ -1,0 +1,21 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`getCartProducts return products with quantity 1`] = `
+Array [
+  Object {
+    "id": 1,
+    "price": 1.99,
+    "quantity": 4,
+  },
+  Object {
+    "id": 1,
+    "price": 4.99,
+    "quantity": 2,
+  },
+  Object {
+    "id": 1,
+    "price": 9.99,
+    "quantity": 1,
+  },
+]
+`;

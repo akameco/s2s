@@ -1,0 +1,9 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`snapshot: render title and price 1`] = `
+<div>
+  Test Product
+   - $
+  9.99
+</div>
+`;

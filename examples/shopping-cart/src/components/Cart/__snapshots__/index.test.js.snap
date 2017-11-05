@@ -1,0 +1,24 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`snapshot 1`] = `
+<div>
+  <h3>
+    Your Cart
+  </h3>
+  <div>
+    <em>
+      Please add some products to cart.
+    </em>
+  </div>
+  <p>
+    Total: $
+    0
+  </p>
+  <button
+    disabled="disabled"
+    onClick={[Function]}
+  >
+    Checkout
+  </button>
+</div>
+`;

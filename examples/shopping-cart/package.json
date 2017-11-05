@@ -1,0 +1,29 @@
+{
+  "name": "shopping-cart",
+  "version": "0.1.0",
+  "private": true,
+  "dependencies": {
+    "react": "^16.0.0",
+    "react-dom": "^16.0.0",
+    "react-redux": "^5.0.6",
+    "react-scripts": "1.0.14",
+    "redux": "^3.7.2",
+    "redux-thunk": "^2.2.0"
+  },
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test --env=jsdom",
+    "eject": "react-scripts eject",
+    "s2s": "s2s"
+  },
+  "devDependencies": {
+    "enzyme": "^3.0.0",
+    "enzyme-adapter-react-16": "^1.0.2",
+    "enzyme-to-json": "^3.1.4",
+    "flow-bin": "^0.57.3",
+    "react-test-renderer": "^16.0.0",
+    "s2s": "file:../../packages/s2s-cli",
+    "s2s-plugins-redux": "file:../../packages/s2s-plugins-redux"
+  }
+}
