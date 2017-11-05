@@ -1,3 +1,4 @@
+// @flow weak
 import path from 'path'
 
 export default function fromPlugin() {

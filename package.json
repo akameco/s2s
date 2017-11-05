@@ -4,37 +4,25 @@
   "engines": {
     "node": ">=8"
   },
-  "author": "akameco <akameco.t@gmail.com> (akameco.github.io)",
   "scripts": {
     "add": "all-contributors add",
-    "prebuild": "rimraf dest",
-    "build": "babel src -d dest --ignore *.test.js,__tests__",
-    "build:watch": "npm run build -- --watch",
+    "build": "node ./scripts/build",
     "lint": "eslint .",
+    "flow": "flow",
     "precommit": "lint-staged",
-    "prepublish": "npm run build",
+    "publish": "yarn build && lerna publish",
+    "prepublish": "yarn build",
     "fmt": "prettier --write '**/*.{js,json}'",
+    "postinstall": "yarn fmt",
     "test": "jest",
     "test:watch": "jest --watch",
     "test:ci":
-      "jest --coverage --ci --runInBand && cat ./coverage/lcov.info | coveralls"
+      "jest --coverage --ci --runInBand && cat ./coverage/lcov.info | coveralls",
+    "validate": "yarn flow && yarn lint && yarn test"
   },
   "lint-staged": {
-    "*.js": ["fmt", "lint", "test", "git add"],
+    "*.js": ["fmt", "validate", "git add"],
     "*.json": ["fmt", "git add"]
-  },
-  "dependencies": {
-    "@babel/core": "^7.0.0-beta.31",
-    "@babel/plugin-syntax-typescript": "^7.0.0-beta.31",
-    "babel-core": "^6.25.0",
-    "babel-polyfill": "^6.26.0",
-    "chalk": "^2.3.0",
-    "chokidar": "^1.7.0",
-    "cp-file": "^5.0.0",
-    "find-up": "^2.1.0",
-    "key-locker": "^0.1.1",
-    "prettier": "^1.7.4",
-    "slash": "^1.0.0"
   },
   "devDependencies": {
     "all-contributors-cli": "^4.5.3",

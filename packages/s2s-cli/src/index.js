@@ -1,5 +1,5 @@
 // @flow
-import 'babel-polyfill'
+import 'babel-polyfill' // eslint-disable-line
 import chalk from 'chalk'
 import chokidar from 'chokidar'
 import type { Opts, Path } from './types'

@@ -8,6 +8,7 @@ export function log(msg: string) {
   console.log(msg)
 }
 
+// eslint-disable-next-line flowtype/no-weak-types
 export function toErrorStack(err: Object) {
   if (err._babel && err instanceof SyntaxError) {
     return `${err.name}: ${err.message}\n${err.codeFrame}`

@@ -2,9 +2,9 @@
 export type Path = string
 export type Code = string
 type FileName = string
-type PluginName = string
 
-export type PluginOpts = PluginName | [PluginName, Object]
+// eslint-disable-next-line
+export type PluginOpts = string | Function | [string | Function, Object]
 
 export type EventType = 'add' | 'change' | 'unlink'
 export type Only = EventType[]
@@ -33,14 +33,15 @@ export type Template = {|
   output?: Path,
 |}
 
+// eslint-disable-next-line
 export type AfterHook = Function
 
 export type Opts = {|
   watch: Path, // file, dir, glob, or array
-  plugins?: Plugin[],
+  plugins?: Plugin[], // eslint-disable-line
   templatesDir?: string,
-  templates?: Template[],
-  afterHooks: AfterHook[],
+  templates?: Template[], // eslint-disable-line
+  afterHooks: AfterHook[], // eslint-disable-line
   prettier: boolean,
 |}
 

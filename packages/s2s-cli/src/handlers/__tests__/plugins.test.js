@@ -98,7 +98,9 @@ test('handlePlugin when compileWithPlugin returns empty code', () => {
 
 test('handlePlugins when locked', () => {
   lock.add(getEventPath('a.js'))
-  plugins.default(getEventPath('a.js'), 'add', [_plugin])
+  plugins.default(getEventPath('a.js'), 'add', [
+    { test: /x.js/, plugin: _plugin },
+  ])
   expect(writeSpy).not.toHaveBeenCalled()
 })
 

@@ -1,0 +1,30 @@
+{
+  "name": "s2s",
+  "version": "0.8.1",
+  "description": "Source To Source",
+  "license": "MIT",
+  "repository": "https://github.com/akameco/s2s",
+  "author": "akameco <akameco.t@gmail.com> (akameco.github.io)",
+  "engines": {
+    "node": ">=6"
+  },
+  "bin": {
+    "s2s": "./bin/s2s.js"
+  },
+  "main": "./lib/index.js",
+  "files": ["lib", "bin"],
+  "keywords": ["s2s"],
+  "dependencies": {
+    "@babel/core": "^7.0.0-beta.31",
+    "@babel/plugin-syntax-typescript": "^7.0.0-beta.31",
+    "babel-core": "^6.25.0",
+    "babel-polyfill": "^6.26.0",
+    "chalk": "^2.3.0",
+    "chokidar": "^1.7.0",
+    "cp-file": "^5.0.0",
+    "find-up": "^2.1.0",
+    "key-locker": "^0.1.1",
+    "prettier": "^1.7.4",
+    "slash": "^1.0.0"
+  }
+}

@@ -2,7 +2,7 @@
 import s2s from '../'
 import loadConfig from './loadConfig'
 
-export function run() {
+export default function run() {
   try {
     const opts = loadConfig()
     s2s(opts)
