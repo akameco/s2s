@@ -1,8 +1,14 @@
 [ignore]
 .*/examples/.*
+.*/packages/.*/lib
 
 [include]
+packages/*/src
 
 [libs]
 
 [options]
+module.name_mapper='^types$' -> '<PROJECT_ROOT>/types/index.js'
+module.name_mapper='^types/\(.*\)$' -> '<PROJECT_ROOT>/types/\1.js'
+include_warnings=true
+emoji=true

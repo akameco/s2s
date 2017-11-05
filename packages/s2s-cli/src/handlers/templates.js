@@ -2,7 +2,7 @@
 import path from 'path'
 import chalk from 'chalk'
 import cpFile from 'cp-file'
-import type { Path, Template } from '../types'
+import type { Path, Template } from 'types'
 import { formatText, trimAndFormatPath } from '../reporters'
 import { log, isAlreadyExist, relativeFromCwd, getOutputPath } from '../utils'
 

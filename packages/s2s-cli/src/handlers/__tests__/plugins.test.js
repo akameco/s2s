@@ -6,7 +6,7 @@ import * as babel from 'babel-core'
 import * as utils from '../../utils'
 import * as plugins from '../plugins'
 import defaultHandler from '../babel-handler'
-import tsHandler from '../ts-handler'
+// import tsHandler from '../ts-handler'
 import _plugin from './helpers/identifer-reverse-plugin'
 
 let errorSpy
@@ -136,12 +136,12 @@ test('onlyオプションがeventTypeと不一致のとき、hanlderを呼ばな
   expect(writeSpy).not.toHaveBeenCalled()
 })
 
-test('use ts-handler', () => {
-  const plugin = {
-    test: /hello.ts/,
-    plugin: _plugin,
-    handler: tsHandler,
-  }
-  plugins.default(getEventPath('hello.ts'), 'add', [plugin])
-  expect(writeSpy.mock.calls[0][1]).toMatchSnapshot()
-})
+// test('use ts-handler', () => {
+//   const plugin = {
+//     test: /hello.ts/,
+//     plugin: _plugin,
+//     handler: tsHandler,
+//   }
+//   plugins.default(getEventPath('hello.ts'), 'add', [plugin])
+//   expect(writeSpy.mock.calls[0][1]).toMatchSnapshot()
+// })

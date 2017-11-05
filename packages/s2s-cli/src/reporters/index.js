@@ -2,7 +2,7 @@
 import path from 'path'
 import slash from 'slash'
 import chalk from 'chalk'
-import type { HandlerType } from '../types'
+import type { HandlerType } from 'types'
 import { relativeFromCwd, getDirAndBaseName } from '../utils'
 
 export const trimAndFormatPath = (testPath: string) => {

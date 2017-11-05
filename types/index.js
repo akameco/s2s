@@ -1,7 +1,6 @@
 // @flow
 export type Path = string
 export type Code = string
-type FileName = string
 
 // eslint-disable-next-line
 export type PluginOpts = string | Function | [string | Function, Object]
@@ -23,8 +22,8 @@ export type Plugin = {|
   plugin: PluginOpts,
   handler?: HanlderFunc,
   only?: Only,
-  input?: FileName,
-  output?: FileName,
+  input?: string,
+  output?: string,
 |}
 
 export type Template = {|
