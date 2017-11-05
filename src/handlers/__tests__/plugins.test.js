@@ -6,6 +6,7 @@ import * as babel from 'babel-core'
 import * as utils from '../../utils'
 import * as plugins from '../plugins'
 import defaultHandler from '../babel-handler'
+import tsHandler from '../ts-handler'
 import _plugin from './helpers/identifer-reverse-plugin'
 
 let errorSpy
@@ -16,7 +17,7 @@ const lock = new KeyLocker()
 
 const fn = x => x
 
-const getEventPath = () => path.resolve(__dirname, 'fixtures', 'a.js')
+const getEventPath = (...p) => path.resolve(__dirname, 'fixtures', ...p)
 jest.useFakeTimers()
 
 beforeEach(() => {
@@ -36,7 +37,7 @@ const setup = plugin => {
   return [
     defaultHandler,
     {
-      eventPath: getEventPath(),
+      eventPath: getEventPath('a.js'),
       plugin,
       hooks: [],
     },
@@ -46,7 +47,7 @@ const setup = plugin => {
 test('eventPathがMatchしないとき、handlePluginを呼ばない', () => {
   const spyFn = jest.spyOn(plugins, 'handlePlugin')
   const plugin = { test: /hoge/, plugin: _plugin }
-  plugins.default(getEventPath(), 'add', [plugin])
+  plugins.default(getEventPath('a.js'), 'add', [plugin])
   expect(spyFn.mock.calls.length).toBe(0)
 })
 
@@ -57,7 +58,7 @@ test('handlePlugin when eventPath match', () => {
 })
 
 test('handlePlugin with input option', () => {
-  const plugin = { test: /a.js/, plugin: _plugin, input: getEventPath() }
+  const plugin = { test: /a.js/, plugin: _plugin, input: getEventPath('a.js') }
   plugins.handlePlugin(...setup(plugin))
   expect(writeSpy.mock.calls[0][1]).toMatchSnapshot()
 })
@@ -83,7 +84,7 @@ test('handlePlugin when output option is [name].test.js', () => {
 test('handlePlugin write args', () => {
   const plugin = { test: /a.js/, plugin: _plugin }
   plugins.handlePlugin(...setup(plugin))
-  expect(writeSpy.mock.calls[0][0]).toBe(getEventPath())
+  expect(writeSpy.mock.calls[0][0]).toBe(getEventPath('a.js'))
   expect(writeSpy.mock.calls[0][1]).toMatchSnapshot()
 })
 
@@ -96,14 +97,14 @@ test('handlePlugin when compileWithPlugin returns empty code', () => {
 })
 
 test('handlePlugins when locked', () => {
-  lock.add(getEventPath())
-  plugins.default(getEventPath(), 'add', [_plugin])
+  lock.add(getEventPath('a.js'))
+  plugins.default(getEventPath('a.js'), 'add', [_plugin])
   expect(writeSpy).not.toHaveBeenCalled()
 })
 
 test('handlePlugins called write', () => {
   const opts = { test: /not-found.js/, plugin: _plugin }
-  plugins.default(getEventPath(), 'add', [opts])
+  plugins.default(getEventPath('a.js'), 'add', [opts])
   expect(logSpy).not.toHaveBeenCalled()
 })
 
@@ -112,12 +113,12 @@ test('handlePlugins handle error', () => {
   logSpy.mockImplementation(() => {
     throw new Error('hello')
   })
-  plugins.default(getEventPath(), 'add', [plugin])
+  plugins.default(getEventPath('a.js'), 'add', [plugin])
   expect(errorSpy).toHaveBeenCalled()
 })
 
 test('handlePlugin when plugins = undefined', () => {
-  plugins.default(getEventPath(), 'add')
+  plugins.default(getEventPath('a.js'), 'add')
   expect(logSpy).not.toHaveBeenCalled()
 })
 
@@ -129,6 +130,16 @@ test('call write handlePlugin when only === add', () => {
 
 test('onlyオプションがeventTypeと不一致のとき、hanlderを呼ばない', () => {
   const plugin = { test: /a.js/, plugin: _plugin, only: ['unlink'] }
-  plugins.default(getEventPath(), 'add', [plugin])
+  plugins.default(getEventPath('a.js'), 'add', [plugin])
   expect(writeSpy).not.toHaveBeenCalled()
+})
+
+test('use ts-handler', () => {
+  const plugin = {
+    test: /hello.ts/,
+    plugin: _plugin,
+    handler: tsHandler,
+  }
+  plugins.default(getEventPath('hello.ts'), 'add', [plugin])
+  expect(writeSpy.mock.calls[0][1]).toMatchSnapshot()
 })

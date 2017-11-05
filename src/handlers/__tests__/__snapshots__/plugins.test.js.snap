@@ -16,3 +16,12 @@ exports[`handlePlugin write args 1`] = `
 "// @flow
 const olleh = 'hello';"
 `;
+
+exports[`use ts-handler 1`] = `
+"function reteerg(nosrep: string) {
+  return 'Hello, ' + nosrep;
+}
+
+let resu = 'Jane User';
+reteerg(resu);"
+`;
