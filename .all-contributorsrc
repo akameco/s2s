@@ -16,7 +16,8 @@
         "code",
         "test",
         "question",
-        "ideas"
+        "ideas",
+        "infra"
       ]
     },
     {
@@ -25,7 +26,8 @@
       "avatar_url": "https://avatars3.githubusercontent.com/u/2284908?v=4",
       "profile": "https://elzup.com",
       "contributions": [
-        "ideas"
+        "ideas",
+        "code"
       ]
     }
   ]
