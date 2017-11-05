@@ -1,0 +1,28 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`fromオプションを使う場合 1`] = `
+"function greeterto(personto: string) {
+  return \\"Hello, \\" + personto;
+}
+
+let userto = \\"Jane User\\";
+greeterto(userto);"
+`;
+
+exports[`pluginがArrayの場合 1`] = `
+"function reteerg(nosrep: string) {
+  return \\"Hello, \\" + nosrep;
+}
+
+let resu = \\"Jane User\\";
+reteerg(resu);"
+`;
+
+exports[`ts-handlerは変換後のコードを返す 1`] = `
+"function reteerg(nosrep: string) {
+  return \\"Hello, \\" + nosrep;
+}
+
+let resu = \\"Jane User\\";
+reteerg(resu);"
+`;
