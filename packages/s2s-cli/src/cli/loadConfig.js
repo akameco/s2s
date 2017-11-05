@@ -1,5 +1,5 @@
 // @flow
-import type { Opts } from '../types'
+import type { Opts } from 'types'
 
 const findUp = require('find-up')
 

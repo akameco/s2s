@@ -1,6 +1,6 @@
 // @flow
+import type { Opts } from 'types'
 import m from '../index'
-import type { Opts } from '../types'
 import * as utils from '../utils'
 
 let mock

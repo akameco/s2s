@@ -1,6 +1,6 @@
 // @flow
 import { transform } from 'babel-core'
-import type { Code, HandlerOpts } from '../types'
+import type { Code, HandlerOpts } from 'types'
 
 export default function babelHandler(
   code: Code,

@@ -4,6 +4,7 @@
     "import/no-extraneous-dependencies": 0,
     "no-duplicate-imports": 0,
     "no-console": 0,
-    "flowtype/no-mutable-array": 0
+    "flowtype/no-mutable-array": 0,
+    "import/no-unresolved": 0
   }
 }

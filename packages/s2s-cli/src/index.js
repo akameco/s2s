@@ -2,7 +2,7 @@
 import 'babel-polyfill' // eslint-disable-line
 import chalk from 'chalk'
 import chokidar from 'chokidar'
-import type { Opts, Path } from './types'
+import type { Opts, Path } from 'types'
 import handlePlugins from './handlers/plugins'
 import handleTemplates from './handlers/templates'
 import * as hooks from './hooks'

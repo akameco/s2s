@@ -2,6 +2,7 @@
 import path from 'path'
 import fs from 'fs'
 import KeyLocker from 'key-locker'
+import type { Path, AfterHook, Plugin, EventType, HanlderFunc } from 'types'
 import {
   getOutputPath,
   writeFileSync,
@@ -10,7 +11,6 @@ import {
   relativeFromCwd,
   resolveInputPath,
 } from '../utils'
-import type { Path, AfterHook, Plugin, EventType, HanlderFunc } from '../types'
 import runHooks from '../hooks/run'
 import { formatText } from '../reporters/'
 import babelHandler from './babel-handler'

@@ -1,7 +1,7 @@
 // @flow
-import handler from '../ts-handler'
-import _plugin from './helpers/identifer-reverse-plugin'
-import fromPlugin from './helpers/from-plugin'
+import handler from '.'
+import _plugin from './__tests__/helpers/identifer-reverse-plugin'
+import fromPlugin from './__tests__/helpers/from-plugin'
 
 const code = `
 function greeter(person: string) {

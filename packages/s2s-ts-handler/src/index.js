@@ -1,7 +1,7 @@
 // @flow
 import { transform } from '@babel/core'
 import tsSyntax from '@babel/plugin-syntax-typescript'
-import type { Code, HandlerOpts } from '../types'
+import type { Code, HandlerOpts } from 'types'
 
 export default function babelHandler(
   code: Code,
