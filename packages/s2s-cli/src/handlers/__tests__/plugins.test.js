@@ -3,10 +3,9 @@ import path from 'path'
 import stripAnsi from 'strip-ansi'
 import KeyLocker from 'key-locker'
 import * as babel from 'babel-core'
+import defaultHandler from 's2s-babel-handler'
 import * as utils from '../../utils'
 import * as plugins from '../plugins'
-import defaultHandler from '../babel-handler'
-// import tsHandler from '../ts-handler'
 import _plugin from './helpers/identifer-reverse-plugin'
 
 let errorSpy
@@ -135,13 +134,3 @@ test('onlyオプションがeventTypeと不一致のとき、hanlderを呼ばな
   plugins.default(getEventPath('a.js'), 'add', [plugin])
   expect(writeSpy).not.toHaveBeenCalled()
 })
-
-// test('use ts-handler', () => {
-//   const plugin = {
-//     test: /hello.ts/,
-//     plugin: _plugin,
-//     handler: tsHandler,
-//   }
-//   plugins.default(getEventPath('hello.ts'), 'add', [plugin])
-//   expect(writeSpy.mock.calls[0][1]).toMatchSnapshot()
-// })

@@ -1,0 +1,15 @@
+{
+  "name": "s2s-babel-handler",
+  "version": "0.0.0",
+  "description": "s2s babel handler",
+  "license": "MIT",
+  "repository": "https://github.com/akameco/s2s",
+  "author": "akameco <akameco.t@gmail.com> (akameco.github.io)",
+  "engines": {
+    "node": ">=6"
+  },
+  "main": "./lib/index.js",
+  "files": ["lib"],
+  "keywords": ["s2s", "babel", "plugin"],
+  "dependencies": {}
+}
