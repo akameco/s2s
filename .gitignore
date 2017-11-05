@@ -3,3 +3,4 @@ dest
 coverage
 examples
 lerna-debug.log
+lib
