@@ -1,1 +1,7 @@
-fixtures
+**/node_modules/**
+**/lib/*
+**/__fixtures__/**/*.js
+**/coverage/**
+**/flow-typed/**
+**/examples/**
+**/__tests__/fixtures**

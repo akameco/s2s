@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`handlePlugin when eventPath match 1`] = `"S2S src/handlers/__tests__/fixtures/a.js → src/handlers/__tests__/fixtures/a.js"`;
+exports[`handlePlugin when eventPath match 1`] = `"S2S packages/s2s-cli/src/handlers/__tests__/fixtures/a.js → packages/s2s-cli/src/handlers/__tests__/fixtures/a.js"`;
 
 exports[`handlePlugin with input option 1`] = `
 "// @flow

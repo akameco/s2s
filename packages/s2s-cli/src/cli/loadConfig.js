@@ -11,6 +11,6 @@ export default function loadConfig(): Opts {
     throw new Error(`required ${S2S_CONFIG_JS}`)
   }
   // $FlowFixMe
-  const configModule = require(fp)
+  const configModule = require(fp) // eslint-disable-line
   return configModule
 }

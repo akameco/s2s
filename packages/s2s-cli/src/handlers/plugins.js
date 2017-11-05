@@ -2,10 +2,16 @@
 import path from 'path'
 import fs from 'fs'
 import KeyLocker from 'key-locker'
-import { getOutputPath, writeFileSync, toErrorStack } from '../utils'
+import {
+  getOutputPath,
+  writeFileSync,
+  toErrorStack,
+  log,
+  relativeFromCwd,
+  resolveInputPath,
+} from '../utils'
 import type { Path, AfterHook, Plugin, EventType, HanlderFunc } from '../types'
 import runHooks from '../hooks/run'
-import { log, relativeFromCwd, resolveInputPath } from '../utils'
 import { formatText } from '../reporters/'
 import babelHandler from './babel-handler'
 
@@ -60,11 +66,11 @@ export default function handlePlugins(
   for (const plugin of plugins) {
     try {
       if (!plugin.test.test(eventPath)) {
-        continue
+        continue // eslint-disable-line
       }
 
       if (plugin.only && !plugin.only.includes(eventType)) {
-        continue
+        continue // eslint-disable-line
       }
 
       lock.add(eventPath)
