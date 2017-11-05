@@ -1,6 +1,6 @@
 // @flow
-import runHooks from '../run'
-import prettierHook from '../prettier'
+import prettierHook from 's2s-hook-prettier'
+import runHooks from '.'
 
 const code = `const      hello =    'world'`
 const expected = `const hello = 'world'`

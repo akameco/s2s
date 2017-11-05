@@ -12,7 +12,7 @@ import {
   relativeFromCwd,
   resolveInputPath,
 } from '../utils'
-import runHooks from '../hooks/run'
+import runHooks from '../hooks'
 import { formatText } from '../reporters/'
 
 type Opts = {

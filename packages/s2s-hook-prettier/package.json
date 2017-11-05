@@ -1,0 +1,17 @@
+{
+  "name": "s2s-hook-prettier",
+  "version": "0.0.0",
+  "description": "s2s hooks for prettier",
+  "license": "MIT",
+  "repository": "https://github.com/akameco/s2s",
+  "author": "akameco <akameco.t@gmail.com> (akameco.github.io)",
+  "engines": {
+    "node": ">=6"
+  },
+  "main": "./lib/index.js",
+  "files": ["lib"],
+  "keywords": ["s2s", "prettier", "hook"],
+  "dependencies": {
+    "prettier": "^1.7.4"
+  }
+}
