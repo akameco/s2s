@@ -2,7 +2,7 @@
 import { format, resolveConfig } from 'prettier'
 
 export default function prettierHook(inputOpts: ?Object = {}) {
-  return (eventPath: string, code: string) => {
+  return (_: string, code: string) => {
     try {
       const rcOpts = resolveConfig.sync(process.cwd())
       const opts = { ...rcOpts, ...inputOpts }
