@@ -34,11 +34,7 @@ export function handlePlugin(
     return
   }
 
-  const result = runHooks(
-    resolveInputPath(plugin.input, eventPath),
-    code,
-    hooks
-  )
+  const result = runHooks(filename, code, hooks)
 
   const outputPath = plugin.output
     ? getOutputPath(
@@ -76,10 +72,7 @@ export default function handlePlugins(
       lock.add(eventPath)
 
       const handler = plugin.handler ? plugin.handler : defaultHanlder
-
-      if (handler) {
-        handlePlugin(handler, { eventPath, plugin, hooks })
-      }
+      handlePlugin(handler, { eventPath, plugin, hooks })
     } catch (err) {
       console.error(toErrorStack(err))
     }
