@@ -141,8 +141,8 @@ test('call write handlePlugin when only === add', () => {
   expect(writeSpy).toHaveBeenCalled()
 })
 
-test('not call write handlePlugin when only != add', () => {
+test('onlyオプションがeventTypeと不一致のとき、hanlderを呼ばない', () => {
   const plugin = { test: /a.js/, plugin: _plugin, only: ['unlink'] }
-  plugins.handlePlugin(...setup(plugin))
+  plugins.default(getEventPath(), 'add', [plugin])
   expect(writeSpy).not.toHaveBeenCalled()
 })

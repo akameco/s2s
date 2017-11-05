@@ -31,21 +31,11 @@ export function handlePlugin(
   plugin: Plugin,
   hooks: AfterHook[] = []
 ) {
-  if (!plugin.test.test(eventPath)) {
-    return
-  }
-
-  if (plugin.only && !plugin.only.includes(eventType)) {
-    return
-  }
-
   const code = compileWithPlugin(eventPath, plugin)
 
   if (!code && code === '') {
     return
   }
-
-  lock.add(eventPath)
 
   const result = runHooks(
     resolveInputPath(plugin.input, eventPath),
@@ -65,18 +55,27 @@ export function handlePlugin(
 }
 
 export default function handlePlugins(
-  input: Path,
+  eventPath: Path,
   eventType: EventType,
   plugins: Plugin[] = [],
   hooks: AfterHook[] = []
 ) {
-  if (lock.has(input)) {
+  if (lock.has(eventPath)) {
     return
   }
 
   for (const plugin of plugins) {
     try {
-      handlePlugin(input, eventType, plugin, hooks)
+      if (!plugin.test.test(eventPath)) {
+        continue
+      }
+
+      if (plugin.only && !plugin.only.includes(eventType)) {
+        continue
+      }
+
+      lock.add(eventPath)
+      handlePlugin(eventPath, eventType, plugin, hooks)
     } catch (err) {
       console.error(toErrorStack(err))
     }
