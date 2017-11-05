@@ -1,6 +1,6 @@
 {
   "name": "s2s-helper-get-action-obj",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "Helper function to get action object",
   "license": "MIT",
   "repository": "akameco/s2s-plugins",
