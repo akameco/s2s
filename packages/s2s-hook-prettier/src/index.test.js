@@ -1,5 +1,5 @@
 // @flow
-import prettierHook from '../prettier'
+import prettierHook from '.'
 
 test('return an empty string on error', () => {
   expect(prettierHook({})('hoge', 'test code')).toBe('test code')

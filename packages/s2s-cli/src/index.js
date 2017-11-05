@@ -2,13 +2,11 @@
 import 'babel-polyfill' // eslint-disable-line
 import chalk from 'chalk'
 import chokidar from 'chokidar'
+import prettierHook from 's2s-hook-prettier'
 import type { Opts, Path } from 'types'
 import handlePlugins from './handlers/plugins'
 import handleTemplates from './handlers/templates'
-import * as hooks from './hooks'
 import { log } from './utils'
-
-export { hooks }
 
 function createWatcher(rootPath: Path) {
   const watcher = chokidar.watch(rootPath, {
@@ -46,7 +44,7 @@ export default ({
   const watcher = createWatcher(watch)
 
   if (isPrettier) {
-    afterHooks.push(hooks.prettier())
+    afterHooks.push(prettierHook())
   }
 
   if (plugins.length > 0) {
