@@ -1,26 +1,11 @@
 // @flow
 import path from 'path'
 import fs from 'fs'
-import { transformFileSync } from 'babel-core'
 
 type Path = string
-type Filename = string
-type Code = string
 
 export function log(msg: string) {
   console.log(msg)
-}
-
-export function compile(
-  filename: Filename,
-  opts: Object
-): { code?: Code, ignored: boolean } {
-  try {
-    return transformFileSync(filename, opts)
-  } catch (err) {
-    console.error(toErrorStack(err))
-    return { ignored: true }
-  }
 }
 
 export function toErrorStack(err: Object) {

@@ -4,7 +4,7 @@ import * as utils from '..'
 import * as babel from 'babel-core'
 
 let logSpy
-let transformFileSyncSpy
+let transformSpy
 let errorSpy
 
 const fn = x => x
@@ -12,15 +12,13 @@ const noop = () => {}
 
 beforeEach(() => {
   logSpy = jest.spyOn(console, 'log').mockImplementation(fn)
-  transformFileSyncSpy = jest
-    .spyOn(babel, 'transformFileSync')
-    .mockImplementation(fn)
+  transformSpy = jest.spyOn(babel, 'transform').mockImplementation(fn)
   errorSpy = jest.spyOn(console, 'error').mockImplementation(fn)
 })
 
 afterEach(() => {
   logSpy.mockRestore()
-  transformFileSyncSpy.mockRestore()
+  transformSpy.mockRestore()
   errorSpy.mockRestore()
 })
 
@@ -50,36 +48,6 @@ test('writeFileSync', () => {
   utils.writeFileSync('test', 'code')
   expect(fsSpy).toHaveBeenCalled()
   fsSpy.mockRestore()
-})
-
-test('compile', () => {
-  utils.compile('hoge.js', {})
-  expect(transformFileSyncSpy).toHaveBeenCalled()
-})
-
-test('compile with SyntaxError', () => {
-  const err = new SyntaxError()
-  // $FlowFixMe
-  err._babel = 'babel error'
-  err.message = 'test error'
-  transformFileSyncSpy.mockImplementation(() => {
-    throw err
-  })
-  expect(utils.compile('hoge.js', {})).toEqual({ ignored: true })
-  expect(errorSpy).toHaveBeenCalled()
-  expect(errorSpy.mock.calls[0][0]).toMatch('test error')
-})
-
-test('compile with Error', () => {
-  const err = new Error()
-  // $FlowFixMe
-  err.message = 'test error'
-  transformFileSyncSpy.mockImplementation(() => {
-    throw err
-  })
-  expect(utils.compile('hoge.js', {})).toEqual({ ignored: true })
-  expect(errorSpy).toHaveBeenCalled()
-  expect(errorSpy.mock.calls[0][0]).toMatch('test error')
 })
 
 test('isAlreadyExist returns false when a code is empty string', () => {

@@ -2,10 +2,11 @@
 import path from 'path'
 import stripAnsi from 'strip-ansi'
 import KeyLocker from 'key-locker'
+import * as babel from 'babel-core'
 import * as utils from '../../utils'
 import * as plugins from '../plugins'
+import defaultHandler from '../babel-handler'
 import _plugin from './helpers/identifer-reverse-plugin'
-import fromPlugin from './helpers/from-plugin'
 
 let errorSpy
 let logSpy
@@ -31,36 +32,21 @@ afterEach(() => {
   writeSpy.mockRestore()
 })
 
-const setup = plugin => [getEventPath(), 'add', plugin]
+const setup = plugin => {
+  return [
+    defaultHandler,
+    {
+      eventPath: getEventPath(),
+      plugin,
+      hooks: [],
+    },
+  ]
+}
 
-test('compileWithPlugin', () => {
-  const result = plugins.compileWithPlugin(getEventPath(), {
-    test: /dummy/,
-    plugin: _plugin,
-  })
-  expect(result).toMatchSnapshot()
-})
-
-test('from option works when plugin === string', () => {
-  const result = plugins.compileWithPlugin(getEventPath(), {
-    test: /dummy/,
-    plugin: fromPlugin,
-  })
-  expect(result).toMatchSnapshot()
-})
-
-test('from option works when plugin === Array', () => {
-  const result = plugins.compileWithPlugin(getEventPath(), {
-    test: /dummy/,
-    plugin: [fromPlugin, { x: 1 }],
-  })
-  expect(result).toMatchSnapshot()
-})
-
-test('handlePlugin when eventPath not match', () => {
-  const spyFn = jest.spyOn(plugins, 'compileWithPlugin')
+test('eventPathがMatchしないとき、handlePluginを呼ばない', () => {
+  const spyFn = jest.spyOn(plugins, 'handlePlugin')
   const plugin = { test: /hoge/, plugin: _plugin }
-  plugins.handlePlugin(...setup(plugin))
+  plugins.default(getEventPath(), 'add', [plugin])
   expect(spyFn.mock.calls.length).toBe(0)
 })
 
@@ -102,7 +88,7 @@ test('handlePlugin write args', () => {
 })
 
 test('handlePlugin when compileWithPlugin returns empty code', () => {
-  const spy = jest.spyOn(utils, 'compile').mockReturnValue('')
+  const spy = jest.spyOn(babel, 'transform').mockReturnValue('')
   const plugin = { test: /a.js/, plugin: _plugin }
   plugins.handlePlugin(...setup(plugin))
   expect(logSpy).not.toHaveBeenCalled()
@@ -141,8 +127,8 @@ test('call write handlePlugin when only === add', () => {
   expect(writeSpy).toHaveBeenCalled()
 })
 
-test('not call write handlePlugin when only != add', () => {
+test('onlyオプションがeventTypeと不一致のとき、hanlderを呼ばない', () => {
   const plugin = { test: /a.js/, plugin: _plugin, only: ['unlink'] }
-  plugins.handlePlugin(...setup(plugin))
+  plugins.default(getEventPath(), 'add', [plugin])
   expect(writeSpy).not.toHaveBeenCalled()
 })

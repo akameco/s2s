@@ -1,5 +1,6 @@
 // @flow
 export type Path = string
+export type Code = string
 type FileName = string
 type PluginName = string
 
@@ -8,9 +9,19 @@ export type PluginOpts = PluginName | [PluginName, Object]
 export type EventType = 'add' | 'change' | 'unlink'
 export type Only = EventType[]
 
+export type HandlerOpts = {
+  eventPath: Path,
+  filename: Path,
+  // eslint-disable-next-line
+  plugin: Plugin,
+}
+
+export type HanlderFunc = (code: Code, opts: HandlerOpts) => Code
+
 export type Plugin = {|
   test: RegExp,
   plugin: PluginOpts,
+  handler?: HanlderFunc,
   only?: Only,
   input?: FileName,
   output?: FileName,
