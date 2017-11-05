@@ -2,6 +2,7 @@
 import path from 'path'
 import fs from 'fs'
 import KeyLocker from 'key-locker'
+import defaultHanlder from 's2s-babel-handler'
 import type { Path, AfterHook, Plugin, EventType, HanlderFunc } from 'types'
 import {
   getOutputPath,
@@ -13,7 +14,6 @@ import {
 } from '../utils'
 import runHooks from '../hooks/run'
 import { formatText } from '../reporters/'
-import babelHandler from './babel-handler'
 
 type Opts = {
   eventPath: Path,
@@ -75,7 +75,7 @@ export default function handlePlugins(
 
       lock.add(eventPath)
 
-      const handler = plugin.handler ? plugin.handler : babelHandler
+      const handler = plugin.handler ? plugin.handler : defaultHanlder
 
       if (handler) {
         handlePlugin(handler, { eventPath, plugin, hooks })

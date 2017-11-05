@@ -1,7 +1,7 @@
 // @flow
-import handler from '../babel-handler'
-import _plugin from './helpers/identifer-reverse-plugin'
-import fromPlugin from './helpers/from-plugin'
+import handler from '.'
+import _plugin from './__tests__/helpers/identifer-reverse-plugin'
+import fromPlugin from './__tests__/helpers/from-plugin'
 
 const code = 'const hello = "hello"'
 
