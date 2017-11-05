@@ -1,2 +1,3 @@
-flow-typed/npm
-dest
+flow-typed
+lib
+coverage
