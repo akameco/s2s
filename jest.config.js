@@ -8,4 +8,5 @@ module.exports = {
   snapshotSerializers: [
     '<rootDir>/node_modules/pretty-format/build/plugins/convert_ansi.js',
   ],
+  modulePathIgnorePatterns: ['examples/.*'],
 }

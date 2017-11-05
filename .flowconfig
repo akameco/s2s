@@ -1,6 +1,5 @@
 [ignore]
 .*/examples/.*
-.*/packages/.*/lib
 
 [include]
 packages/*/src

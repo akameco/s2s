@@ -1,0 +1,59 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`initialState not found 1`] = `
+"
+// @flow
+type Count = number
+type State = { count: Count, isLoading: boolean }
+
+const initState = {}
+
+      ↓ ↓ ↓ ↓ ↓ ↓
+
+// @flow
+type Count = number;
+type State = { count: Count; isLoading: boolean; };
+
+const initState = {};
+"
+`;
+
+exports[`initialize object when empty object 1`] = `
+"
+// @flow
+type Count = number
+type State = { count: Count, isLoading: boolean }
+
+// $FlowFixMe
+const initialState: State = {}
+
+      ↓ ↓ ↓ ↓ ↓ ↓
+
+// @flow
+type Count = number;
+type State = { count: Count; isLoading: boolean; };
+
+// $FlowFixMe
+const initialState: State = { \\"count\\": 0, \\"isLoading\\": false };
+"
+`;
+
+exports[`overwirte property when property is not type match 1`] = `
+"
+// @flow
+type Count = number
+type State = { count: Count, isLoading: boolean }
+
+// $FlowFixMe
+const initialState: State = { count: 100 }
+
+      ↓ ↓ ↓ ↓ ↓ ↓
+
+// @flow
+type Count = number;
+type State = { count: Count; isLoading: boolean; };
+
+// $FlowFixMe
+const initialState: State = { \\"count\\": 100, \\"isLoading\\": false };
+"
+`;

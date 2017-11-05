@@ -1,0 +1,85 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`basic 1`] = `
+"
+import reducer, {initialState} from './actions'
+
+      ↓ ↓ ↓ ↓ ↓ ↓
+
+import reducer, { initialState } from './actions';
+
+test('handle INCREMENT', () => {
+  expect(reducer(initialState, actions.increment())).toEqual(null);
+});
+
+test('handle DECREMENT', () => {
+  expect(reducer(initialState, actions.decrement())).toEqual(null);
+});
+"
+`;
+
+exports[`basic 2`] = `
+"
+import reducer, {initialState} from './actions'
+
+      ↓ ↓ ↓ ↓ ↓ ↓
+
+import reducer, { initialState } from './actions';
+
+test('handle INCREMENT', () => {
+  expect(reducer(initialState, actions.increment())).toEqual({ count: 0 });
+});
+
+test('handle DECREMENT', () => {
+  expect(reducer(initialState, actions.decrement())).toEqual({ count: 0 });
+});
+"
+`;
+
+exports[`exist test case 1`] = `
+"
+import reducer, {initialState} from './actions'
+import * as actions from './actions'
+
+test('handle INCREMENT', () => {
+  expect(actions.sample()).toEqual(null)
+})
+
+      ↓ ↓ ↓ ↓ ↓ ↓
+
+import reducer, { initialState } from './actions';
+import * as actions from './actions';
+
+test('handle INCREMENT', () => {
+  expect(actions.sample()).toEqual(null);
+});
+
+test('handle DECREMENT', () => {
+  expect(reducer(initialState, actions.decrement())).toEqual(null);
+});
+"
+`;
+
+exports[`exist test case 2`] = `
+"
+import reducer, {initialState} from './actions'
+import * as actions from './actions'
+
+test('handle INCREMENT', () => {
+  expect(actions.sample()).toEqual(null)
+})
+
+      ↓ ↓ ↓ ↓ ↓ ↓
+
+import reducer, { initialState } from './actions';
+import * as actions from './actions';
+
+test('handle INCREMENT', () => {
+  expect(actions.sample()).toEqual(null);
+});
+
+test('handle DECREMENT', () => {
+  expect(reducer(initialState, actions.decrement())).toEqual({ count: 0 });
+});
+"
+`;

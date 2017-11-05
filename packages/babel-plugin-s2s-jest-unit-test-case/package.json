@@ -1,0 +1,24 @@
+{
+  "name": "babel-plugin-s2s-jest-unit-test-case",
+  "version": "0.2.2",
+  "description": "create jest test case from target source",
+  "license": "MIT",
+  "repository": "akameco/s2s-plugins",
+  "author": {
+    "name": "akameco",
+    "email": "akameco.t@gmail.com",
+    "url": "akameco.github.io"
+  },
+  "engines": {
+    "node": ">=6"
+  },
+  "main": "lib/index.js",
+  "files": ["lib"],
+  "dependencies": {
+    "babel-traverse": "^6.26.0",
+    "babel-types": "^6.26.0",
+    "babylon": "^6.18.0",
+    "lodash.flatten": "^4.4.0",
+    "s2s-utils": "^0.4.0"
+  }
+}

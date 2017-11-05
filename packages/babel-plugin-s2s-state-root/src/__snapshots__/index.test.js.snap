@@ -1,0 +1,54 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`glob options 1`] = `
+"
+// show options
+
+      ↓ ↓ ↓ ↓ ↓ ↓
+
+// @flow
+// show options
+import type { State as App } from \\"../../__fixtures__/app/reducer\\";
+import type { State as Bob } from \\"../../__fixtures__/bob/reducer\\";
+
+export type State = {
+  App: App;
+  Bob: Bob;
+};
+"
+`;
+
+exports[`no parse 1`] = `
+"
+// @flow
+      const state = { ...state, a: 1}
+
+      ↓ ↓ ↓ ↓ ↓ ↓
+
+// @flow
+import type { State as App } from \\"../../__fixtures__/app/reducer\\";
+import type { State as Bob } from \\"../../__fixtures__/bob/reducer\\";
+
+export type State = {
+      App: App;
+      Bob: Bob;
+};
+"
+`;
+
+exports[`options 1`] = `
+"
+// @flow
+
+      ↓ ↓ ↓ ↓ ↓ ↓
+
+// @flow
+import type { State as App } from \\"../../__fixtures__/app/reducer\\";
+import type { State as Bob } from \\"../../__fixtures__/bob/reducer\\";
+
+export type State = {
+  App: App;
+  Bob: Bob;
+};
+"
+`;

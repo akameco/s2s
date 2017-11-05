@@ -1,0 +1,17 @@
+{
+  "name": "s2s-babel-flow-types",
+  "version": "0.2.0",
+  "description": "Flow types for s2s plugins",
+  "license": "MIT",
+  "repository": "akameco/s2s-plugins",
+  "author": {
+    "name": "akameco",
+    "email": "akameco.t@gmail.com",
+    "url": "akameco.github.io"
+  },
+  "engines": {
+    "node": ">=6"
+  },
+  "main": "index.js",
+  "files": ["index.js"]
+}

@@ -1,0 +1,57 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`glob options 1`] = `
+"
+// show options
+
+      ↓ ↓ ↓ ↓ ↓ ↓
+
+// @flow
+// show options
+import { combineReducers } from 'redux';
+import App from \\"./__fixtures__/app/reducer\\";
+import Bob from \\"./__fixtures__/bob/reducer\\";
+
+export default combineReducers({
+  App,
+  Bob
+});
+"
+`;
+
+exports[`no parse 1`] = `
+"
+// @flow
+      const state = { ...state, a: 1}
+
+      ↓ ↓ ↓ ↓ ↓ ↓
+
+// @flow
+import { combineReducers } from 'redux';
+import App from \\"./__fixtures__/app/reducer\\";
+import Bob from \\"./__fixtures__/bob/reducer\\";
+
+export default combineReducers({
+      App,
+      Bob
+});
+"
+`;
+
+exports[`options 1`] = `
+"
+// @flow
+
+      ↓ ↓ ↓ ↓ ↓ ↓
+
+// @flow
+import { combineReducers } from 'redux';
+import App from \\"./__fixtures__/app/reducer\\";
+import Bob from \\"./__fixtures__/bob/reducer\\";
+
+export default combineReducers({
+  App,
+  Bob
+});
+"
+`;

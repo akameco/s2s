@@ -1,0 +1,137 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`another import 1`] = `
+"
+// @flow
+import type { Count } from './types'
+
+export const ADD: 'App/ADD' = 'App/ADD'
+
+export const Actions = {
+  ADD,
+}
+
+export type Add = {
+  type: typeof ADD,
+  n: number,
+  payload: Count,
+}
+
+export type Action = Add
+
+      ↓ ↓ ↓ ↓ ↓ ↓
+
+// @flow
+import type { Count } from './types';
+
+import { ADD } from './actionTypes';
+import type { Add } from './actionTypes';
+
+export function add(n: number, payload: Count): Add {
+  return {
+    type: ADD,
+    n,
+    payload
+  };
+}
+"
+`;
+
+exports[`has prop 1`] = `
+"
+// @flow
+export const ADD: 'App/ADD' = 'App/ADD'
+
+export const Actions = {
+  ADD,
+}
+
+export type Add = {
+  type: typeof ADD,
+  payload: number,
+}
+
+export type Action = Add
+
+      ↓ ↓ ↓ ↓ ↓ ↓
+
+// @flow
+import { ADD } from './actionTypes';
+import type { Add } from './actionTypes';
+
+export function add(payload: number): Add {
+  return {
+    type: ADD,
+    payload
+  };
+}
+"
+`;
+
+exports[`one function 1`] = `
+"
+// @flow
+export const INCREMENT: \\"counter/INCREMENT\\" = \\"counter/INCREMENT\\";
+
+export const Actions = {
+  INCREMENT
+};
+
+export type Increment = {
+  type: typeof INCREMENT
+};
+
+export type Action = Increment;
+
+      ↓ ↓ ↓ ↓ ↓ ↓
+
+// @flow
+import { INCREMENT } from \\"./actionTypes\\";
+import type { Increment } from \\"./actionTypes\\";
+
+export function increment(): Increment {
+  return {
+    type: INCREMENT
+  };
+}
+"
+`;
+
+exports[`some function 1`] = `
+"
+export const INCREMENT: 'App/INCREMENT' = 'App/INCREMENT'
+export const DECREMENT: 'App/DECREMENT' = 'App/DECREMENT'
+
+export const Actions = {
+  INCREMENT,
+  DECREMENT,
+}
+
+export type Increment = {
+  type: typeof INCREMENT,
+}
+
+export type Decrement = {
+  type: typeof DECREMENT,
+}
+
+export type Action = Increment | Decrement
+
+      ↓ ↓ ↓ ↓ ↓ ↓
+
+// @flow
+import { INCREMENT, DECREMENT } from './actionTypes';
+import type { Increment, Decrement } from './actionTypes';
+
+export function increment(): Increment {
+  return {
+    type: INCREMENT
+  };
+}
+export function decrement(): Decrement {
+  return {
+    type: DECREMENT
+  };
+}
+"
+`;

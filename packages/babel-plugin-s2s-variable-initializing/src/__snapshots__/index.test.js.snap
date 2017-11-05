@@ -1,0 +1,35 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`initialize variable 1`] = `
+"
+// @flow
+type S = { a: number }
+var a: S
+
+type X = number
+var b: X
+
+var c
+
+var d = {}
+
+type Y = string
+let e: Y
+
+      ↓ ↓ ↓ ↓ ↓ ↓
+
+// @flow
+type S = { a: number };
+var a: S = { \\"a\\": 0 };
+
+type X = number;
+var b: X = 0;
+
+var c;
+
+var d = {};
+
+type Y = string;
+let e: Y = \\"\\";
+"
+`;
