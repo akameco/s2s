@@ -1,0 +1,10 @@
+[ignore]
+.*/templates/.*
+
+[include]
+
+[libs]
+
+[lints]
+
+[options]

@@ -1,0 +1,12 @@
+{
+  "scripts": {
+    "flow": "flow",
+    "s2s": "s2s"
+  },
+  "devDependencies": {
+    "babel-plugin-s2s-variable-initializing":
+      "file:../../packages/babel-plugin-s2s-variable-initializing",
+    "flow-bin": "^0.58.0",
+    "s2s": "file:../../packages/s2s-cli"
+  }
+}

@@ -1,0 +1,33 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`render product 1`] = `
+<Product
+  id={1}
+  inventory={6}
+  price={9.99}
+  title="Product 1"
+/>
+`;
+
+exports[`snapshot 1`] = `
+<div
+  style={
+    Object {
+      "marginBottom": 20,
+    }
+  }
+>
+  <Product
+    id={1}
+    inventory={6}
+    price={9.99}
+    title="Product 1"
+  />
+  <button
+    disabled=""
+    onClick={[Function]}
+  >
+    Add to cart
+  </button>
+</div>
+`;

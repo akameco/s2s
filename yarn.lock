@@ -3278,9 +3278,9 @@ jsx-ast-utils@^2.0.0:
   dependencies:
     array-includes "^3.0.3"
 
-key-locker@^0.1.1:
-  version "0.1.1"
-  resolved "https://registry.yarnpkg.com/key-locker/-/key-locker-0.1.1.tgz#b42f90ec92fbffbba69a3dd5c9ef077726091a7e"
+key-locker@^0.2.0:
+  version "0.2.0"
+  resolved "https://registry.yarnpkg.com/key-locker/-/key-locker-0.2.0.tgz#a03c01ef1b94615194dda42ab64ee715d845ad41"
 
 kind-of@^3.0.2:
   version "3.2.2"

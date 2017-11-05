@@ -1,0 +1,35 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`lists all of the products as visible 1`] = `
+Array [
+  Object {
+    "id": 1,
+    "inventory": 2,
+    "price": 100,
+    "title": "Product 1",
+  },
+  Object {
+    "id": 2,
+    "inventory": 1,
+    "price": 100,
+    "title": "Product 2",
+  },
+]
+`;
+
+exports[`when an item is added to the cart the inventory is reduced 1`] = `
+Array [
+  Object {
+    "id": 1,
+    "inventory": 1,
+    "price": 100,
+    "title": "Product 1",
+  },
+  Object {
+    "id": 2,
+    "inventory": 1,
+    "price": 100,
+    "title": "Product 2",
+  },
+]
+`;
