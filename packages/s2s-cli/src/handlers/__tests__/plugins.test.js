@@ -103,6 +103,20 @@ test('handlePlugins when locked', () => {
   expect(writeSpy).not.toHaveBeenCalled()
 })
 
+test('handlePluginsのPlugin.testオプションはglobを判定できる', () => {
+  plugins.default(getEventPath('a.js'), 'add', [
+    { test: '*.js,!b.js$', plugin: _plugin },
+  ])
+  expect(writeSpy).toHaveBeenCalled()
+})
+
+test('handlePluginsのPlugin.testオプションはglobの配列を判定できる', () => {
+  plugins.default(getEventPath('a.js'), 'add', [
+    { test: ['*.js', '!b.js$'], plugin: _plugin },
+  ])
+  expect(writeSpy).toHaveBeenCalled()
+})
+
 test('handlePlugins called write', () => {
   const opts = { test: /not-found.js/, plugin: _plugin }
   plugins.default(getEventPath('a.js'), 'add', [opts])

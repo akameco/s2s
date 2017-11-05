@@ -3,6 +3,7 @@ import path from 'path'
 import fs from 'fs'
 import KeyLocker from 'key-locker'
 import defaultHanlder from 's2s-handler-babel'
+import micromatch from 'micromatch'
 import type { Path, AfterHook, Plugin, EventType, HanlderFunc } from 'types'
 import {
   getOutputPath,
@@ -47,6 +48,24 @@ export function handlePlugin(
   log(formatText('S2S', relativeFromCwd(eventPath), outputPath))
 }
 
+function validate(
+  eventPath: Path,
+  eventType: EventType,
+  plugin: Plugin
+): boolean {
+  if (typeof plugin.test === 'string' || Array.isArray(plugin.test)) {
+    return !micromatch.some(eventPath, plugin.test)
+  } else if (!plugin.test.test(eventPath)) {
+    return false
+  }
+
+  if (plugin.only && !plugin.only.includes(eventType)) {
+    return false
+  }
+
+  return true
+}
+
 const lock = new KeyLocker()
 
 export default function handlePlugins(
@@ -61,11 +80,7 @@ export default function handlePlugins(
 
   for (const plugin of plugins) {
     try {
-      if (!plugin.test.test(eventPath)) {
-        continue // eslint-disable-line
-      }
-
-      if (plugin.only && !plugin.only.includes(eventType)) {
+      if (!validate(eventPath, eventType, plugin)) {
         continue // eslint-disable-line
       }
 

@@ -21,6 +21,7 @@
     "cp-file": "^5.0.0",
     "find-up": "^2.1.0",
     "key-locker": "^0.2.0",
+    "micromatch": "^3.1.4",
     "prettier": "^1.7.4",
     "s2s-handler-babel": "0.0.0",
     "s2s-hook-prettier": "0.0.0",
