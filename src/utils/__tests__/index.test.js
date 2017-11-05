@@ -50,36 +50,6 @@ test('writeFileSync', () => {
   fsSpy.mockRestore()
 })
 
-// test('compile', () => {
-//   utils.compile('hoge.js', {})
-//   expect(transformSpy).toHaveBeenCalled()
-// })
-
-test('compile with SyntaxError', () => {
-  const err = new SyntaxError()
-  // $FlowFixMe
-  err._babel = 'babel error'
-  err.message = 'test error'
-  transformSpy.mockImplementation(() => {
-    throw err
-  })
-  expect(utils.compile('hoge.js', {})).toEqual({ ignored: true })
-  expect(errorSpy).toHaveBeenCalled()
-  expect(errorSpy.mock.calls[0][0]).toMatch('Error: ENOEN')
-})
-
-test('compile with Error', () => {
-  const err = new Error()
-  // $FlowFixMe
-  err.message = 'Error: ENOENT'
-  transformSpy.mockImplementation(() => {
-    throw err
-  })
-  expect(utils.compile('hoge.js', {})).toEqual({ ignored: true })
-  expect(errorSpy).toHaveBeenCalled()
-  expect(errorSpy.mock.calls[0][0]).toMatch('Error')
-})
-
 test('isAlreadyExist returns false when a code is empty string', () => {
   const spyFs = jest.spyOn(fs, 'readFileSync').mockReturnValue('')
   expect(utils.isAlreadyExist('hoge')).toBe(false)

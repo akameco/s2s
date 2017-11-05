@@ -1,37 +1,28 @@
 // @flow
 import path from 'path'
+import fs from 'fs'
 import KeyLocker from 'key-locker'
-import { compile, getOutputPath, writeFileSync, toErrorStack } from '../utils'
-import type { Path, AfterHook, Plugin, EventType } from '../types'
+import { getOutputPath, writeFileSync, toErrorStack } from '../utils'
+import type { Path, AfterHook, Plugin, EventType, HanlderFunc } from '../types'
 import runHooks from '../hooks/run'
 import { log, relativeFromCwd, resolveInputPath } from '../utils'
 import { formatText } from '../reporters/'
+import babelHandler from './babel-handler'
 
-const lock = new KeyLocker()
-
-export function compileWithPlugin(eventPath: Path, plugin: Plugin) {
-  const input = resolveInputPath(plugin.input, eventPath)
-  const opts = plugin.plugin
-
-  const pluginWithFrom = Array.isArray(opts)
-    ? [opts[0], { ...opts[1], from: eventPath }]
-    : [opts, { from: eventPath }]
-
-  const { code } = compile(input, {
-    babelrc: false,
-    plugins: [pluginWithFrom],
-  })
-
-  return code ? code.trim() : ''
+type Opts = {
+  eventPath: Path,
+  plugin: Plugin,
+  hooks: AfterHook[],
 }
 
 export function handlePlugin(
-  eventPath: Path,
-  eventType: EventType,
-  plugin: Plugin,
-  hooks: AfterHook[] = []
+  handler: HanlderFunc,
+  { eventPath, plugin, hooks = [] }: Opts
 ) {
-  const code = compileWithPlugin(eventPath, plugin)
+  const filename = resolveInputPath(plugin.input, eventPath)
+  const content = fs.readFileSync(filename, 'utf8')
+
+  const code = handler(content, { eventPath, plugin, filename })
 
   if (!code && code === '') {
     return
@@ -54,6 +45,8 @@ export function handlePlugin(
   log(formatText('S2S', relativeFromCwd(eventPath), outputPath))
 }
 
+const lock = new KeyLocker()
+
 export default function handlePlugins(
   eventPath: Path,
   eventType: EventType,
@@ -75,7 +68,12 @@ export default function handlePlugins(
       }
 
       lock.add(eventPath)
-      handlePlugin(eventPath, eventType, plugin, hooks)
+
+      const handler = plugin.handler ? plugin.handler : babelHandler
+
+      if (handler) {
+        handlePlugin(handler, { eventPath, plugin, hooks })
+      }
     } catch (err) {
       console.error(toErrorStack(err))
     }

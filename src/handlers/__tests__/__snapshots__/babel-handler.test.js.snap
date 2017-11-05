@@ -1,0 +1,7 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`babel-handlerは変換後のコードを返す 1`] = `"const olleh = \\"hello\\";"`;
+
+exports[`fromオプションを使う場合 1`] = `"const helloto = \\"hello\\";"`;
+
+exports[`pluginがArrayの場合 1`] = `"const olleh = \\"hello\\";"`;
