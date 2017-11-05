@@ -1,4 +1,4 @@
-const tsHandler = require('s2s-ts-handler').default
+const tsHandler = require('s2s-handler-typescript').default
 
 module.exports = {
   watch: './**/*.ts',

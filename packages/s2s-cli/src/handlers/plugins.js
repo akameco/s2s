@@ -2,7 +2,7 @@
 import path from 'path'
 import fs from 'fs'
 import KeyLocker from 'key-locker'
-import defaultHanlder from 's2s-babel-handler'
+import defaultHanlder from 's2s-handler-babel'
 import type { Path, AfterHook, Plugin, EventType, HanlderFunc } from 'types'
 import {
   getOutputPath,

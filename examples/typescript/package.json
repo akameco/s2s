@@ -5,6 +5,6 @@
   "devDependencies": {
     "babel-plugin-fizzbuzz": "^0.1.0",
     "s2s": "file:../../packages/s2s-cli",
-    "s2s-ts-handler": "file:../../packages/s2s-ts-handler"
+    "s2s-handler-typescript": "file:../../packages/s2s-handler-typescript"
   }
 }

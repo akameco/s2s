@@ -15,7 +15,6 @@
   "files": ["lib", "bin"],
   "keywords": ["s2s"],
   "dependencies": {
-    "babel-core": "^6.25.0",
     "babel-polyfill": "^6.26.0",
     "chalk": "^2.3.0",
     "chokidar": "^1.7.0",
@@ -23,7 +22,7 @@
     "find-up": "^2.1.0",
     "key-locker": "^0.2.0",
     "prettier": "^1.7.4",
-    "s2s-babel-handler": "0.0.0",
+    "s2s-handler-babel": "0.0.0",
     "slash": "^1.0.0"
   }
 }
