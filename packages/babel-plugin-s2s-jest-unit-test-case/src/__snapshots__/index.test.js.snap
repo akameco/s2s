@@ -1,0 +1,135 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`1. s2s-jest-unit-test-case 1`] = `
+"
+// empty
+
+      ↓ ↓ ↓ ↓ ↓ ↓
+
+// empty
+import { sum } from \\"./export-sum\\";
+
+test(\\"sum\\", () => {
+  const result = sum();
+  expect(result).toBe(null);
+});
+"
+`;
+
+exports[`1. s2s-jest-unit-test-case 2`] = `
+"
+// empty
+
+      ↓ ↓ ↓ ↓ ↓ ↓
+
+// empty
+import { sum, add } from \\"./multi-exports\\";
+
+test(\\"sum\\", () => {
+  const result = sum();
+  expect(result).toBe(null);
+});
+
+test(\\"add\\", () => {
+  const result = add();
+  expect(result).toBe(null);
+});
+"
+`;
+
+exports[`1. s2s-jest-unit-test-case 3`] = `
+"
+// empty
+
+      ↓ ↓ ↓ ↓ ↓ ↓
+
+// empty
+import { add } from \\"./no-export-sum\\";
+
+test(\\"add\\", () => {
+  const result = add();
+  expect(result).toBe(null);
+});
+"
+`;
+
+exports[`when exist test("sum") 1`] = `
+"
+test('sum', () => {
+  expect(sum(1, 1)).toBe(2)
+})
+
+      ↓ ↓ ↓ ↓ ↓ ↓
+
+import { sum } from './export-sum';
+test('sum', () => {
+  expect(sum(1, 1)).toBe(2);
+});
+"
+`;
+
+exports[`when exist test("sum") 2`] = `
+"
+test('sum', () => {
+  expect(sum(1, 1)).toBe(2)
+})
+
+      ↓ ↓ ↓ ↓ ↓ ↓
+
+import { sum, add } from './multi-exports';
+test('sum', () => {
+  expect(sum(1, 1)).toBe(2);
+});
+
+test('add', () => {
+  const result = add();
+  expect(result).toBe(null);
+});
+"
+`;
+
+exports[`when other source is imported 1`] = `
+"
+import { add } from './other-source'
+
+      ↓ ↓ ↓ ↓ ↓ ↓
+
+import { sum } from './export-sum';
+import { add } from './other-source';
+
+test('sum', () => {
+  const result = sum();
+  expect(result).toBe(null);
+});
+"
+`;
+
+exports[`when sum is imported 1`] = `
+"
+import { sum } from './export-sum'
+
+      ↓ ↓ ↓ ↓ ↓ ↓
+
+import { sum } from './export-sum';
+
+test('sum', () => {
+  const result = sum();
+  expect(result).toBe(null);
+});
+"
+`;
+
+exports[`when sum is not imported 1`] = `
+"
+import { add } from './export-sum'
+
+      ↓ ↓ ↓ ↓ ↓ ↓
+
+import { sum } from './export-sum';
+
+test('sum', () => {
+  const result = sum();
+  expect(result).toBe(null);
+});
+"
+`;

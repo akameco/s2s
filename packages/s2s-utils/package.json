@@ -1,0 +1,15 @@
+{
+  "name": "s2s-utils",
+  "version": "0.4.0",
+  "description": "s2s utils",
+  "license": "MIT",
+  "repository": "akameco/s2s-plugins",
+  "author": "akameco <akameco.t@gmail.com>",
+  "main": "index.js",
+  "files": ["index.js"],
+  "dependencies": {
+    "babel-template": "^6.26.0",
+    "babel-types": "^6.26.0",
+    "slash": "^1.0.0"
+  }
+}

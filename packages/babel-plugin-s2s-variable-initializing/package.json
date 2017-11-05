@@ -1,0 +1,23 @@
+{
+  "name": "babel-plugin-s2s-variable-initializing",
+  "version": "0.1.0",
+  "description": "variable initializing with type info",
+  "license": "MIT",
+  "repository": "akameco/s2s-plugins",
+  "author": {
+    "name": "akameco",
+    "email": "akameco.t@gmail.com",
+    "url": "akameco.github.io"
+  },
+  "engines": {
+    "node": ">=6"
+  },
+  "main": "lib/index.js",
+  "files": ["lib"],
+  "dependencies": {
+    "babylon": "^6.18.0",
+    "flow-faker": "^0.1.1",
+    "s2s-babel-flow-types": "^0.2.0",
+    "s2s-utils": "^0.4.0"
+  }
+}

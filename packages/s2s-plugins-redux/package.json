@@ -1,0 +1,27 @@
+{
+  "name": "s2s-plugins-redux",
+  "version": "0.3.1",
+  "description": "s2s plugins for redux",
+  "license": "MIT",
+  "repository": "akameco/s2s-plugins",
+  "author": {
+    "name": "akameco",
+    "email": "akameco.t@gmail.com",
+    "url": "akameco.github.io"
+  },
+  "engines": {
+    "node": ">=6"
+  },
+  "main": "index.js",
+  "files": ["index.js"],
+  "dependencies": {
+    "babel-plugin-s2s-action-creater": "^0.2.4",
+    "babel-plugin-s2s-action-root": "^0.3.4",
+    "babel-plugin-s2s-action-types": "^0.4.4",
+    "babel-plugin-s2s-initial-state-creater": "^0.2.1",
+    "babel-plugin-s2s-reducer-case-creater": "^0.1.3",
+    "babel-plugin-s2s-reducer-root": "^0.2.4",
+    "babel-plugin-s2s-reducer-test-case": "^0.4.4",
+    "babel-plugin-s2s-state-root": "^0.2.4"
+  }
+}

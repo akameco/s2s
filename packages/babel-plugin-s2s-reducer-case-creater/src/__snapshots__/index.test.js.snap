@@ -1,0 +1,138 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`1. s2s-reducer-case-creater 1`] = `
+"
+export default function(state: State = initialState, action) {
+  switch (action.type) {
+    case Actions.INCREMENT:
+      return { ...state, count: state + 1 }
+
+    default:
+      return state
+  }
+}
+
+      ↓ ↓ ↓ ↓ ↓ ↓
+
+export default function (state: State = initialState, action) {
+  switch (action.type) {
+    case Actions.INCREMENT:
+      return { ...state, count: state + 1 };
+
+    default:
+      return state;
+  }
+}
+"
+`;
+
+exports[`basic 1`] = `
+"
+export default function(state: State = initialState, action) {
+  switch (action.type) {
+    case Actions.INCREMENT:
+      return { ...state, count: state + 1 }
+
+    default:
+      return state
+  }
+}
+
+      ↓ ↓ ↓ ↓ ↓ ↓
+
+export default function (state: State = initialState, action) {
+  switch (action.type) {
+    case Actions.DECREMENT:
+      return {
+        ...state
+      };
+
+    case Actions.INCREMENT:
+      return { ...state, count: state + 1 };
+
+    default:
+      return state;
+  }
+}
+"
+`;
+
+exports[`basic 2`] = `
+"
+function update(state: State = initialState, action) {
+  switch (action.type) {
+    case Actions.INCREMENT:
+      return { ...state, count: state + 1 }
+    default:
+      return state
+  }
+}
+
+export default function(state: State = initialState, action) {
+  switch (action.type) {
+    case Actions.INCREMENT:
+      return update(state, action)
+    default:
+      return state
+  }
+}
+
+      ↓ ↓ ↓ ↓ ↓ ↓
+
+function update(state: State = initialState, action) {
+  switch (action.type) {
+    case Actions.INCREMENT:
+      return { ...state, count: state + 1 };
+    default:
+      return state;
+  }
+}
+
+export default function (state: State = initialState, action) {
+  switch (action.type) {
+    case Actions.DECREMENT:
+      return {
+        ...state
+      };
+
+    case Actions.INCREMENT:
+      return update(state, action);
+    default:
+      return state;
+  }
+}
+"
+`;
+
+exports[`not Actions 1`] = `
+"
+export default function(state: State = initialState, action) {
+  switch (action.type) {
+    case Other.INCREMENT:
+      return { ...state, count: state + 1 }
+    case Actions.INCREMENT:
+      return { ...state, count: state + 1 }
+    default:
+      return state
+  }
+}
+
+      ↓ ↓ ↓ ↓ ↓ ↓
+
+export default function (state: State = initialState, action) {
+  switch (action.type) {
+    case Actions.DECREMENT:
+      return {
+        ...state
+      };
+
+    case Other.INCREMENT:
+      return { ...state, count: state + 1 };
+    case Actions.INCREMENT:
+      return { ...state, count: state + 1 };
+    default:
+      return state;
+  }
+}
+"
+`;

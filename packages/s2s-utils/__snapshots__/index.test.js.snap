@@ -1,0 +1,83 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`snapshot defaultImport 1`] = `
+Object {
+  "source": Object {
+    "type": "StringLiteral",
+    "value": "source",
+  },
+  "specifiers": Array [
+    Object {
+      "local": Object {
+        "name": "local",
+        "type": "Identifier",
+      },
+      "type": "ImportDefaultSpecifier",
+    },
+  ],
+  "type": "ImportDeclaration",
+}
+`;
+
+exports[`snapshot typeImport 1`] = `
+Object {
+  "importKind": "type",
+  "source": Object {
+    "type": "StringLiteral",
+    "value": "source",
+  },
+  "specifiers": Array [
+    Object {
+      "imported": Object {
+        "name": "imported",
+        "type": "Identifier",
+      },
+      "local": Object {
+        "name": "local",
+        "type": "Identifier",
+      },
+      "type": "ImportSpecifier",
+    },
+  ],
+  "type": "ImportDeclaration",
+}
+`;
+
+exports[`template 1`] = `
+Node {
+  "__clone": undefined,
+  "_fromTemplate": true,
+  "end": undefined,
+  "id": Node {
+    "__clone": undefined,
+    "_fromTemplate": true,
+    "end": undefined,
+    "loc": undefined,
+    "name": "Action",
+    "start": undefined,
+    "type": "Identifier",
+  },
+  "loc": undefined,
+  "right": Node {
+    "__clone": undefined,
+    "_fromTemplate": true,
+    "end": undefined,
+    "id": Node {
+      "__clone": undefined,
+      "_fromTemplate": true,
+      "end": undefined,
+      "loc": undefined,
+      "name": "A",
+      "start": undefined,
+      "type": "Identifier",
+    },
+    "loc": undefined,
+    "start": undefined,
+    "type": "GenericTypeAnnotation",
+    "typeParameters": null,
+  },
+  "start": undefined,
+  "type": "TypeAlias",
+  "typeParameters": null,
+}
+`;

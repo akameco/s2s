@@ -1,0 +1,38 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`glob options 1`] = `
+"
+// show options
+
+      ↓ ↓ ↓ ↓ ↓ ↓
+
+// @flow
+// show options
+import type { Action as AppAction } from \\"../__fixtures__/app/actionTypes\\";
+import type { Action as BobAction } from \\"../__fixtures__/bob/actionTypes\\";
+
+export type ReduxInitAction = {
+  type: '@@INIT'
+};
+
+export type Action = ReduxInitAction | AppAction | BobAction;
+"
+`;
+
+exports[`options 1`] = `
+"
+// @flow
+
+      ↓ ↓ ↓ ↓ ↓ ↓
+
+// @flow
+import type { Action as AppAction } from \\"../__fixtures__/app/actionTypes\\";
+import type { Action as BobAction } from \\"../__fixtures__/bob/actionTypes\\";
+
+export type ReduxInitAction = {
+  type: '@@INIT'
+};
+
+export type Action = ReduxInitAction | AppAction | BobAction;
+"
+`;

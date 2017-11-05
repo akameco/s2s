@@ -28,6 +28,8 @@
     "all-contributors-cli": "^4.5.3",
     "babel-cli": "^6.26.0",
     "babel-jest": "^21.2.0",
+    "babel-log": "^2.0.0",
+    "babel-plugin-tester": "^4.0.0",
     "babel-preset-env": "^1.6.1",
     "babel-preset-flow": "^6.23.0",
     "babel-preset-stage-2": "^6.24.1",

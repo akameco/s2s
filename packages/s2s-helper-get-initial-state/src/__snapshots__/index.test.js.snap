@@ -1,0 +1,151 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`get initalState 1`] = `
+Node {
+  "end": 39,
+  "loc": SourceLocation {
+    "end": Position {
+      "column": 38,
+      "line": 2,
+    },
+    "start": Position {
+      "column": 28,
+      "line": 2,
+    },
+  },
+  "properties": Array [
+    Node {
+      "computed": false,
+      "end": 38,
+      "key": Node {
+        "end": 35,
+        "loc": SourceLocation {
+          "end": Position {
+            "column": 34,
+            "line": 2,
+          },
+          "identifierName": "count",
+          "start": Position {
+            "column": 29,
+            "line": 2,
+          },
+        },
+        "name": "count",
+        "start": 30,
+        "type": "Identifier",
+      },
+      "loc": SourceLocation {
+        "end": Position {
+          "column": 37,
+          "line": 2,
+        },
+        "start": Position {
+          "column": 29,
+          "line": 2,
+        },
+      },
+      "method": false,
+      "shorthand": false,
+      "start": 30,
+      "type": "ObjectProperty",
+      "value": Node {
+        "end": 38,
+        "extra": Object {
+          "raw": "1",
+          "rawValue": 1,
+        },
+        "loc": SourceLocation {
+          "end": Position {
+            "column": 37,
+            "line": 2,
+          },
+          "start": Position {
+            "column": 36,
+            "line": 2,
+          },
+        },
+        "start": 37,
+        "type": "NumericLiteral",
+        "value": 1,
+      },
+    },
+  ],
+  "start": 29,
+  "type": "ObjectExpression",
+}
+`;
+
+exports[`get initalState with flow 1`] = `
+Node {
+  "end": 46,
+  "loc": SourceLocation {
+    "end": Position {
+      "column": 45,
+      "line": 2,
+    },
+    "start": Position {
+      "column": 35,
+      "line": 2,
+    },
+  },
+  "properties": Array [
+    Node {
+      "computed": false,
+      "end": 45,
+      "key": Node {
+        "end": 42,
+        "loc": SourceLocation {
+          "end": Position {
+            "column": 41,
+            "line": 2,
+          },
+          "identifierName": "count",
+          "start": Position {
+            "column": 36,
+            "line": 2,
+          },
+        },
+        "name": "count",
+        "start": 37,
+        "type": "Identifier",
+      },
+      "loc": SourceLocation {
+        "end": Position {
+          "column": 44,
+          "line": 2,
+        },
+        "start": Position {
+          "column": 36,
+          "line": 2,
+        },
+      },
+      "method": false,
+      "shorthand": false,
+      "start": 37,
+      "type": "ObjectProperty",
+      "value": Node {
+        "end": 45,
+        "extra": Object {
+          "raw": "1",
+          "rawValue": 1,
+        },
+        "loc": SourceLocation {
+          "end": Position {
+            "column": 44,
+            "line": 2,
+          },
+          "start": Position {
+            "column": 43,
+            "line": 2,
+          },
+        },
+        "start": 44,
+        "type": "NumericLiteral",
+        "value": 1,
+      },
+    },
+  ],
+  "start": 36,
+  "type": "ObjectExpression",
+}
+`;
