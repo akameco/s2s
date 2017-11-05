@@ -1,7 +1,7 @@
 {
-  "name": "s2s-babel-handler",
+  "name": "s2s-handler-typescript",
   "version": "0.0.0",
-  "description": "s2s babel handler",
+  "description": "typescript handler",
   "license": "MIT",
   "repository": "https://github.com/akameco/s2s",
   "author": "akameco <akameco.t@gmail.com> (akameco.github.io)",
@@ -10,6 +10,9 @@
   },
   "main": "./lib/index.js",
   "files": ["lib"],
-  "keywords": ["s2s", "babel", "plugin"],
-  "dependencies": {}
+  "keywords": ["s2s"],
+  "dependencies": {
+    "@babel/core": "^7.0.0-beta.31",
+    "@babel/plugin-syntax-typescript": "^7.0.0-beta.31"
+  }
 }
