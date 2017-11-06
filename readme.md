@@ -73,7 +73,7 @@ Check out `s2s.config.js` in the root of the project. This is a setting file.
 
 You can write easy the file if you are familer with webpack.
 
-For more infomations, see [Config](https://github.com/akameco/s2s/tree/master/docs/ja/config.md).
+For more infomations, see [Config](./docs/en/config.md).
 
 ```js
 module.exports = {
