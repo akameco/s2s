@@ -1,8 +1,7 @@
 // @flow
 import path from 'path'
 import fs from 'fs'
-
-type Path = string
+import type { Path } from 'types'
 
 export function log(msg: string) {
   console.log(msg)
