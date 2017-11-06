@@ -32,8 +32,7 @@ export type Template = {|
   output?: Path,
 |}
 
-// eslint-disable-next-line
-export type AfterHook = Function
+export type AfterHook = (code: Code, path: Path) => Code
 
 export type Opts = {|
   watch: Path, // file, dir, glob, or array

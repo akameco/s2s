@@ -87,3 +87,10 @@ test('templatesがない場合、ファイルが追加されたときhandleTempl
   watcher.emit('add', 'hello')
   expect(handleTemplateSpy).not.toBeCalled()
 })
+
+test('when prettier = false', () => {
+  watcher = m(setup({ prettier: false }))
+  watcher.emit('add', 'hello')
+  const result = handlePluginsSpy.mock.calls[0]
+  expect(result[3]).toEqual([])
+})

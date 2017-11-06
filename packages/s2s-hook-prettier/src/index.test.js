@@ -2,9 +2,13 @@
 import prettierHook from '.'
 
 test('return an empty string on error', () => {
-  expect(prettierHook({})('hoge', 'test code')).toBe('test code')
+  expect(prettierHook({})('test code')).toBe('test code')
 })
 
 test('format', () => {
-  expect(prettierHook({})('hoge', 'var x    = 1')).toBe('var x = 1\n')
+  expect(prettierHook({})('var x    = 1')).toBe('var x = 1\n')
+})
+
+test('when no args', () => {
+  expect(prettierHook()('var x    = 1')).toBe('var x = 1\n')
 })
