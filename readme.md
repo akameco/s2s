@@ -138,7 +138,7 @@ If you contributed our project with writting a code and test, then type this com
 $ yarn run all-contributors <GitHub Username> code,test
 ```
 
-If you contibuted our project with adding documents and fixing them, then typ this command.
+If you contibuted our project with adding documents and fixing them, then type this command.
 
 ```
 $ yarn run all-contributors <GitHub Username> doc
