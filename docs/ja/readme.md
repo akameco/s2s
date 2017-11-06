@@ -15,7 +15,7 @@
 詳しくは、[examples](https://github.com/akameco/s2s/tree/master/examples)を見てください。
 
 ## コンセプト
-ソースコードからソースコードへのリアルタイムコード生成。  
+ソースコードからソースコードへのリアルタイムコード生成。
 あなたのエディタを監視して、リアルタイムにコードを生成します。
 
 変更したファイル名が一致すると、単一のBabelPluginを実行し、それをコードへと反映します。
@@ -101,7 +101,7 @@ $ yarn run s2s
 
 ## プラグイン
 ### プラグインを組み合わせる
-複数のプラグインを組みわせると、より力を発揮します。  
+複数のプラグインを組みわせると、より力を発揮します。
 以下の例は、Actionの型を定義すると、Actionの定数、アクションクリエイター、reducer、reducerのテストをそれぞれ生成します。
 
 ![plugins](https://camo.qiitausercontent.com/2b3fc744eda2c6e569f437d8006c765c78bc9f20/68747470733a2f2f71696974612d696d6167652d73746f72652e73332e616d617a6f6e6177732e636f6d2f302f31353331392f37306239386664642d373338622d646464322d663866352d3932343435353763643734322e676966)
@@ -123,3 +123,24 @@ reduxとflowtypeを組み合わせた例。
 - [**babel-plugin-s2s-state-root**<br>compose flow + redux state types](https://github.com/akameco/s2s/tree/master/packages/babel-plugin-s2s-state-root)
 - [**babel-plugin-s2s-reducer-root**<br>compose redux reducer](https://github.com/akameco/s2s/tree/master/packages/babel-plugin-s2s-reducer-root)
 - [**babel-plugin-s2s-reducer-test-case**<br>create reducer test using switch/case](https://github.com/akameco/s2s/tree/master/packages/babel-plugin-s2s-reducer-test-case)
+
+## 貢献
+どのような貢献でもウェルカムです。
+
+また、このレポジトリは、[all-contributors](https://github.com/kentcdodds/all-contributors)Specに従って運用しています。
+
+あたながコードとテストを書いて貢献した場合、以下のコマンドを打ってください。
+
+```
+$ yarn run all-contributors GitHubのアカウント名 code,test
+```
+
+また、ドキュメントの追加や修正を行った場合は以下のコマンドです。
+
+```
+$ yarn run all-contributors GitHubのアカウント名 doc
+```
+
+詳しくは、[all-contributors](https://github.com/kentcdodds/all-contributors)を参照してください。
+
+どのような貢献でも待っています。
