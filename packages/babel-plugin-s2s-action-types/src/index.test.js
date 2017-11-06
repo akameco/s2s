@@ -96,6 +96,7 @@ export type Action = FetchSuccess | FetchFailure;
       title: 'no type Action',
       code: `// @flow`,
     },
+    { title: 'no GenericTypeAnnotation', code: `export type Action = string` },
   ],
 })
 
@@ -105,5 +106,14 @@ pluginTester({
   snapshot: true,
   babelOptions: { filename },
   pluginOptions: { removePrefix: 'app' },
+  tests: [`export type Action = Increment`],
+})
+
+pluginTester({
+  title: 'use prefix === false',
+  plugin,
+  snapshot: true,
+  babelOptions: { filename },
+  pluginOptions: { usePrefix: false },
   tests: [`export type Action = Increment`],
 })

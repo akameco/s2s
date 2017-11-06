@@ -42,6 +42,27 @@ export type Action = Increment;
 "
 `;
 
+exports[`1. s2s-action-types 3`] = `
+"
+export type Action = Increment
+
+      ↓ ↓ ↓ ↓ ↓ ↓
+
+// @flow
+export const INCREMENT: \\"INCREMENT\\" = \\"INCREMENT\\";
+
+export const Actions = {
+  INCREMENT
+};
+
+export type Increment = {
+  type: typeof INCREMENT
+};
+
+export type Action = Increment;
+"
+`;
+
 exports[`2. s2s-action-types 1`] = `
 "
 // @flow
@@ -257,6 +278,20 @@ export type Increment = {
 };
 
 export type Action = Increment;
+"
+`;
+
+exports[`no GenericTypeAnnotation 1`] = `
+"
+export type Action = string
+
+      ↓ ↓ ↓ ↓ ↓ ↓
+
+// @flow
+
+export const Actions = {};
+
+export type Action = ;
 "
 `;
 
