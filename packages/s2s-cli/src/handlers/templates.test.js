@@ -4,13 +4,13 @@ import rimraf from 'rimraf'
 import cpFile from 'cp-file'
 import stripAnsi from 'strip-ansi'
 import pathExists from 'path-exists'
-import * as utils from '../../utils'
-import * as templates from '../templates'
+import * as utils from '../utils'
+import * as templates from './templates'
 
 let logSpy
 const fn = x => x
 
-const fixturesPath = resolve(__dirname, 'fixtures')
+const fixturesPath = resolve(__dirname, '__tests__', 'fixtures')
 const getEventPath = (...x) => join(fixturesPath, ...x)
 const eventPath = getEventPath('copy-result.js')
 

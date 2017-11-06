@@ -1,7 +1,7 @@
 // @flow
 import type { Opts } from 'types'
-import m from '../index'
-import * as utils from '../utils'
+import m from '.'
+import * as utils from './utils'
 
 let mock
 const watchers = []
