@@ -142,3 +142,18 @@ test('lockが機能しているか', () => {
   plugins.default(getEventPath('a.js'), 'add', [plugin])
   expect(logSpy).toHaveBeenCalledTimes(1)
 })
+
+test('カスタムhandlerが呼ばれるか', () => {
+  const handler = jest.fn()
+  const plugin = { test: /a.js/, plugin: _plugin, handler }
+  plugins.default(getEventPath('a.js'), 'add', [plugin])
+  expect(handler).toBeCalled()
+})
+
+test('hooksが渡されない場合', () => {
+  const plugin = { test: /a.js/, plugin: _plugin }
+  const opts = setup(plugin)
+  delete opts[1].hooks
+  plugins.handlePlugin(opts[0], { ...opts[1] })
+  expect(writeSpy).toBeCalled()
+})

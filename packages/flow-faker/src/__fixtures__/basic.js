@@ -22,3 +22,6 @@ let info: Info
 function getUser(id: number): User {
   return { id, name: 'unknown', age: 20 }
 }
+
+type NoParam = any
+let noParam: NoParam

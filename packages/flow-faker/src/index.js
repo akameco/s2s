@@ -80,9 +80,9 @@ export function getTypeAst(input: string) {
 
   traverse(ast, {
     TypeAlias(nodePath) {
-      if (nodePath.get('id').isIdentifier({ name: 'X' })) {
-        typeAST = nodePath.get('right')
-      }
+      // if (nodePath.get('id').isIdentifier({ name: 'X' })) { }
+      // nodeのidは`X`が必ず保証されてる
+      typeAST = nodePath.get('right')
     },
   })
 

@@ -21,7 +21,7 @@ const builders = {
   action: wrapTemp(`export type Action = UNION`),
 }
 
-function getPrefix({ opts: { filename } }: File, removePrefix: string = '') {
+function getPrefix({ opts: { filename } }: File, removePrefix: string) {
   const file = relative(join(process.cwd(), removePrefix), filename)
   return `${dirname(file)}/`
 }

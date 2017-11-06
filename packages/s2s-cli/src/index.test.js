@@ -59,6 +59,15 @@ test('Displayed "start" on the Consle', () => {
   expect(logSpy.mock.calls[0][0]).toMatch('start')
 })
 
+test('pluginsとtemplatesが渡されないとき', () => {
+  const opts = setup()
+  delete opts.plugins
+  delete opts.templates
+  watcher = m(opts)
+  expect(logSpy.mock.calls.length).toBe(1)
+  expect(logSpy.mock.calls[0][0]).toMatch('start')
+})
+
 test('ファイルが追加されたときhandlePluginsが呼ばれる', () => {
   watcher = m(setup())
   watcher.emit('add', 'hello')
