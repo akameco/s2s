@@ -4,6 +4,7 @@ import {
   getFlowBin,
   versionInfo,
   typeAtPos,
+  typeAtPosSync,
   getTypeFromFile,
   getTypeFromFileSync,
 } from '.'
@@ -39,17 +40,32 @@ test('getTypeAtPosがflowの型情報のオブジェクトを返す', async () =
   expect(info).toHaveProperty('type')
 })
 
-test('getTypeFromFileはflowの型情報の文字列を返す', async () => {
-  const t = await getTypeFromFile(cwd, filePath, ...pos)
-  expect(t).toBe('{age: ?number, id: number, name: string, sex?: string}')
+test('typeAtPosSyncはtypeプロパティを持つオブジェクトを返す', () => {
+  const info = typeAtPosSync(cwd, filePath, ...pos)
+  expect(info).toHaveProperty('type')
 })
 
-test('getTypeFromFileSyncはflowの型情報の文字列を返す', () => {
-  const t = getTypeFromFileSync(cwd, filePath, ...pos)
-  expect(t).toBe('{age: ?number, id: number, name: string, sex?: string}')
+test('typeAtPosSync: patが見つからないのとき空オブジェクトを返す', () => {
+  const info = typeAtPosSync('not-found', filePath, ...pos)
+  expect(info).toEqual({})
+})
+
+test('getTypeFromFileはflowの型情報の文字列を返す', async () => {
+  const t = await getTypeFromFile(cwd, filePath, ...pos)
+  expect(t).toMatchSnapshot()
 })
 
 test('getTypeFromFileはcwdがnullのときnullを返す', async () => {
   const t = await getTypeFromFile('not-found', filePath, ...pos)
+  expect(t).toBe(null)
+})
+
+test('getTypeFromFileSyncはflowの型情報の文字列を返す', () => {
+  const t = getTypeFromFileSync(cwd, filePath, ...pos)
+  expect(t).toMatchSnapshot()
+})
+
+test('getTypeFromFileSyncはcwdがnullのときnullを返す', () => {
+  const t = getTypeFromFileSync('not-found', filePath, ...pos)
   expect(t).toBe(null)
 })
