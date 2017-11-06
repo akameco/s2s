@@ -22,6 +22,16 @@ afterEach(() => {
   errorSpy.mockRestore()
 })
 
+test('toErrorStack', () => {
+  const err = new SyntaxError('error test')
+  // $FlowFixMe
+  err._babel = 'this is babel error'
+  // $FlowFixMe
+  err.codeFrame = 1
+  const result = utils.toErrorStack(err).replace('\n', '')
+  expect(result).toBe('SyntaxError: error test1')
+})
+
 test('getOutputPath when output = absolute path', () => {
   const result = utils.getOutputPath(__dirname, 'input')
   expect(result).toBe(__dirname)
