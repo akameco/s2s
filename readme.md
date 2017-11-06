@@ -63,9 +63,12 @@ $ yarn
 
 ### Usage
 
-Check out `s2s.config.js` in the root of the project.
-This is a setting file. `watch` set an direcotry that s2s watches, and `plugins` set an array of the plugins.
+Check out `s2s.config.js` in the root of the project. This is a setting file.
+
+`watch` set an direcotry that s2s watches, and `plugins` set an array of the plugins.
+
 You can write easy the file if you are familer with webpack.
+
 For more infomations, see [Config](https://github.com/akameco/s2s/tree/master/docs/ja/config.md).
 
 ```js
@@ -87,7 +90,8 @@ $ yarn run flow init # you have to run it before to run s2s
 $ yarn run s2s
 ```
 
-Open `src/index.js` with your favorite editor, type `var user: User` and save it.
+Opened `src/index.js` with your favorite editor, type `var user: User` and save it.
+
 Would s2s generate default values?
 
 It finishes Quick Start. Thanks!
@@ -95,7 +99,10 @@ It finishes Quick Start. Thanks!
 See [Getting Started Exmaple](https://github.com/akameco/s2s-plugins/tree/master/examples/getting-started)
 
 ## Combine plugins
-To compbine some plugins makes s2s more useful. Following example is that s2s generates an constant of Action and an Action Creator, a Reducer, a test of Reducer when you wrote the definition of the type of Action.
+
+With combinations of some plugins, it makes s2s more useful.
+
+This example is that s2s generates an constant of Action and an Action Creator, a Reducer, a test of Reducer when you wrote the definition of the type of Action.
 
 ![plugins](https://camo.qiitausercontent.com/2b3fc744eda2c6e569f437d8006c765c78bc9f20/68747470733a2f2f71696974612d696d6167652d73746f72652e73332e616d617a6f6e6177732e636f6d2f302f31353331392f37306239386664642d373338622d646464322d663866352d3932343435353763643734322e676966)
 
@@ -119,9 +126,8 @@ More Info? See Examples.
 
 ## Contributions
 
-For all contributions we are welcome.
-We are working with [all-contributors](https://github.com/kentcdodds/all-contributors)Spec
- in this repository.
+ For all contributions we are always welcome. and we are working with [all-contributors](https://github.com/kentcdodds/all-contributors)  Specifications in this repository.
+
 If you contributed our project with writting a code and test, then type this command.
 
 ```
