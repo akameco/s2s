@@ -18,6 +18,7 @@ $ yarn add --dev s2s
 Babelのバージョンは6です。
 
 - [s2s-handler-babel](./s2s-handler-babel)
+- [s2s-handler-babel-next](./s2s-handler-babel-next)
 - [s2s-handler-typescript](./s2s-handler-typescript)
 
 ## Plugins

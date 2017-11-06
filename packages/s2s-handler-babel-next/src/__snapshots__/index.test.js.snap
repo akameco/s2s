@@ -1,0 +1,5 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`handlerは変換後のコードを返す 1`] = `"const hellofixture = \\"hello\\";"`;
+
+exports[`pluginがArrayの場合、変換後のCodeを返す 1`] = `"const hellofixture = \\"hello\\";"`;
