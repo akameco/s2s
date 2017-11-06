@@ -135,3 +135,10 @@ test('onlyオプションがeventTypeと不一致のとき、hanlderを呼ばな
   plugins.default(getEventPath('a.js'), 'add', [plugin])
   expect(writeSpy).not.toHaveBeenCalled()
 })
+
+test('lockが機能しているか', () => {
+  const plugin = { test: /a.js/, plugin: _plugin }
+  plugins.default(getEventPath('a.js'), 'add', [plugin])
+  plugins.default(getEventPath('a.js'), 'add', [plugin])
+  expect(logSpy).toHaveBeenCalledTimes(1)
+})
