@@ -47,6 +47,12 @@ test('sync: ファイルとポジションを受け取り、その型を初期�
   })
 })
 
+test('ジェネリックタイプかつパラメータがない場合nullを返す', async () => {
+  const filePath = getFixturePath('basic.js')
+  const result = await flowFaker(filePath, { row: 27, column: 5 })
+  expect(result).toEqual(null)
+})
+
 test('astToObjにnodeではないオブジェクトを渡したときnullを返す', () => {
   expect(astToObj({ node: {} })).toBe(null)
 })
