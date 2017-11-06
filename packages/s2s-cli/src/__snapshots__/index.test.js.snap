@@ -1,9 +1,9 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`throw error when opts.after !== Array 1`] = `"Expected a Array got string"`;
+exports[`throw errors opts.after !== Array 1`] = `"Expected a Array got string"`;
 
-exports[`throw error when opts.plugins !== Array 1`] = `"Expected a Array, got string"`;
+exports[`throw errors opts.plugins !== Array 1`] = `"Expected a Array, got string"`;
 
-exports[`throw error when opts.templates !== Array 1`] = `"Expected a Array got string"`;
+exports[`throw errors opts.templates !== Array 1`] = `"Expected a Array got string"`;
 
-exports[`throw error when opts.watch == null 1`] = `"required watch"`;
+exports[`throw errors opts.watch == null 1`] = `"required watch"`;
