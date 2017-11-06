@@ -1,6 +1,6 @@
 // @flow
 import stripAnsi from 'strip-ansi'
-import { formatText, trimAndFormatPath } from '../'
+import { formatText, trimAndFormatPath } from '.'
 
 test('trimAndFormatPath', () => {
   expect(

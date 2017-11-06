@@ -4,9 +4,9 @@ import stripAnsi from 'strip-ansi'
 import KeyLocker from 'key-locker'
 import * as babel from 'babel-core'
 import defaultHandler from 's2s-handler-babel'
-import * as utils from '../../utils'
-import * as plugins from '../plugins'
-import _plugin from './helpers/identifer-reverse-plugin'
+import * as utils from '../utils'
+import * as plugins from './plugins'
+import _plugin from './__tests__/helpers/identifer-reverse-plugin'
 
 let errorSpy
 let logSpy
@@ -16,7 +16,8 @@ const lock = new KeyLocker()
 
 const fn = x => x
 
-const getEventPath = (...p) => path.resolve(__dirname, 'fixtures', ...p)
+const getEventPath = (...p) =>
+  path.resolve(__dirname, '__tests__', 'fixtures', ...p)
 jest.useFakeTimers()
 
 beforeEach(() => {

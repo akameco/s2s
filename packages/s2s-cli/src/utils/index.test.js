@@ -1,7 +1,7 @@
 // @flow
 import fs from 'fs'
-import * as utils from '..'
 import * as babel from 'babel-core'
+import * as utils from '.'
 
 let logSpy
 let transformSpy
