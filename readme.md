@@ -9,6 +9,8 @@
 [![lerna](https://img.shields.io/badge/maintained%20with-lerna-cc00ff.svg)](https://lernajs.io/)
 [![All Contributors](https://img.shields.io/badge/all_contributors-3-orange.svg?style=flat-square)](#contributors)
 
+## [日本語](https://github.com/akameco/s2s/tree/master/docs/ja)
+(readmeの最新版は日本語です)
 
 ## Ultra-fast coding by AST assist
 
@@ -106,12 +108,12 @@ More Info? See Examples.
 
 ## Official Plugins
 
-- [**babel-plugin-s2s-action-types**<br>generate redux action types](https://github.com/akameco/s2s-plugins/tree/master/packages/babel-plugin-s2s-action-types)
-- [**babel-plugin-s2s-action-creater**<br>generate redux action creater](https://github.com/akameco/s2s-plugins/tree/master/packages/babel-plugin-s2s-action-creater)
-- [**babel-plugin-s2s-action-root**<br>compose flow + redux action types](https://github.com/akameco/s2s-plugins/tree/master/packages/babel-plugin-s2s-action-root)
-- [**babel-plugin-s2s-state-root**<br>compose flow + redux state types](https://github.com/akameco/s2s-plugins/tree/master/packages/babel-plugin-s2s-state-root)
-- [**babel-plugin-s2s-reducer-root**<br>compose redux reducer](https://github.com/akameco/s2s-plugins/tree/master/packages/babel-plugin-s2s-reducer-root)
-- [**babel-plugin-s2s-reducer-test-case**<br>create reducer test using switch/case](https://github.com/akameco/s2s-plugins/tree/master/packages/babel-plugin-s2s-reducer-test-case)
+- [**babel-plugin-s2s-action-types**<br>generate redux action types](https://github.com/akameco/s2s/tree/master/packages/babel-plugin-s2s-action-types)
+- [**babel-plugin-s2s-action-creater**<br>generate redux action creater](https://github.com/akameco/s2s/tree/master/packages/babel-plugin-s2s-action-creater)
+- [**babel-plugin-s2s-action-root**<br>compose flow + redux action types](https://github.com/akameco/s2s/tree/master/packages/babel-plugin-s2s-action-root)
+- [**babel-plugin-s2s-state-root**<br>compose flow + redux state types](https://github.com/akameco/s2s/tree/master/packages/babel-plugin-s2s-state-root)
+- [**babel-plugin-s2s-reducer-root**<br>compose redux reducer](https://github.com/akameco/s2s/tree/master/packages/babel-plugin-s2s-reducer-root)
+- [**babel-plugin-s2s-reducer-test-case**<br>create reducer test using switch/case](https://github.com/akameco/s2s/tree/master/packages/babel-plugin-s2s-reducer-test-case)
 
 ## Contributors
 
