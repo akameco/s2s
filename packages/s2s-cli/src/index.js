@@ -6,7 +6,6 @@ import prettierHook from 's2s-hook-prettier'
 import type { Opts, Path } from 'types'
 import handlePlugins from './handlers/plugins'
 import handleTemplates from './handlers/templates'
-import { log } from './utils'
 
 function createWatcher(rootPath: Path) {
   const watcher = chokidar.watch(rootPath, {
@@ -61,11 +60,11 @@ export default ({
     })
   }
 
-  log(
-    `${chalk.bold('s2s')} started monitoring. Enjoy coding with ${chalk.bold(
-      's2s'
-    )}.`
-  )
+  const msg = `${chalk.bold(
+    's2s'
+  )} started monitoring. Enjoy coding with ${chalk.bold('s2s')}.`
+
+  console.log(msg)
 
   return watcher
 }

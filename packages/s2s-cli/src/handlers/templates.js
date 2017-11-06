@@ -4,7 +4,7 @@ import chalk from 'chalk'
 import cpFile from 'cp-file'
 import type { Path, Template } from 'types'
 import { formatText, trimAndFormatPath } from '../reporters'
-import { log, isAlreadyExist, relativeFromCwd, getOutputPath } from '../utils'
+import { isAlreadyExist, relativeFromCwd, getOutputPath } from '../utils'
 
 type CopyError = Error & { path: string, code: string }
 
@@ -14,9 +14,9 @@ function handleCopyError(err: CopyError): void {
       'TEMPLATE'
     )} ${trimAndFormatPath(err.path)}
           no such file or directory`
-    log(errorText)
+    console.log(errorText)
   } else {
-    log(err.stack)
+    console.log(err.stack)
   }
 }
 
@@ -42,7 +42,7 @@ function handleTemplate(
   const templatePath = path.join(templatesDir, template.input)
   cpFile.sync(templatePath, outputPath)
 
-  log(formatText('TEMPLATE', relativeFromCwd(templatePath), outputPath))
+  console.log(formatText('TEMPLATE', relativeFromCwd(templatePath), outputPath))
 }
 
 export default function handleTemplates(

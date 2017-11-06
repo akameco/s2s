@@ -1,18 +1,17 @@
 // @flow
 import type { Opts } from 'types'
 import m from '.'
-import * as utils from './utils'
 
-let mock
+let logSpy
 const watchers = []
 
 beforeEach(() => {
-  mock = jest.spyOn(utils, 'log')
-  mock.mockImplementation(x => x)
+  logSpy = jest.spyOn(console, 'log')
+  logSpy.mockImplementation(x => x)
 })
 
 afterEach(() => {
-  mock.mockRestore()
+  logSpy.mockRestore()
   for (const w of watchers) {
     w.close()
   }
@@ -67,6 +66,6 @@ test('not throw when no args', () => {
 
 test('Displayed "start" on the Consle', () => {
   expect(addToWatchers()).not.toThrow()
-  expect(mock.mock.calls.length).toBe(1)
-  expect(mock.mock.calls[0][0]).toMatch('start')
+  expect(logSpy.mock.calls.length).toBe(1)
+  expect(logSpy.mock.calls[0][0]).toMatch('start')
 })

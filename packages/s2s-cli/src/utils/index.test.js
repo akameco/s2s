@@ -22,11 +22,6 @@ afterEach(() => {
   errorSpy.mockRestore()
 })
 
-test('log', () => {
-  utils.log('hello')
-  expect(logSpy).toHaveBeenCalledWith('hello')
-})
-
 test('getOutputPath when output = absolute path', () => {
   const result = utils.getOutputPath(__dirname, 'input')
   expect(result).toBe(__dirname)

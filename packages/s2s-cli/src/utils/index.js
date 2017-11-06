@@ -3,10 +3,6 @@ import path from 'path'
 import fs from 'fs'
 import type { Path } from 'types'
 
-export function log(msg: string) {
-  console.log(msg)
-}
-
 // eslint-disable-next-line flowtype/no-weak-types
 export function toErrorStack(err: Object) {
   if (err._babel && err instanceof SyntaxError) {

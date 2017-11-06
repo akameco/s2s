@@ -23,7 +23,7 @@ jest.useFakeTimers()
 beforeEach(() => {
   jest.runAllTimers()
   errorSpy = jest.spyOn(console, 'error').mockImplementation(fn)
-  logSpy = jest.spyOn(utils, 'log').mockImplementation(fn)
+  logSpy = jest.spyOn(console, 'log').mockImplementation(fn)
   writeSpy = jest.spyOn(utils, 'writeFileSync').mockImplementation(fn)
 })
 
