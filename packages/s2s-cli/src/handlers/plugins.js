@@ -8,7 +8,6 @@ import {
   getOutputPath,
   writeFileSync,
   toErrorStack,
-  log,
   relativeFromCwd,
   resolveInputPath,
 } from '../utils'
@@ -44,7 +43,7 @@ export function handlePlugin(
     : eventPath
 
   writeFileSync(outputPath, result)
-  log(formatText('S2S', relativeFromCwd(eventPath), outputPath))
+  console.log(formatText('S2S', relativeFromCwd(eventPath), outputPath))
 }
 
 const lock = new KeyLocker()

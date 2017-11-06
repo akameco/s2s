@@ -1,72 +1,89 @@
 // @flow
+import cases from 'jest-in-case'
 import type { Opts } from 'types'
+import * as plugins from './handlers/plugins'
+import * as templates from './handlers/templates'
 import m from '.'
-import * as utils from './utils'
 
-let mock
-const watchers = []
+let logSpy
+let handlePluginsSpy
+let handleTemplateSpy
+let watcher
+
+function setup(opts: $Shape<Opts>) {
+  return {
+    watch: 'app',
+    plugins: [{ test: /dummy/, plugin: 'dummy' }],
+    templates: [{ test: /dummy/, input: 'dummy' }],
+    ...opts,
+  }
+}
 
 beforeEach(() => {
-  mock = jest.spyOn(utils, 'log')
-  mock.mockImplementation(x => x)
+  logSpy = jest.spyOn(console, 'log').mockImplementation(x => x)
+  handlePluginsSpy = jest.spyOn(plugins, 'default')
+  handleTemplateSpy = jest.spyOn(templates, 'default')
 })
 
 afterEach(() => {
-  mock.mockRestore()
-  for (const w of watchers) {
-    w.close()
+  logSpy.mockRestore()
+  handlePluginsSpy.mockRestore()
+  handleTemplateSpy.mockRestore()
+  if (watcher && watcher.close) {
+    watcher.close()
   }
 })
 
-const setup = (opts: $Shape<Opts>) => ({
-  watch: 'app',
-  plugins: [],
-  templates: [],
-  ...opts,
-})
-
-const addToWatchers = (opts: $Shape<Opts>) => () => {
-  watchers.push(m(setup(opts)))
-}
-
-test('export function', () => {
-  expect(typeof m).toBe('function')
-})
-
-test('throw error when opts.watch == null', () => {
-  expect(() => {
+cases(
+  'throw errors',
+  opts => {
+    expect(() => {
+      m(setup(opts.input))
+    }).toThrowErrorMatchingSnapshot()
+  },
+  [
     // $FlowFixMe
-    m({ watch: null })
-  }).toThrowErrorMatchingSnapshot()
-})
-
-test('throw error when opts.plugins !== Array', () => {
-  expect(() => {
+    { name: 'opts.watch == null', input: { watch: null } },
     // $FlowFixMe
-    m(setup({ plugins: 'not array' }))
-  }).toThrowErrorMatchingSnapshot()
-})
-
-test('throw error when opts.templates !== Array', () => {
-  expect(() => {
+    { name: 'opts.plugins !== Array', input: { plugins: 'not array' } },
     // $FlowFixMe
-    m(setup({ templates: 'string' }))
-  }).toThrowErrorMatchingSnapshot()
-})
-
-test('throw error when opts.after !== Array', () => {
-  expect(() => {
+    { name: 'opts.templates !== Array', input: { templates: 'string' } },
     // $FlowFixMe
-    m(setup({ afterHooks: 'string' }))
-  }).toThrowErrorMatchingSnapshot()
-})
-
-test('not throw when no args', () => {
-  expect(addToWatchers()).not.toThrow()
-})
+    { name: 'opts.after !== Array', input: { afterHooks: 'string' } },
+  ]
+)
 
 test('Displayed "start" on the Consle', () => {
-  expect(addToWatchers()).not.toThrow()
-  expect(mock.mock.calls.length).toBe(1)
-  expect(mock.mock.calls[0][0]).toMatch('start')
+  watcher = m(setup())
+  expect(logSpy.mock.calls.length).toBe(1)
+  expect(logSpy.mock.calls[0][0]).toMatch('start')
+})
+
+test('ファイルが追加されたときhandlePluginsが呼ばれる', () => {
+  watcher = m(setup())
+  watcher.emit('add', 'hello')
+  const result = handlePluginsSpy.mock.calls[0]
+  expect(result[0]).toBe('hello')
+  expect(result[1]).toBe('add')
+  expect(result[2]).toEqual([{ plugin: 'dummy', test: /dummy/ }])
+})
+
+test('pluginsがない場合、ファイルが追加されたときhandlePluginsは呼ばれない', () => {
+  watcher = m(setup({ plugins: [] }))
+  watcher.emit('add', 'hello')
+  expect(handlePluginsSpy).not.toBeCalled()
+})
+
+test('ファイルが追加されたときhandleTemplatesが呼ばれる', () => {
+  watcher = m(setup())
+  watcher.emit('add', 'hello')
+  const result = handleTemplateSpy.mock.calls[0]
+  const expected = ['hello', [{ input: 'dummy', test: /dummy/ }], undefined]
+  expect(result).toEqual(expected)
+})
+
+test('templatesがない場合、ファイルが追加されたときhandleTemplatesは呼ばれない', () => {
+  watcher = m(setup({ templates: [] }))
+  watcher.emit('add', 'hello')
+  expect(handleTemplateSpy).not.toBeCalled()
 })

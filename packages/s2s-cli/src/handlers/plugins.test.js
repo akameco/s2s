@@ -23,7 +23,7 @@ jest.useFakeTimers()
 beforeEach(() => {
   jest.runAllTimers()
   errorSpy = jest.spyOn(console, 'error').mockImplementation(fn)
-  logSpy = jest.spyOn(utils, 'log').mockImplementation(fn)
+  logSpy = jest.spyOn(console, 'log').mockImplementation(fn)
   writeSpy = jest.spyOn(utils, 'writeFileSync').mockImplementation(fn)
 })
 
@@ -134,4 +134,11 @@ test('onlyオプションがeventTypeと不一致のとき、hanlderを呼ばな
   const plugin = { test: /a.js/, plugin: _plugin, only: ['unlink'] }
   plugins.default(getEventPath('a.js'), 'add', [plugin])
   expect(writeSpy).not.toHaveBeenCalled()
+})
+
+test('lockが機能しているか', () => {
+  const plugin = { test: /a.js/, plugin: _plugin }
+  plugins.default(getEventPath('a.js'), 'add', [plugin])
+  plugins.default(getEventPath('a.js'), 'add', [plugin])
+  expect(logSpy).toHaveBeenCalledTimes(1)
 })

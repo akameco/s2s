@@ -45,7 +45,6 @@ function typeImport(
     [t.importSpecifier(t.identifier(local), t.identifier(imported))],
     t.stringLiteral(source)
   )
-  // $FlowFixMe
   im.importKind = 'type'
   return im
 }

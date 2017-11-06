@@ -1,12 +1,7 @@
 // @flow
 import path from 'path'
 import fs from 'fs'
-
-type Path = string
-
-export function log(msg: string) {
-  console.log(msg)
-}
+import type { Path } from 'types'
 
 // eslint-disable-next-line flowtype/no-weak-types
 export function toErrorStack(err: Object) {

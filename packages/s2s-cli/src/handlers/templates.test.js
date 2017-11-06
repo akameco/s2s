@@ -4,7 +4,6 @@ import rimraf from 'rimraf'
 import cpFile from 'cp-file'
 import stripAnsi from 'strip-ansi'
 import pathExists from 'path-exists'
-import * as utils from '../utils'
 import * as templates from './templates'
 
 let logSpy
@@ -17,7 +16,7 @@ const eventPath = getEventPath('copy-result.js')
 beforeEach(() => {
   rimraf.sync(getEventPath('copy-result.js'))
   rimraf.sync(getEventPath('output.js'))
-  logSpy = jest.spyOn(utils, 'log').mockImplementation(fn)
+  logSpy = jest.spyOn(console, 'log').mockImplementation(fn)
 })
 
 afterEach(() => {
