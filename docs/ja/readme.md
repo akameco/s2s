@@ -15,17 +15,17 @@
 詳しくは、[examples](https://github.com/akameco/s2s/tree/master/examples)を見てください。
 
 ## コンセプト
-ソースコードからソースコードへのリアルタイムコード生成。
-あなたのエディアを監視して、リアルタイムにコードを生成します。
+ソースコードからソースコードへのリアルタイムコード生成。  
+あなたのエディタを監視して、リアルタイムにコードを生成します。
 
-ファイル名がマッチするとき、1つのBabelPluginを実行後、prettierでフォーマットし、それをコードへと反映します。
+変更したファイル名が一致すると、単一のBabelPluginを実行し、それをコードへと反映します。
+
+<img src="https://github.com/akameco/logos/blob/master/s2s/s2s-concept.png?raw=true" height=600 />
 
 ### 利点
 
 - エディタにロックインされません。AtomでもVSCodeでも使えます。
 - s2s自体にロックインされません。単なるBabelPluginを書くだけで拡張できます。
-
-<img src="https://github.com/akameco/logos/blob/master/s2s/s2s-concept.png?raw=true" height=600 />
 
 
 ## Articles
@@ -38,7 +38,7 @@
 ## Users
 [SSconnect/ssconnect]( https://github.com/SSconnect/ssconnect)
 
-> もし、あなたの会社やプロジェクトでs2sを使っているなら、プルリクエストを送ってリストに追加してください。(アルファベット順でお願いします)
+> もし、あなたの会社やプロジェクトでs2sを使っている場合は、プルリクエストを送ってリストに追加してくださると嬉しいです。(アルファベット順でお願いします)
 
 ## クイックスタート
 では、本当に小さいサンプルから始めましょう。
@@ -101,13 +101,12 @@ $ yarn run s2s
 
 ## プラグイン
 ### プラグインを組み合わせる
-複数のプラグインを組みわせると、より力を発揮します。
+複数のプラグインを組みわせると、より力を発揮します。  
 以下の例は、Actionの型を定義すると、Actionの定数、アクションクリエイター、reducer、reducerのテストをそれぞれ生成します。
 
 ![plugins](https://camo.qiitausercontent.com/2b3fc744eda2c6e569f437d8006c765c78bc9f20/68747470733a2f2f71696974612d696d6167652d73746f72652e73332e616d617a6f6e6177732e636f6d2f302f31353331392f37306239386664642d373338622d646464322d663866352d3932343435353763643734322e676966)
 
-もっと多くの情報が必要ですか？
-Examplesを確認してください。
+もっと多くの情報が必要ですか？ Examplesを確認してください。
 
 ### もっとExamples
 
