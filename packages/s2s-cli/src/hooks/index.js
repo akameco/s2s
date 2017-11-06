@@ -2,12 +2,12 @@
 import type { Path, AfterHook } from 'types'
 
 export default function runHooks(
-  input: Path,
   code: string,
+  input: Path,
   hooks: AfterHook[] = []
 ) {
   const result = hooks.reduce((prev, next) => {
-    return next(input, prev)
+    return next(prev, input)
   }, code)
 
   return result

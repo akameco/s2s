@@ -15,14 +15,14 @@ test('call hooks', () => {
 
 test('return formated code when run prettierHook', () => {
   const hooks = [prettierHook()]
-  expect(runHooks('', code, hooks).trim()).toEqual(expected)
+  expect(runHooks(code, '', hooks).trim()).toEqual(expected)
 })
 
 test('run prettierHook with no hooks', () => {
-  expect(runHooks('', code).trim()).toEqual(code)
+  expect(runHooks(code, '').trim()).toEqual(code)
 })
 
 test('run prettierHook with some hooks', () => {
   const hooks = [prettierHook(), prettierHook()]
-  expect(runHooks('', code, hooks).trim()).toEqual(expected)
+  expect(runHooks(code, '', hooks).trim()).toEqual(expected)
 })
