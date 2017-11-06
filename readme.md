@@ -111,7 +111,7 @@ More Info? See Examples.
 - [**babel-plugin-s2s-action-root**<br>compose flow + redux action types](https://github.com/akameco/s2s-plugins/tree/master/packages/babel-plugin-s2s-action-root)
 - [**babel-plugin-s2s-state-root**<br>compose flow + redux state types](https://github.com/akameco/s2s-plugins/tree/master/packages/babel-plugin-s2s-state-root)
 - [**babel-plugin-s2s-reducer-root**<br>compose redux reducer](https://github.com/akameco/s2s-plugins/tree/master/packages/babel-plugin-s2s-reducer-root)
-- [**babel-plugin-s2s-reducer-root**<br>create reducer test using switch/case](https://github.com/akameco/s2s-plugins/tree/master/packages/babel-plugin-s2s-reducer-test-case)
+- [**babel-plugin-s2s-reducer-test-case**<br>create reducer test using switch/case](https://github.com/akameco/s2s-plugins/tree/master/packages/babel-plugin-s2s-reducer-test-case)
 
 ## Contributors
 
