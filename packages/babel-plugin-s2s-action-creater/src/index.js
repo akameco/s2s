@@ -96,7 +96,6 @@ export default () => {
           const constImport = createImport(actions)
           const typeImport = createImport(typeNames)
 
-          // $FlowFixMe
           typeImport.importKind = 'type'
 
           programPath.node.body = [
