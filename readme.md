@@ -135,13 +135,13 @@ More Info? See Examples.
 If you contributed our project with writting a code and test, then type this command.
 
 ```
-$ yarn run all-contributors <GitHub Username> code,test
+$ yarn run add-contributors <GitHub Username> code,test
 ```
 
 If you contibuted our project with adding documents and fixing them, then type this command.
 
 ```
-$ yarn run all-contributors <GitHub Username> doc
+$ yarn run add-contributors <GitHub Username> doc
 ```
 
 For more infomations, refer [all-contributors](https://github.com/kentcdodds/all-contributors).

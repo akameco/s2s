@@ -127,18 +127,18 @@ reduxとflowtypeを組み合わせた例。
 ## 貢献
 どのような貢献でもウェルカムです。
 
-また、このレポジトリは、[all-contributors](https://github.com/kentcdodds/all-contributors)Specに従って運用しています。
+また、このレポジトリは、[add-contributors](https://github.com/kentcdodds/all-contributors)Specに従って運用しています。
 
 あたながコードとテストを書いて貢献した場合、以下のコマンドを打ってください。
 
 ```
-$ yarn run all-contributors GitHubのアカウント名 code,test
+$ yarn run add-contributors GitHubのアカウント名 code,test
 ```
 
 また、ドキュメントの追加や修正を行った場合は以下のコマンドです。
 
 ```
-$ yarn run all-contributors GitHubのアカウント名 doc
+$ yarn run add-contributors GitHubのアカウント名 doc
 ```
 
 詳しくは、[all-contributors](https://github.com/kentcdodds/all-contributors)を参照してください。
