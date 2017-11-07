@@ -22,7 +22,7 @@
     "validate": "yarn flow && yarn lint && yarn test"
   },
   "lint-staged": {
-    "*.js": ["fmt", "validate", "git add"],
+    "*.js": ["fmt", "flow", "lint", "git add"],
     "*.json": ["fmt", "git add"]
   },
   "devDependencies": {
