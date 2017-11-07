@@ -20,7 +20,7 @@
 
 <img src="https://raw.githubusercontent.com/akameco/s2s-examples/master/media/demo.gif" />
 
-See Examples [akameco/s2s-examples](https://github.com/akameco/s2s-examples)
+See Examples [examples](./examples)
 
 ## Concept
 
