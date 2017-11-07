@@ -8,13 +8,13 @@ export type FlowVersionInfo = {
   build_id: string,
 }
 
-const BIN_NAME = process.platform === 'win32' ? 'flow.exe' : 'flow'
-const FLOW_BIN_PATH = path.join('node_modules', '.bin', BIN_NAME)
-
 const noop = () => null
 
 export function getFlowBin(cwd: string) {
-  return path.resolve(cwd, FLOW_BIN_PATH)
+  const bin = process.platform === 'win32' ? 'flow.exe' : 'flow'
+  const flowBinPath = path.join('node_modules', '.bin', bin)
+
+  return path.resolve(cwd, flowBinPath)
 }
 
 async function execFlow(
