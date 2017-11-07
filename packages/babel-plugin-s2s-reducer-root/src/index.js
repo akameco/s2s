@@ -1,6 +1,6 @@
 // @flow
 import * as t from 'babel-types'
-import { removeFlowComment, addFlowComment } from 'babel-add-flow-comments'
+import flowComment from 'babel-add-flow-comments'
 import globby from 'globby'
 import upperCamelCase from 'uppercamelcase'
 import type { Path, State } from 's2s-babel-flow-types'
@@ -25,8 +25,6 @@ export default () => {
     name: 's2s-reducer-root',
     visitor: {
       Program(programPath: Path, state: State) {
-        const { file } = state
-        removeFlowComment(file.ast.comments)
         const { input, output } = state.opts
         const globOptions = Object.assign(
           { absolute: true },
@@ -59,7 +57,7 @@ export default () => {
           builders.root({ OBJ: t.objectExpression(props) }),
         ]
 
-        addFlowComment(programPath)
+        flowComment(programPath)
       },
     },
   }
