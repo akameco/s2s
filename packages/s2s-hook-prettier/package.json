@@ -12,6 +12,6 @@
   "files": ["lib"],
   "keywords": ["s2s", "prettier", "hook"],
   "dependencies": {
-    "prettier": "^1.7.4"
+    "prettier": "^1.8.0"
   }
 }

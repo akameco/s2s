@@ -87,11 +87,19 @@ describe('ASTをjsのオブジェクトに変換する', () => {
 
     astTest('nullableな型の場合nullを返す', '{age: ?number}', { age: null })
 
-    astTest('オプショナルな型の場合{}を返す {age?: number}', '{age?: number}', {})
+    astTest(
+      'オプショナルな型の場合{}を返す {age?: number}',
+      '{age?: number}',
+      {}
+    )
 
-    astTest('ネストした型の場合、ネストしたオブジェクトを返す', '{user: {id: number, name: string} }', {
-      user: { id: 'number', name: 'string' },
-    })
+    astTest(
+      'ネストした型の場合、ネストしたオブジェクトを返す',
+      '{user: {id: number, name: string} }',
+      {
+        user: { id: 'number', name: 'string' },
+      }
+    )
   })
 
   describe('ArrayTypeAnnotation型のとき配列を返す', () => {
