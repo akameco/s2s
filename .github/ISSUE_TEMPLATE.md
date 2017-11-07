@@ -1,4 +1,6 @@
 <!--
+English/日本語
+
 Thanks for your interest in the project. I appreciate bugs filed and PRs submitted!
 Please make sure that you are familiar with and follow the Code of Conduct for
 this project (found in the CODE_OF_CONDUCT.md file).
@@ -10,6 +12,8 @@ I'll probably ask you to submit the fix (after giving some direction). If you've
 never done that before, that's great! Check this free short video tutorial to
 learn how: http://kcd.im/pull-request
 
+全て日本語で入力して構いません。
+もし、あなたが日本語に精通していればそちらの方が素早い対応ができます。
 
 プロジェクトに興味を持ってくれてありがとうございます。提出されたバグとPRに感謝します！
 このプロジェクトの行動規範(CODE_OF_CONDUCT)を確認し、それに従ってください。（CODE_OF_CONDUCT.mdファイルにあります）
