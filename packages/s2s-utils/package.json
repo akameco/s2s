@@ -3,7 +3,7 @@
   "version": "0.4.1",
   "description": "s2s utils",
   "license": "MIT",
-  "repository": "akameco/s2s-plugins",
+  "repository": "akameco/s2s",
   "author": "akameco <akameco.t@gmail.com>",
   "main": "index.js",
   "files": ["index.js"],

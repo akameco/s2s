@@ -3,7 +3,7 @@
   "version": "0.1.1",
   "description": "variable initializing with type info",
   "license": "MIT",
-  "repository": "akameco/s2s-plugins",
+  "repository": "akameco/s2s",
   "author": {
     "name": "akameco",
     "email": "akameco.t@gmail.com",

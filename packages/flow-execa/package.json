@@ -3,7 +3,7 @@
   "version": "0.1.2",
   "description": "execute flow-bin",
   "license": "MIT",
-  "repository": "akameco/s2s-plugins",
+  "repository": "akameco/s2s",
   "author": "akameco <akameco.t@gmail.com>",
   "main": "lib/index.js",
   "files": ["lib", "src"],
