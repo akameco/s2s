@@ -5,7 +5,7 @@
     "node": ">=8"
   },
   "scripts": {
-    "all-contributors": "all-contributors add",
+    "add-contributors": "all-contributors add",
     "build": "node ./scripts/build",
     "lint": "eslint .",
     "flow": "flow",
