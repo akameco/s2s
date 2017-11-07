@@ -11,7 +11,7 @@ export type FlowVersionInfo = {
 const BIN_NAME = process.platform === 'win32' ? 'flow.exe' : 'flow'
 const FLOW_BIN_PATH = path.join('node_modules', '.bin', BIN_NAME)
 
-const nullFn = () => null
+const noop = () => null
 
 export function getFlowBin(cwd: string) {
   return path.resolve(cwd, FLOW_BIN_PATH)
@@ -21,7 +21,7 @@ async function execFlow(
   cwd: string,
   params: $ReadOnlyArray<string>
 ): Promise<Object> {
-  const output = await execa.stdout(getFlowBin(cwd), params).catch(nullFn)
+  const output = await execa.stdout(getFlowBin(cwd), params).catch(noop)
   return JSON.parse(output)
 }
 
@@ -35,7 +35,7 @@ function execFlowSync(cwd: string, params: $ReadOnlyArray<string>): Object {
 }
 
 export async function versionInfo(cwd: string): Promise<?FlowVersionInfo> {
-  const json = await execFlow(cwd, ['version', '--json']).catch(nullFn)
+  const json = await execFlow(cwd, ['version', '--json']).catch(noop)
   return json
 }
 
