@@ -3,7 +3,7 @@ import flowSyntax from 'babel-plugin-syntax-flow'
 import * as t from 'babel-types'
 import snakeCase from 'lodash.snakecase'
 import camelCase from 'lodash.camelcase'
-import { removeFlowComment, addFlowComment } from 'babel-add-flow-comments'
+import flowComment from 'babel-add-flow-comments'
 import { template } from 's2s-utils'
 import type { Path, State } from 's2s-babel-flow-types'
 // import blog from 'babel-log'
@@ -38,7 +38,6 @@ export default () => {
         exit(programPath: Path, state: State) {
           const { file } = state
           const basename = file.opts.basename
-          removeFlowComment(file.ast.comments)
 
           const imports = []
           const typeNames = []
@@ -106,7 +105,7 @@ export default () => {
             ...funcs,
           ]
 
-          addFlowComment(programPath)
+          flowComment(programPath)
         },
       },
     },

@@ -1,7 +1,7 @@
 // @flow
 import flowSyntax from 'babel-plugin-syntax-flow'
 import * as t from 'babel-types'
-import { removeFlowComment, addFlowComment } from 'babel-add-flow-comments'
+import flowComment from 'babel-add-flow-comments'
 import globby from 'globby'
 import upperCamelCase from 'uppercamelcase'
 import {
@@ -31,13 +31,11 @@ export default () => {
     name: 's2s-action-root',
     visitor: {
       Program: {
-        exit(programPath: Path, state: State) {
-          const { file } = state
-          removeFlowComment(file.ast.comments)
-          const { input, output } = state.opts
+        exit(programPath: Path, { opts }: State) {
+          const { input, output } = opts
           const globOptions = Object.assign(
             { absolute: true },
-            state.opts.globOptions
+            opts.globOptions
           )
 
           if (!input) {
@@ -71,7 +69,7 @@ export default () => {
             action,
           ]
 
-          addFlowComment(programPath)
+          flowComment(programPath)
         },
       },
     },
