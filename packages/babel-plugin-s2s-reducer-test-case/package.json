@@ -1,6 +1,6 @@
 {
   "name": "babel-plugin-s2s-reducer-test-case",
-  "version": "0.4.5",
+  "version": "0.4.6",
   "description": "create reducer test using switch/case",
   "license": "MIT",
   "repository": "akameco/s2s",
@@ -21,9 +21,9 @@
     "babel-polyfill": "^6.26.0",
     "babel-types": "^6.26.0",
     "camelcase": "^4.1.0",
-    "s2s-babel-flow-types": "^0.2.1",
-    "s2s-helper-get-initial-state": "^0.2.2",
-    "s2s-helper-get-reducer-case": "^0.2.2",
-    "s2s-utils": "^0.4.1"
+    "s2s-babel-flow-types": "^0.2.2",
+    "s2s-helper-get-initial-state": "^0.2.3",
+    "s2s-helper-get-reducer-case": "^0.2.3",
+    "s2s-utils": "^0.4.2"
   }
 }

@@ -1,6 +1,6 @@
 {
   "name": "s2s-plugins-redux",
-  "version": "0.3.2",
+  "version": "0.3.3",
   "description": "s2s plugins for redux",
   "license": "MIT",
   "repository": "akameco/s2s",
@@ -15,13 +15,13 @@
   "main": "index.js",
   "files": ["index.js"],
   "dependencies": {
-    "babel-plugin-s2s-action-creater": "^0.2.5",
-    "babel-plugin-s2s-action-root": "^0.3.5",
-    "babel-plugin-s2s-action-types": "^0.4.5",
-    "babel-plugin-s2s-initial-state-creater": "^0.2.2",
-    "babel-plugin-s2s-reducer-case-creater": "^0.1.4",
-    "babel-plugin-s2s-reducer-root": "^0.2.5",
-    "babel-plugin-s2s-reducer-test-case": "^0.4.5",
-    "babel-plugin-s2s-state-root": "^0.2.5"
+    "babel-plugin-s2s-action-creater": "^0.2.6",
+    "babel-plugin-s2s-action-root": "^0.3.6",
+    "babel-plugin-s2s-action-types": "^0.4.6",
+    "babel-plugin-s2s-initial-state-creater": "^0.2.3",
+    "babel-plugin-s2s-reducer-case-creater": "^0.1.5",
+    "babel-plugin-s2s-reducer-root": "^0.2.6",
+    "babel-plugin-s2s-reducer-test-case": "^0.4.6",
+    "babel-plugin-s2s-state-root": "^0.2.6"
   }
 }
