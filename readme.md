@@ -13,7 +13,7 @@
 [![Examples](https://img.shields.io/badge/%F0%9F%92%A1-examples-8C8E93.svg?style=flat-square)](./examples)
 [![All Contributors](https://img.shields.io/badge/all_contributors-4-orange.svg?style=flat-square)](#contributors)
 
-## [日本語](https://github.com/akameco/s2s/tree/master/docs/ja)
+## [日本語](./docs/ja)
 (readmeの最新版は日本語です)
 
 ## Ultra-fast coding by AST assist
@@ -100,7 +100,7 @@ Would s2s generate default values?
 
 It finishes Quick Start. Thanks!
 
-See [Getting Started Exmaple](https://github.com/akameco/s2s-plugins/tree/master/examples/getting-started)
+See [Getting Started Exmaple](./examples/getting-started)
 
 ## Combine plugins
 
@@ -115,7 +115,7 @@ More Info? See Examples.
 ## More Examples
 
 Combination of Redux and Flow.
-[Shopping Cart (redux+flowtype+s2s)](https://github.com/akameco/s2s-examples)
+[Shopping Cart (redux+flowtype+s2s)](./examples/shopping-cart)
 
 More Info? See Examples.
 

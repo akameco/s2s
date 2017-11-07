@@ -3,7 +3,7 @@
   "version": "0.2.2",
   "description": "Helper function to get initialState",
   "license": "MIT",
-  "repository": "akameco/s2s-plugins",
+  "repository": "akameco/s2s",
   "author": "akameco <akameco.t@gmail.com>",
   "main": "lib/index.js",
   "files": ["lib"],

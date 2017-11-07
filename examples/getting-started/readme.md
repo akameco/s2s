@@ -19,4 +19,4 @@ Open `src/index.js`, and Coding!
 
 ## Next
 
-See [examples/shopping-cart](https://github.com/akameco/s2s-plugins/tree/master/examples/shopping-cart)
+See [examples/shopping-cart](../shopping-cart)
