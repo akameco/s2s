@@ -2,7 +2,7 @@
 import path from 'path'
 import fs from 'fs'
 import KeyLocker from 'key-locker'
-import defaultHanlder from 's2s-handler-babel'
+import handlerBabel from 's2s-handler-babel'
 import type { Path, AfterHook, Plugin, EventType, HanlderFunc } from 'types'
 import {
   getOutputPath,
@@ -70,7 +70,7 @@ export default function handlePlugins(
 
       lock.add(eventPath)
 
-      const handler = plugin.handler ? plugin.handler : defaultHanlder
+      const handler = plugin.handler ? plugin.handler : handlerBabel
       handlePlugin(handler, { eventPath, plugin, hooks })
     } catch (err) {
       console.error(toErrorStack(err))
