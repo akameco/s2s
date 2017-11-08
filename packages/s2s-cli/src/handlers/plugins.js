@@ -14,6 +14,8 @@ import {
 import runHooks from '../hooks'
 import { formatText } from '../reporters/'
 
+const lock = new KeyLocker()
+
 type Opts = {
   eventPath: Path,
   plugin: Plugin,
@@ -45,8 +47,6 @@ export function handlePlugin(
   writeFileSync(outputPath, result)
   console.log(formatText('S2S', relativeFromCwd(eventPath), outputPath))
 }
-
-const lock = new KeyLocker()
 
 export default function handlePlugins(
   eventPath: Path,
