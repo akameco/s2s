@@ -18,6 +18,7 @@ const fn = x => x
 
 const getEventPath = (...p) =>
   path.resolve(__dirname, '__tests__', 'fixtures', ...p)
+
 jest.useFakeTimers()
 
 beforeEach(() => {
@@ -156,4 +157,10 @@ test('hooksが渡されない場合', () => {
   delete opts[1].hooks
   plugins.handlePlugin(opts[0], { ...opts[1] })
   expect(writeSpy).toBeCalled()
+})
+
+test('use s2s-handler-typescript when extname of eventPath is .ts', () => {
+  const plugin = { test: /hello.ts/, plugin: _plugin }
+  plugins.default(getEventPath('hello.ts'), 'add', [plugin])
+  expect(writeSpy.mock.calls[0][1]).toMatchSnapshot()
 })

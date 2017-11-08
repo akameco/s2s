@@ -17,6 +17,8 @@ $ yarn add --dev s2s
 現在BabelHandlerをデフォルトのハンドラーとして利用しています。
 Babelのバージョンは6です。
 
+また、拡張子が`.ts`の場合、`s2s-handler-typescript`が選択されます。あなたが指定する必要はありません。
+
 - [s2s-handler-babel](./s2s-handler-babel)
 - [s2s-handler-babel-next](./s2s-handler-babel-next)
 - [s2s-handler-typescript](./s2s-handler-typescript)
