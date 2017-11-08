@@ -1081,9 +1081,9 @@ preserve@^0.2.0:
   version "0.2.0"
   resolved "https://registry.yarnpkg.com/preserve/-/preserve-0.2.0.tgz#815ed1f6ebc65926f865b310c0713bcb3315ce4b"
 
-prettier@^1.7.4:
-  version "1.7.4"
-  resolved "https://registry.yarnpkg.com/prettier/-/prettier-1.7.4.tgz#5e8624ae9363c80f95ec644584ecdf55d74f93fa"
+prettier@^1.8.0:
+  version "1.8.1"
+  resolved "https://registry.yarnpkg.com/prettier/-/prettier-1.8.1.tgz#91064d778c08c85ac1cbe6b23195c34310d039f9"
 
 private@^0.1.7:
   version "0.1.8"
@@ -1209,23 +1209,44 @@ rimraf@2, rimraf@^2.5.1, rimraf@^2.6.1:
   dependencies:
     glob "^7.0.5"
 
-"s2s-ts-handler@file:../../packages/s2s-ts-handler":
-  version "0.0.0"
+s2s-handler-babel@^0.1.1:
+  version "0.1.1"
+  resolved "https://registry.yarnpkg.com/s2s-handler-babel/-/s2s-handler-babel-0.1.1.tgz#5792b3172b1faaec10a3420aa7362f4b2c70c6e8"
+  dependencies:
+    babel-core "^6.25.0"
+
+s2s-handler-typescript@^0.1.1:
+  version "0.1.1"
+  resolved "https://registry.yarnpkg.com/s2s-handler-typescript/-/s2s-handler-typescript-0.1.1.tgz#be0c90f839a36e0657a39f2587697048556906fe"
   dependencies:
     "@babel/core" "^7.0.0-beta.31"
     "@babel/plugin-syntax-typescript" "^7.0.0-beta.31"
 
-"s2s@file:../../packages/s2s-cli":
-  version "0.9.1"
+"s2s-handler-typescript@file:../../packages/s2s-handler-typescript":
+  version "0.1.1"
   dependencies:
-    babel-core "^6.25.0"
+    "@babel/core" "^7.0.0-beta.31"
+    "@babel/plugin-syntax-typescript" "^7.0.0-beta.31"
+
+s2s-hook-prettier@^0.2.0:
+  version "0.2.0"
+  resolved "https://registry.yarnpkg.com/s2s-hook-prettier/-/s2s-hook-prettier-0.2.0.tgz#bba749d40b4c8cc0d85e34a730442fbfb5f0a434"
+  dependencies:
+    prettier "^1.8.0"
+
+"s2s@file:../../packages/s2s-cli":
+  version "0.11.1"
+  dependencies:
     babel-polyfill "^6.26.0"
     chalk "^2.3.0"
     chokidar "^1.7.0"
     cp-file "^5.0.0"
     find-up "^2.1.0"
     key-locker "^0.2.0"
-    prettier "^1.7.4"
+    prettier "^1.8.0"
+    s2s-handler-babel "^0.1.1"
+    s2s-handler-typescript "^0.1.1"
+    s2s-hook-prettier "^0.2.0"
     slash "^1.0.0"
 
 safe-buffer@^5.0.1, safe-buffer@~5.1.0, safe-buffer@~5.1.1:
