@@ -28,44 +28,41 @@ learn how: http://kcd.im/pull-request
 - `node` version:
 - `npm` (or `yarn`) version:
 
-## Relevant code or config
+## Relevant code or config <!-- 関連するコードまたは設定 -->
 
-<!-- 関連するコードまたは設定 -->
 
 ```javascript
 
 ```
 
+<!-- 何をしましたか？ -->
 ## What you did:
 
-<!-- 何をしましたか？ -->
 
-
-
+<!-- 何が起きました？ -->
 ## What happened:
 
 <!--
-何が起きました？
-
 Please provide the full error message/screenshots/anything
 全てのエラーメッセージ、スクリーンショット、何でも提供してください。
 -->
 
+
+<!-- 再現レポジトリ -->
 ## Reproduction repository:
 
 <!--
-再現レポジトリ
-
 If possible, please create a repository that reproduces the issue with the
 minimal amount of code possible.
 もし可能ならば、最小限のコードでこのイシューを再現するレポジトリを作成してください。
 -->
 
-## Problem description:
 
 <!--問題の説明 -->
+## Problem description:
 
-
-## Suggested solution:
 
 <!-- 推奨される解決策 -->
+## Suggested solution:
+
+
