@@ -48,6 +48,18 @@ export function handlePlugin(
   console.log(formatText('S2S', relativeFromCwd(eventPath), outputPath))
 }
 
+function validate(plugin: Plugin, eventPath: Path, eventType: EventType) {
+  if (!plugin.test.test(eventPath)) {
+    return false
+  }
+
+  if (plugin.only && !plugin.only.includes(eventType)) {
+    return false
+  }
+
+  return true
+}
+
 export default function handlePlugins(
   eventPath: Path,
   eventType: EventType,
@@ -59,21 +71,16 @@ export default function handlePlugins(
   }
 
   for (const plugin of plugins) {
-    try {
-      if (!plugin.test.test(eventPath)) {
-        continue // eslint-disable-line
-      }
-
-      if (plugin.only && !plugin.only.includes(eventType)) {
-        continue // eslint-disable-line
-      }
-
+    if (validate(plugin, eventPath, eventType)) {
       lock.add(eventPath)
 
       const handler = plugin.handler ? plugin.handler : handlerBabel
-      handlePlugin(handler, { eventPath, plugin, hooks })
-    } catch (err) {
-      console.error(toErrorStack(err))
+
+      try {
+        handlePlugin(handler, { eventPath, plugin, hooks })
+      } catch (err) {
+        console.error(toErrorStack(err))
+      }
     }
   }
 }
