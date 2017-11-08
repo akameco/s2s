@@ -60,6 +60,11 @@ function validate(plugin: Plugin, eventPath: Path, eventType: EventType) {
   return true
 }
 
+function selectHandler(handler: HanlderFunc = handlerBabel): HanlderFunc {
+  const finalHanlder = handler
+  return finalHanlder
+}
+
 export default function handlePlugins(
   eventPath: Path,
   eventType: EventType,
@@ -74,7 +79,7 @@ export default function handlePlugins(
     if (validate(plugin, eventPath, eventType)) {
       lock.add(eventPath)
 
-      const handler = plugin.handler ? plugin.handler : handlerBabel
+      const handler = selectHandler(plugin.handler)
 
       try {
         handlePlugin(handler, { eventPath, plugin, hooks })
