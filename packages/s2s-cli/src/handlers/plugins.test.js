@@ -18,6 +18,7 @@ const fn = x => x
 
 const getEventPath = (...p) =>
   path.resolve(__dirname, '__tests__', 'fixtures', ...p)
+
 jest.useFakeTimers()
 
 beforeEach(() => {
