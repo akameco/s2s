@@ -21,8 +21,6 @@ export default function getReducerCase(code /* : Code */) {
         return
       }
 
-      // TODO 他ファイルのアクションも受け入れる
-      // が、とりあえずs2s stackのみの動作を目指す
       if (testPath.get('object').node.name !== 'Actions') {
         return
       }

@@ -10,24 +10,6 @@ type Opts = {
   cwd?: string,
 }
 
-export default flowFaker
-
-async function flowFaker(
-  filePath: string,
-  { row, column, cwd = process.cwd() }: Opts
-) {
-  const ast = await getTypeFromFile(cwd, filePath, row, column)
-  return _flowFaker(ast)
-}
-
-export function flowFakerSync(
-  filePath: string,
-  { row, column, cwd = process.cwd() }: Opts
-) {
-  const ast = getTypeFromFileSync(cwd, filePath, row, column)
-  return _flowFaker(ast)
-}
-
 function _flowFaker(ast) {
   if (!ast) {
     return {}
@@ -49,44 +31,6 @@ function typeToValue(typeInfo: string | null) {
     default:
       return null
   }
-}
-
-export function createInitialStateFromTypeInfo(
-  info: Object | $ReadOnlyArray<*> | string | null
-) {
-  if (!info || typeof info === 'string') {
-    return typeToValue(info)
-  }
-
-  if (Array.isArray(info)) {
-    return []
-  }
-
-  return Object.keys(info).reduce((acc, key) => {
-    // $FlowFixMe
-    return { ...acc, [key]: createInitialStateFromTypeInfo(info[key]) }
-  }, {})
-}
-
-export function getTypeAst(input: string) {
-  const typeString = `type X = ${input}`
-
-  const ast = parse(typeString, {
-    plugins: ['flow'],
-    sourceType: 'module',
-  })
-
-  let typeAST = {}
-
-  traverse(ast, {
-    TypeAlias(nodePath) {
-      // if (nodePath.get('id').isIdentifier({ name: 'X' })) { }
-      // nodeのidは`X`が必ず保証されてる
-      typeAST = nodePath.get('right')
-    },
-  })
-
-  return typeAST
 }
 
 function getType(node) {
@@ -144,10 +88,66 @@ function isPathLike(obj) {
   return isNodeLike(obj) && {}.hasOwnProperty.call(obj, 'node')
 }
 
+// eslint-disable-next-line import/exports-last
 export function astToObj(input: *) {
   if (isPathLike(input)) {
     input = input.node
   }
 
   return getType(input)
+}
+
+// eslint-disable-next-line flowtype/no-weak-types
+type Info = Object | $ReadOnlyArray<*> | string | null
+
+export function createInitialStateFromTypeInfo(info: Info) {
+  if (!info || typeof info === 'string') {
+    return typeToValue(info)
+  }
+
+  if (Array.isArray(info)) {
+    return []
+  }
+
+  return Object.keys(info).reduce((acc, key) => {
+    // $FlowFixMe
+    return { ...acc, [key]: createInitialStateFromTypeInfo(info[key]) }
+  }, {})
+}
+
+export function getTypeAst(input: string) {
+  const typeString = `type X = ${input}`
+
+  const ast = parse(typeString, {
+    plugins: ['flow'],
+    sourceType: 'module',
+  })
+
+  let typeAST = {}
+
+  traverse(ast, {
+    TypeAlias(nodePath) {
+      // if (nodePath.get('id').isIdentifier({ name: 'X' })) { }
+      // nodeのidは`X`が必ず保証されてる
+      typeAST = nodePath.get('right')
+    },
+  })
+
+  return typeAST
+}
+
+export default async function flowFaker(
+  filePath: string,
+  { row, column, cwd = process.cwd() }: Opts
+) {
+  const ast = await getTypeFromFile(cwd, filePath, row, column)
+  return _flowFaker(ast)
+}
+
+export function flowFakerSync(
+  filePath: string,
+  { row, column, cwd = process.cwd() }: Opts
+) {
+  const ast = getTypeFromFileSync(cwd, filePath, row, column)
+  return _flowFaker(ast)
 }

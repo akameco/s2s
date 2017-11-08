@@ -2,30 +2,21 @@
 import path from 'path'
 import execa from 'execa'
 
-export type FlowVersionInfo = {
-  semver: string,
-  binary: string,
-  build_id: string,
-}
+type TypeInfo = ?{ type: string }
 
 const noop = () => null
-
-export function getFlowBin(cwd: string) {
-  const bin = process.platform === 'win32' ? 'flow.exe' : 'flow'
-  const flowBinPath = path.join('node_modules', '.bin', bin)
-
-  return path.resolve(cwd, flowBinPath)
-}
+// eslint-disable-next-line flowtype/no-weak-types
+type JsonType = Object
 
 async function execFlow(
   cwd: string,
   params: $ReadOnlyArray<string>
-): Promise<Object> {
+): Promise<JsonType> {
   const output = await execa.stdout(getFlowBin(cwd), params).catch(noop)
   return JSON.parse(output)
 }
 
-function execFlowSync(cwd: string, params: $ReadOnlyArray<string>): Object {
+function execFlowSync(cwd: string, params: $ReadOnlyArray<string>): JsonType {
   try {
     const output = execa.sync(getFlowBin(cwd), params).stdout
     return JSON.parse(output)
@@ -34,12 +25,23 @@ function execFlowSync(cwd: string, params: $ReadOnlyArray<string>): Object {
   }
 }
 
+export function getFlowBin(cwd: string) {
+  const bin = process.platform === 'win32' ? 'flow.exe' : 'flow'
+  const flowBinPath = path.join('node_modules', '.bin', bin)
+
+  return path.resolve(cwd, flowBinPath)
+}
+
+export type FlowVersionInfo = {
+  semver: string,
+  binary: string,
+  build_id: string,
+}
+
 export async function versionInfo(cwd: string): Promise<?FlowVersionInfo> {
   const json = await execFlow(cwd, ['version', '--json']).catch(noop)
   return json
 }
-
-type TypeInfo = ?{ type: string }
 
 export async function typeAtPos(
   cwd: string,

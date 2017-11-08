@@ -19,10 +19,11 @@
     "test:cov": "jest --coverage --ci --runInBand",
     "test:ci": "yarn lint && yarn flow && yarn test:cov && yarn add:coveralls",
     "add:coveralls": "cat ./coverage/lcov.info | coveralls",
+    "check": "yarn flow && yarn lint",
     "validate": "yarn flow && yarn lint && yarn test"
   },
   "lint-staged": {
-    "*.js": ["fmt", "flow", "lint", "git add"],
+    "*.js": ["fmt", "check", "git add"],
     "*.json": ["fmt", "git add"]
   },
   "devDependencies": {
