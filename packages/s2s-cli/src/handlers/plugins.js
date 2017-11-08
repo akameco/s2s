@@ -3,6 +3,7 @@ import path from 'path'
 import fs from 'fs'
 import KeyLocker from 'key-locker'
 import handlerBabel from 's2s-handler-babel'
+import hanlderTypeScript from 's2s-handler-typescript'
 import type { Path, AfterHook, Plugin, EventType, HanlderFunc } from 'types'
 import {
   getOutputPath,
@@ -60,9 +61,15 @@ function validate(plugin: Plugin, eventPath: Path, eventType: EventType) {
   return true
 }
 
-function selectHandler(handler: HanlderFunc = handlerBabel): HanlderFunc {
-  const finalHanlder = handler
-  return finalHanlder
+function selectHandler(
+  handler: HanlderFunc = handlerBabel,
+  filepath: Path
+): HanlderFunc {
+  const ext = path.extname(filepath)
+  if (ext === '.ts') {
+    return hanlderTypeScript
+  }
+  return handler
 }
 
 export default function handlePlugins(
@@ -79,7 +86,7 @@ export default function handlePlugins(
     if (validate(plugin, eventPath, eventType)) {
       lock.add(eventPath)
 
-      const handler = selectHandler(plugin.handler)
+      const handler = selectHandler(plugin.handler, eventPath)
 
       try {
         handlePlugin(handler, { eventPath, plugin, hooks })

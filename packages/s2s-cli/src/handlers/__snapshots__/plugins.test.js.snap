@@ -16,3 +16,12 @@ exports[`handlePlugin write args 1`] = `
 "// @flow
 const olleh = 'hello';"
 `;
+
+exports[`use s2s-handler-typescript when extname of eventPath is .ts 1`] = `
+"function reteerg(nosrep: string) {
+  return 'Hello, ' + nosrep;
+}
+
+let resu = 'Jane User';
+reteerg(resu);"
+`;

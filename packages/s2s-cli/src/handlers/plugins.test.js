@@ -158,3 +158,9 @@ test('hooksが渡されない場合', () => {
   plugins.handlePlugin(opts[0], { ...opts[1] })
   expect(writeSpy).toBeCalled()
 })
+
+test('use s2s-handler-typescript when extname of eventPath is .ts', () => {
+  const plugin = { test: /hello.ts/, plugin: _plugin }
+  plugins.default(getEventPath('hello.ts'), 'add', [plugin])
+  expect(writeSpy.mock.calls[0][1]).toMatchSnapshot()
+})

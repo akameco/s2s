@@ -23,6 +23,7 @@
     "key-locker": "^0.2.0",
     "prettier": "^1.8.0",
     "s2s-handler-babel": "^0.1.1",
+    "s2s-handler-typescript": "^0.1.1",
     "s2s-hook-prettier": "^0.2.0",
     "slash": "^1.0.0"
   }
