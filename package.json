@@ -7,20 +7,20 @@
   "scripts": {
     "add-contributors": "all-contributors add",
     "build": "node ./scripts/build",
-    "lint": "eslint .",
+    "lint": "eslint . --fix",
     "flow": "flow",
     "precommit": "lint-staged",
     "publish": "yarn build && lerna publish",
     "prepublish": "yarn build",
     "fmt": "prettier --write '**/*.{js,json}'",
     "postinstall": "yarn fmt",
-    "test": "jest",
+    "test": "jest --watch --coverage",
     "test:watch": "jest --watch",
     "test:cov": "jest --coverage --ci --runInBand",
     "test:ci": "yarn lint && yarn flow && yarn test:cov && yarn add:coveralls",
     "add:coveralls": "cat ./coverage/lcov.info | coveralls",
     "check": "yarn flow && yarn lint",
-    "validate": "yarn flow && yarn lint && yarn test"
+    "validate": "yarn flow && yarn lint && yarn test:cov"
   },
   "lint-staged": {
     "*.js": ["fmt", "check", "git add"],
