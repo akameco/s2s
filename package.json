@@ -7,7 +7,7 @@
   "scripts": {
     "add-contributors": "all-contributors add",
     "build": "node ./scripts/build",
-    "lint": "eslint .",
+    "lint": "eslint . --fix",
     "flow": "flow",
     "precommit": "lint-staged",
     "publish": "yarn build && lerna publish",
