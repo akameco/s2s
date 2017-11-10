@@ -12,8 +12,7 @@ I'll probably ask you to submit the fix (after giving some direction). If you've
 never done that before, that's great! Check this free short video tutorial to
 learn how: http://kcd.im/pull-request
 
-全て日本語で入力して構いません。
-もし、あなたが日本語に精通していればそちらの方が素早い対応ができます。
+全て日本語で入力して構いません。もし、あなたが日本語に精通していればそちらの方が素早い対応ができます。
 
 プロジェクトに興味を持ってくれてありがとうございます。提出されたバグとPRに感謝します！
 このプロジェクトの行動規範(CODE_OF_CONDUCT)を確認し、それに従ってください。（CODE_OF_CONDUCT.mdファイルにあります）
@@ -26,7 +25,8 @@ learn how: http://kcd.im/pull-request
 - module name:
 - module version:
 - `node` version:
-- `npm` (or `yarn`) version:
+- `yarn` version:
+<!-- Use yarn, 1.3.2 or higher | yarnの1.3.2以上のバージョンを使って下さい -->
 
 ## Relevant code or config <!-- 関連するコードまたは設定 -->
 
@@ -42,20 +42,14 @@ learn how: http://kcd.im/pull-request
 <!-- 何が起きました？ -->
 ## What happened:
 
-<!--
-Please provide the full error message/screenshots/anything
-全てのエラーメッセージ、スクリーンショット、何でも提供してください。
--->
+<!-- Please provide the full error message/screenshots/anything | 全てのエラーメッセージ、スクリーンショット、何でも提供してください。-->
 
 
 <!-- 再現レポジトリ -->
 ## Reproduction repository:
 
-<!--
-If possible, please create a repository that reproduces the issue with the
-minimal amount of code possible.
-もし可能ならば、最小限のコードでこのイシューを再現するレポジトリを作成してください。
--->
+<!-- If possible, please create a repository that reproduces the issue with the
+minimal amount of code possible. | もし可能ならば、最小限のコードでこのイシューを再現するレポジトリを作成してください。-->
 
 
 <!--問題の説明 -->
