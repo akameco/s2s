@@ -55,3 +55,21 @@ export default combineReducers({
 });
 "
 `;
+
+exports[`reducer options 1`] = `
+"
+// @flow
+
+      ↓ ↓ ↓ ↓ ↓ ↓
+
+// @flow
+import { combineReducers } from \\"./myCombineReducers\\";
+import App from \\"./__fixtures__/app/reducer\\";
+import Bob from \\"./__fixtures__/bob/reducer\\";
+
+export default combineReducers({
+  App,
+  Bob
+});
+"
+`;
