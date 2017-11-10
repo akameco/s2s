@@ -25,8 +25,7 @@ export default () => {
     name: 's2s-reducer-root',
     visitor: {
       Program(programPath: Path, state: State) {
-        const { input, output } = state.opts
-        const combineReducers = state.opts.combineReducers || 'redux'
+        const { input, output, combineReducers = 'redux' } = state.opts
         const globOptions = Object.assign(
           { absolute: true },
           state.opts.globOptions
