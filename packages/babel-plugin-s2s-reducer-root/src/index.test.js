@@ -54,7 +54,7 @@ pluginTester({
   pluginOptions: {
     input: '__fixtures__/**/reducer.js',
     output,
-    combineReducersModule: './myCombineReducers',
+    combineReducers: './myCombineReducers',
     globOptions: { cwd },
   },
   tests: [

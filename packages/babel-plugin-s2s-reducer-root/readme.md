@@ -63,12 +63,12 @@ outputh path.
 See https://github.com/isaacs/node-glob#options
 
 
-#### combineReducersModule
+#### combineReducers
 
 type: `string` <br>
 required: false <br>
 defualt: 'redux'
 
-combineReducers module name.
+combineReducers module/path name.
 
 `import { combineReducers } from './myCombineReducer'`

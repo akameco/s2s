@@ -26,8 +26,7 @@ export default () => {
     visitor: {
       Program(programPath: Path, state: State) {
         const { input, output } = state.opts
-        const combineReducersModule =
-          state.opts.combineReducersModule || 'redux'
+        const combineReducers = state.opts.combineReducers || 'redux'
         const globOptions = Object.assign(
           { absolute: true },
           state.opts.globOptions
@@ -61,7 +60,7 @@ export default () => {
         }
         programPath.node.body = [
           builders.redux({
-            IMPORT_DECLARATION: createImport(combineReducersModule),
+            IMPORT_DECLARATION: createImport(combineReducers),
           }),
           ...imports,
           t.noop(),
