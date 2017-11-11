@@ -49,6 +49,24 @@ pluginTester({
 
 pluginTester({
   plugin,
+  snapshot: true,
+  babelOptions: { filename },
+  pluginOptions: {
+    input: '__fixtures__/**/reducer.js',
+    output,
+    combineReducers: './myCombineReducers',
+    globOptions: { cwd },
+  },
+  tests: [
+    {
+      title: 'reducer options',
+      code: `// @flow`,
+    },
+  ],
+})
+
+pluginTester({
+  plugin,
   babelOptions: { filename },
   tests: [
     {

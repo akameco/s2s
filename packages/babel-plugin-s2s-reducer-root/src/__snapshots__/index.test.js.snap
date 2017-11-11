@@ -8,7 +8,7 @@ exports[`glob options 1`] = `
 
 // @flow
 // show options
-import { combineReducers } from 'redux';
+import { combineReducers } from \\"redux\\";
 import App from \\"./__fixtures__/app/reducer\\";
 import Bob from \\"./__fixtures__/bob/reducer\\";
 
@@ -27,7 +27,7 @@ exports[`no parse 1`] = `
       ↓ ↓ ↓ ↓ ↓ ↓
 
 // @flow
-import { combineReducers } from 'redux';
+import { combineReducers } from \\"redux\\";
 import App from \\"./__fixtures__/app/reducer\\";
 import Bob from \\"./__fixtures__/bob/reducer\\";
 
@@ -45,7 +45,25 @@ exports[`options 1`] = `
       ↓ ↓ ↓ ↓ ↓ ↓
 
 // @flow
-import { combineReducers } from 'redux';
+import { combineReducers } from \\"redux\\";
+import App from \\"./__fixtures__/app/reducer\\";
+import Bob from \\"./__fixtures__/bob/reducer\\";
+
+export default combineReducers({
+  App,
+  Bob
+});
+"
+`;
+
+exports[`reducer options 1`] = `
+"
+// @flow
+
+      ↓ ↓ ↓ ↓ ↓ ↓
+
+// @flow
+import { combineReducers } from \\"./myCombineReducers\\";
 import App from \\"./__fixtures__/app/reducer\\";
 import Bob from \\"./__fixtures__/bob/reducer\\";
 

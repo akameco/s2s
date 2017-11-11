@@ -61,3 +61,24 @@ outputh path.
 #### globOptions
 
 See https://github.com/isaacs/node-glob#options
+
+
+#### combineReducers
+
+type: `string` <br>
+required: false <br>
+defualt: `"redux"`
+
+If you need customized combineReducers like redux-persist, set that path or module name.
+
+```
+{
+  ['s2s-reducer-root', { combineReducers: './path/to/yourCombineReducers'}]
+}
+```
+
+Output:
+
+```js
+import { combineReducers } from './path/to/yourCombineReducers'
+```

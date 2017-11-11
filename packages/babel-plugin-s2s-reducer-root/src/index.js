@@ -13,7 +13,7 @@ import {
 } from 's2s-utils'
 
 const builders = {
-  redux: template(`import { combineReducers } from 'redux'`),
+  redux: template(`IMPORT_DECLARATION`),
   root: template(`export default combineReducers(OBJ)`),
 }
 
@@ -25,7 +25,7 @@ export default () => {
     name: 's2s-reducer-root',
     visitor: {
       Program(programPath: Path, state: State) {
-        const { input, output } = state.opts
+        const { input, output, combineReducers = 'redux' } = state.opts
         const globOptions = Object.assign(
           { absolute: true },
           state.opts.globOptions
@@ -50,8 +50,17 @@ export default () => {
           .map(x => t.identifier(x))
           .map(name => t.objectProperty(name, name, false, true))
 
+        function createImport(v) {
+          const i = t.identifier('combineReducers')
+          return t.importDeclaration(
+            [t.importSpecifier(i, i)],
+            t.stringLiteral(v)
+          )
+        }
         programPath.node.body = [
-          builders.redux({}),
+          builders.redux({
+            IMPORT_DECLARATION: createImport(combineReducers),
+          }),
           ...imports,
           t.noop(),
           builders.root({ OBJ: t.objectExpression(props) }),
