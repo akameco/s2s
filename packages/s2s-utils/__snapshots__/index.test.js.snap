@@ -1,47 +1,12 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`snapshot defaultImport 1`] = `
-Object {
-  "source": Object {
-    "type": "StringLiteral",
-    "value": "source",
-  },
-  "specifiers": Array [
-    Object {
-      "local": Object {
-        "name": "local",
-        "type": "Identifier",
-      },
-      "type": "ImportDefaultSpecifier",
-    },
-  ],
-  "type": "ImportDeclaration",
-}
-`;
+exports[`snapshot createImportDeclaration when string 1`] = `"import { local } from \\"./source\\";"`;
 
-exports[`snapshot typeImport 1`] = `
-Object {
-  "importKind": "type",
-  "source": Object {
-    "type": "StringLiteral",
-    "value": "source",
-  },
-  "specifiers": Array [
-    Object {
-      "imported": Object {
-        "name": "imported",
-        "type": "Identifier",
-      },
-      "local": Object {
-        "name": "local",
-        "type": "Identifier",
-      },
-      "type": "ImportSpecifier",
-    },
-  ],
-  "type": "ImportDeclaration",
-}
-`;
+exports[`snapshot createImportDeclaration when string array 1`] = `"import { local1, local2 } from \\"./source\\";"`;
+
+exports[`snapshot defaultImport 1`] = `"import defaultlocal from \\"source\\";"`;
+
+exports[`snapshot typeImport 1`] = `"import type { imported as local } from \\"source\\";"`;
 
 exports[`template 1`] = `
 Node {

@@ -3,7 +3,12 @@ import fs from 'fs'
 import * as t from 'babel-types'
 import { parse } from 'babylon'
 import traverse from 'babel-traverse'
-import { inheritsOpts, template, getImportPath } from 's2s-utils'
+import {
+  inheritsOpts,
+  template,
+  getImportPath,
+  createImportDeclaration,
+} from 's2s-utils'
 import flatten from 'lodash.flatten'
 // import blog from 'babel-log'
 
@@ -77,15 +82,9 @@ export default () => {
 
         rootPath.pushContainer('body', flatten(asts))
 
-        function createImport(v) {
-          const specifiers = names.map(name => {
-            const i = t.identifier(name)
-            return t.importSpecifier(i, i)
-          })
-          return t.importDeclaration(specifiers, t.stringLiteral(v))
-        }
-
-        rootPath.unshiftContainer('body', [createImport(targetPath)])
+        rootPath.unshiftContainer('body', [
+          createImportDeclaration(names, targetPath),
+        ])
       },
     },
   }
