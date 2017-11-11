@@ -21,7 +21,6 @@
     "babel-polyfill": "^6.26.0",
     "babel-types": "^6.26.0",
     "camelcase": "^4.1.0",
-    "s2s-babel-flow-types": "^0.2.2",
     "s2s-helper-get-initial-state": "^0.2.3",
     "s2s-helper-get-reducer-case": "^0.2.4",
     "s2s-utils": "^0.4.2"

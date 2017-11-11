@@ -3,7 +3,7 @@ import * as t from 'babel-types'
 import flowComment from 'babel-add-flow-comments'
 import globby from 'globby'
 import upperCamelCase from 'uppercamelcase'
-import type { Path, State } from 's2s-babel-flow-types'
+import type { BabelPath, State } from 'types'
 import {
   getImportPath,
   template,
@@ -24,7 +24,7 @@ export default () => {
     inherits: inheritsOpts,
     name: 's2s-reducer-root',
     visitor: {
-      Program(programPath: Path, state: State) {
+      Program(programPath: BabelPath, state: State) {
         const {
           input,
           output,

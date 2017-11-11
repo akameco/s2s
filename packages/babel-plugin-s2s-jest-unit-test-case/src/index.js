@@ -10,11 +10,8 @@ import {
   createImportDeclaration,
 } from 's2s-utils'
 import flatten from 'lodash.flatten'
+import type { BabelPath, State } from 'types'
 // import blog from 'babel-log'
-
-/* ::
-import type {Path, State} from 's2s-babel-flow-types'
-*/
 
 const builder = {
   test: template(`test(TITLE, () => {
@@ -49,7 +46,7 @@ export default () => {
     inherits: inheritsOpts(),
     name: 's2s-jest-unit-test-case',
     visitor: {
-      Program(rootPath /* : Path */, { opts: { from }, file } /* : State */) {
+      Program(rootPath: BabelPath, { opts: { from }, file }: State) {
         if (!from) {
           throw new Error('required from option')
         }

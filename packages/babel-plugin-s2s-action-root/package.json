@@ -20,7 +20,6 @@
     "babel-template": "^6.26.0",
     "babel-types": "^6.26.0",
     "globby": "^6.1.0",
-    "s2s-babel-flow-types": "^0.2.2",
     "s2s-utils": "^0.4.2",
     "uppercamelcase": "^3.0.0"
   }

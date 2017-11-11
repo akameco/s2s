@@ -10,7 +10,7 @@ import {
   getParentDirName,
   typeImport,
 } from 's2s-utils'
-import type { Path, State } from 's2s-babel-flow-types'
+import type { BabelPath, State } from 'types'
 
 const createUnion = union =>
   template(`export type Action = UNION`)({
@@ -31,7 +31,7 @@ export default () => {
     name: 's2s-action-root',
     visitor: {
       Program: {
-        exit(programPath: Path, { opts }: State) {
+        exit(programPath: BabelPath, { opts }: State) {
           const { input, output } = opts
           const globOptions = Object.assign(
             { absolute: true },
