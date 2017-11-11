@@ -8,7 +8,7 @@ import looksLike from 'babel-looks-like'
 import getReducerCase from 's2s-helper-get-reducer-case'
 import getInitialStae from 's2s-helper-get-initial-state'
 import { template } from 's2s-utils'
-import type { BabelPath, State } from 'types'
+import type { BabelPath, State } from 'types/babel'
 // import blog from 'babel-log'
 
 const testBuilder = template(`

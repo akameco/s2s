@@ -10,7 +10,7 @@ import {
   getParentDirName,
   typeImport,
 } from 's2s-utils'
-import type { BabelPath, State } from 'types'
+import type { BabelPath, State } from 'types/babel'
 
 const createUnion = union =>
   template(`export type Action = UNION`)({

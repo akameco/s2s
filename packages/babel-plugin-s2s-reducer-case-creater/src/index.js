@@ -3,7 +3,7 @@ import fs from 'fs'
 import * as t from 'babel-types'
 import getActionObj from 's2s-helper-get-action-obj'
 import { template, inheritsOpts } from 's2s-utils'
-import type { BabelPath, State } from 'types'
+import type { BabelPath, State } from 'types/babel'
 // import blog from 'babel-log'
 
 const builder = {
