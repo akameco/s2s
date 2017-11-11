@@ -3,11 +3,8 @@ import fs from 'fs'
 import * as t from 'babel-types'
 import getActionObj from 's2s-helper-get-action-obj'
 import { template, inheritsOpts } from 's2s-utils'
+import type { BabelPath, State } from 'types'
 // import blog from 'babel-log'
-
-/* ::
-import type {Path, State} from 's2s-babel-flow-types'
-*/
 
 const builder = {
   test: template(`Actions.TYPE`),
@@ -19,7 +16,7 @@ export default () => {
     inherits: inheritsOpts(),
     name: 's2s-reducer-case-creater',
     visitor: {
-      Program(rootPath /* : Path */, { opts: { from } } /* : State */) {
+      Program(rootPath: BabelPath, { opts: { from } }: State) {
         if (!from) {
           throw new Error('required from option')
         }

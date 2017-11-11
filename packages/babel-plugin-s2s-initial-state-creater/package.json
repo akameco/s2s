@@ -19,7 +19,6 @@
     "babylon": "^6.18.0",
     "flow-faker": "^0.1.4",
     "json5": "^0.5.1",
-    "s2s-babel-flow-types": "^0.2.2",
     "s2s-utils": "^0.4.2",
     "typed-assign": "^0.1.1"
   }

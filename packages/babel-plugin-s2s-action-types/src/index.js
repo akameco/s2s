@@ -5,7 +5,7 @@ import * as t from 'babel-types'
 import template from 'babel-template'
 import snakeCase from 'lodash.snakecase'
 import flowComment from 'babel-add-flow-comments'
-import type { Path, State, File } from 's2s-babel-flow-types'
+import type { BabelPath, State, File } from 'types'
 // import blog from 'babel-log'
 
 const constantCase = (str: string) => snakeCase(str).toUpperCase()
@@ -32,14 +32,14 @@ export default () => {
     name: 's2s-action-types',
     visitor: {
       Program: {
-        exit(programPath: Path, state: State) {
+        exit(programPath: BabelPath, state: State) {
           const { file, opts: { usePrefix = true, removePrefix = '' } } = state
 
           const imports = []
           const typeNameSet: Set<string> = new Set()
           const actionMap: Map<string, Node> = new Map()
 
-          function addTypes(path: Path) {
+          function addTypes(path: BabelPath) {
             const v: string = path.get('id').node.name
             typeNameSet.add(v)
             if (v.endsWith('Request')) {
@@ -49,10 +49,10 @@ export default () => {
           }
 
           programPath.traverse({
-            ImportDeclaration(path: Path) {
+            ImportDeclaration(path: BabelPath) {
               imports.push(path.node)
             },
-            TypeAlias(path: Path) {
+            TypeAlias(path: BabelPath) {
               if (path.get('id').node.name === 'Action') {
                 const right = path.get('right')
                 if (right.isUnionTypeAnnotation()) {

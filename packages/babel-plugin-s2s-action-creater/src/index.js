@@ -5,7 +5,7 @@ import snakeCase from 'lodash.snakecase'
 import camelCase from 'lodash.camelcase'
 import flowComment from 'babel-add-flow-comments'
 import { template, createImportDeclaration } from 's2s-utils'
-import type { Path, State } from 's2s-babel-flow-types'
+import type { BabelPath, State } from 'types'
 // import blog from 'babel-log'
 
 const constantCase = (str: string) => snakeCase(str).toUpperCase()
@@ -35,7 +35,7 @@ export default () => {
     name: 's2s-action-creater',
     visitor: {
       Program: {
-        exit(programPath: Path, state: State) {
+        exit(programPath: BabelPath, state: State) {
           const { file } = state
           const basename = file.opts.basename
 
@@ -45,16 +45,16 @@ export default () => {
           const funcs = []
 
           programPath.traverse({
-            ImportDeclaration(path: Path) {
+            ImportDeclaration(path: BabelPath) {
               imports.push(path.node)
             },
-            VariableDeclarator(path: Path) {
+            VariableDeclarator(path: BabelPath) {
               const name = path.get('id').node.name
               if (name !== 'Actions') {
                 actions.push(name)
               }
             },
-            TypeAlias(path: Path) {
+            TypeAlias(path: BabelPath) {
               const name = path.get('id').node.name
 
               if (name === 'Action') {

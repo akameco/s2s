@@ -1,17 +1,14 @@
 // @flow
-const path = require('path')
+import path from 'path'
 
-const actionTypesPlugin = require('babel-plugin-s2s-action-types').default
-const actionCreaterPlugin = require('babel-plugin-s2s-action-creater').default
-const reducerCaseCreaterPlugin = require('babel-plugin-s2s-reducer-case-creater')
-  .default
-const actionRootPlugin = require('babel-plugin-s2s-action-root').default
-const reducerTestCasePlugin = require('babel-plugin-s2s-reducer-test-case')
-  .default
-const initilaStetePlugin = require('babel-plugin-s2s-initial-state-creater')
-  .default
-const stateRootPlugin = require('babel-plugin-s2s-state-root').default
-const reducerRootPlugin = require('babel-plugin-s2s-reducer-root').default
+import actionTypesPlugin from 'babel-plugin-s2s-action-types'
+import actionCreaterPlugin from 'babel-plugin-s2s-action-creater'
+import reducerCaseCreaterPlugin from 'babel-plugin-s2s-reducer-case-creater'
+import actionRootPlugin from 'babel-plugin-s2s-action-root'
+import reducerTestCasePlugin from 'babel-plugin-s2s-reducer-test-case'
+import initilaStetePlugin from 'babel-plugin-s2s-initial-state-creater'
+import stateRootPlugin from 'babel-plugin-s2s-state-root'
+import reducerRootPlugin from 'babel-plugin-s2s-reducer-root'
 
 const cwd = process.cwd()
 

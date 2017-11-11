@@ -8,11 +8,8 @@ import looksLike from 'babel-looks-like'
 import getReducerCase from 's2s-helper-get-reducer-case'
 import getInitialStae from 's2s-helper-get-initial-state'
 import { template } from 's2s-utils'
+import type { BabelPath, State } from 'types'
 // import blog from 'babel-log'
-
-/* ::
-import type {Path, State} from 's2s-babel-flow-types'
-*/
 
 const testBuilder = template(`
 test(TEST_TITLE, () => {
@@ -25,14 +22,14 @@ export default () => {
     inherits: flowSyntax,
     name: 's2s-reducer-test-case',
     visitor: {
-      Program(rootPath /* : Path */, { opts: { from } } /* : State */) {
+      Program(rootPath: BabelPath, { opts: { from } }: State) {
         if (!from) {
           throw new Error('required from option')
         }
 
         const existTestCases = []
         rootPath.traverse({
-          CallExpression(callPath /* : Path */) {
+          CallExpression(callPath: BabelPath) {
             if (
               looksLike(callPath, {
                 node: {
@@ -41,7 +38,7 @@ export default () => {
               })
             ) {
               const testTitlePath = callPath.get('arguments')[0]
-              const value /* : string */ = testTitlePath.get('value').node
+              const value: string = testTitlePath.get('value').node
               existTestCases.push(value.replace('handle ', ''))
             }
           },
@@ -50,7 +47,7 @@ export default () => {
         const code = fs.readFileSync(from, 'utf8')
         const state = getInitialStae(code) || t.nullLiteral()
 
-        function add(actionType /* : string */) {
+        function add(actionType: string) {
           rootPath.pushContainer('body', [
             t.noop(),
             testBuilder({

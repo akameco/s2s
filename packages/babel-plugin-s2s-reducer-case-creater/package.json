@@ -16,7 +16,6 @@
   "files": ["lib"],
   "dependencies": {
     "babel-types": "^6.26.0",
-    "s2s-babel-flow-types": "^0.2.2",
     "s2s-helper-get-action-obj": "^0.1.3",
     "s2s-utils": "^0.4.2"
   }

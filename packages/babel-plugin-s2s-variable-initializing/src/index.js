@@ -2,7 +2,7 @@
 import { parseExpression } from 'babylon'
 import { inheritsOpts } from 's2s-utils'
 import { flowFakerSync } from 'flow-faker'
-import type { Path, State } from 's2s-babel-flow-types'
+import type { BabelPath, State } from 'types'
 // import blog from 'babel-log'
 
 const parseFromObj = obj =>
@@ -13,7 +13,7 @@ export default () => {
     inherits: inheritsOpts,
     name: 's2s-variable-initializing',
     visitor: {
-      Program(programPath: Path, state: State) {
+      Program(programPath: BabelPath, state: State) {
         const { opts: { from } } = state
         programPath.traverse({
           VariableDeclarator(nodePath) {

@@ -3,7 +3,7 @@ import { parseExpression } from 'babylon'
 import { inheritsOpts } from 's2s-utils'
 import { flowFakerSync } from 'flow-faker'
 import generator from 'babel-generator'
-import type { Path, State } from 's2s-babel-flow-types'
+import type { BabelPath, State } from 'types'
 import json5 from 'json5'
 import typedAssign from 'typed-assign'
 // import blog from 'babel-log'
@@ -22,7 +22,7 @@ export default () => {
     inherits: inheritsOpts,
     name: 's2s-initial-state-creater',
     visitor: {
-      Program(programPath: Path, state: State) {
+      Program(programPath: BabelPath, state: State) {
         const { opts: { from } } = state
         programPath.traverse({
           VariableDeclarator(nodePath) {
