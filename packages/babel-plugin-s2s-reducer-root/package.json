@@ -4,11 +4,7 @@
   "description": "generate state types",
   "license": "MIT",
   "repository": "akameco/babel-plugin-s2s-reducer-root",
-  "author": {
-    "name": "akameco",
-    "email": "akameco.t@gmail.com",
-    "url": "akameco.github.io"
-  },
+  "author": "akameco <akameco.t@gmail.com> (akameco.github.io)",
   "engines": {
     "node": ">=6"
   },

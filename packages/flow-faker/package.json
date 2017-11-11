@@ -4,7 +4,7 @@
   "description": "create fake data from flow",
   "license": "MIT",
   "repository": "akameco/s2s",
-  "author": "akameco <akameco.t@gmail.com>",
+  "author": "akameco <akameco.t@gmail.com> (akameco.github.io)",
   "main": "lib/index.js",
   "files": ["lib"],
   "dependencies": {
