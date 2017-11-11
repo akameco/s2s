@@ -1,5 +1,5 @@
 // @flow
-import generator from 'babel-generator'
+import generate from 'babel-generator'
 import * as utils from '.'
 
 test('getImportPath same folder', () => {
@@ -32,20 +32,30 @@ test('return parent path name', () => {
   expect(utils.getParentDirName('ok/hello/world')).toBe('hello')
 })
 
-test('snapshot defaultImport', () => {
-  expect(utils.defaultImport('local', 'source')).toMatchSnapshot()
-})
+testAst([
+  {
+    title: 'snapshot createImportDeclaration when string array',
+    ast: utils.createImportDeclaration(['local1', 'local2'], './source'),
+  },
+  {
+    title: 'snapshot createImportDeclaration when string',
+    ast: utils.createImportDeclaration('local', './source'),
+  },
+  {
+    title: 'snapshot typeImport',
+    ast: utils.typeImport('local', 'imported', 'source'),
+  },
+  {
+    title: 'snapshot defaultImport',
+    ast: utils.defaultImport('defaultlocal', 'source'),
+  },
+])
 
-test('snapshot typeImport', () => {
-  expect(utils.typeImport('local', 'imported', 'source')).toMatchSnapshot()
-})
-
-test('snapshot createImportDeclaration when string', () => {
-  const ast = utils.createImportDeclaration('local', './source')
-  expect(generator(ast).code).toMatchSnapshot()
-})
-
-test('snapshot createImportDeclaration when string array', () => {
-  const ast = utils.createImportDeclaration(['local1', 'local2'], './source')
-  expect(generator(ast).code).toMatchSnapshot()
-})
+function testAst(tests: Array<{ title: string, ast: * }>) {
+  for (const { title, ast } of tests) {
+    test(title, () => {
+      const { code } = generate(ast)
+      expect(code).toMatchSnapshot(title)
+    })
+  }
+}
