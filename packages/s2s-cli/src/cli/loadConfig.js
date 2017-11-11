@@ -1,7 +1,6 @@
 // @flow
+import findUp from 'find-up'
 import type { Opts } from 'types'
-
-const findUp = require('find-up')
 
 const S2S_CONFIG_JS = 's2s.config.js'
 
