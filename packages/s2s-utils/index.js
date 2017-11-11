@@ -61,11 +61,10 @@ function createImportDeclaration(
   source /*: string */
 ) {
   const finalLocals = [].concat(locals)
-  const specifiers = []
-  for (const local of finalLocals) {
+  const specifiers = finalLocals.map(local => {
     const i = t.identifier(local)
-    specifiers.push(t.importSpecifier(i, i))
-  }
+    return t.importSpecifier(i, i)
+  })
   return t.importDeclaration(specifiers, t.stringLiteral(source))
 }
 
