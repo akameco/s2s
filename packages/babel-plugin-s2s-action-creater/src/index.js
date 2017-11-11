@@ -4,7 +4,7 @@ import * as t from 'babel-types'
 import snakeCase from 'lodash.snakecase'
 import camelCase from 'lodash.camelcase'
 import flowComment from 'babel-add-flow-comments'
-import { template } from 's2s-utils'
+import { template, createImportDeclaration } from 's2s-utils'
 import type { Path, State } from 's2s-babel-flow-types'
 // import blog from 'babel-log'
 
@@ -80,20 +80,8 @@ export default () => {
             },
           })
 
-          function createImport(arr: $ReadOnlyArray<string>) {
-            const specifiers = []
-            for (const x of arr) {
-              const i = t.identifier(x)
-              specifiers.push(t.importSpecifier(i, i))
-            }
-            return t.importDeclaration(
-              specifiers,
-              t.stringLiteral(`./${basename}`)
-            )
-          }
-
-          const constImport = createImport(actions)
-          const typeImport = createImport(typeNames)
+          const constImport = createImportDeclaration(actions, `./${basename}`)
+          const typeImport = createImportDeclaration(typeNames, `./${basename}`)
 
           typeImport.importKind = 'type'
 

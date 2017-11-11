@@ -10,10 +10,10 @@ import {
   inheritsOpts,
   getParentDirName,
   defaultImport,
+  createImportDeclaration,
 } from 's2s-utils'
 
 const builders = {
-  redux: template(`IMPORT_DECLARATION`),
   root: template(`export default combineReducers(OBJ)`),
 }
 
@@ -51,17 +51,8 @@ export default () => {
           .map(x => t.identifier(x))
           .map(name => t.objectProperty(name, name, false, true))
 
-        function createImport(v) {
-          const i = t.identifier('combineReducers')
-          return t.importDeclaration(
-            [t.importSpecifier(i, i)],
-            t.stringLiteral(v)
-          )
-        }
         programPath.node.body = [
-          builders.redux({
-            IMPORT_DECLARATION: createImport(combineReducers),
-          }),
+          createImportDeclaration('combineReducers', combineReducers),
           ...imports,
           t.noop(),
           builders.root({ OBJ: t.objectExpression(props) }),
