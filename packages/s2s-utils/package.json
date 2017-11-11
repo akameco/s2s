@@ -5,8 +5,8 @@
   "license": "MIT",
   "repository": "akameco/s2s",
   "author": "akameco <akameco.t@gmail.com>",
-  "main": "index.js",
-  "files": ["index.js"],
+  "main": "lib/index.js",
+  "files": ["lib"],
   "dependencies": {
     "babel-template": "^6.26.0",
     "babel-types": "^6.26.0",
