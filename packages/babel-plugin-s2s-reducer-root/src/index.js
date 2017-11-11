@@ -25,11 +25,12 @@ export default () => {
     name: 's2s-reducer-root',
     visitor: {
       Program(programPath: Path, state: State) {
-        const { input, output, combineReducers = 'redux' } = state.opts
-        const globOptions = Object.assign(
-          { absolute: true },
-          state.opts.globOptions
-        )
+        const {
+          input,
+          output,
+          globOptions = {},
+          combineReducers = 'redux',
+        } = state.opts
 
         if (!input) {
           throw new Error('require input option')
@@ -39,7 +40,7 @@ export default () => {
           throw new Error('require output option')
         }
 
-        const files = globby.sync(input, globOptions)
+        const files = globby.sync(input, { absolute: true, ...globOptions })
 
         const imports = files.map(f =>
           defaultImport(getTypeName(f), getImportPath(output, f))

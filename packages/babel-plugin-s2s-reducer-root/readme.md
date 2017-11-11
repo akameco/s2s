@@ -60,6 +60,9 @@ outputh path.
 
 #### globOptions
 
+type: `Object` <br>
+default: `{}` <br>
+
 See https://github.com/isaacs/node-glob#options
 
 
