@@ -27,7 +27,7 @@ type Only = EventType[]
 type PluginOpts = PluginName | [PluginName, Object]
 
 type Plugin = {|
-  test: RegExp,
+  test: RegExp | string | string[],
   plugin: PluginOpts,
   only?: Only,
   input?: FileName,
@@ -43,7 +43,7 @@ inputは`templates`ディレクトリにあるファイルを指定します。
 
 ```js
 type Template = {|
-  test: RegExp,
+  test: RegExp | string | string[],
   input: Path,
   output?: Path,
 |}

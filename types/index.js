@@ -37,7 +37,7 @@ export type HandlerOpts = {
 export type HanlderFunc = (code: Code, opts: HandlerOpts) => Code
 
 export type Plugin = {|
-  test: RegExp,
+  test: RegExp | string | string[],
   plugin: PluginOpts,
   handler?: HanlderFunc,
   only?: Only,
@@ -46,7 +46,7 @@ export type Plugin = {|
 |}
 
 export type Template = {|
-  test: RegExp,
+  test: RegExp | string | string[],
   input: Path,
   output?: Path,
 |}

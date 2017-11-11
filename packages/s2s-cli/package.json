@@ -22,6 +22,7 @@
     "find-up": "^2.1.0",
     "key-locker": "^0.2.0",
     "prettier": "^1.8.2",
+    "micromatch": "^2.3.11",
     "s2s-handler-babel": "^0.1.1",
     "s2s-handler-typescript": "^0.1.1",
     "s2s-hook-prettier": "^0.2.0",

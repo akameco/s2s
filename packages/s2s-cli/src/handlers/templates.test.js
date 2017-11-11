@@ -92,3 +92,17 @@ test('no result when templates = undefined', () => {
   templates.default(eventPath)
   expect(logSpy).not.toHaveBeenCalled()
 })
+
+test('handlePluginsのPlugin.testオプションはglobを判定できる', () => {
+  const template = { test: '**/*.ts', input: 'not-found.js' }
+
+  templates.default(eventPath, [template], fixturesPath)
+  expect(logSpy).not.toHaveBeenCalled()
+})
+
+test('handlePluginsのPlugin.testオプションはglobの配列を判定できる', () => {
+  const template = { test: ['**/*.js', '!copy'], input: 'copy.js' }
+
+  templates.default(eventPath, [template], fixturesPath)
+  expect(logSpy).toHaveBeenCalled()
+})

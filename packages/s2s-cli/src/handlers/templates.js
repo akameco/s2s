@@ -5,6 +5,7 @@ import cpFile from 'cp-file'
 import type { Path, Template } from 'types'
 import { formatText, trimAndFormatPath } from '../reporters'
 import { isAlreadyExist, relativeFromCwd, getOutputPath } from '../utils'
+import some from '../utils/some'
 
 type CopyError = Error & { path: string, code: string }
 
@@ -22,12 +23,22 @@ function handleCopyError(err: CopyError): void {
 
 const DEFAULT_TEMPLATES_DIR = 'templates'
 
+function validate(template: Template, eventPath: Path) {
+  if (typeof template.test === 'string' || Array.isArray(template.test)) {
+    return some(eventPath, template.test)
+  } else if (!template.test.test(eventPath)) {
+    return false
+  }
+
+  return true
+}
+
 function handleTemplate(
   eventPath: Path,
   template: Template,
   templatesDir: string
 ) {
-  if (!template.test.test(eventPath)) {
+  if (!validate(template, eventPath)) {
     return
   }
 
