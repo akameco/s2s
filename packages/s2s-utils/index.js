@@ -56,9 +56,23 @@ function defaultImport(local /*: string */, source /*: string*/) {
   )
 }
 
+function createImportDeclaration(
+  locals /*: string[] | string */,
+  source /*: string */
+) {
+  const finalLocals = [].concat(locals)
+  const specifiers = []
+  for (const local of finalLocals) {
+    const i = t.identifier(local)
+    specifiers.push(t.importSpecifier(i, i))
+  }
+  return t.importDeclaration(specifiers, t.stringLiteral(source))
+}
+
 exports.defaultImport = defaultImport
 exports.getImportPath = getImportPath
 exports.template = template
 exports.inheritsOpts = inheritsOpts
 exports.getParentDirName = getParentDirName
 exports.typeImport = typeImport
+exports.createImportDeclaration = createImportDeclaration

@@ -1,4 +1,5 @@
 // @flow
+import generator from 'babel-generator'
 import * as utils from '.'
 
 test('getImportPath same folder', () => {
@@ -37,4 +38,14 @@ test('snapshot defaultImport', () => {
 
 test('snapshot typeImport', () => {
   expect(utils.typeImport('local', 'imported', 'source')).toMatchSnapshot()
+})
+
+test('snapshot createImportDeclaration when string', () => {
+  const ast = utils.createImportDeclaration('local', './source')
+  expect(generator(ast).code).toMatchSnapshot()
+})
+
+test('snapshot createImportDeclaration when string array', () => {
+  const ast = utils.createImportDeclaration(['local1', 'local2'], './source')
+  expect(generator(ast).code).toMatchSnapshot()
 })

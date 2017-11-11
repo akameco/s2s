@@ -1,5 +1,9 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`snapshot createImportDeclaration when string 1`] = `"import { local } from \\"./source\\";"`;
+
+exports[`snapshot createImportDeclaration when string array 1`] = `"import { local1, local2 } from \\"./source\\";"`;
+
 exports[`snapshot defaultImport 1`] = `
 Object {
   "source": Object {
