@@ -27,7 +27,7 @@
     "*.json": ["fmt", "git add"]
   },
   "devDependencies": {
-    "all-contributors-cli": "^4.5.3",
+    "all-contributors-cli": "^4.8.1",
     "babel-cli": "^6.26.0",
     "babel-jest": "^21.2.0",
     "babel-log": "^2.0.0",
@@ -36,9 +36,9 @@
     "babel-preset-flow": "^6.23.0",
     "babel-preset-stage-2": "^6.24.1",
     "coveralls": "^3.0.0",
-    "eslint": "^4.10.0",
+    "eslint": "^4.11.0",
     "eslint-config-precure": "^0.11.2",
-    "flow-bin": "^0.58.0",
+    "flow-bin": "^0.59.0",
     "globby": "^6.1.0",
     "husky": "^0.14.3",
     "jest": "^21.2.1",
