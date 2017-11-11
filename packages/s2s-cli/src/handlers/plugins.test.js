@@ -164,3 +164,17 @@ test('use s2s-handler-typescript when extname of eventPath is .ts', () => {
   plugins.default(getEventPath('hello.ts'), 'add', [plugin])
   expect(writeSpy.mock.calls[0][1]).toMatchSnapshot()
 })
+
+test('handlePluginsのPlugin.testオプションはglobを判定できる', () => {
+  plugins.default(getEventPath('a.js'), 'add', [
+    { test: '**/*.js', plugin: _plugin },
+  ])
+  expect(writeSpy).toHaveBeenCalled()
+})
+
+test('handlePluginsのPlugin.testオプションはglobの配列を判定できる', () => {
+  plugins.default(getEventPath('a.js'), 'add', [
+    { test: ['**/*.js', '!**/b'], plugin: _plugin },
+  ])
+  expect(writeSpy).toHaveBeenCalled()
+})

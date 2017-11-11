@@ -12,6 +12,7 @@ import {
   relativeFromCwd,
   resolveInputPath,
 } from '../utils'
+import some from '../utils/some'
 import runHooks from '../hooks'
 import { formatText } from '../reporters/'
 
@@ -50,7 +51,9 @@ export function handlePlugin(
 }
 
 function validate(plugin: Plugin, eventPath: Path, eventType: EventType) {
-  if (!plugin.test.test(eventPath)) {
+  if (typeof plugin.test === 'string' || Array.isArray(plugin.test)) {
+    return some(eventPath, plugin.test)
+  } else if (!plugin.test.test(eventPath)) {
     return false
   }
 
