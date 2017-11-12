@@ -15,12 +15,12 @@ export type HandlerOpts = {
   plugin: Plugin,
 }
 
-export type HanlderFunc = (code: Code, opts: HandlerOpts) => Code
+export type Handler = (code: Code, opts: HandlerOpts) => Code
 
 export type Plugin = {|
   test: RegExp | string | string[],
   plugin: PluginOpts,
-  handler?: HanlderFunc,
+  handler?: Handler,
   only?: Only,
   input?: string,
   output?: string,
