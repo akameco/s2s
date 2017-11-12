@@ -1,6 +1,6 @@
 {
   "name": "s2s-helper-get-initial-state",
-  "version": "0.2.3",
+  "version": "0.2.4",
   "description": "Helper function to get initialState",
   "license": "MIT",
   "repository": "akameco/s2s",

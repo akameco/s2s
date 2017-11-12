@@ -1,6 +1,6 @@
 {
   "name": "s2s-babel-flow-types",
-  "version": "0.2.2",
+  "version": "0.2.3",
   "description": "Flow types for s2s plugins",
   "license": "MIT",
   "repository": "akameco/s2s",
