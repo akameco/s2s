@@ -135,7 +135,6 @@ exports[`when state = string and initialState = "hello" 1`] = `
 // @flow
 type State = string
 
-// $FlowFixMe
 const initialState: State = 'hello'
 
       ↓ ↓ ↓ ↓ ↓ ↓
@@ -143,7 +142,6 @@ const initialState: State = 'hello'
 // @flow
 type State = string;
 
-// $FlowFixMe
 const initialState: State = 'hello';
 "
 `;
