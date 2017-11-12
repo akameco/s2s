@@ -1085,6 +1085,10 @@ prettier@^1.8.0:
   version "1.8.1"
   resolved "https://registry.yarnpkg.com/prettier/-/prettier-1.8.1.tgz#91064d778c08c85ac1cbe6b23195c34310d039f9"
 
+prettier@^1.8.2:
+  version "1.8.2"
+  resolved "https://registry.yarnpkg.com/prettier/-/prettier-1.8.2.tgz#bff83e7fd573933c607875e5ba3abbdffb96aeb8"
+
 private@^0.1.7:
   version "0.1.8"
   resolved "https://registry.yarnpkg.com/private/-/private-0.1.8.tgz#2381edb3689f7a53d653190060fcf822d2f368ff"
@@ -1235,7 +1239,7 @@ s2s-hook-prettier@^0.2.0:
     prettier "^1.8.0"
 
 "s2s@file:../../packages/s2s-cli":
-  version "0.11.1"
+  version "0.12.1"
   dependencies:
     babel-polyfill "^6.26.0"
     chalk "^2.3.0"
@@ -1243,7 +1247,8 @@ s2s-hook-prettier@^0.2.0:
     cp-file "^5.0.0"
     find-up "^2.1.0"
     key-locker "^0.2.0"
-    prettier "^1.8.0"
+    micromatch "^2.3.11"
+    prettier "^1.8.2"
     s2s-handler-babel "^0.1.1"
     s2s-handler-typescript "^0.1.1"
     s2s-hook-prettier "^0.2.0"
