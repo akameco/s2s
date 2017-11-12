@@ -15,18 +15,19 @@ module.exports = {
 
 ### plugins
 オブジェクトの配列を指定します。
-必須項目は、`test`と`plugin`です。
+必須項目は、`test`です。
 `test`は、対象とするファイルを正規表現で指定します。
-`plugin`は`.babelrc`の指定方法と同様にプラグイン名、オプションが必要な場合は、配列で渡すことが可能です。
+`plugin`はそれぞれのハンドラーで指定されたオプションを指定します。
+デフォルトでは、babelのpluginを指定します。
+なので、`.babelrc`の指定方法と同様にプラグイン名、オプションが必要な場合は、配列で渡すことが可能です。
 
 ```js
 type EventType = 'add' | 'change' | 'unlink'
 type Only = EventType[]
-type PluginOpts = PluginName | [PluginName, Object]
 
 type Plugin = {|
   test: RegExp | string | string[],
-  plugin: PluginOpts,
+  plugin?: *,
   only?: Only,
   input?: FileName,
   output?: FileName,

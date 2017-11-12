@@ -4,7 +4,7 @@ import fs from 'fs'
 import KeyLocker from 'key-locker'
 import handlerBabel from 's2s-handler-babel'
 import hanlderTypeScript from 's2s-handler-typescript'
-import type { Path, AfterHook, Plugin, EventType, HanlderFunc } from 'types'
+import type { Path, AfterHook, Plugin, EventType, Handler } from 'types'
 import {
   getOutputPath,
   writeFileSync,
@@ -25,7 +25,7 @@ type Opts = {
 }
 
 export function handlePlugin(
-  handler: HanlderFunc,
+  handler: Handler,
   { eventPath, plugin, hooks = [] }: Opts
 ) {
   const filename = resolveInputPath(plugin.input, eventPath)
@@ -65,9 +65,9 @@ function validate(plugin: Plugin, eventPath: Path, eventType: EventType) {
 }
 
 function selectHandler(
-  handler: HanlderFunc = handlerBabel,
+  handler: Handler = handlerBabel,
   filepath: Path
-): HanlderFunc {
+): Handler {
   const ext = path.extname(filepath)
   if (ext === '.ts') {
     return hanlderTypeScript

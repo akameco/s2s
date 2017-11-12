@@ -26,3 +26,11 @@ test('codeが""の場合、""が返ること', () => {
   const result = handler('', setup())
   expect(result).toBe('')
 })
+
+test('pluginが渡されない場合、エラーを起こすこと', () => {
+  const opts = setup()
+  delete opts.plugin
+  expect(() => {
+    handler(code, opts)
+  }).toThrow('required plugin')
+})
