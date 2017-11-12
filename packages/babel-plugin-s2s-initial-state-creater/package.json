@@ -4,11 +4,7 @@
   "description": "create initial state from flow info",
   "license": "MIT",
   "repository": "akameco/s2s",
-  "author": {
-    "name": "akameco",
-    "email": "akameco.t@gmail.com",
-    "url": "akameco.github.io"
-  },
+  "author": "akameco <akameco.t@gmail.com> (akameco.github.io)",
   "engines": {
     "node": ">=6"
   },

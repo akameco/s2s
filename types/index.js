@@ -1,23 +1,4 @@
 // @flow
-export type BabelNode = {
-  type: string,
-  [key: string | number]: any,
-}
-
-export type BabelPath = {
-  type: string,
-  node: BabelNode,
-  [key: string | number]: any,
-  get(key: string): BabelNode,
-}
-
-export type File = Object
-
-export type State = {
-  opts: Object,
-  file: File,
-}
-
 export type Path = string
 export type Code = string
 

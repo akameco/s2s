@@ -1,5 +1,5 @@
 // @flow
-const helper = require('./').default
+import helper from '.'
 
 test('get Actions', () => {
   const fixture = `

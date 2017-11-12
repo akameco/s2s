@@ -3,7 +3,7 @@ import * as t from 'babel-types'
 import flowComment from 'babel-add-flow-comments'
 import globby from 'globby'
 import upperCamelCase from 'uppercamelcase'
-import type { BabelPath, State } from 'types'
+import type { BabelPath, State } from 'types/babel'
 import {
   getImportPath,
   template,

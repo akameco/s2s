@@ -2,7 +2,7 @@
 import { parseExpression } from 'babylon'
 import { inheritsOpts } from 's2s-utils'
 import { flowFakerSync } from 'flow-faker'
-import type { BabelPath, State } from 'types'
+import type { BabelPath, State } from 'types/babel'
 // import blog from 'babel-log'
 
 const parseFromObj = obj =>

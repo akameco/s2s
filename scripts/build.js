@@ -49,6 +49,12 @@ function buildFile(file /* : string */) {
   fs.writeFileSync(destPath, code)
 
   // node v8以上でPublishするのでcp-fileなどは使わない
+
+  // babel-pluginに型定義は不要
+  if (getPkgName(file).startsWith('babel-plugin')) {
+    return
+  }
+
   if (fs.copyFileSync) {
     fs.copyFileSync(file, `${destPath}.flow`)
   }

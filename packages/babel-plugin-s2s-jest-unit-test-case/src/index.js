@@ -10,7 +10,7 @@ import {
   createImportDeclaration,
 } from 's2s-utils'
 import flatten from 'lodash.flatten'
-import type { BabelPath, State } from 'types'
+import type { BabelPath, State } from 'types/babel'
 // import blog from 'babel-log'
 
 const builder = {
