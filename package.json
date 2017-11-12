@@ -13,7 +13,7 @@
     "precommit": "lint-staged",
     "publish": "./scripts/publish.sh",
     "fmt": "prettier --write '**/*.{js,json}'",
-    "postinstall": "yarn fmt",
+    "postinstall": "yarn fmt && yarn build",
     "test": "jest --watch --coverage",
     "test:watch": "jest --watch",
     "test:cov": "jest --coverage --ci --runInBand",
