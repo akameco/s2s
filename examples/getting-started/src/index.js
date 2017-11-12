@@ -7,4 +7,4 @@
 
 type User = { id: number, name: string }
 // type `var user: User` and save!
-var user: User = { id: 0, name: '' }
+var user: User
