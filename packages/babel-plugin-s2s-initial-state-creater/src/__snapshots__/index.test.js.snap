@@ -57,3 +57,93 @@ type State = { count: Count; isLoading: boolean; };
 const initialState: State = { \\"count\\": 100, \\"isLoading\\": false };
 "
 `;
+
+exports[`when state = number 1`] = `
+"
+// @flow
+type Count = number
+type State = Count
+
+// $FlowFixMe
+const initialState: State = {}
+
+      ↓ ↓ ↓ ↓ ↓ ↓
+
+// @flow
+type Count = number;
+type State = Count;
+
+// $FlowFixMe
+const initialState: State = 0;
+"
+`;
+
+exports[`when state = number[] 1`] = `
+"
+// @flow
+type State = number[]
+
+// $FlowFixMe
+const initialState: State = {}
+
+      ↓ ↓ ↓ ↓ ↓ ↓
+
+// @flow
+type State = number[];
+
+// $FlowFixMe
+const initialState: State = [];
+"
+`;
+
+exports[`when state = number[] and initlaState = [] 1`] = `
+"
+// @flow
+type State = number[]
+
+const initialState: State = [1, 2, 3]
+
+      ↓ ↓ ↓ ↓ ↓ ↓
+
+// @flow
+type State = number[];
+
+const initialState: State = [1, 2, 3];
+"
+`;
+
+exports[`when state = string 1`] = `
+"
+// @flow
+type State = string
+
+// $FlowFixMe
+const initialState: State = {}
+
+      ↓ ↓ ↓ ↓ ↓ ↓
+
+// @flow
+type State = string;
+
+// $FlowFixMe
+const initialState: State = \\"\\";
+"
+`;
+
+exports[`when state = string and initialState = "hello" 1`] = `
+"
+// @flow
+type State = string
+
+// $FlowFixMe
+const initialState: State = 'hello'
+
+      ↓ ↓ ↓ ↓ ↓ ↓
+
+// @flow
+type State = string;
+
+// $FlowFixMe
+const initialState: State = 'hello';
+"
+`;

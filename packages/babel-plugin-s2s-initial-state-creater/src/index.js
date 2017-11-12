@@ -26,8 +26,7 @@ export default () => {
         const { opts: { from } } = state
         programPath.traverse({
           VariableDeclarator(nodePath) {
-            const idPath = nodePath.get('id')
-            if (idPath.node.name !== INITIAL_STATE) {
+            if (nodePath.get('id').node.name !== INITIAL_STATE) {
               return
             }
 
@@ -37,16 +36,19 @@ export default () => {
               column: column + 1,
             })
 
-            const NodeFromFlowtype = parseFromObj(flowInfoObj)
-            const NodeFromVariable = nodePath.get('init').node
+            const FromFlowNode = parseFromObj(flowInfoObj)
+            const InitNode = nodePath.get('init').node
 
-            const mergedObj = typedAssign(
-              {},
-              getObj(NodeFromVariable),
-              getObj(NodeFromFlowtype)
-            )
-
-            nodePath.get('init').replaceWith(parseFromObj(mergedObj))
+            if (FromFlowNode.type === 'ObjectExpression') {
+              const lastNode = typedAssign(
+                {},
+                getObj(InitNode),
+                getObj(FromFlowNode)
+              )
+              nodePath.get('init').replaceWith(parseFromObj(lastNode))
+            } else if (FromFlowNode.type !== InitNode.type) {
+              nodePath.get('init').replaceWith(FromFlowNode)
+            }
           },
         })
       },

@@ -39,4 +39,24 @@ pluginTest([
     title: 'initialState not found',
     file: 'reducer-no-state.js',
   },
+  {
+    title: 'when state = number[]',
+    file: 'array.js',
+  },
+  {
+    title: 'when state = number[] and initlaState = []',
+    file: 'array-exist.js',
+  },
+  {
+    title: 'when state = number',
+    file: 'number.js',
+  },
+  {
+    title: 'when state = string',
+    file: 'string.js',
+  },
+  {
+    title: 'when state = string and initialState = "hello"',
+    file: 'string-exist.js',
+  },
 ])
