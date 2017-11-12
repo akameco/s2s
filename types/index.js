@@ -2,9 +2,6 @@
 export type Path = string
 export type Code = string
 
-// eslint-disable-next-line
-export type PluginOpts = string | Function | [string | Function, Object]
-
 export type EventType = 'add' | 'change' | 'unlink'
 export type Only = EventType[]
 
@@ -12,14 +9,14 @@ export type HandlerOpts = {
   eventPath: Path,
   filename: Path,
   // eslint-disable-next-line
-  plugin: Plugin,
+  plugin?: Plugin,
 }
 
 export type Handler = (code: Code, opts: HandlerOpts) => Code
 
 export type Plugin = {|
   test: RegExp | string | string[],
-  plugin: PluginOpts,
+  plugin?: *,
   handler?: Handler,
   only?: Only,
   input?: string,
