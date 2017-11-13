@@ -47,3 +47,16 @@ type Template = {|
   output?: Path,
 |}
 ```
+
+### handlermapper
+`{ [extensions: string]: Handler }`
+
+必須ではありません。
+ハンドラの拡張子を指定することでそのハンドラを実行します。
+デフォルトでは、`.js`と`.ts`をそれぞれ処理します。
+
+```js
+  handlerMapper: {
+    '*.ts': typescriptHandler
+  }
+```

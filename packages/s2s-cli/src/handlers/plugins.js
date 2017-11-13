@@ -1,10 +1,11 @@
 // @flow
 import path from 'path'
 import fs from 'fs'
+import micromatch from 'micromatch'
 import KeyLocker from 'key-locker'
 import handlerBabel from 's2s-handler-babel'
 import hanlderTypeScript from 's2s-handler-typescript'
-import type { Path, AfterHook, Plugin, EventType, Handler } from 'types'
+import type { Path, AfterHook, Plugin, EventType, Handler, Config } from 'types'
 import {
   getOutputPath,
   writeFileSync,
@@ -64,34 +65,54 @@ function validate(plugin: Plugin, eventPath: Path, eventType: EventType) {
   return true
 }
 
-function selectHandler(
-  handler: Handler = handlerBabel,
+type HandlerMapper = { [extensions: string]: Handler }
+
+const DEFAULT_HANDLE_MAPPER = {
+  '*.(js|jsx)': handlerBabel,
+  '*.(ts|tsx)': hanlderTypeScript,
+}
+
+export function selectHandler(
+  handlerMapper: HandlerMapper,
+  handler?: Handler,
   filepath: Path
 ): Handler {
-  const ext = path.extname(filepath)
-  if (ext === '.ts') {
-    return hanlderTypeScript
+  if (handler) {
+    return handler
   }
-  return handler
+
+  const finalHandlerMapper = Object.assign(
+    {},
+    handlerMapper,
+    DEFAULT_HANDLE_MAPPER // デフォルトのハンドラの優先度は低いため
+  )
+
+  for (const key of Object.keys(finalHandlerMapper)) {
+    if (micromatch.isMatch(filepath, key, { matchBase: true })) {
+      return finalHandlerMapper[key]
+    }
+  }
+
+  throw new Error('any handlers not match')
 }
 
 export default function handlePlugins(
   eventPath: Path,
   eventType: EventType,
-  plugins: Plugin[] = [],
-  hooks: AfterHook[] = []
+  config: $Shape<Config> = {}
 ) {
   if (lock.has(eventPath)) {
     return
   }
 
+  const { plugins = [], afterHooks: hooks = [], handlerMapper = {} } = config
+
   for (const plugin of plugins) {
     if (validate(plugin, eventPath, eventType)) {
       lock.add(eventPath)
 
-      const handler = selectHandler(plugin.handler, eventPath)
-
       try {
+        const handler = selectHandler(handlerMapper, plugin.handler, eventPath)
         handlePlugin(handler, { eventPath, plugin, hooks })
       } catch (err) {
         console.error(toErrorStack(err))

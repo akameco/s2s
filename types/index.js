@@ -31,13 +31,14 @@ export type Template = {|
 
 export type AfterHook = (code: Code, path: Path) => Code
 
-export type Opts = {|
+export type Config = {
   watch: Path, // file, dir, glob, or array
   plugins?: Plugin[], // eslint-disable-line
   templatesDir?: string,
   templates?: Template[], // eslint-disable-line
-  afterHooks: AfterHook[], // eslint-disable-line
+  afterHooks?: AfterHook[], // eslint-disable-line
   prettier: boolean,
-|}
+  handlerMapper?: { [extensions: string]: Handler },
+}
 
 export type HandlerType = 'S2S' | 'TEMPLATE'

@@ -7,3 +7,25 @@ exports[`throw errors opts.plugins !== Array 1`] = `"Expected a Array, got strin
 exports[`throw errors opts.templates !== Array 1`] = `"Expected a Array got string"`;
 
 exports[`throw errors opts.watch == null 1`] = `"required watch"`;
+
+exports[`ファイルが追加されたときhandlePluginsが呼ばれる 1`] = `
+Object {
+  "afterHooks": Array [
+    [Function],
+  ],
+  "plugins": Array [
+    Object {
+      "plugin": "dummy",
+      "test": /dummy/,
+    },
+  ],
+  "prettier": true,
+  "templates": Array [
+    Object {
+      "input": "dummy",
+      "test": /dummy/,
+    },
+  ],
+  "watch": "app",
+}
+`;

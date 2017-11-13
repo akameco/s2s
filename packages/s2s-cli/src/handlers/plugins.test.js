@@ -48,7 +48,7 @@ const setup = plugin => {
 test('eventPathがMatchしないとき、handlePluginを呼ばない', () => {
   const spyFn = jest.spyOn(plugins, 'handlePlugin')
   const plugin = { test: /hoge/, plugin: _plugin }
-  plugins.default(getEventPath('a.js'), 'add', [plugin])
+  plugins.default(getEventPath('a.js'), 'add', { plugins: [plugin] })
   expect(spyFn.mock.calls.length).toBe(0)
 })
 
@@ -99,15 +99,15 @@ test('handlePlugin when compileWithPlugin returns empty code', () => {
 
 test('handlePlugins when locked', () => {
   lock.add(getEventPath('a.js'))
-  plugins.default(getEventPath('a.js'), 'add', [
-    { test: /x.js/, plugin: _plugin },
-  ])
+  plugins.default(getEventPath('a.js'), 'add', {
+    plugins: [{ test: /x.js/, plugin: _plugin }],
+  })
   expect(writeSpy).not.toHaveBeenCalled()
 })
 
 test('handlePlugins called write', () => {
   const opts = { test: /not-found.js/, plugin: _plugin }
-  plugins.default(getEventPath('a.js'), 'add', [opts])
+  plugins.default(getEventPath('a.js'), 'add', { plugins: [opts] })
   expect(logSpy).not.toHaveBeenCalled()
 })
 
@@ -116,7 +116,7 @@ test('handlePlugins handle error', () => {
   logSpy.mockImplementation(() => {
     throw new Error('hello')
   })
-  plugins.default(getEventPath('a.js'), 'add', [plugin])
+  plugins.default(getEventPath('a.js'), 'add', { plugins: [plugin] })
   expect(errorSpy).toHaveBeenCalled()
 })
 
@@ -133,21 +133,21 @@ test('call write handlePlugin when only === add', () => {
 
 test('onlyオプションがeventTypeと不一致のとき、hanlderを呼ばない', () => {
   const plugin = { test: /a.js/, plugin: _plugin, only: ['unlink'] }
-  plugins.default(getEventPath('a.js'), 'add', [plugin])
+  plugins.default(getEventPath('a.js'), 'add', { plugins: [plugin] })
   expect(writeSpy).not.toHaveBeenCalled()
 })
 
 test('lockが機能しているか', () => {
   const plugin = { test: /a.js/, plugin: _plugin }
-  plugins.default(getEventPath('a.js'), 'add', [plugin])
-  plugins.default(getEventPath('a.js'), 'add', [plugin])
+  plugins.default(getEventPath('a.js'), 'add', { plugins: [plugin] })
+  plugins.default(getEventPath('a.js'), 'add', { plugins: [plugin] })
   expect(logSpy).toHaveBeenCalledTimes(1)
 })
 
 test('カスタムhandlerが呼ばれるか', () => {
   const handler = jest.fn()
   const plugin = { test: /a.js/, plugin: _plugin, handler }
-  plugins.default(getEventPath('a.js'), 'add', [plugin])
+  plugins.default(getEventPath('a.js'), 'add', { plugins: [plugin] })
   expect(handler).toBeCalled()
 })
 
@@ -161,20 +161,57 @@ test('hooksが渡されない場合', () => {
 
 test('use s2s-handler-typescript when extname of eventPath is .ts', () => {
   const plugin = { test: /hello.ts/, plugin: _plugin }
-  plugins.default(getEventPath('hello.ts'), 'add', [plugin])
+  plugins.default(getEventPath('hello.ts'), 'add', {
+    plugins: [plugin],
+  })
   expect(writeSpy.mock.calls[0][1]).toMatchSnapshot()
 })
 
 test('handlePluginsのPlugin.testオプションはglobを判定できる', () => {
-  plugins.default(getEventPath('a.js'), 'add', [
-    { test: '**/*.js', plugin: _plugin },
-  ])
+  plugins.default(getEventPath('a.js'), 'add', {
+    plugins: [{ test: '**/*.js', plugin: _plugin }],
+  })
   expect(writeSpy).toHaveBeenCalled()
 })
 
 test('handlePluginsのPlugin.testオプションはglobの配列を判定できる', () => {
-  plugins.default(getEventPath('a.js'), 'add', [
-    { test: ['**/*.js', '!**/b'], plugin: _plugin },
-  ])
+  plugins.default(getEventPath('a.js'), 'add', {
+    plugins: [{ test: ['**/*.js', '!**/b'], plugin: _plugin }],
+  })
   expect(writeSpy).toHaveBeenCalled()
+})
+
+describe('selectHandler', () => {
+  test('ハンドラが渡された場合、そのハンドラを返す', () => {
+    const handler = x => x
+    expect(plugins.selectHandler({}, handler, 'a.ejs').name).toEqual('handler')
+  })
+
+  test('任意のハンドラーを渡すことができる', () => {
+    const testHandler = () => 'test'
+    const receivedHandler = plugins.selectHandler(
+      { '*.ejs': testHandler },
+      undefined,
+      'path/to/index.ejs'
+    )
+    // $FlowFixMe
+    expect(receivedHandler('', {})).toBe('test')
+  })
+
+  test('デフォルトのハンドラより渡されたハンドラを優先する', () => {
+    const testHandler = () => 'test'
+    const receivedHandler = plugins.selectHandler(
+      { '*.js': testHandler },
+      undefined,
+      'path/to/index.js'
+    )
+    // $FlowFixMe
+    expect(receivedHandler('', {})).toBe('test')
+  })
+
+  test('ハンドラがマッチしない場合、エラーを起こす', () => {
+    expect(() => {
+      plugins.selectHandler({}, undefined, 'a.ejs')
+    }).toThrow('any handlers not match')
+  })
 })
