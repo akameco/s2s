@@ -31,7 +31,7 @@ export type Template = {|
 
 export type AfterHook = (code: Code, path: Path) => Code
 
-export type Opts = {|
+export type Config = {|
   watch: Path, // file, dir, glob, or array
   plugins?: Plugin[], // eslint-disable-line
   templatesDir?: string,

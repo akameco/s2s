@@ -3,7 +3,7 @@ import 'babel-polyfill' // eslint-disable-line
 import chalk from 'chalk'
 import chokidar from 'chokidar'
 import prettierHook from 's2s-hook-prettier'
-import type { Opts, Path } from 'types'
+import type { Config, Path } from 'types'
 import handlePlugins from './handlers/plugins'
 import handleTemplates from './handlers/templates'
 
@@ -23,7 +23,7 @@ export default ({
   afterHooks = [],
   templatesDir,
   prettier: isPrettier = true,
-}: Opts) => {
+}: Config) => {
   if (!watch) {
     throw new Error('required watch')
   }

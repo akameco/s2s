@@ -1,6 +1,6 @@
 // @flow
 import cases from 'jest-in-case'
-import type { Opts } from 'types'
+import type { Config } from 'types'
 import * as plugins from './handlers/plugins'
 import * as templates from './handlers/templates'
 import m from '.'
@@ -10,7 +10,7 @@ let handlePluginsSpy
 let handleTemplateSpy
 let watcher
 
-function setup(opts: $Shape<Opts>) {
+function setup(opts: $Shape<Config>) {
   return {
     watch: 'app',
     plugins: [{ test: /dummy/, plugin: 'dummy' }],
