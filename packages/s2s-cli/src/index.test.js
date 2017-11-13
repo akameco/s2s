@@ -74,7 +74,7 @@ test('ファイルが追加されたときhandlePluginsが呼ばれる', () => {
   const result = handlePluginsSpy.mock.calls[0]
   expect(result[0]).toBe('hello')
   expect(result[1]).toBe('add')
-  expect(result[2]).toEqual([{ plugin: 'dummy', test: /dummy/ }])
+  expect(result[2]).toMatchSnapshot()
 })
 
 test('pluginsがない場合、ファイルが追加されたときhandlePluginsは呼ばれない', () => {
@@ -97,9 +97,9 @@ test('templatesがない場合、ファイルが追加されたときhandleTempl
   expect(handleTemplateSpy).not.toBeCalled()
 })
 
-test('when prettier = false', () => {
+test('prettier = falseのとき、 afterHooksが空配列でhandlePluginが呼ばれる', () => {
   watcher = m(setup({ prettier: false }))
   watcher.emit('add', 'hello')
   const result = handlePluginsSpy.mock.calls[0]
-  expect(result[3]).toEqual([])
+  expect(result[2].afterHooks).toEqual([])
 })

@@ -16,14 +16,19 @@ function createWatcher(rootPath: Path) {
   return watcher
 }
 
-export default ({
-  watch,
-  plugins = [],
-  templates = [],
-  afterHooks = [],
-  templatesDir,
-  prettier: isPrettier = true,
-}: Config) => {
+export default (inputConfg: Config) => {
+  const config = {
+    ...{
+      plugins: [],
+      templates: [],
+      afterHooks: [],
+      prettier: true,
+    },
+    ...inputConfg,
+  }
+
+  const { watch, plugins, templates, afterHooks } = config
+
   if (!watch) {
     throw new Error('required watch')
   }
@@ -39,24 +44,23 @@ export default ({
   if (!Array.isArray(afterHooks)) {
     throw new TypeError(`Expected a Array got ${typeof afterHooks}`)
   }
-
   const watcher = createWatcher(watch)
 
-  if (isPrettier) {
+  if (config.prettier) {
     afterHooks.push(prettierHook())
   }
 
   if (plugins.length > 0) {
     for (const type of ['add', 'change', 'unlink']) {
       watcher.on(type, (input: Path) => {
-        handlePlugins(input, type, plugins, afterHooks)
+        handlePlugins(input, type, config)
       })
     }
   }
 
   if (templates.length > 0) {
     watcher.on('add', (input: Path) => {
-      handleTemplates(input, templates, templatesDir)
+      handleTemplates(input, templates, config.templatesDir)
     })
   }
 
