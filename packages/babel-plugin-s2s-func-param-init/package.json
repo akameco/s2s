@@ -1,0 +1,17 @@
+{
+  "name": "babel-plugin-s2s-func-param-init",
+  "version": "0.1.4",
+  "description": "funciton param initializing with type info",
+  "license": "MIT",
+  "repository": "akameco/s2s",
+  "author": "akameco <akameco.t@gmail.com> (akameco.github.io)",
+  "engines": {
+    "node": ">=6"
+  },
+  "main": "lib/index.js",
+  "files": ["lib"],
+  "dependencies": {
+    "flow-faker": "^0.1.5",
+    "s2s-utils": "^0.5.0"
+  }
+}
