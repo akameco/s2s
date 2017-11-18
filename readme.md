@@ -63,7 +63,6 @@ $ git clone --depth=1 git@github.com:akameco/s2s.git
 $ yarn
 $ cd examples/getting-started
 $ yarn
-// or npm install
 ```
 
 ### Usage
