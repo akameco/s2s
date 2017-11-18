@@ -19,8 +19,8 @@ export type Plugin = {|
   plugin?: *,
   handler?: Handler,
   only?: Only,
-  input?: string,
-  output?: string,
+  input?: Path,
+  output?: Path,
 |}
 
 export type Template = {|
