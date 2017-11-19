@@ -4,8 +4,8 @@ import chalk from 'chalk'
 import chokidar from 'chokidar'
 import prettierHook from 's2s-hook-prettier'
 import type { Config, Path } from 'types'
-import handlePlugins from './handlers/plugins'
-import handleTemplates from './handlers/templates'
+import handlePlugins from './handlers'
+import handleTemplates from './templates'
 
 function createWatcher(rootPath: Path) {
   const watcher = chokidar.watch(rootPath, {

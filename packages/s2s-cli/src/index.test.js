@@ -1,8 +1,8 @@
 // @flow
 import cases from 'jest-in-case'
 import type { Config } from 'types'
-import * as plugins from './handlers/plugins'
-import * as templates from './handlers/templates'
+import * as plugins from './handlers'
+import * as templates from './templates'
 import m from '.'
 
 let logSpy
