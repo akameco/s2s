@@ -4,7 +4,7 @@ import rimraf from 'rimraf'
 import cpFile from 'cp-file'
 import stripAnsi from 'strip-ansi'
 import pathExists from 'path-exists'
-import * as templates from './templates'
+import * as templates from '.'
 
 let logSpy
 const fn = x => x

@@ -5,7 +5,7 @@ import KeyLocker from 'key-locker'
 import * as babel from 'babel-core'
 import defaultHandler from 's2s-handler-babel'
 import * as utils from '../utils'
-import * as plugins from './plugins'
+import * as plugins from '.'
 import _plugin from './__tests__/helpers/identifer-reverse-plugin'
 
 let errorSpy

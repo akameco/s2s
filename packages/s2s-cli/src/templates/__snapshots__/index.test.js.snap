@@ -1,0 +1,5 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`called log with output result 1`] = `"TEMPLATE packages/s2s-cli/src/templates/__tests__/fixtures/copy.js → packages/s2s-cli/src/templates/__tests__/fixtures/copy-result.js"`;
+
+exports[`show output path when add output option 1`] = `"TEMPLATE packages/s2s-cli/src/templates/__tests__/fixtures/copy.js → packages/s2s-cli/src/templates/__tests__/fixtures/output.js"`;
