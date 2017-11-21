@@ -55,7 +55,7 @@ export default () => {
 
         const code = fs.readFileSync(from, 'utf8')
         const names = getFuncNames(code)
-        const nameMap /* : Set<string> */ = new Set(names)
+        const nameMap: Set<string> = new Set(names)
 
         rootPath.traverse({
           ImportDeclaration(path) {
