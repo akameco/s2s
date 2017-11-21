@@ -1,13 +1,10 @@
 // @flow
 import { parse } from 'babylon'
 import traverse from 'babel-traverse'
+import type { Code } from 'types'
 // import blog from 'babel-log'
 
-/* ::
-type Code = string
-*/
-
-export default function getReducerCase(code /* : Code */) {
+export default function getReducerCase(code: Code): string[] {
   const ast = parse(code, {
     sourceType: 'module',
     plugins: ['flow', 'objectRestSpread'],

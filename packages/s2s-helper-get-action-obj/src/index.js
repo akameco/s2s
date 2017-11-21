@@ -1,15 +1,12 @@
 // @flow
 import { parse } from 'babylon'
 import traverse from 'babel-traverse'
+import type { Code } from 'types'
 // import blog from 'babel-log'
-
-/* ::
-type Code = string
-*/
 
 const ACTIONS = 'Actions'
 
-export default function getActionObj(code /* : Code */) {
+export default function getActionObj(code: Code): string[] {
   const ast = parse(code, {
     sourceType: 'module',
     plugins: ['flow', 'objectRestSpread'],

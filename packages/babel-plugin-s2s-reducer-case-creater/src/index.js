@@ -22,8 +22,8 @@ export default () => {
         }
 
         const code = fs.readFileSync(from, 'utf8')
-        const actions /* : string[]  */ = getActionObj(code)
-        const actionSet /* : Set<string> */ = new Set(actions)
+        const actions = getActionObj(code)
+        const actionSet: Set<string> = new Set(actions)
 
         rootPath.traverse({
           SwitchCase(path) {
