@@ -27,12 +27,12 @@ afterEach(() => {
 
 test('unixのときgetFlowBinはflowのバイナリのパスを返す', () => {
   process.platform = 'darwin'
-  expect(getFlowBin('/')).toBe('/node_modules/.bin/flow')
+  expect(getFlowBin(cwd)).toBe(path.join(cwd, '/node_modules/.bin/flow'))
 })
 
 test('win32のときgetFlowBinはflow.exeのバイナリのパスを返す', () => {
   process.platform = 'win32'
-  expect(getFlowBin('/')).toBe('/node_modules/.bin/flow.exe')
+  expect(getFlowBin(cwd)).toBe(path.join(cwd, '/node_modules/.bin/flow.exe'))
 })
 
 test('getVersionInfoはflowのバージョン情報のオブジェクトを返す', async () => {

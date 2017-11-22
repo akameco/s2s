@@ -2,6 +2,7 @@
 import path from 'path'
 import chalk from 'chalk'
 import cpFile from 'cp-file'
+import slash from 'slash'
 import type { Path, Template } from 'types'
 import { formatText, trimAndFormatPath } from '../reporters'
 import { isAlreadyExist, relativeFromCwd, getOutputPath } from '../utils'
@@ -53,7 +54,9 @@ function handleTemplate(
   const templatePath = path.join(templatesDir, template.input)
   cpFile.sync(templatePath, outputPath)
 
-  console.log(formatText('TEMPLATE', relativeFromCwd(templatePath), outputPath))
+  console.log(
+    formatText('TEMPLATE', relativeFromCwd(templatePath), slash(outputPath))
+  )
 }
 
 export default function handleTemplates(

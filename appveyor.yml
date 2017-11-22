@@ -1,0 +1,28 @@
+environment:
+  nodejs_version: "8"
+
+# Install scripts. (runs after repo cloning)
+install:
+  # Get the latest stable version of Node.js or io.js
+  - ps: Install-Product node $env:nodejs_version x64
+  # install modules
+  - yarn install
+
+cache:
+  - node_modules
+  - "%LOCALAPPDATA%\\Yarn"
+
+branches:
+  only:
+  - master
+  - /v[0-9]+(\.[0-9]+)*/
+
+test_script:
+  # Output useful info for debugging.
+  - node --version
+  - npm --version
+  # Run tests
+  - yarn run test:ci
+
+# Don't actually build.
+build: off

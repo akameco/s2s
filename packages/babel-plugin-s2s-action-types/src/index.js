@@ -5,6 +5,7 @@ import * as t from 'babel-types'
 import template from 'babel-template'
 import snakeCase from 'lodash.snakecase'
 import flowComment from 'babel-add-flow-comments'
+import slash from 'slash'
 import type { BabelPath, State, File } from 'types/babel'
 // import blog from 'babel-log'
 
@@ -23,7 +24,7 @@ const builders = {
 
 function getPrefix({ opts: { filename } }: File, removePrefix: string) {
   const file = relative(join(process.cwd(), removePrefix), filename)
-  return `${dirname(file)}/`
+  return `${dirname(slash(file))}/`
 }
 
 export default () => {
