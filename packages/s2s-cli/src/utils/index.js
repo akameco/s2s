@@ -1,6 +1,7 @@
 // @flow
 import path from 'path'
 import fs from 'fs'
+import slash from 'slash'
 import type { Path } from 'types'
 
 // eslint-disable-next-line flowtype/no-weak-types
@@ -13,10 +14,10 @@ export function toErrorStack(err: Object) {
 
 export function getOutputPath(output: Path, input: Path): Path {
   if (path.isAbsolute(output)) {
-    return output
+    return slash(output)
   }
 
-  return path.resolve(path.dirname(input), output)
+  return slash(path.resolve(path.dirname(input), output))
 }
 
 export function writeFileSync(outputPath: Path, code: string) {
@@ -24,7 +25,7 @@ export function writeFileSync(outputPath: Path, code: string) {
 }
 
 export function relativeFromCwd(input: Path) {
-  return path.relative(process.cwd(), input)
+  return path.relative(slash(process.cwd()), input)
 }
 
 export function getDirAndBaseName(testPath: string) {
