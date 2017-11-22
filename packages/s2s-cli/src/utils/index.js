@@ -14,7 +14,7 @@ export function toErrorStack(err: Object) {
 
 export function getOutputPath(output: Path, input: Path): Path {
   if (path.isAbsolute(output)) {
-    return slash(output)
+    return output
   }
 
   return slash(path.resolve(path.dirname(input), output))
@@ -25,7 +25,7 @@ export function writeFileSync(outputPath: Path, code: string) {
 }
 
 export function relativeFromCwd(input: Path) {
-  return path.relative(slash(process.cwd()), input)
+  return slash(path.relative(process.cwd(), input))
 }
 
 export function getDirAndBaseName(testPath: string) {
