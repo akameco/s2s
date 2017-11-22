@@ -25,15 +25,22 @@ afterEach(() => {
   process.platform = platform
 })
 
-test('unixのときgetFlowBinはflowのバイナリのパスを返す', () => {
-  process.platform = 'darwin'
-  expect(getFlowBin('/')).toBe('/node_modules/.bin/flow')
-})
+if (process.platform === 'win32') {
+  test('win32: win32のときgetFlowBinはflow.exeのバイナリのパスを返す', () => {
+    process.platform = 'win32'
+    expect(getFlowBin('/')).toBe('C:\\node_modules\\.bin\\flow.exe')
+  })
+} else {
+  test('unixのときgetFlowBinはflowのバイナリのパスを返す', () => {
+    process.platform = 'darwin'
+    expect(getFlowBin('/')).toBe('/node_modules/.bin/flow')
+  })
 
-test('win32のときgetFlowBinはflow.exeのバイナリのパスを返す', () => {
-  process.platform = 'win32'
-  expect(getFlowBin('/')).toBe('/node_modules/.bin/flow.exe')
-})
+  test('win32のときgetFlowBinはflow.exeのバイナリのパスを返す', () => {
+    process.platform = 'win32'
+    expect(getFlowBin('/')).toBe('/node_modules/.bin/flow.exe')
+  })
+}
 
 test('getVersionInfoはflowのバージョン情報のオブジェクトを返す', async () => {
   const info = await versionInfo(cwd)
