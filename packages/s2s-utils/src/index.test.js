@@ -1,4 +1,5 @@
 // @flow
+import path from 'path'
 import generate from 'babel-generator'
 import * as utils from '.'
 
@@ -29,7 +30,8 @@ test('inheritsOpts', () => {
 })
 
 test('return parent path name', () => {
-  expect(utils.getParentDirName('ok/hello/world')).toBe('hello')
+  const filePath = path.sep === '\\' ? 'ok\\hello\\world' : 'ok/hello/world'
+  expect(utils.getParentDirName(filePath)).toBe('hello')
 })
 
 testAst([
