@@ -31,3 +31,59 @@ export default function getActionObj(code: Code): string[] {
 
   return actions
 }
+
+export function getTypeProperty(code: Code, target: string): string[] {
+  const ast = parse(code, {
+    sourceType: 'module',
+    plugins: ['flow', 'objectRestSpread'],
+  })
+
+  const properties = []
+
+  traverse(ast, {
+    TypeAlias(path) {
+      if (path.get('id').node.name !== target) {
+        return
+      }
+
+      const path2 = path.get('right')
+
+      if (!path2.isObjectTypeAnnotation()) {
+        return
+      }
+
+      for (const prop of path2.get('properties')) {
+        properties.push(prop.get('key').node.name)
+      }
+    },
+  })
+
+  return properties
+}
+
+export function getAllTypeProperty(code: Code): { [key: string]: string[] } {
+  const ast = parse(code, {
+    sourceType: 'module',
+    plugins: ['flow', 'objectRestSpread'],
+  })
+
+  const properties = {}
+
+  traverse(ast, {
+    TypeAlias(path) {
+      const name = path.get('id').node.name
+
+      const path2 = path.get('right')
+
+      if (!path2.isObjectTypeAnnotation()) {
+        return
+      }
+
+      properties[name] = path2
+        .get('properties')
+        .map(p => p.get('key').node.name)
+    },
+  })
+
+  return properties
+}

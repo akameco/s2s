@@ -6,6 +6,7 @@ import plugin from '.'
 const getFixturesPath = x => path.resolve(__dirname, '__fixtures__', x)
 const fromPath = getFixturesPath('actionTypes.js')
 const noopPath = getFixturesPath('noop.js')
+const withParamsPath = getFixturesPath('sameParam.js')
 
 pluginTester({
   title: 'default',
@@ -95,5 +96,22 @@ pluginTester({
       code: `// throw error`,
       error: /required from option/,
     },
+  ],
+})
+
+pluginTester({
+  title: 'when has same property',
+  plugin,
+  snapshot: true,
+  pluginOptions: { from: withParamsPath },
+  tests: [
+    `
+export default function(state: State = initialState, action) {
+  switch (action.type) {
+    default:
+      return state
+  }
+}
+      `,
   ],
 })

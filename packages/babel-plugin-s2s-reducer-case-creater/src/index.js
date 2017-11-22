@@ -1,9 +1,10 @@
 // @flow
 import fs from 'fs'
 import * as t from 'babel-types'
-import getActionObj from 's2s-helper-get-action-obj'
+import getActionObj, { getAllTypeProperty } from 's2s-helper-get-action-obj'
 import { template, inheritsOpts } from 's2s-utils'
 import type { BabelPath, State } from 'types/babel'
+import upperCamelCase from 'uppercamelcase'
 // import blog from 'babel-log'
 
 const builder = {
@@ -22,8 +23,10 @@ export default () => {
         }
 
         const code = fs.readFileSync(from, 'utf8')
-        const actions = getActionObj(code)
-        const actionSet: Set<string> = new Set(actions)
+
+        // 重複を避けるためSetに変換
+        const actionSet: Set<string> = new Set(getActionObj(code))
+        const actionMap = getAllTypeProperty(code)
 
         rootPath.traverse({
           SwitchCase(path) {
@@ -52,8 +55,20 @@ export default () => {
             const items = Array.from(actionSet).map(name => {
               const testAST = builder.test({ TYPE: t.identifier(name) })
                 .expression
-              const cons = [builder.consequent()]
-              return t.switchCase(testAST, cons)
+
+              const propsAST = actionMap[upperCamelCase(name)]
+                .filter(v => v !== 'type')
+                .map(v =>
+                  t.objectProperty(t.identifier(v), t.identifier(`action.${v}`))
+                )
+
+              const returnStatement = builder.consequent()
+              returnStatement.argument.properties = [
+                ...returnStatement.argument.properties,
+                ...propsAST,
+              ]
+
+              return t.switchCase(testAST, [returnStatement])
             })
 
             path.unshiftContainer('cases', items)
