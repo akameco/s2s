@@ -26,6 +26,32 @@ export default function (state: State = initialState, action) {
 "
 `;
 
+exports[`1. s2s-reducer-case-creater 2`] = `
+"
+export default function(state: State = initialState, action) {
+  switch (action.type) {
+    default:
+      return state
+  }
+}
+
+      ↓ ↓ ↓ ↓ ↓ ↓
+
+export default function (state: State = initialState, action) {
+  switch (action.type) {
+    case Actions.SET:
+      return {
+        ...state,
+        count: action.count
+      };
+
+    default:
+      return state;
+  }
+}
+"
+`;
+
 exports[`basic 1`] = `
 "
 export default function(state: State = initialState, action) {
