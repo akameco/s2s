@@ -1,5 +1,5 @@
 // @flow
-import { relative, dirname, extname, normalize } from 'path'
+import { relative, dirname, extname, normalize, sep } from 'path'
 import slash from 'slash'
 import babelTemplate from 'babel-template'
 import * as t from 'babel-types'
@@ -32,8 +32,8 @@ export function inheritsOpts() {
   }
 }
 
-export function getParentDirName(path: string) {
-  const parentPath = normalize(dirname(path)).split('/')
+export function getParentDirName(filePath: string) {
+  const parentPath = normalize(dirname(filePath)).split(sep)
   return parentPath[parentPath.length - 1]
 }
 
