@@ -3,14 +3,15 @@ import 'babel-polyfill' // eslint-disable-line
 import chalk from 'chalk'
 import chokidar from 'chokidar'
 import prettierHook from 's2s-hook-prettier'
-import type { Config, Path } from 'types'
+import type { Config, Path, AnymatchPath } from 'types'
 import handlePlugins from './handlers'
 import handleTemplates from './templates'
 
-function createWatcher(rootPath: Path) {
+function createWatcher(rootPath: Path, ignored: AnymatchPath) {
   const watcher = chokidar.watch(rootPath, {
     cwd: process.cwd(),
     ignoreInitial: true,
+    ignored,
   })
 
   return watcher
@@ -23,11 +24,12 @@ export default (inputConfg: Config) => {
       templates: [],
       afterHooks: [],
       prettier: true,
+      ignored: ['.git/', 'node_modules/'],
     },
     ...inputConfg,
   }
 
-  const { watch, plugins, templates, afterHooks } = config
+  const { watch, plugins, templates, afterHooks, ignored } = config
 
   if (!watch) {
     throw new Error('required watch')
@@ -44,7 +46,7 @@ export default (inputConfg: Config) => {
   if (!Array.isArray(afterHooks)) {
     throw new TypeError(`Expected a Array got ${typeof afterHooks}`)
   }
-  const watcher = createWatcher(watch)
+  const watcher = createWatcher(watch, ignored)
 
   if (config.prettier) {
     afterHooks.push(prettierHook())
