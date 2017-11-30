@@ -8,6 +8,8 @@ const noop = () => null
 // eslint-disable-next-line flowtype/no-weak-types
 type JsonType = Object
 
+const FLOW_BIN_PATH = path.join('node_modules', '.bin', 'flow')
+
 async function execFlow(
   cwd: string,
   params: $ReadOnlyArray<string>
@@ -21,16 +23,12 @@ function execFlowSync(cwd: string, params: $ReadOnlyArray<string>): JsonType {
     const output = execa.sync(getFlowBin(cwd), params).stdout
     return JSON.parse(output)
   } catch (err) {
-    console.error(err)
     return {}
   }
 }
 
 export function getFlowBin(cwd: string) {
-  const bin = process.platform === 'win32' ? 'flow.exe' : 'flow'
-  const flowBinPath = path.join('node_modules', '.bin', bin)
-
-  return path.resolve(cwd, flowBinPath)
+  return path.resolve(cwd, FLOW_BIN_PATH)
 }
 
 export type FlowVersionInfo = {
