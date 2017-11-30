@@ -3,6 +3,7 @@ import path from 'path'
 import fs from 'fs'
 import slash from 'slash'
 import type { Path } from 'types'
+import normalizePathSep from './normalize_path_sep'
 
 // eslint-disable-next-line flowtype/no-weak-types
 export function toErrorStack(err: Object) {
@@ -40,7 +41,7 @@ export function getDirAndBaseName(testPath: string) {
 
 export function isAlreadyExist(input: Path) {
   try {
-    const code = fs.readFileSync(input, 'utf-8')
+    const code = fs.readFileSync(normalizePathSep(input), 'utf-8')
     if (code.length === 0 || code.trim() === '') {
       return false
     }
