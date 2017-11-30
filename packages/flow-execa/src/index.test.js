@@ -13,7 +13,6 @@ const getFixturePath = (...x) => path.resolve(__dirname, '__fixtures__', ...x)
 
 let cwd
 let filePath
-const platform = process.platform
 const pos = [11, 7]
 
 beforeEach(() => {
@@ -21,18 +20,8 @@ beforeEach(() => {
   filePath = getFixturePath('basic.js')
 })
 
-afterEach(() => {
-  process.platform = platform
-})
-
 test('unixのときgetFlowBinはflowのバイナリのパスを返す', () => {
-  process.platform = 'darwin'
   expect(getFlowBin(cwd)).toBe(path.join(cwd, '/node_modules/.bin/flow'))
-})
-
-test('win32のときgetFlowBinはflow.exeのバイナリのパスを返す', () => {
-  process.platform = 'win32'
-  expect(getFlowBin(cwd)).toBe(path.join(cwd, '/node_modules/.bin/flow.exe'))
 })
 
 test('getVersionInfoはflowのバージョン情報のオブジェクトを返す', async () => {
