@@ -12,7 +12,7 @@
     "flow": "flow",
     "precommit": "lint-staged",
     "publish": "./scripts/publish.sh",
-    "fmt": "prettier --write '**/*.{js,json}'",
+    "fmt": "prettier --write \"**/*.{js,json}\"",
     "postinstall": "yarn build",
     "test": "jest --watch --coverage",
     "test:watch": "jest --watch",
