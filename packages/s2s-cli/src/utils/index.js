@@ -17,7 +17,7 @@ export function getOutputPath(output: Path, input: Path): Path {
     return output
   }
 
-  return slash(path.resolve(path.dirname(input), output))
+  return path.posix.resolve(path.posix.dirname(slash(input)), slash(output))
 }
 
 export function writeFileSync(outputPath: Path, code: string) {
