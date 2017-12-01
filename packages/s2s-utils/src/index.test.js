@@ -1,10 +1,14 @@
 // @flow
-import path from 'path'
 import generate from 'babel-generator'
 import * as utils from '.'
 
 test('getImportPath same folder', () => {
   const result = utils.getImportPath('path/to/index.js', 'path/to/test.js')
+  expect(result).toBe('./test')
+})
+
+test('getImportPath same folder when windows', () => {
+  const result = utils.getImportPath('path\\to\\index.js', 'path\\to\\test.js')
   expect(result).toBe('./test')
 })
 
@@ -30,7 +34,12 @@ test('inheritsOpts', () => {
 })
 
 test('return parent path name', () => {
-  const filePath = path.sep === '\\' ? 'ok\\hello\\world' : 'ok/hello/world'
+  const filePath = 'ok/hello/world'
+  expect(utils.getParentDirName(filePath)).toBe('hello')
+})
+
+test('return parent path name when windows', () => {
+  const filePath = 'ok\\hello\\world'
   expect(utils.getParentDirName(filePath)).toBe('hello')
 })
 

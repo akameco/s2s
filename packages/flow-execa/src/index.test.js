@@ -9,6 +9,8 @@ import {
   getTypeFromFileSync,
 } from '.'
 
+jest.setTimeout(18000)
+
 const getFixturePath = (...x) => path.resolve(__dirname, '__fixtures__', ...x)
 
 let cwd

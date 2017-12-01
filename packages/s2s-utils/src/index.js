@@ -1,15 +1,17 @@
 // @flow
-import { relative, dirname, extname, normalize, sep } from 'path'
+import path from 'path'
 import slash from 'slash'
 import babelTemplate from 'babel-template'
 import * as t from 'babel-types'
 
-export function trimExtension(path: string, ext: string = '.js') {
-  return extname(path) === ext ? path.replace(ext, '') : path
+export function trimExtension(filename: string, ext: string = '.js') {
+  return path.extname(filename) === ext ? filename.replace(ext, '') : filename
 }
 
 export function getImportPath(from: string, to: string): string {
-  const relativePath = slash(relative(dirname(from), to))
+  const relativePath = slash(
+    path.posix.relative(path.posix.dirname(slash(from)), slash(to))
+  )
   const fomattedPath = trimExtension(relativePath)
   if (!/^\.\.?/.test(fomattedPath)) {
     return `./${fomattedPath}`
@@ -33,7 +35,7 @@ export function inheritsOpts() {
 }
 
 export function getParentDirName(filePath: string) {
-  const parentPath = normalize(dirname(filePath)).split(sep)
+  const parentPath = path.posix.dirname(slash(filePath)).split('/')
   return parentPath[parentPath.length - 1]
 }
 
