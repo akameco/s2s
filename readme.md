@@ -114,8 +114,8 @@ More Info? See Examples.
 
 ## More Examples
 
-Combination of Redux and Flow.
-[Shopping Cart (redux+flowtype+s2s)](./examples/shopping-cart)
+- [Shopping Cart](./examples/shopping-cart) Combination of Redux and Flow.
+- [cndlhvn/s2s-redux-actions-sample](https://github.com/cndlhvn/s2s-redux-actions-sample) redux-actions + redux-saga.
 
 More Info? See Examples.
 
