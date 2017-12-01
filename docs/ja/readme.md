@@ -110,9 +110,8 @@ $ yarn run s2s
 
 ### もっとExamples
 
-reduxとflowtypeを組み合わせた例。
-
-[ショッピングカート (redux+flowtype+s2s)](https://github.com/akameco/s2s/tree/master/examples/shopping-cart)
+- [ショッピングカート](../../examples/shopping-cart) redux+flowtype
+- [cndlhvn/s2s-redux-actions-sample](https://github.com/cndlhvn/s2s-redux-actions-sample) redux-actions + redux-saga.
 
 
 ### オフィシャルプラグイン
