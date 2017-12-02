@@ -19,10 +19,7 @@ export function getOutputPath(output: Path, input: Path): Path {
   }
 
   return slash(
-    path.resolve(
-      path.dirname(normalizePathSeq(input)),
-      normalizePathSeq(output)
-    )
+    path.join(path.dirname(normalizePathSeq(input)), normalizePathSeq(output))
   )
 }
 
