@@ -10,6 +10,7 @@
   "dependencies": {
     "babel-template": "^6.26.0",
     "babel-types": "^6.26.0",
-    "slash": "^1.0.0"
+    "slash": "^1.0.0",
+    "normalize-path-sep": "^0.1.1"
   }
 }
