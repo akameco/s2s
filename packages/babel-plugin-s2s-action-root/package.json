@@ -1,6 +1,6 @@
 {
   "name": "babel-plugin-s2s-action-root",
-  "version": "0.3.7",
+  "version": "0.4.0",
   "description": "generate action types",
   "license": "MIT",
   "repository": "akameco/s2s",
@@ -16,7 +16,7 @@
     "babel-template": "^6.26.0",
     "babel-types": "^6.26.0",
     "globby": "^6.1.0",
-    "s2s-utils": "^0.5.0",
+    "s2s-utils": "^0.6.0",
     "uppercamelcase": "^3.0.0"
   }
 }

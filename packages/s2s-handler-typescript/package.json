@@ -1,6 +1,6 @@
 {
   "name": "s2s-handler-typescript",
-  "version": "0.1.2",
+  "version": "0.1.3",
   "description": "typescript handler",
   "license": "MIT",
   "repository": "https://github.com/akameco/s2s",

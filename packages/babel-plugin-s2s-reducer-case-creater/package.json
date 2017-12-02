@@ -1,6 +1,6 @@
 {
   "name": "babel-plugin-s2s-reducer-case-creater",
-  "version": "0.1.6",
+  "version": "0.1.7",
   "description": "create reducer case using action types",
   "license": "MIT",
   "repository": "akameco/s2s",
@@ -12,8 +12,8 @@
   "files": ["lib"],
   "dependencies": {
     "babel-types": "^6.26.0",
-    "s2s-helper-get-action-obj": "^0.1.4",
-    "s2s-utils": "^0.5.0",
+    "s2s-helper-get-action-obj": "^0.1.5",
+    "s2s-utils": "^0.6.0",
     "uppercamelcase": "^3.0.0"
   }
 }

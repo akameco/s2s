@@ -1,6 +1,6 @@
 {
   "name": "s2s-utils",
-  "version": "0.5.0",
+  "version": "0.6.0",
   "description": "s2s utils",
   "license": "MIT",
   "repository": "akameco/s2s",
@@ -10,7 +10,7 @@
   "dependencies": {
     "babel-template": "^6.26.0",
     "babel-types": "^6.26.0",
-    "slash": "^1.0.0",
-    "normalize-path-sep": "^0.1.1"
+    "normalize-path-sep": "^0.1.1",
+    "slash": "^1.0.0"
   }
 }
