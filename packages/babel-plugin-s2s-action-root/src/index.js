@@ -5,10 +5,10 @@ import flowComment from 'babel-add-flow-comments'
 import globby from 'globby'
 import upperCamelCase from 'uppercamelcase'
 import {
-  getImportPath,
   template,
-  getParentDirName,
   typeImport,
+  getParentDirName,
+  getImportPath,
 } from 's2s-utils'
 import type { BabelPath, State } from 'types/babel'
 
@@ -21,8 +21,8 @@ const createInitAction = template(
   `export type ReduxInitAction = { type: '@@INIT' }`
 )
 
-function createActionName(path: string) {
-  return `${upperCamelCase(getParentDirName(path))}Action`
+function createActionName(filename: string) {
+  return `${upperCamelCase(getParentDirName(filename))}Action`
 }
 
 export default () => {
