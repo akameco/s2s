@@ -20,7 +20,7 @@ const createInitAction = template(
 )
 
 function getParentDirName(filePath: string) {
-  const parentPath = slash(path.dirname(filePath)).split('/')
+  const parentPath = slash(path.dirname(normalizePathSeq(filePath))).split('/')
   return parentPath[parentPath.length - 1]
 }
 
