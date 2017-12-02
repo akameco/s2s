@@ -2,6 +2,7 @@
 import path from 'path'
 import fs from 'fs'
 import slash from 'slash'
+import normalizePathSeq from 'normalize-path-sep'
 import type { Path } from 'types'
 
 // eslint-disable-next-line flowtype/no-weak-types
@@ -17,7 +18,12 @@ export function getOutputPath(output: Path, input: Path): Path {
     return output
   }
 
-  return slash(path.resolve(path.dirname(input), output))
+  return slash(
+    path.resolve(
+      path.dirname(normalizePathSeq(input)),
+      normalizePathSeq(output)
+    )
+  )
 }
 
 export function writeFileSync(outputPath: Path, code: string) {
