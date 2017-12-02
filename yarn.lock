@@ -3780,6 +3780,10 @@ normalize-package-data@^2.3.0, normalize-package-data@^2.3.2, normalize-package-
     semver "2 || 3 || 4 || 5"
     validate-npm-package-license "^3.0.1"
 
+normalize-path-sep@^0.1.1:
+  version "0.1.1"
+  resolved "https://registry.yarnpkg.com/normalize-path-sep/-/normalize-path-sep-0.1.1.tgz#0f4308116ac0f4f603b33b83b1f0e42f517c1a02"
+
 normalize-path@^1.0.0:
   version "1.0.0"
   resolved "https://registry.yarnpkg.com/normalize-path/-/normalize-path-1.0.0.tgz#32d0e472f91ff345701c15a8311018d3b0a90379"

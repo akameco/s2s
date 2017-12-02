@@ -1,15 +1,13 @@
 // @flow
+import path from 'path'
 import flowSyntax from 'babel-plugin-syntax-flow'
 import * as t from 'babel-types'
 import flowComment from 'babel-add-flow-comments'
 import globby from 'globby'
 import upperCamelCase from 'uppercamelcase'
-import {
-  getImportPath,
-  template,
-  getParentDirName,
-  typeImport,
-} from 's2s-utils'
+import slash from 'slash'
+import normalizePathSeq from 'normalize-path-sep'
+import { template, typeImport, trimExtension } from 's2s-utils'
 import type { BabelPath, State } from 'types/babel'
 
 const createUnion = union =>
@@ -21,8 +19,24 @@ const createInitAction = template(
   `export type ReduxInitAction = { type: '@@INIT' }`
 )
 
-function createActionName(path: string) {
-  return `${upperCamelCase(getParentDirName(path))}Action`
+function getParentDirName(filePath: string) {
+  const parentPath = slash(path.dirname(filePath)).split('/')
+  return parentPath[parentPath.length - 1]
+}
+
+function createActionName(filename: string) {
+  return `${upperCamelCase(getParentDirName(filename))}Action`
+}
+
+function getImportPath(from: string, to: string): string {
+  const relativePath = slash(
+    path.relative(path.dirname(normalizePathSeq(from)), normalizePathSeq(to))
+  )
+  const fomattedPath = trimExtension(relativePath)
+  if (!/^\.\.?/.test(fomattedPath)) {
+    return `./${fomattedPath}`
+  }
+  return fomattedPath
 }
 
 export default () => {
