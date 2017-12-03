@@ -14,7 +14,7 @@
     "babel-add-flow-comments": "^0.3.0",
     "babel-plugin-syntax-flow": "^6.18.0",
     "babel-types": "^6.26.0",
-    "globby": "^6.1.0",
+    "globby": "^7.1.1",
     "s2s-utils": "^0.6.0",
     "uppercamelcase": "^3.0.0"
   }
