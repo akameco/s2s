@@ -12,11 +12,11 @@ export const trimAndFormatPath = (testPath: string) => {
 }
 
 export const formatText = (
-  handlerType: HandlerType,
+  handlerType: HandlerType | string,
   inputPath: string,
   outputPath: string
 ) => {
-  const color = handlerType === 'S2S' ? 'green' : 'cyan'
+  const color = handlerType === 'TEMPLATE' ? 'cyan' : 'green'
   const input = trimAndFormatPath(inputPath)
   const output = trimAndFormatPath(relativeFromCwd(outputPath))
   const header = chalk.reset.inverse.bold[color](handlerType)

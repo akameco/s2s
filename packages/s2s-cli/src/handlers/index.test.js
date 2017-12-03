@@ -58,6 +58,12 @@ test('handlePlugin when eventPath match', () => {
   expect(stripAnsi(logSpy.mock.calls[0][0])).toMatchSnapshot()
 })
 
+test('handlePlugin pluginNameが与えられたとき、それを表示する', () => {
+  const plugin = { test: /a.js/, plugin: 'syntax-flow' }
+  plugins.handlePlugin(...setup(plugin))
+  expect(stripAnsi(logSpy.mock.calls[0][0])).toMatchSnapshot()
+})
+
 test('handlePlugin with input option', () => {
   const plugin = { test: /a.js/, plugin: _plugin, input: getEventPath('a.js') }
   plugins.handlePlugin(...setup(plugin))

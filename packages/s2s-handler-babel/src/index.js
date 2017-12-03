@@ -27,6 +27,7 @@ export default ((code, { eventPath, plugin, filename }) => {
     code: result ? result.trim() : '',
     meta: {
       handlerName: 'babel',
+      pluginName: typeof lastPlugin[0] === 'string' ? lastPlugin[0] : '',
     },
   }
 }: Handler)
