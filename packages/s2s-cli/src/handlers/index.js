@@ -32,7 +32,12 @@ export function handlePlugin(
   const filename = resolveInputPath(plugin.input, eventPath)
   const content = fs.readFileSync(filename, 'utf8')
 
-  const code = handler(content, { eventPath, plugin, filename })
+  const handlerResult = handler(content, { eventPath, plugin, filename })
+
+  const { code, meta } =
+    handlerResult && typeof handlerResult === 'string'
+      ? { code: handlerResult, meta: { handlerName: 'S2S' } }
+      : handlerResult
 
   if (!code && code === '') {
     return
@@ -48,7 +53,14 @@ export function handlePlugin(
     : eventPath
 
   writeFileSync(outputPath, result)
-  console.log(formatText('S2S', relativeFromCwd(eventPath), outputPath))
+
+  const { handlerName } = meta
+
+  const outputPrefix =
+    handlerName +
+    (meta.pluginName && meta.pluginName !== '' ? `:${meta.pluginName}` : '')
+
+  console.log(formatText(outputPrefix, relativeFromCwd(eventPath), outputPath))
 }
 
 function validate(plugin: Plugin, eventPath: Path, eventType: EventType) {

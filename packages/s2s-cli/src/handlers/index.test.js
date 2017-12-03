@@ -58,6 +58,20 @@ test('handlePlugin when eventPath match', () => {
   expect(stripAnsi(logSpy.mock.calls[0][0])).toMatchSnapshot()
 })
 
+test('handlePlugin pluginNameが与えられたとき、それを表示する', () => {
+  const plugin = { test: /a.js/, plugin: 'syntax-flow' }
+  plugins.handlePlugin(...setup(plugin))
+  expect(stripAnsi(logSpy.mock.calls[0][0])).toMatchSnapshot()
+})
+
+test('Codeを返す旧ハンドラーの場合はS2Sと表示させる', () => {
+  const plugin = { test: /a.js/, plugin: 'syntax-flow' }
+  const handler = x => x
+  // $FlowFixMe
+  plugins.handlePlugin(handler, setup(plugin)[1])
+  expect(stripAnsi(logSpy.mock.calls[0][0])).toMatchSnapshot()
+})
+
 test('handlePlugin with input option', () => {
   const plugin = { test: /a.js/, plugin: _plugin, input: getEventPath('a.js') }
   plugins.handlePlugin(...setup(plugin))
@@ -164,6 +178,7 @@ test('use s2s-handler-typescript when extname of eventPath is .ts', () => {
   plugins.default(getEventPath('hello.ts'), 'add', {
     plugins: [plugin],
   })
+  // expect(writeSpy.mock.calls).toEqual({})
   expect(writeSpy.mock.calls[0][1]).toMatchSnapshot()
 })
 
@@ -183,30 +198,36 @@ test('handlePluginsのPlugin.testオプションはglobの配列を判定でき�
 
 describe('selectHandler', () => {
   test('ハンドラが渡された場合、そのハンドラを返す', () => {
-    const handler = x => x
+    const handler = x => ({ code: x, meta: { handlerName: 'x' } })
     expect(plugins.selectHandler({}, handler, 'a.ejs').name).toEqual('handler')
   })
 
   test('任意のハンドラーを渡すことができる', () => {
-    const testHandler = () => 'test'
+    const testHandler = () => ({
+      code: 'test',
+      meta: { handlerName: 'testHandler' },
+    })
     const receivedHandler = plugins.selectHandler(
       { '*.ejs': testHandler },
       undefined,
       'path/to/index.ejs'
     )
     // $FlowFixMe
-    expect(receivedHandler('', {})).toBe('test')
+    expect(receivedHandler('', {}).code).toBe('test')
   })
 
   test('デフォルトのハンドラより渡されたハンドラを優先する', () => {
-    const testHandler = () => 'test'
+    const testHandler = () => ({
+      code: 'test',
+      meta: { handlerName: 'testHandler' },
+    })
     const receivedHandler = plugins.selectHandler(
       { '*.js': testHandler },
       undefined,
       'path/to/index.js'
     )
     // $FlowFixMe
-    expect(receivedHandler('', {})).toBe('test')
+    expect(receivedHandler('', {}).code).toBe('test')
   })
 
   test('ハンドラがマッチしない場合、エラーを起こす', () => {

@@ -1,14 +1,11 @@
 // @flow
 import { transform } from 'babel-core'
-import type { Code, HandlerOpts } from 'types'
+import type { Handler } from 'types'
 
 // eslint-disable-next-line
 export type Opts = string | Function | [string | Function, Object]
 
-export default function babelHandler(
-  code: Code,
-  { eventPath, plugin, filename }: HandlerOpts
-): Code {
+export default ((code, { eventPath, plugin, filename }) => {
   if (!plugin || !plugin.plugin) {
     throw new Error('required plugin')
   }
@@ -26,5 +23,11 @@ export default function babelHandler(
     plugins: [lastPlugin],
   })
 
-  return result ? result.trim() : ''
-}
+  return {
+    code: result ? result.trim() : '',
+    meta: {
+      handlerName: 'babel',
+      pluginName: typeof lastPlugin[0] === 'string' ? lastPlugin[0] : '',
+    },
+  }
+}: Handler)
