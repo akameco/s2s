@@ -161,7 +161,7 @@ test('lockが機能しているか', () => {
 
 test('対象のファイルが存在しない場合、簡潔なエラーを表示する', () => {
   const testPlugin = () => {
-    fs.readFileSync('not-found')
+    fs.readFileSync('./not-found')
     return {
       name: 'test-plugin',
       visitor: {},
@@ -170,7 +170,7 @@ test('対象のファイルが存在しない場合、簡潔なエラーを表�
   const plugin = { test: /a.js/, plugin: testPlugin }
   plugins.default(getEventPath('a.js'), 'add', { plugins: [plugin] })
   expect(errorSpy.mock.calls[0][0]).toEqual(
-    "ENOENT: no such file or directory, open 'not-found'"
+    "ENOENT: no such file or directory, open './not-found'"
   )
 })
 
