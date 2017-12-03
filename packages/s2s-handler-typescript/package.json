@@ -1,6 +1,6 @@
 {
   "name": "s2s-handler-typescript",
-  "version": "0.2.0",
+  "version": "0.3.0",
   "description": "typescript handler",
   "license": "MIT",
   "repository": "https://github.com/akameco/s2s",
@@ -14,6 +14,6 @@
   "dependencies": {
     "@babel/core": "^7.0.0-beta.34",
     "@babel/plugin-syntax-typescript": "^7.0.0-beta.34",
-    "s2s-helper-get-plugin-name": "0.0.0"
+    "s2s-helper-get-plugin-name": "^0.1.0"
   }
 }

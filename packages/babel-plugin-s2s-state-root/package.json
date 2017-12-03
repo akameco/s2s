@@ -1,6 +1,6 @@
 {
   "name": "babel-plugin-s2s-state-root",
-  "version": "0.2.8",
+  "version": "0.2.9",
   "description": "generate state types",
   "license": "MIT",
   "repository": "akameco/s2s",

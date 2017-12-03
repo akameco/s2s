@@ -1,6 +1,6 @@
 {
   "name": "s2s-plugins-redux",
-  "version": "0.4.1",
+  "version": "0.4.2",
   "description": "s2s plugins for redux",
   "license": "MIT",
   "repository": "akameco/s2s",
@@ -12,12 +12,12 @@
   "files": ["lib"],
   "dependencies": {
     "babel-plugin-s2s-action-creater": "^0.3.0",
-    "babel-plugin-s2s-action-root": "^0.4.0",
+    "babel-plugin-s2s-action-root": "^0.4.1",
     "babel-plugin-s2s-action-types": "^0.4.8",
     "babel-plugin-s2s-initial-state-creater": "^0.3.1",
     "babel-plugin-s2s-reducer-case-creater": "^0.1.7",
-    "babel-plugin-s2s-reducer-root": "^0.3.2",
+    "babel-plugin-s2s-reducer-root": "^0.3.3",
     "babel-plugin-s2s-reducer-test-case": "^0.4.9",
-    "babel-plugin-s2s-state-root": "^0.2.8"
+    "babel-plugin-s2s-state-root": "^0.2.9"
   }
 }

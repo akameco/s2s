@@ -1,6 +1,6 @@
 {
   "name": "babel-plugin-s2s-reducer-root",
-  "version": "0.3.2",
+  "version": "0.3.3",
   "description": "generate state types",
   "license": "MIT",
   "repository": "akameco/babel-plugin-s2s-reducer-root",
