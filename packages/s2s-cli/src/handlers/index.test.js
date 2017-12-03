@@ -1,5 +1,6 @@
 // @flow
 import path from 'path'
+import fs from 'fs'
 import stripAnsi from 'strip-ansi'
 import KeyLocker from 'key-locker'
 import * as babel from 'babel-core'
@@ -156,6 +157,21 @@ test('lockが機能しているか', () => {
   plugins.default(getEventPath('a.js'), 'add', { plugins: [plugin] })
   plugins.default(getEventPath('a.js'), 'add', { plugins: [plugin] })
   expect(logSpy).toHaveBeenCalledTimes(1)
+})
+
+test('対象のファイルが存在しない場合、簡潔なエラーを表示する', () => {
+  const testPlugin = () => {
+    fs.readFileSync('not-found')
+    return {
+      name: 'test-plugin',
+      visitor: {},
+    }
+  }
+  const plugin = { test: /a.js/, plugin: testPlugin }
+  plugins.default(getEventPath('a.js'), 'add', { plugins: [plugin] })
+  expect(errorSpy.mock.calls[0][0]).toEqual(
+    "ENOENT: no such file or directory, open 'not-found'"
+  )
 })
 
 test('カスタムhandlerが呼ばれるか', () => {
