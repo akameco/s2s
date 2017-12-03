@@ -1,0 +1,10 @@
+{
+  "name": "s2s-helper-get-plugin-name",
+  "version": "0.0.0",
+  "description": "Helper function for handler",
+  "license": "MIT",
+  "repository": "akameco/s2s",
+  "author": "akameco <akameco.t@gmail.com> (akameco.github.io)",
+  "main": "lib/index.js",
+  "files": ["lib"]
+}

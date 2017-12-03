@@ -12,6 +12,7 @@
   "files": ["lib"],
   "keywords": ["s2s"],
   "dependencies": {
-    "@babel/core": "^7.0.0-beta.34"
+    "@babel/core": "^7.0.0-beta.34",
+    "s2s-helper-get-plugin-name": "0.0.0"
   }
 }

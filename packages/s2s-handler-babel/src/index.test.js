@@ -42,3 +42,14 @@ test('metaデータを返す', () => {
     pluginName: 'syntax-flow',
   })
 })
+
+test('pluginが関数の場合、pluginNameを返す', () => {
+  const result = handler(code, setup())
+  expect(result.meta.pluginName).toBe('from-plugin')
+})
+
+test('pluginが関数かつnameプロパティがない場合、""を返す', () => {
+  const noop = () => ({ visitor: {} })
+  const result = handler(code, setup(noop))
+  expect(result.meta.pluginName).toBe('')
+})

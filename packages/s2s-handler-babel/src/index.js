@@ -1,8 +1,9 @@
 // @flow
 import { transform } from 'babel-core'
+import { getPluginName } from 's2s-helper-get-plugin-name'
 import type { Handler } from 'types'
 
-// eslint-disable-next-line
+// eslint-disable-next-line flowtype/no-weak-types
 export type Opts = string | Function | [string | Function, Object]
 
 export default ((code, { eventPath, plugin, filename }) => {
@@ -27,7 +28,7 @@ export default ((code, { eventPath, plugin, filename }) => {
     code: result ? result.trim() : '',
     meta: {
       handlerName: 'babel',
-      pluginName: typeof lastPlugin[0] === 'string' ? lastPlugin[0] : '',
+      pluginName: getPluginName(lastPlugin[0]),
     },
   }
 }: Handler)

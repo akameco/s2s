@@ -1,5 +1,6 @@
 // @flow
 import { transform } from '@babel/core'
+import { getPluginName } from 's2s-helper-get-plugin-name'
 import tsSyntax from '@babel/plugin-syntax-typescript'
 import type { Handler } from 'types'
 
@@ -28,7 +29,7 @@ export default ((code, { eventPath, plugin, filename }) => {
     code: result ? result.trim() : '',
     meta: {
       handlerName: 'typescript',
-      pluginName: typeof lastPlugin[0] === 'string' ? lastPlugin[0] : '',
+      pluginName: getPluginName(lastPlugin[0]),
     },
   }
 }: Handler)
