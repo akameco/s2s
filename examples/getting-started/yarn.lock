@@ -10,7 +10,7 @@
     esutils "^2.0.2"
     js-tokens "^3.0.0"
 
-"@babel/core@^7.0.0-beta.32":
+"@babel/core@^7.0.0-beta.34":
   version "7.0.0-beta.34"
   resolved "https://registry.yarnpkg.com/@babel/core/-/core-7.0.0-beta.34.tgz#576863223bcb4d003e9450b2a4c5076a626be966"
   dependencies:
@@ -61,7 +61,7 @@
     "@babel/traverse" "7.0.0-beta.34"
     "@babel/types" "7.0.0-beta.34"
 
-"@babel/plugin-syntax-typescript@^7.0.0-beta.32":
+"@babel/plugin-syntax-typescript@^7.0.0-beta.34":
   version "7.0.0-beta.34"
   resolved "https://registry.yarnpkg.com/@babel/plugin-syntax-typescript/-/plugin-syntax-typescript-7.0.0-beta.34.tgz#a290cb23a8087cc2c8a124bdf01e8d36ad863000"
 
@@ -1285,18 +1285,24 @@ rimraf@2, rimraf@^2.5.1, rimraf@^2.6.1:
   dependencies:
     glob "^7.0.5"
 
-s2s-handler-babel@^0.2.0:
-  version "0.2.0"
-  resolved "https://registry.yarnpkg.com/s2s-handler-babel/-/s2s-handler-babel-0.2.0.tgz#29ce37b8b838b397912480ae9fea59ca86b8686a"
+s2s-handler-babel@^0.3.0:
+  version "0.3.0"
+  resolved "https://registry.yarnpkg.com/s2s-handler-babel/-/s2s-handler-babel-0.3.0.tgz#1f9197dd411cc5786ad71f1965168b461afbf213"
   dependencies:
     babel-core "^6.25.0"
+    s2s-helper-get-plugin-name "^0.1.0"
 
-s2s-handler-typescript@^0.2.0:
-  version "0.2.0"
-  resolved "https://registry.yarnpkg.com/s2s-handler-typescript/-/s2s-handler-typescript-0.2.0.tgz#18baa9d4f89c66d36a0caddc909e9610aa107f42"
+s2s-handler-typescript@^0.3.0:
+  version "0.3.0"
+  resolved "https://registry.yarnpkg.com/s2s-handler-typescript/-/s2s-handler-typescript-0.3.0.tgz#bb1fe1b7cba8caa0cbd7f27a699d99fdfb974c4f"
   dependencies:
-    "@babel/core" "^7.0.0-beta.32"
-    "@babel/plugin-syntax-typescript" "^7.0.0-beta.32"
+    "@babel/core" "^7.0.0-beta.34"
+    "@babel/plugin-syntax-typescript" "^7.0.0-beta.34"
+    s2s-helper-get-plugin-name "^0.1.0"
+
+s2s-helper-get-plugin-name@^0.1.0:
+  version "0.1.0"
+  resolved "https://registry.yarnpkg.com/s2s-helper-get-plugin-name/-/s2s-helper-get-plugin-name-0.1.0.tgz#6ed1855be5d6638d3b2d32b9be7c7d5b6d532222"
 
 s2s-hook-prettier@^0.2.1:
   version "0.2.1"
@@ -1314,7 +1320,7 @@ s2s-utils@^0.6.0:
     slash "^1.0.0"
 
 "s2s@file:../../packages/s2s-cli":
-  version "0.14.0"
+  version "0.14.1"
   dependencies:
     babel-polyfill "^6.26.0"
     chalk "^2.3.0"
@@ -1325,8 +1331,8 @@ s2s-utils@^0.6.0:
     micromatch "^2.3.11"
     normalize-path-sep "^0.1.1"
     prettier "^1.8.2"
-    s2s-handler-babel "^0.2.0"
-    s2s-handler-typescript "^0.2.0"
+    s2s-handler-babel "^0.3.0"
+    s2s-handler-typescript "^0.3.0"
     s2s-hook-prettier "^0.2.1"
     slash "^1.0.0"
 
