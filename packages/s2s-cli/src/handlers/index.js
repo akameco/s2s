@@ -1,67 +1,10 @@
 // @flow
-import path from 'path'
-import fs from 'fs'
-import micromatch from 'micromatch'
 import KeyLocker from 'key-locker'
-import handlerBabel from 's2s-handler-babel'
-import hanlderTypeScript from 's2s-handler-typescript'
-import type { Path, AfterHook, Plugin, EventType, Handler, Config } from 'types'
-import {
-  getOutputPath,
-  writeFileSync,
-  toErrorStack,
-  relativeFromCwd,
-  resolveInputPath,
-} from '../utils'
+import type { Path, Plugin, EventType, Config } from 'types'
+import { toErrorStack } from '../utils'
 import some from '../utils/some'
-import runHooks from '../hooks'
-import { formatText } from '../reporters/'
-
-const lock = new KeyLocker()
-
-type Opts = {
-  eventPath: Path,
-  plugin: Plugin,
-  hooks: AfterHook[],
-}
-
-export function handlePlugin(
-  handler: Handler,
-  { eventPath, plugin, hooks = [] }: Opts
-) {
-  const filename = resolveInputPath(plugin.input, eventPath)
-  const content = fs.readFileSync(filename, 'utf8')
-
-  const handlerResult = handler(content, { eventPath, plugin, filename })
-
-  const { code, meta } =
-    handlerResult && typeof handlerResult === 'string'
-      ? { code: handlerResult, meta: { handlerName: 'S2S' } }
-      : handlerResult
-
-  if (!code && code === '') {
-    return
-  }
-
-  const result = runHooks(code, filename, hooks)
-
-  const outputPath = plugin.output
-    ? getOutputPath(
-        plugin.output.replace('[name]', path.parse(eventPath).name),
-        eventPath
-      )
-    : eventPath
-
-  writeFileSync(outputPath, result)
-
-  const { handlerName } = meta
-
-  const outputPrefix =
-    handlerName +
-    (meta.pluginName && meta.pluginName !== '' ? `:${meta.pluginName}` : '')
-
-  console.log(formatText(outputPrefix, relativeFromCwd(eventPath), outputPath))
-}
+import { handlePlugin } from './handle-plugin'
+import { selectHandler } from './select-handler'
 
 function validate(plugin: Plugin, eventPath: Path, eventType: EventType) {
   if (typeof plugin.test === 'string' || Array.isArray(plugin.test)) {
@@ -77,36 +20,7 @@ function validate(plugin: Plugin, eventPath: Path, eventType: EventType) {
   return true
 }
 
-type HandlerMapper = { [extensions: string]: Handler }
-
-const DEFAULT_HANDLE_MAPPER = {
-  '*.(js|jsx)': handlerBabel,
-  '*.(ts|tsx)': hanlderTypeScript,
-}
-
-export function selectHandler(
-  handlerMapper: HandlerMapper,
-  handler?: Handler,
-  filepath: Path
-): Handler {
-  if (handler) {
-    return handler
-  }
-
-  const finalHandlerMapper = Object.assign(
-    {},
-    handlerMapper,
-    DEFAULT_HANDLE_MAPPER // デフォルトのハンドラの優先度は低いため
-  )
-
-  for (const key of Object.keys(finalHandlerMapper)) {
-    if (micromatch.isMatch(filepath, key, { matchBase: true })) {
-      return finalHandlerMapper[key]
-    }
-  }
-
-  throw new Error('any handlers not match')
-}
+const lock = new KeyLocker()
 
 export default function handlePlugins(
   eventPath: Path,

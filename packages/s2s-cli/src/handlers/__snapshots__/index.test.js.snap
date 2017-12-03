@@ -1,27 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Codeを返す旧ハンドラーの場合はS2Sと表示させる 1`] = `"S2S packages/s2s-cli/src/handlers/__tests__/fixtures/a.js → packages/s2s-cli/src/handlers/__tests__/fixtures/a.js"`;
-
-exports[`handlePlugin pluginNameが与えられたとき、それを表示する 1`] = `"babel:syntax-flow packages/s2s-cli/src/handlers/__tests__/fixtures/a.js → packages/s2s-cli/src/handlers/__tests__/fixtures/a.js"`;
-
-exports[`handlePlugin when eventPath match 1`] = `"babel packages/s2s-cli/src/handlers/__tests__/fixtures/a.js → packages/s2s-cli/src/handlers/__tests__/fixtures/a.js"`;
-
-exports[`handlePlugin with input option 1`] = `
-"// @flow
-const olleh = 'hello';"
-`;
-
-exports[`handlePlugin with relative input path 1`] = `
-"// @flow
-const dlroWolleh = 'hello world';"
-`;
-
-exports[`handlePlugin write args 1`] = `
-"// @flow
-const olleh = 'hello';"
-`;
-
-exports[`use s2s-handler-typescript when extname of eventPath is .ts 1`] = `
+exports[`拡張子が.tsのとき、s2s-handler-typescriptを実行する 1`] = `
 "function reteerg(nosrep: string) {
   return 'Hello, ' + nosrep;
 }
