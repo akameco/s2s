@@ -127,7 +127,11 @@ export default function handlePlugins(
         const handler = selectHandler(handlerMapper, plugin.handler, eventPath)
         handlePlugin(handler, { eventPath, plugin, hooks })
       } catch (err) {
-        console.error(toErrorStack(err))
+        if (err.code === 'ENOENT') {
+          console.error(err.message)
+        } else {
+          console.error(toErrorStack(err))
+        }
       }
     }
   }
