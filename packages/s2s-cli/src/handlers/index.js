@@ -32,7 +32,7 @@ export function handlePlugin(
   const filename = resolveInputPath(plugin.input, eventPath)
   const content = fs.readFileSync(filename, 'utf8')
 
-  const code = handler(content, { eventPath, plugin, filename })
+  const { code } = handler(content, { eventPath, plugin, filename })
 
   if (!code && code === '') {
     return

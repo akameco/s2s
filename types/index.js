@@ -12,7 +12,15 @@ export type HandlerOpts = {
   plugin?: Plugin,
 }
 
-export type Handler = (code: Code, opts: HandlerOpts) => Code
+type Meta = {
+  handlerName: string,
+  pluginName?: string,
+}
+
+export type Handler = (
+  code: Code,
+  opts: HandlerOpts
+) => { code: Code, meta: Meta }
 
 export type Plugin = {|
   test: RegExp | string | string[],

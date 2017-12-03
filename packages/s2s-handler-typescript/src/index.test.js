@@ -21,17 +21,17 @@ greeter(user);
 
 test('ts-handlerは変換後のコードを返す', () => {
   const result = handler(code, setup())
-  expect(result).toMatchSnapshot()
+  expect(result.code).toMatchSnapshot()
 })
 
 test('pluginがArrayの場合', () => {
   const result = handler(code, setup([plugin, { x: 1 }]))
-  expect(result).toMatchSnapshot()
+  expect(result.code).toMatchSnapshot()
 })
 
 test('codeが""の場合、""が返ること', () => {
   const result = handler('', setup())
-  expect(result).toBe('')
+  expect(result.code).toBe('')
 })
 
 test('pluginが渡されない場合、エラーを起こすこと', () => {
