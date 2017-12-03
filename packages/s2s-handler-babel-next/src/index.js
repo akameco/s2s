@@ -1,5 +1,6 @@
 // @flow
 import { transform } from '@babel/core'
+import { getPluginName } from 's2s-helper-get-plugin-name'
 import type { Handler } from 'types'
 
 // eslint-disable-next-line
@@ -27,7 +28,7 @@ export default ((code, { eventPath, plugin, filename }) => {
     code: result ? result.trim() : '',
     meta: {
       handlerName: 'babel/next',
-      pluginName: typeof lastPlugin[0] === 'string' ? lastPlugin[0] : '',
+      pluginName: getPluginName(lastPlugin[0]),
     },
   }
 }: Handler)
