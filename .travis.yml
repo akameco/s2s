@@ -13,5 +13,8 @@ cache:
     - ".eslintcache"
     - "node_modules"
 
+notifications:
+  email: false
+
 script:
   - yarn run test:ci
