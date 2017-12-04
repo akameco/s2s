@@ -13,6 +13,10 @@ Object {
   "afterHooks": Array [
     [Function],
   ],
+  "ignored": Array [
+    ".git/",
+    "node_modules/",
+  ],
   "plugins": Array [
     Object {
       "plugin": "dummy",

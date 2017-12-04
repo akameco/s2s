@@ -5,6 +5,8 @@ export type Code = string
 export type EventType = 'add' | 'change' | 'unlink'
 export type Only = EventType[]
 
+export type AnymatchPath = RegExp | string | (RegExp | string)[]
+
 export type HandlerOpts = {
   eventPath: Path,
   filename: Path,
@@ -39,6 +41,10 @@ export type Template = {|
 
 export type AfterHook = (code: Code, path: Path) => Code
 
+/**
+ * @see https://github.com/paulmillr/chokidar
+ * @see https://github.com/es128/anymatch
+ */
 export type Config = {
   watch: Path, // file, dir, glob, or array
   plugins?: Plugin[], // eslint-disable-line
@@ -47,6 +53,7 @@ export type Config = {
   afterHooks?: AfterHook[], // eslint-disable-line
   prettier: boolean,
   handlerMapper?: { [extensions: string]: Handler },
+  ignored?: AnymatchPath, // file, dir, glob, regexp, or array
 }
 
 export type HandlerType = 'S2S' | 'TEMPLATE'

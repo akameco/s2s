@@ -10,7 +10,7 @@ let handlePluginsSpy
 let handleTemplateSpy
 let watcher
 
-function setup(opts: $Shape<Config>) {
+function setup(opts: $Shape<Config>): Config {
   return {
     watch: 'app',
     plugins: [{ test: /dummy/, plugin: 'dummy' }],
@@ -102,4 +102,9 @@ test('prettier = falseのとき、 afterHooksが空配列でhandlePluginが呼�
   watcher.emit('add', 'hello')
   const result = handlePluginsSpy.mock.calls[0]
   expect(result[2].afterHooks).toEqual([])
+})
+
+test('ignoredに指定されたパターンに該当するファイルは、呼ばれない', () => {
+  watcher = m(setup({ ignored: ['hoge'] }))
+  expect(watcher.options.ignored).toEqual(['hoge'])
 })
