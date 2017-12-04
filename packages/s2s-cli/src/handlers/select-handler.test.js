@@ -26,7 +26,7 @@ test('デフォルトのハンドラより渡されたハンドラを優先す�
     meta: { handlerName: 'testHandler' },
   })
   const receivedHandler = selectHandler(
-    { '*.js': testHandler },
+    { '*.(js|jsx)': testHandler },
     undefined,
     'path/to/index.js'
   )

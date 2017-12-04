@@ -22,8 +22,8 @@ export function selectHandler(
 
   const finalHandlerMapper = Object.assign(
     {},
-    handlerMapper,
-    DEFAULT_HANDLE_MAPPER // デフォルトのハンドラの優先度は低いため
+    DEFAULT_HANDLE_MAPPER, // デフォルトのハンドラの優先度は低いため
+    handlerMapper
   )
 
   for (const key of Object.keys(finalHandlerMapper)) {
