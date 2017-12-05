@@ -34,6 +34,16 @@ test('デフォルトのハンドラより渡されたハンドラを優先す�
   expect(receivedHandler('', {}).code).toBe('test')
 })
 
+test('ハンドラが渡されれば、デフォルトのハンドラは無効になる', () => {
+  const testHandler = () => ({
+    code: 'test',
+    meta: { handlerName: 'testHandler' },
+  })
+  expect(() => {
+    selectHandler({ '*.ejs': testHandler }, undefined, 'a.js')
+  }).toThrow('any handlers not match')
+})
+
 test('ハンドラがマッチしない場合、エラーを起こす', () => {
   expect(() => {
     selectHandler({}, undefined, 'a.ejs')

@@ -49,3 +49,16 @@ type Template = {|
   output?: Path,
 |}
 ```
+
+### handlermapper
+`{ [extensions: string]: Handler }`
+
+This field optional.
+Run handler corresponding to extension.
+If unspecified, run `.js` `.jsx` `.ts` `.tsx` by default.
+
+```js
+  handlerMapper: {
+    '*.ts': typescriptHandler
+  }
+```

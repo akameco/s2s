@@ -12,7 +12,7 @@
 [![Donate](https://img.shields.io/badge/%EF%BC%84-support-green.svg?style=flat-square)](http://amzn.asia/bO78HzR)
 [![Code of Conduct](https://img.shields.io/badge/code%20of-conduct-ff69b4.svg?style=flat-square)](./CODE_OF_CONDUCT.md)
 [![Examples](https://img.shields.io/badge/%F0%9F%92%A1-examples-8C8E93.svg?style=flat-square)](./examples)
-[![All Contributors](https://img.shields.io/badge/all_contributors-4-orange.svg?style=flat-square)](#contributors)
+[![All Contributors](https://img.shields.io/badge/all_contributors-5-orange.svg?style=flat-square)](#contributors)
 
 ## [日本語](./docs/ja)
 (readmeの最新版は日本語です)
@@ -154,8 +154,9 @@ We will be welcome your contributions!
 Thanks goes to these wonderful people ([emoji key](https://github.com/kentcdodds/all-contributors#emoji-key)):
 
 <!-- ALL-CONTRIBUTORS-LIST:START - Do not remove or modify this section -->
-| [<img src="https://avatars2.githubusercontent.com/u/4002137?v=4" width="100px;"/><br /><sub><b>akameco</b></sub>](http://akameco.github.io)<br />[💻](https://github.com/akameco/s2s/commits?author=akameco "Code") [⚠️](https://github.com/akameco/s2s/commits?author=akameco "Tests") [💬](#question-akameco "Answering Questions") [🤔](#ideas-akameco "Ideas, Planning, & Feedback") [🚇](#infra-akameco "Infrastructure (Hosting, Build-Tools, etc)") | [<img src="https://avatars3.githubusercontent.com/u/2284908?v=4" width="100px;"/><br /><sub><b>elzup</b></sub>](https://elzup.com)<br />[🤔](#ideas-elzup "Ideas, Planning, & Feedback") [💻](https://github.com/akameco/s2s/commits?author=elzup "Code") | [<img src="https://avatars3.githubusercontent.com/u/84027?v=4" width="100px;"/><br /><sub><b>erukiti</b></sub>](http://www.amazon.co.jp/gp/registry/wishlist/JQ28X5KI9FRY)<br />[📝](#blog-erukiti "Blogposts") | [<img src="https://avatars2.githubusercontent.com/u/5019902?v=4" width="100px;"/><br /><sub><b>TANIGUCHI Masaya</b></sub>](https://ta2gch.github.io/)<br />[📖](https://github.com/akameco/s2s/commits?author=ta2gch "Documentation") |
-| :---: | :---: | :---: | :---: |
+<!-- prettier-ignore -->
+| [<img src="https://avatars2.githubusercontent.com/u/4002137?v=4" width="100px;"/><br /><sub><b>akameco</b></sub>](http://akameco.github.io)<br />[💻](https://github.com/akameco/s2s/commits?author=akameco "Code") [⚠️](https://github.com/akameco/s2s/commits?author=akameco "Tests") [💬](#question-akameco "Answering Questions") [🤔](#ideas-akameco "Ideas, Planning, & Feedback") [🚇](#infra-akameco "Infrastructure (Hosting, Build-Tools, etc)") | [<img src="https://avatars3.githubusercontent.com/u/2284908?v=4" width="100px;"/><br /><sub><b>elzup</b></sub>](https://elzup.com)<br />[🤔](#ideas-elzup "Ideas, Planning, & Feedback") [💻](https://github.com/akameco/s2s/commits?author=elzup "Code") | [<img src="https://avatars3.githubusercontent.com/u/84027?v=4" width="100px;"/><br /><sub><b>erukiti</b></sub>](http://www.amazon.co.jp/gp/registry/wishlist/JQ28X5KI9FRY)<br />[📝](#blog-erukiti "Blogposts") | [<img src="https://avatars2.githubusercontent.com/u/5019902?v=4" width="100px;"/><br /><sub><b>TANIGUCHI Masaya</b></sub>](https://ta2gch.github.io/)<br />[📖](https://github.com/akameco/s2s/commits?author=ta2gch "Documentation") | [<img src="https://avatars0.githubusercontent.com/u/1541187?v=4" width="100px;"/><br /><sub><b>kamijin_fanta</b></sub>](https://twitter.com/kamijin_fanta)<br />[💻](https://github.com/akameco/s2s/commits?author=kamijin-fanta "Code") [📖](https://github.com/akameco/s2s/commits?author=kamijin-fanta "Documentation") |
+| :---: | :---: | :---: | :---: | :---: |
 <!-- ALL-CONTRIBUTORS-LIST:END -->
 
 This project follows the [all-contributors](https://github.com/kentcdodds/all-contributors) specification. Contributions of any kind welcome!
