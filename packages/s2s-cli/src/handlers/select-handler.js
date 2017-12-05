@@ -20,11 +20,10 @@ export function selectHandler(
     return handler
   }
 
-  const finalHandlerMapper = Object.assign(
-    {},
-    DEFAULT_HANDLE_MAPPER, // デフォルトのハンドラの優先度は低いため
-    handlerMapper
-  )
+  const finalHandlerMapper =
+    Object.keys(handlerMapper).length > 0
+      ? handlerMapper
+      : DEFAULT_HANDLE_MAPPER
 
   for (const key of Object.keys(finalHandlerMapper)) {
     if (micromatch.isMatch(filepath, key, { matchBase: true })) {

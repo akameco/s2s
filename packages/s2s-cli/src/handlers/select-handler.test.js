@@ -26,12 +26,22 @@ test('デフォルトのハンドラより渡されたハンドラを優先す�
     meta: { handlerName: 'testHandler' },
   })
   const receivedHandler = selectHandler(
-    { '*.(js|jsx)': testHandler },
+    { '*.js': testHandler },
     undefined,
     'path/to/index.js'
   )
   // $FlowFixMe
   expect(receivedHandler('', {}).code).toBe('test')
+})
+
+test('ハンドラが渡されれば、デフォルトのハンドラは無効になる', () => {
+  const testHandler = () => ({
+    code: 'test',
+    meta: { handlerName: 'testHandler' },
+  })
+  expect(() => {
+    selectHandler({ '*.ejs': testHandler }, undefined, 'a.js')
+  }).toThrow('any handlers not match')
 })
 
 test('ハンドラがマッチしない場合、エラーを起こす', () => {
