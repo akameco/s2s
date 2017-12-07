@@ -48,6 +48,15 @@ describe('formats', () => {
     })
   })
 
+  it('default options', () => {
+    fixturesEnv(loc, 'basic', ops => {
+      const { actualFile, expectedFile, tmpPath } = ops
+      const hook = tslintHook()
+      const res = hook(actualFile, tmpPath)
+      expect(res).toBe(expectedFile)
+    })
+  })
+
   it('lintConfig option is incorrect', () => {
     fixturesEnv(loc, 'basic', ops => {
       const { actualFile, tmpPath, tslintPath } = ops
@@ -65,7 +74,7 @@ describe('formats', () => {
       const { actualFile, tmpPath, tslintPath } = ops
       const hook = tslintHook({
         test: /\.html$/,
-        lintConfig: `${tslintPath}-bad`,
+        lintConfig: `${tslintPath}`,
       })
       const res = hook(actualFile, tmpPath)
       expect(res).toBe(actualFile) // input == output
