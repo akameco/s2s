@@ -33,51 +33,65 @@ function fixturesEnv(
   }
 }
 
-describe('formats', () => {
-  const loc = path.resolve(__dirname, '../__fixtures__')
+const loc = path.resolve(__dirname, '../__fixtures__')
 
-  it('basic', () => {
-    fixturesEnv(loc, 'basic', ops => {
-      const { actualFile, expectedFile, tmpPath, tslintPath } = ops
-      const hook = tslintHook({
-        test: /\.ts$/,
-        lintConfig: tslintPath,
-      })
-      const res = hook(actualFile, tmpPath)
-      expect(res).toBe(expectedFile)
+let errorSpy
+
+const fn = x => x
+
+jest.useFakeTimers()
+
+beforeEach(() => {
+  jest.runAllTimers()
+  errorSpy = jest.spyOn(console, 'error').mockImplementation(fn)
+})
+
+afterEach(() => {
+  errorSpy.mockRestore()
+})
+
+test('basic', () => {
+  fixturesEnv(loc, 'basic', ops => {
+    const { actualFile, expectedFile, tmpPath, tslintPath } = ops
+    const hook = tslintHook({
+      test: /\.ts$/,
+      lintConfig: tslintPath,
     })
+    const res = hook(actualFile, tmpPath)
+    expect(res).toBe(expectedFile)
   })
+})
 
-  it('default options', () => {
-    fixturesEnv(loc, 'basic', ops => {
-      const { actualFile, expectedFile, tmpPath } = ops
-      const hook = tslintHook()
-      const res = hook(actualFile, tmpPath)
-      expect(res).toBe(expectedFile)
-    })
+test('default options', () => {
+  fixturesEnv(loc, 'basic', ops => {
+    const { actualFile, expectedFile, tmpPath } = ops
+    const hook = tslintHook()
+    const res = hook(actualFile, tmpPath)
+    expect(res).toBe(expectedFile)
   })
+})
 
-  it('lintConfig option is incorrect', () => {
-    fixturesEnv(loc, 'basic', ops => {
-      const { actualFile, tmpPath, tslintPath } = ops
-      const hook = tslintHook({
-        test: /\.ts$/,
-        lintConfig: `${tslintPath}-bad`,
-      })
-      const res = hook(actualFile, tmpPath)
-      expect(res).toBe(actualFile) // ignored error
+test('lintConfig option is incorrect', () => {
+  fixturesEnv(loc, 'basic', ops => {
+    const { actualFile, tmpPath, tslintPath } = ops
+    const hook = tslintHook({
+      test: /\.ts$/,
+      lintConfig: `${tslintPath}-bad`,
     })
+    const res = hook(actualFile, tmpPath)
+    expect(res).toBe(actualFile) // ignored error
+    expect(errorSpy.mock.calls[0][0]).toBe('tslint error')
   })
+})
 
-  it('not match filepath', () => {
-    fixturesEnv(loc, 'basic', ops => {
-      const { actualFile, tmpPath, tslintPath } = ops
-      const hook = tslintHook({
-        test: /\.html$/,
-        lintConfig: `${tslintPath}`,
-      })
-      const res = hook(actualFile, tmpPath)
-      expect(res).toBe(actualFile) // input == output
+test('not match filepath', () => {
+  fixturesEnv(loc, 'basic', ops => {
+    const { actualFile, tmpPath, tslintPath } = ops
+    const hook = tslintHook({
+      test: /\.html$/,
+      lintConfig: `${tslintPath}`,
     })
+    const res = hook(actualFile, tmpPath)
+    expect(res).toBe(actualFile) // input == output
   })
 })
