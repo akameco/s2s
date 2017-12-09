@@ -1,12 +1,14 @@
 {
+  "name": "s2s-example-getting-started",
+  "version": "0.0.0",
+  "private": true,
   "scripts": {
     "flow": "flow",
     "s2s": "s2s"
   },
   "devDependencies": {
-    "babel-plugin-s2s-variable-initializing":
-      "file:../../packages/babel-plugin-s2s-variable-initializing",
-    "flow-bin": "^0.60.1",
-    "s2s": "file:../../packages/s2s-cli"
+    "babel-plugin-s2s-variable-initializing": "^0.1.5",
+    "flow-bin": "^0.61.0",
+    "s2s": "^0.14.1"
   }
 }
