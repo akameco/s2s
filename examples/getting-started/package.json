@@ -4,7 +4,7 @@
   "private": true,
   "scripts": {
     "flow": "flow",
-    "s2s": "s2s"
+    "s2s": "yarn flow && s2s"
   },
   "devDependencies": {
     "babel-plugin-s2s-variable-initializing": "^0.1.5",
