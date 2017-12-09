@@ -80,14 +80,6 @@ module.exports = {
 
 ### Run
 
-s2sの前にflowを実行しておく必要があります。
-
-```
-$ yarn run flow
-```
-
-そして、s2sを起動します。
-
 ```
 $ yarn run s2s
 ```

@@ -9,7 +9,6 @@ $ yarn
 ## Easy Start
 
 ```
-$ yarn run flow
 $ yarn run s2s
 ```
 

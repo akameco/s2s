@@ -90,7 +90,6 @@ module.exports = {
 ### Run
 
 ```
-$ yarn run flow init # you have to run it before to run s2s
 $ yarn run s2s
 ```
 
