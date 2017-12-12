@@ -56,7 +56,6 @@
 $ git clone --depth=1 git@github.com:akameco/s2s.git
 $ cd examples/getting-started
 $ yarn
-// or npm install
 ```
 
 ### 使い方
@@ -80,14 +79,6 @@ module.exports = {
 ```
 
 ### Run
-
-s2sの前にflowを実行しておく必要があります。
-
-```
-$ yarn run flow
-```
-
-そして、s2sを起動します。
 
 ```
 $ yarn run s2s

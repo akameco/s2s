@@ -61,7 +61,6 @@ Clone the repository and install dependencies.
 
 ```
 $ git clone --depth=1 git@github.com:akameco/s2s.git
-$ yarn
 $ cd examples/getting-started
 $ yarn
 ```
@@ -91,7 +90,6 @@ module.exports = {
 ### Run
 
 ```
-$ yarn run flow init # you have to run it before to run s2s
 $ yarn run s2s
 ```
 
