@@ -50,7 +50,7 @@ type Template = {|
 |}
 ```
 
-### handlermapper
+### handlerMapper
 `{ [extensions: string]: Handler }`
 
 This field optional.
@@ -62,3 +62,17 @@ If unspecified, run `.js` `.jsx` `.ts` `.tsx` by default.
     '*.ts': typescriptHandler
   }
 ```
+
+### afterHook
+This field optional.
+Configure array of hooks.
+When run handler, execute hooks.
+
+```js
+export type AfterHook = (code: Code, path: Path) => Code
+```
+
+### prettier
+This field optional.
+default value is `true` .
+If configure `true`, enable [prettierHook](https://github.com/akameco/s2s/tree/master/packages/s2s-hook-prettier) hook.

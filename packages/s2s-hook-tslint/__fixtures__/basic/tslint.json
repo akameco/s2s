@@ -1,0 +1,13 @@
+{
+  "rules": {
+    "trailing-comma": [
+      true,
+      {
+        "multiline": {
+          "objects": "always"
+        },
+        "esSpecCompliant": true
+      }
+    ]
+  }
+}

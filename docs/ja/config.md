@@ -48,7 +48,7 @@ type Template = {|
 |}
 ```
 
-### handlermapper
+### handlerMapper
 `{ [extensions: string]: Handler }`
 
 必須ではありません。
@@ -60,3 +60,17 @@ type Template = {|
     '*.ts': typescriptHandler
   }
 ```
+
+### afterHook
+必須ではありません。
+hookの配列を指定します。
+handlerが実行された際に、指定されたhookが実行されます。
+
+```js
+export type AfterHook = (code: Code, path: Path) => Code
+```
+
+### prettier
+必須ではありません。
+デフォルトで `true` が指定されています。
+trueが指定されていると、 [prettierHook](https://github.com/akameco/s2s/tree/master/packages/s2s-hook-prettier) が有効になります。
