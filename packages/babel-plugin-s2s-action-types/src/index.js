@@ -124,13 +124,13 @@ export default () => {
 
           programPath.node.body = [
             ...imports,
-            ...constantAST,
-            t.noop(),
-            actionsAST,
+            action,
             t.noop(),
             ...typesAst,
             t.noop(),
-            action,
+            ...constantAST,
+            t.noop(),
+            actionsAST,
           ]
 
           flowComment(programPath)
