@@ -7,17 +7,17 @@ export type Action = Increment
       ↓ ↓ ↓ ↓ ↓ ↓
 
 // @flow
-export const INCREMENT: \\"app/counter/INCREMENT\\" = \\"app/counter/INCREMENT\\";
-
-export const Actions = {
-  INCREMENT
-};
+export type Action = Increment;
 
 export type Increment = {
   type: typeof INCREMENT
 };
 
-export type Action = Increment;
+export const INCREMENT: \\"app/counter/INCREMENT\\" = \\"app/counter/INCREMENT\\";
+
+export const Actions = {
+  INCREMENT
+};
 "
 `;
 
@@ -28,17 +28,17 @@ export type Action = Increment
       ↓ ↓ ↓ ↓ ↓ ↓
 
 // @flow
-export const INCREMENT: \\"counter/INCREMENT\\" = \\"counter/INCREMENT\\";
-
-export const Actions = {
-  INCREMENT
-};
+export type Action = Increment;
 
 export type Increment = {
   type: typeof INCREMENT
 };
 
-export type Action = Increment;
+export const INCREMENT: \\"counter/INCREMENT\\" = \\"counter/INCREMENT\\";
+
+export const Actions = {
+  INCREMENT
+};
 "
 `;
 
@@ -49,17 +49,17 @@ export type Action = Increment
       ↓ ↓ ↓ ↓ ↓ ↓
 
 // @flow
-export const INCREMENT: \\"INCREMENT\\" = \\"INCREMENT\\";
-
-export const Actions = {
-  INCREMENT
-};
+export type Action = Increment;
 
 export type Increment = {
   type: typeof INCREMENT
 };
 
-export type Action = Increment;
+export const INCREMENT: \\"INCREMENT\\" = \\"INCREMENT\\";
+
+export const Actions = {
+  INCREMENT
+};
 "
 `;
 
@@ -71,17 +71,17 @@ export type Action = Increment
       ↓ ↓ ↓ ↓ ↓ ↓
 
 // @flow
-export const INCREMENT: \\"app/counter/INCREMENT\\" = \\"app/counter/INCREMENT\\";
-
-export const Actions = {
-  INCREMENT
-};
+export type Action = Increment;
 
 export type Increment = {
   type: typeof INCREMENT
 };
 
-export type Action = Increment;
+export const INCREMENT: \\"app/counter/INCREMENT\\" = \\"app/counter/INCREMENT\\";
+
+export const Actions = {
+  INCREMENT
+};
 "
 `;
 
@@ -92,13 +92,7 @@ export type Action = Increment | Decrement
       ↓ ↓ ↓ ↓ ↓ ↓
 
 // @flow
-export const INCREMENT: \\"app/counter/INCREMENT\\" = \\"app/counter/INCREMENT\\";
-export const DECREMENT: \\"app/counter/DECREMENT\\" = \\"app/counter/DECREMENT\\";
-
-export const Actions = {
-  INCREMENT,
-  DECREMENT
-};
+export type Action = Increment | Decrement;
 
 export type Increment = {
   type: typeof INCREMENT
@@ -107,7 +101,13 @@ export type Decrement = {
   type: typeof DECREMENT
 };
 
-export type Action = Increment | Decrement;
+export const INCREMENT: \\"app/counter/INCREMENT\\" = \\"app/counter/INCREMENT\\";
+export const DECREMENT: \\"app/counter/DECREMENT\\" = \\"app/counter/DECREMENT\\";
+
+export const Actions = {
+  INCREMENT,
+  DECREMENT
+};
 "
 `;
 
@@ -118,15 +118,7 @@ export type Action = FetchRequest;
       ↓ ↓ ↓ ↓ ↓ ↓
 
 // @flow
-export const FETCH_REQUEST: \\"app/counter/FETCH_REQUEST\\" = \\"app/counter/FETCH_REQUEST\\";
-export const FETCH_SUCCESS: \\"app/counter/FETCH_SUCCESS\\" = \\"app/counter/FETCH_SUCCESS\\";
-export const FETCH_FAILURE: \\"app/counter/FETCH_FAILURE\\" = \\"app/counter/FETCH_FAILURE\\";
-
-export const Actions = {
-  FETCH_REQUEST,
-  FETCH_SUCCESS,
-  FETCH_FAILURE
-};
+export type Action = FetchRequest | FetchSuccess | FetchFailure;
 
 export type FetchRequest = {
   type: typeof FETCH_REQUEST
@@ -138,7 +130,15 @@ export type FetchFailure = {
   type: typeof FETCH_FAILURE
 };
 
-export type Action = FetchRequest | FetchSuccess | FetchFailure;
+export const FETCH_REQUEST: \\"app/counter/FETCH_REQUEST\\" = \\"app/counter/FETCH_REQUEST\\";
+export const FETCH_SUCCESS: \\"app/counter/FETCH_SUCCESS\\" = \\"app/counter/FETCH_SUCCESS\\";
+export const FETCH_FAILURE: \\"app/counter/FETCH_FAILURE\\" = \\"app/counter/FETCH_FAILURE\\";
+
+export const Actions = {
+  FETCH_REQUEST,
+  FETCH_SUCCESS,
+  FETCH_FAILURE
+};
 "
 `;
 
@@ -149,15 +149,7 @@ export type Action = FetchRequest | FetchSuccess;
       ↓ ↓ ↓ ↓ ↓ ↓
 
 // @flow
-export const FETCH_REQUEST: \\"app/counter/FETCH_REQUEST\\" = \\"app/counter/FETCH_REQUEST\\";
-export const FETCH_SUCCESS: \\"app/counter/FETCH_SUCCESS\\" = \\"app/counter/FETCH_SUCCESS\\";
-export const FETCH_FAILURE: \\"app/counter/FETCH_FAILURE\\" = \\"app/counter/FETCH_FAILURE\\";
-
-export const Actions = {
-  FETCH_REQUEST,
-  FETCH_SUCCESS,
-  FETCH_FAILURE
-};
+export type Action = FetchRequest | FetchSuccess | FetchFailure;
 
 export type FetchRequest = {
   type: typeof FETCH_REQUEST
@@ -169,7 +161,15 @@ export type FetchFailure = {
   type: typeof FETCH_FAILURE
 };
 
-export type Action = FetchRequest | FetchSuccess | FetchFailure;
+export const FETCH_REQUEST: \\"app/counter/FETCH_REQUEST\\" = \\"app/counter/FETCH_REQUEST\\";
+export const FETCH_SUCCESS: \\"app/counter/FETCH_SUCCESS\\" = \\"app/counter/FETCH_SUCCESS\\";
+export const FETCH_FAILURE: \\"app/counter/FETCH_FAILURE\\" = \\"app/counter/FETCH_FAILURE\\";
+
+export const Actions = {
+  FETCH_REQUEST,
+  FETCH_SUCCESS,
+  FETCH_FAILURE
+};
 "
 `;
 
@@ -180,13 +180,7 @@ export type Action = FetchSuccess | FetchFailure;
       ↓ ↓ ↓ ↓ ↓ ↓
 
 // @flow
-export const FETCH_SUCCESS: \\"app/counter/FETCH_SUCCESS\\" = \\"app/counter/FETCH_SUCCESS\\";
-export const FETCH_FAILURE: \\"app/counter/FETCH_FAILURE\\" = \\"app/counter/FETCH_FAILURE\\";
-
-export const Actions = {
-  FETCH_SUCCESS,
-  FETCH_FAILURE
-};
+export type Action = FetchSuccess | FetchFailure;
 
 export type FetchSuccess = {
   type: typeof FETCH_SUCCESS
@@ -195,7 +189,13 @@ export type FetchFailure = {
   type: typeof FETCH_FAILURE
 };
 
-export type Action = FetchSuccess | FetchFailure;
+export const FETCH_SUCCESS: \\"app/counter/FETCH_SUCCESS\\" = \\"app/counter/FETCH_SUCCESS\\";
+export const FETCH_FAILURE: \\"app/counter/FETCH_FAILURE\\" = \\"app/counter/FETCH_FAILURE\\";
+
+export const Actions = {
+  FETCH_SUCCESS,
+  FETCH_FAILURE
+};
 "
 `;
 
@@ -210,17 +210,17 @@ export type Action = Add;
       ↓ ↓ ↓ ↓ ↓ ↓
 
 // @flow
-export const ADD: 'app/counter/ADD' = 'app/counter/ADD';
-
-export const Actions = {
-  ADD
-};
+export type Action = Add;
 
 export type Add = {
   type: typeof ADD
 };
 
-export type Action = Add;
+export const ADD: 'app/counter/ADD' = 'app/counter/ADD';
+
+export const Actions = {
+  ADD
+};
 "
 `;
 
@@ -240,18 +240,18 @@ export type Action = FetchUser;
 // @flow
 import type { UserID } from './types.js';
 
-export const FETCH_USER: 'app/counter/FETCH_USER' = 'app/counter/FETCH_USER';
-
-export const Actions = {
-  FETCH_USER
-};
+export type Action = FetchUser;
 
 export type FetchUser = {
   type: typeof FETCH_USER;
   id: UserID;
 };
 
-export type Action = FetchUser;
+export const FETCH_USER: 'app/counter/FETCH_USER' = 'app/counter/FETCH_USER';
+
+export const Actions = {
+  FETCH_USER
+};
 "
 `;
 
@@ -267,17 +267,17 @@ export type Action = Increment
 // @flow
 import type { X } from './types';
 
-export const INCREMENT: 'app/counter/INCREMENT' = 'app/counter/INCREMENT';
-
-export const Actions = {
-  INCREMENT
-};
+export type Action = Increment;
 
 export type Increment = {
   type: typeof INCREMENT
 };
 
-export type Action = Increment;
+export const INCREMENT: 'app/counter/INCREMENT' = 'app/counter/INCREMENT';
+
+export const Actions = {
+  INCREMENT
+};
 "
 `;
 
@@ -288,10 +288,9 @@ export type Action = string
       ↓ ↓ ↓ ↓ ↓ ↓
 
 // @flow
+export type Action = ;
 
 export const Actions = {};
-
-export type Action = ;
 "
 `;
 
@@ -302,10 +301,9 @@ exports[`no type Action 1`] = `
       ↓ ↓ ↓ ↓ ↓ ↓
 
 // @flow
+export type Action = ;
 
 export const Actions = {};
-
-export type Action = ;
 "
 `;
 
@@ -320,15 +318,15 @@ export type Action = Increment;
       ↓ ↓ ↓ ↓ ↓ ↓
 
 // @flow
+export type Action = Increment;
+
+export type Increment = { type: typeof INCREMENT; payload: number; };
+
 export const INCREMENT: 'app/counter/INCREMENT' = 'app/counter/INCREMENT';
 
 export const Actions = {
   INCREMENT
 };
-
-export type Increment = { type: typeof INCREMENT; payload: number; };
-
-export type Action = Increment;
 "
 `;
 
@@ -343,17 +341,17 @@ export type Action = Decrement;
       ↓ ↓ ↓ ↓ ↓ ↓
 
 // @flow
-export const DECREMENT: 'app/counter/DECREMENT' = 'app/counter/DECREMENT';
-
-export const Actions = {
-  DECREMENT
-};
+export type Action = Decrement;
 
 export type Decrement = {
   type: typeof DECREMENT
 };
 
-export type Action = Decrement;
+export const DECREMENT: 'app/counter/DECREMENT' = 'app/counter/DECREMENT';
+
+export const Actions = {
+  DECREMENT
+};
 "
 `;
 
@@ -364,16 +362,16 @@ export type Action = ThisIsAction;
       ↓ ↓ ↓ ↓ ↓ ↓
 
 // @flow
-export const THIS_IS_ACTION: \\"app/counter/THIS_IS_ACTION\\" = \\"app/counter/THIS_IS_ACTION\\";
-
-export const Actions = {
-  THIS_IS_ACTION
-};
+export type Action = ThisIsAction;
 
 export type ThisIsAction = {
   type: typeof THIS_IS_ACTION
 };
 
-export type Action = ThisIsAction;
+export const THIS_IS_ACTION: \\"app/counter/THIS_IS_ACTION\\" = \\"app/counter/THIS_IS_ACTION\\";
+
+export const Actions = {
+  THIS_IS_ACTION
+};
 "
 `;
