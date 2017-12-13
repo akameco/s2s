@@ -5,7 +5,7 @@ tslint for s2s
 ## Example
 
 ```javascript
-const tslint = require('s2s-hook-tslint').default;
+const tslint = require('s2s-hook-tslint').default
 
 module.exports = {
   watch: './**/*.ts',
@@ -16,8 +16,8 @@ module.exports = {
   afterHooks: [
     tslint({
       test: /\.(ts|tsx)/,
-    })
-  ]
+    }),
+  ],
 }
 ```
 

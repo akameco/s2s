@@ -2,7 +2,6 @@
 
 > s2s plugin: create initial-state from flow info
 
-
 ## Install
 
 ```
@@ -21,17 +20,15 @@ type State = { count: Count, isLoading: boolean }
 const initialState: State = {}
 ```
 
-
 #### OUT:
 
 ```js
 // @flow
-type Count = number;
-type State = { count: Count, isLoading: boolean };
+type Count = number
+type State = { count: Count, isLoading: boolean }
 
-const initialState: State = { count: 0, isLoading: false };
+const initialState: State = { count: 0, isLoading: false }
 ```
-
 
 ### Usage
 

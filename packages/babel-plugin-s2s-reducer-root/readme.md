@@ -2,7 +2,6 @@
 
 > s2s plugin: compose state types
 
-
 ## Install
 
 ```
@@ -14,8 +13,8 @@ $ npm install --save-dev babel-plugin-s2s-reducer-root
 #### IN:
 
 ```
-```
 
+```
 
 #### OUT:
 
@@ -30,7 +29,6 @@ export default combineReducers({
   Bob
 });
 ```
-
 
 ### Usage
 
@@ -64,7 +62,6 @@ type: `Object` <br>
 default: `{}` <br>
 
 See https://github.com/isaacs/node-glob#options
-
 
 #### combineReducers
 

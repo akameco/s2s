@@ -2,7 +2,6 @@
 
 > s2s plugin: create jest test case from source
 
-
 ## Install
 
 ```
@@ -31,10 +30,10 @@ export function sum(a, b) {
 // this is test file
 import { sum } from './target'
 
-test("sum", () => {
-  const result = sum();
-  expect(result).toBe(null);
-});
+test('sum', () => {
+  const result = sum()
+  expect(result).toBe(null)
+})
 ```
 
 ### Options

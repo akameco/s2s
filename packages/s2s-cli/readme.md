@@ -11,4 +11,3 @@ $ yarn add --dev s2s
 ```
 $ yarn run s2s
 ```
-

@@ -12,7 +12,7 @@
     "flow": "flow",
     "precommit": "lint-staged",
     "publish": "./scripts/publish.sh",
-    "fmt": "prettier --write \"**/*.{js,json}\"",
+    "fmt": "prettier --write \"**/*.{md,js,json}\"",
     "postinstall": "yarn build",
     "test": "jest --watch --coverage",
     "test:watch": "jest --watch",
@@ -24,7 +24,7 @@
   },
   "lint-staged": {
     "*.js": ["fmt", "check", "git add"],
-    "*.json": ["fmt", "git add"]
+    "*.{json,md}": ["fmt", "git add"]
   },
   "devDependencies": {
     "all-contributors-cli": "^4.10.0",
