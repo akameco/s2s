@@ -22,41 +22,28 @@ learn how: http://kcd.im/pull-request
 私はたぶん、あなたに修正を依頼します(いくつかの議論の後で)。もし、あなたが今までにそれを行ったことがないとしたら、素晴らしいです。無料の短いビデオチュートリアルでそれを学ぶことができます。 http://kcd.im/pull-request
 -->
 
-- module name:
-- module version:
-- `node` version:
-- `yarn` version:
-<!-- Use yarn, 1.3.2 or higher | yarnの1.3.2以上のバージョンを使って下さい -->
+* module name:
+* module version:
+* `node` version:
+* `yarn` version:
+  <!-- Use yarn, 1.3.2 or higher | yarnの1.3.2以上のバージョンを使って下さい -->
 
 ## Relevant code or config <!-- 関連するコードまたは設定 -->
 
-
 ```javascript
-
 ```
 
-<!-- 何をしましたか？ -->
-## What you did:
+## What you did <!-- 何をしましたか？ -->
 
-
-<!-- 何が起きました？ -->
-## What happened:
+## What happened <!-- 何が起きました？ -->
 
 <!-- Please provide the full error message/screenshots/anything | 全てのエラーメッセージ、スクリーンショット、何でも提供してください。-->
 
-
-<!-- 再現レポジトリ -->
-## Reproduction repository:
+## Reproduction repository <!-- 再現レポジトリ -->
 
 <!-- If possible, please create a repository that reproduces the issue with the
 minimal amount of code possible. | もし可能ならば、最小限のコードでこのイシューを再現するレポジトリを作成してください。-->
 
+## Problem description <!--問題の説明 -->
 
-<!--問題の説明 -->
-## Problem description:
-
-
-<!-- 推奨される解決策 -->
-## Suggested solution:
-
-
+## Suggested solution <!-- 推奨される解決策 -->

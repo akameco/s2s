@@ -1,9 +1,9 @@
 # babel-plugin-s2s-state-root
+
 [![Build Status](https://travis-ci.org/akameco/babel-plugin-s2s-state-root.svg?branch=master)](https://travis-ci.org/akameco/babel-plugin-s2s-state-root)
 [![styled with prettier](https://img.shields.io/badge/styled_with-prettier-ff69b4.svg)](https://github.com/prettier/prettier)
 
 > s2s plugin: compose state types
-
 
 ## Install
 
@@ -16,8 +16,8 @@ $ npm install --save-dev babel-plugin-s2s-state-root
 #### IN:
 
 ```
-```
 
+```
 
 #### OUT:
 
@@ -31,7 +31,6 @@ export type State = {
   Bob: Bob;
 };
 ```
-
 
 ### Usage
 
@@ -62,7 +61,6 @@ outputh path.
 #### globOptions
 
 See https://github.com/isaacs/node-glob#options
-
 
 ## License
 

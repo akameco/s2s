@@ -2,7 +2,6 @@
 
 > generate action types
 
-
 ## Install
 
 ```
@@ -29,19 +28,17 @@ export type Add = {
 export type Action = Add
 ```
 
-
 ### out:
-
 
 ```js
 // @flow
-import { ADD } from './actionTypes';
-import type { Add } from './actionTypes';
+import { ADD } from './actionTypes'
+import type { Add } from './actionTypes'
 
 export function add(payload: number): Add {
   return {
     type: ADD,
-    payload
-  };
+    payload,
+  }
 }
 ```

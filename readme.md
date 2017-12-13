@@ -15,7 +15,8 @@
 [![All Contributors](https://img.shields.io/badge/all_contributors-5-orange.svg?style=flat-square)](#contributors)
 
 ## [日本語](./docs/ja)
-(readmeの最新版は日本語です)
+
+(readme の最新版は日本語です)
 
 ## Ultra-fast coding by AST assist
 
@@ -29,25 +30,26 @@ Monitor your coding and generate code in real time.
 
 When the file names match, a single Babel plugin is executed and the formatted code is reflected in the editor.
 
-- You can use any editor.
-- Just Babel Plugin. No lock in.
+* You can use any editor.
+* Just Babel Plugin. No lock in.
 
 <img src="https://github.com/akameco/logos/blob/master/s2s/s2s-concept.png?raw=true" height=600 />
 
-
 ## Articles
+
 ### 日本語
 
-- [さよならボイラープレート。s2sによる高速reduxアプリケーション構築](https://qiita.com/akameco/items/e1489c6bbf3439ec6ca4)
-- [s2s: reduxにおけるreducerのテスト。あなたがテストを書く必要はないかも知れない](https://qiita.com/akameco/items/66a2232df0e95e5bfe31)
-
+* [さよならボイラープレート。s2s による高速 redux アプリケーション構築](https://qiita.com/akameco/items/e1489c6bbf3439ec6ca4)
+* [s2s: redux における reducer のテスト。あなたがテストを書く必要はないかも知れない](https://qiita.com/akameco/items/66a2232df0e95e5bfe31)
 
 ## Users
-[SSconnect/ssconnect]( https://github.com/SSconnect/ssconnect)
+
+[SSconnect/ssconnect](https://github.com/SSconnect/ssconnect)
 
 > If your company or project is using s2s, please open a PR and add yourself to this list (in alphabetical order please)
 
 ## Quick Start
+
 This is short example.
 It is enough to know the power of s2s :)
 
@@ -113,23 +115,23 @@ More Info? See Examples.
 
 ## More Examples
 
-- [Shopping Cart](./examples/shopping-cart) Combination of Redux and Flow.
-- [cndlhvn/s2s-redux-actions-sample](https://github.com/cndlhvn/s2s-redux-actions-sample) redux-actions + redux-saga.
+* [Shopping Cart](./examples/shopping-cart) Combination of Redux and Flow.
+* [cndlhvn/s2s-redux-actions-sample](https://github.com/cndlhvn/s2s-redux-actions-sample) redux-actions + redux-saga.
 
 More Info? See Examples.
 
 ## Official Plugins
 
-- [**babel-plugin-s2s-action-types**<br>generate redux action types](https://github.com/akameco/s2s/tree/master/packages/babel-plugin-s2s-action-types)
-- [**babel-plugin-s2s-action-creater**<br>generate redux action creater](https://github.com/akameco/s2s/tree/master/packages/babel-plugin-s2s-action-creater)
-- [**babel-plugin-s2s-action-root**<br>compose flow + redux action types](https://github.com/akameco/s2s/tree/master/packages/babel-plugin-s2s-action-root)
-- [**babel-plugin-s2s-state-root**<br>compose flow + redux state types](https://github.com/akameco/s2s/tree/master/packages/babel-plugin-s2s-state-root)
-- [**babel-plugin-s2s-reducer-root**<br>compose redux reducer](https://github.com/akameco/s2s/tree/master/packages/babel-plugin-s2s-reducer-root)
-- [**babel-plugin-s2s-reducer-test-case**<br>create reducer test using switch/case](https://github.com/akameco/s2s/tree/master/packages/babel-plugin-s2s-reducer-test-case)
+* [**babel-plugin-s2s-action-types**<br>generate redux action types](https://github.com/akameco/s2s/tree/master/packages/babel-plugin-s2s-action-types)
+* [**babel-plugin-s2s-action-creater**<br>generate redux action creater](https://github.com/akameco/s2s/tree/master/packages/babel-plugin-s2s-action-creater)
+* [**babel-plugin-s2s-action-root**<br>compose flow + redux action types](https://github.com/akameco/s2s/tree/master/packages/babel-plugin-s2s-action-root)
+* [**babel-plugin-s2s-state-root**<br>compose flow + redux state types](https://github.com/akameco/s2s/tree/master/packages/babel-plugin-s2s-state-root)
+* [**babel-plugin-s2s-reducer-root**<br>compose redux reducer](https://github.com/akameco/s2s/tree/master/packages/babel-plugin-s2s-reducer-root)
+* [**babel-plugin-s2s-reducer-test-case**<br>create reducer test using switch/case](https://github.com/akameco/s2s/tree/master/packages/babel-plugin-s2s-reducer-test-case)
 
 ## Contributions
 
- For all contributions we are always welcome. and we are working with [all-contributors](https://github.com/kentcdodds/all-contributors)  Specifications in this repository.
+For all contributions we are always welcome. and we are working with [all-contributors](https://github.com/kentcdodds/all-contributors) Specifications in this repository.
 
 If you contributed our project with writting a code and test, then type this command.
 
@@ -152,9 +154,11 @@ We will be welcome your contributions!
 Thanks goes to these wonderful people ([emoji key](https://github.com/kentcdodds/all-contributors#emoji-key)):
 
 <!-- ALL-CONTRIBUTORS-LIST:START - Do not remove or modify this section -->
+
 <!-- prettier-ignore -->
 | [<img src="https://avatars2.githubusercontent.com/u/4002137?v=4" width="100px;"/><br /><sub><b>akameco</b></sub>](http://akameco.github.io)<br />[💻](https://github.com/akameco/s2s/commits?author=akameco "Code") [⚠️](https://github.com/akameco/s2s/commits?author=akameco "Tests") [💬](#question-akameco "Answering Questions") [🤔](#ideas-akameco "Ideas, Planning, & Feedback") [🚇](#infra-akameco "Infrastructure (Hosting, Build-Tools, etc)") | [<img src="https://avatars3.githubusercontent.com/u/2284908?v=4" width="100px;"/><br /><sub><b>elzup</b></sub>](https://elzup.com)<br />[🤔](#ideas-elzup "Ideas, Planning, & Feedback") [💻](https://github.com/akameco/s2s/commits?author=elzup "Code") | [<img src="https://avatars3.githubusercontent.com/u/84027?v=4" width="100px;"/><br /><sub><b>erukiti</b></sub>](http://www.amazon.co.jp/gp/registry/wishlist/JQ28X5KI9FRY)<br />[📝](#blog-erukiti "Blogposts") [💻](https://github.com/akameco/s2s/commits?author=erukiti "Code") [⚠️](https://github.com/akameco/s2s/commits?author=erukiti "Tests") | [<img src="https://avatars2.githubusercontent.com/u/5019902?v=4" width="100px;"/><br /><sub><b>asciian</b></sub>](https://asciian.github.io/)<br />[📖](https://github.com/akameco/s2s/commits?author=asciian "Documentation") | [<img src="https://avatars0.githubusercontent.com/u/1541187?v=4" width="100px;"/><br /><sub><b>kamijin_fanta</b></sub>](https://twitter.com/kamijin_fanta)<br />[💻](https://github.com/akameco/s2s/commits?author=kamijin-fanta "Code") [📖](https://github.com/akameco/s2s/commits?author=kamijin-fanta "Documentation") |
 | :---: | :---: | :---: | :---: | :---: |
+
 <!-- ALL-CONTRIBUTORS-LIST:END -->
 
 This project follows the [all-contributors](https://github.com/kentcdodds/all-contributors) specification. Contributions of any kind welcome!

@@ -2,7 +2,6 @@
 
 > Helper function to get reducer case
 
-
 ## API
 
 ```js

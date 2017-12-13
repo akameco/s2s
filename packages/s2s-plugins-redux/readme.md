@@ -2,15 +2,20 @@
 
 > s2s plugins for redux
 
-
 ## Plugins
 
 ### babel-plugin-s2s-action-creater
+
 ### babel-plugin-s2s-action-root
+
 ### babel-plugin-s2s-action-types
+
 ### babel-plugin-s2s-reducer-case-creater
+
 ### babel-plugin-s2s-reducer-root
+
 ### babel-plugin-s2s-reducer-test-case
+
 ### babel-plugin-s2s-state-root
 
 ## Usage
@@ -35,8 +40,8 @@ module.exports = {
     { test: /logic.js/, input: 'logic.js' },
   ],
 }
-
 ```
 
 ### Examples
+
 [s2s-examples/shopping-cart](https://github.com/akameco/s2s-examples/tree/master/shopping-cart)

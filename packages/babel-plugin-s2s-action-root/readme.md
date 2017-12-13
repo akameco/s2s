@@ -2,7 +2,6 @@
 
 > compose action types
 
-
 ## Install
 
 ```
@@ -14,8 +13,8 @@ $ npm install --save-dev babel-plugin-s2s-action-root
 #### IN:
 
 ```
-```
 
+```
 
 #### OUT:
 
@@ -26,7 +25,6 @@ import type { Action as BobAction } from "../bob/actionTypes";
 
 export type Action = AppAction | BobAction;
 ```
-
 
 ### Usage
 

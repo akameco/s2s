@@ -2,7 +2,6 @@
 
 > s2s plugin: create reducr case pattern using actionTypes
 
-
 ## Install
 
 ```
@@ -37,18 +36,18 @@ export default function(state: State = initialState, action) {
 #### OUT:
 
 ```js
-export default function (state: State = initialState, action) {
+export default function(state: State = initialState, action) {
   switch (action.type) {
     case Actions.DECREMENT:
       return {
-        ...state
-      };
+        ...state,
+      }
 
     case Actions.INCREMENT:
-      return { ...state, count: state + 1 };
+      return { ...state, count: state + 1 }
 
     default:
-      return state;
+      return state
   }
 }
 ```
