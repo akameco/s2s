@@ -4,10 +4,7 @@ import { Actions } from './actionTypes'
 
 export type State = Cart
 
-export const initialState: State = {
-  addedIds: [],
-  quantityById: {},
-}
+export const initialState: State = { addedIds: [], quantityById: {} }
 
 function addedIds<S: number[]>(state: S, action: Action): S {
   switch (action.type) {
