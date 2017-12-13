@@ -43,6 +43,8 @@ export default function(
         addedIds: addedIds(state.addedIds, action),
         quantityById: quantityById(state.quantityById, action),
       }
+    case Actions.CHECKOUT_SUCCESS:
+    case Actions.CHECKOUT_FAILURE:
     default:
       return state
   }

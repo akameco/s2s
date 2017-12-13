@@ -30,3 +30,22 @@ test('when product is already in cart handle ADD_TO_CART action', () => {
     quantityById: { 1: 1, 2: 2 },
   })
 })
+
+test('handle CHECKOUT_SUCCESS', () => {
+  const cart = {
+    addedIds: [1, 2],
+    // $FlowFixMe
+    quantityById: { 1: 1, 2: 1 },
+  }
+  expect(reducer(initialState, actions.checkoutSuccess(cart))).toEqual({
+    addedIds: [],
+    quantityById: {},
+  })
+})
+
+test('handle CHECKOUT_FAILURE', () => {
+  expect(reducer(initialState, actions.checkoutFailure())).toEqual({
+    addedIds: [],
+    quantityById: {},
+  })
+})
