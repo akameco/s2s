@@ -114,3 +114,15 @@ test('hooksが渡されない場合', () => {
   handlePlugin(opts[0], { ...opts[1] })
   expect(writeSpy).toBeCalled()
 })
+
+test('hookに渡されるパスはoutput', () => {
+  const input = getEventPath('a.js')
+  const output = getEventPath('b.js')
+  const plugin = { test: /a.js/, plugin: _plugin, input, output }
+  const opts = setup(plugin)
+  const mockHook = jest.fn(code => code)
+  opts[1].hooks = [mockHook]
+  handlePlugin(...opts)
+  expect(mockHook).toBeCalled()
+  expect(mockHook.mock.calls[0][1]).toBe(output)
+})

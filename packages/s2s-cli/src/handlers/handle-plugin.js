@@ -35,7 +35,8 @@ export function handlePlugin(
     return
   }
 
-  const result = runHooks(code, filename, hooks)
+  const outputFilename = resolveInputPath(plugin.output, eventPath)
+  const result = runHooks(code, outputFilename, hooks)
 
   const outputPath = plugin.output
     ? getOutputPath(
