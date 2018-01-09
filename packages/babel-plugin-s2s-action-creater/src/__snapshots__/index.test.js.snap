@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`another import 1`] = `
+exports[`default another import: another import 1`] = `
 "
 // @flow
 import type { Count } from './types'
@@ -37,7 +37,7 @@ export function add(n: number, payload: Count): Add {
 "
 `;
 
-exports[`has prop 1`] = `
+exports[`default has prop: has prop 1`] = `
 "
 // @flow
 export const ADD: 'App/ADD' = 'App/ADD'
@@ -68,7 +68,7 @@ export function add(payload: number): Add {
 "
 `;
 
-exports[`one function 1`] = `
+exports[`default one function: one function 1`] = `
 "
 // @flow
 export const INCREMENT: \\"counter/INCREMENT\\" = \\"counter/INCREMENT\\";
@@ -97,7 +97,7 @@ export function increment(): Increment {
 "
 `;
 
-exports[`some function 1`] = `
+exports[`default some function: some function 1`] = `
 "
 export const INCREMENT: 'App/INCREMENT' = 'App/INCREMENT'
 export const DECREMENT: 'App/DECREMENT' = 'App/DECREMENT'

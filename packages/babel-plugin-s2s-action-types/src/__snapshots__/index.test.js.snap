@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`1. s2s-action-types 1`] = `
+exports[`default 1. s2s-action-types: 1. s2s-action-types 1`] = `
 "
 export type Action = Increment
 
@@ -21,49 +21,7 @@ export const Actions = {
 "
 `;
 
-exports[`1. s2s-action-types 2`] = `
-"
-export type Action = Increment
-
-      ↓ ↓ ↓ ↓ ↓ ↓
-
-// @flow
-export type Action = Increment;
-
-export type Increment = {
-  type: typeof INCREMENT
-};
-
-export const INCREMENT: \\"counter/INCREMENT\\" = \\"counter/INCREMENT\\";
-
-export const Actions = {
-  INCREMENT
-};
-"
-`;
-
-exports[`1. s2s-action-types 3`] = `
-"
-export type Action = Increment
-
-      ↓ ↓ ↓ ↓ ↓ ↓
-
-// @flow
-export type Action = Increment;
-
-export type Increment = {
-  type: typeof INCREMENT
-};
-
-export const INCREMENT: \\"INCREMENT\\" = \\"INCREMENT\\";
-
-export const Actions = {
-  INCREMENT
-};
-"
-`;
-
-exports[`2. s2s-action-types 1`] = `
+exports[`default 2. s2s-action-types: 2. s2s-action-types 1`] = `
 "
 // @flow
 export type Action = Increment
@@ -85,7 +43,7 @@ export const Actions = {
 "
 `;
 
-exports[`3. s2s-action-types 1`] = `
+exports[`default 3. s2s-action-types: 3. s2s-action-types 1`] = `
 "
 export type Action = Increment | Decrement
 
@@ -111,38 +69,7 @@ export const Actions = {
 "
 `;
 
-exports[`Request/Failure/Success pattern 1`] = `
-"
-export type Action = FetchRequest;
-
-      ↓ ↓ ↓ ↓ ↓ ↓
-
-// @flow
-export type Action = FetchRequest | FetchSuccess | FetchFailure;
-
-export type FetchRequest = {
-  type: typeof FETCH_REQUEST
-};
-export type FetchSuccess = {
-  type: typeof FETCH_SUCCESS
-};
-export type FetchFailure = {
-  type: typeof FETCH_FAILURE
-};
-
-export const FETCH_REQUEST: \\"app/counter/FETCH_REQUEST\\" = \\"app/counter/FETCH_REQUEST\\";
-export const FETCH_SUCCESS: \\"app/counter/FETCH_SUCCESS\\" = \\"app/counter/FETCH_SUCCESS\\";
-export const FETCH_FAILURE: \\"app/counter/FETCH_FAILURE\\" = \\"app/counter/FETCH_FAILURE\\";
-
-export const Actions = {
-  FETCH_REQUEST,
-  FETCH_SUCCESS,
-  FETCH_FAILURE
-};
-"
-`;
-
-exports[`Request/Failure/Success pattern when Request/Success 1`] = `
+exports[`default Request/Failure/Success pattern when Request/Success: Request/Failure/Success pattern when Request/Success 1`] = `
 "
 export type Action = FetchRequest | FetchSuccess;
 
@@ -173,7 +100,7 @@ export const Actions = {
 "
 `;
 
-exports[`Request/Failure/Success pattern when exist Success/Failure 1`] = `
+exports[`default Request/Failure/Success pattern when exist Success/Failure: Request/Failure/Success pattern when exist Success/Failure 1`] = `
 "
 export type Action = FetchSuccess | FetchFailure;
 
@@ -199,7 +126,38 @@ export const Actions = {
 "
 `;
 
-exports[`already has Actions 1`] = `
+exports[`default Request/Failure/Success pattern: Request/Failure/Success pattern 1`] = `
+"
+export type Action = FetchRequest;
+
+      ↓ ↓ ↓ ↓ ↓ ↓
+
+// @flow
+export type Action = FetchRequest | FetchSuccess | FetchFailure;
+
+export type FetchRequest = {
+  type: typeof FETCH_REQUEST
+};
+export type FetchSuccess = {
+  type: typeof FETCH_SUCCESS
+};
+export type FetchFailure = {
+  type: typeof FETCH_FAILURE
+};
+
+export const FETCH_REQUEST: \\"app/counter/FETCH_REQUEST\\" = \\"app/counter/FETCH_REQUEST\\";
+export const FETCH_SUCCESS: \\"app/counter/FETCH_SUCCESS\\" = \\"app/counter/FETCH_SUCCESS\\";
+export const FETCH_FAILURE: \\"app/counter/FETCH_FAILURE\\" = \\"app/counter/FETCH_FAILURE\\";
+
+export const Actions = {
+  FETCH_REQUEST,
+  FETCH_SUCCESS,
+  FETCH_FAILURE
+};
+"
+`;
+
+exports[`default already has Actions: already has Actions 1`] = `
 "
 const x = 'x'
 
@@ -224,7 +182,7 @@ export const Actions = {
 "
 `;
 
-exports[`import type 1`] = `
+exports[`default import type: import type 1`] = `
 "
 import type { UserID } from './types.js'
 
@@ -255,7 +213,7 @@ export const Actions = {
 "
 `;
 
-exports[`imports 1`] = `
+exports[`default imports: imports 1`] = `
 "
 // @flow
 import type { X } from './types';
@@ -281,7 +239,7 @@ export const Actions = {
 "
 `;
 
-exports[`no GenericTypeAnnotation 1`] = `
+exports[`default no GenericTypeAnnotation: no GenericTypeAnnotation 1`] = `
 "
 export type Action = string
 
@@ -294,7 +252,7 @@ export const Actions = {};
 "
 `;
 
-exports[`no type Action 1`] = `
+exports[`default no type Action: no type Action 1`] = `
 "
 // @flow
 
@@ -307,7 +265,7 @@ export const Actions = {};
 "
 `;
 
-exports[`payload 1`] = `
+exports[`default payload: payload 1`] = `
 "
 export const INCREMENT: 'app/counter/Increment' = 'app/counter/Increment';
 
@@ -330,7 +288,7 @@ export const Actions = {
 "
 `;
 
-exports[`remove unuded action 1`] = `
+exports[`default remove unuded action: remove unuded action 1`] = `
 "
 export const INCREMENT: 'app/counter/Increment' = 'app/counter/Increment';
 
@@ -355,7 +313,7 @@ export const Actions = {
 "
 `;
 
-exports[`snake_case 1`] = `
+exports[`default snake_case: snake_case 1`] = `
 "
 export type Action = ThisIsAction;
 
@@ -372,6 +330,48 @@ export const THIS_IS_ACTION: \\"app/counter/THIS_IS_ACTION\\" = \\"app/counter/T
 
 export const Actions = {
   THIS_IS_ACTION
+};
+"
+`;
+
+exports[`remove prefix 1. s2s-action-types: 1. s2s-action-types 1`] = `
+"
+export type Action = Increment
+
+      ↓ ↓ ↓ ↓ ↓ ↓
+
+// @flow
+export type Action = Increment;
+
+export type Increment = {
+  type: typeof INCREMENT
+};
+
+export const INCREMENT: \\"counter/INCREMENT\\" = \\"counter/INCREMENT\\";
+
+export const Actions = {
+  INCREMENT
+};
+"
+`;
+
+exports[`use prefix === false 1. s2s-action-types: 1. s2s-action-types 1`] = `
+"
+export type Action = Increment
+
+      ↓ ↓ ↓ ↓ ↓ ↓
+
+// @flow
+export type Action = Increment;
+
+export type Increment = {
+  type: typeof INCREMENT
+};
+
+export const INCREMENT: \\"INCREMENT\\" = \\"INCREMENT\\";
+
+export const Actions = {
+  INCREMENT
 };
 "
 `;

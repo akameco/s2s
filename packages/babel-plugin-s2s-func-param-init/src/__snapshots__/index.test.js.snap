@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`default 1`] = `
+exports[`s2s-func-param-init default: default 1`] = `
 "
 // @flow
 

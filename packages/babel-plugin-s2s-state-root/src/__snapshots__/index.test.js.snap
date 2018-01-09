@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`glob options 1`] = `
+exports[`s2s-state-root glob options: glob options 1`] = `
 "
 // show options
 
@@ -18,7 +18,7 @@ export type State = {
 "
 `;
 
-exports[`no parse 1`] = `
+exports[`s2s-state-root no parse: no parse 1`] = `
 "
 // @flow
       const state = { ...state, a: 1}
@@ -36,7 +36,7 @@ export type State = {
 "
 `;
 
-exports[`options 1`] = `
+exports[`s2s-state-root options: options 1`] = `
 "
 // @flow
 

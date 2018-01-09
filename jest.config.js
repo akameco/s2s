@@ -3,6 +3,7 @@
 
 module.exports = {
   testEnvironment: 'node',
+  coveragePathIgnorePatterns: ['/node_modules/', '/.*/lib/'],
   watchPathIgnorePatterns: ['/fixtures/copy*'],
   testPathIgnorePatterns: ['/node_modules/', '/fixtures/', '/helpers/'],
   snapshotSerializers: [

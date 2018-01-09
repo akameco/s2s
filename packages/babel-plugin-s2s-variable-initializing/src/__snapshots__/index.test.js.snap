@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`initialize variable 1`] = `
+exports[`s2s-variable-initializing initialize variable: initialize variable 1`] = `
 "
 // @flow
 type S = { a: number }

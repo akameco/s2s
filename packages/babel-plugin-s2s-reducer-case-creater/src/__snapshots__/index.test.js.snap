@@ -1,58 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`1. s2s-reducer-case-creater 1`] = `
-"
-export default function(state: State = initialState, action) {
-  switch (action.type) {
-    case Actions.INCREMENT:
-      return { ...state, count: state + 1 }
-
-    default:
-      return state
-  }
-}
-
-      ↓ ↓ ↓ ↓ ↓ ↓
-
-export default function (state: State = initialState, action) {
-  switch (action.type) {
-    case Actions.INCREMENT:
-      return { ...state, count: state + 1 };
-
-    default:
-      return state;
-  }
-}
-"
-`;
-
-exports[`1. s2s-reducer-case-creater 2`] = `
-"
-export default function(state: State = initialState, action) {
-  switch (action.type) {
-    default:
-      return state
-  }
-}
-
-      ↓ ↓ ↓ ↓ ↓ ↓
-
-export default function (state: State = initialState, action) {
-  switch (action.type) {
-    case Actions.SET:
-      return {
-        ...state,
-        count: action.count
-      };
-
-    default:
-      return state;
-  }
-}
-"
-`;
-
-exports[`basic 1`] = `
+exports[`default basic: basic 1`] = `
 "
 export default function(state: State = initialState, action) {
   switch (action.type) {
@@ -83,7 +31,7 @@ export default function (state: State = initialState, action) {
 "
 `;
 
-exports[`basic 2`] = `
+exports[`default basic: basic 2`] = `
 "
 function update(state: State = initialState, action) {
   switch (action.type) {
@@ -130,7 +78,7 @@ export default function (state: State = initialState, action) {
 "
 `;
 
-exports[`not Actions 1`] = `
+exports[`default not Actions: not Actions 1`] = `
 "
 export default function(state: State = initialState, action) {
   switch (action.type) {
@@ -156,6 +104,58 @@ export default function (state: State = initialState, action) {
       return { ...state, count: state + 1 };
     case Actions.INCREMENT:
       return { ...state, count: state + 1 };
+    default:
+      return state;
+  }
+}
+"
+`;
+
+exports[`when actionTypes.js is empty 1. s2s-reducer-case-creater: 1. s2s-reducer-case-creater 1`] = `
+"
+export default function(state: State = initialState, action) {
+  switch (action.type) {
+    case Actions.INCREMENT:
+      return { ...state, count: state + 1 }
+
+    default:
+      return state
+  }
+}
+
+      ↓ ↓ ↓ ↓ ↓ ↓
+
+export default function (state: State = initialState, action) {
+  switch (action.type) {
+    case Actions.INCREMENT:
+      return { ...state, count: state + 1 };
+
+    default:
+      return state;
+  }
+}
+"
+`;
+
+exports[`when has same property 1. s2s-reducer-case-creater: 1. s2s-reducer-case-creater 1`] = `
+"
+export default function(state: State = initialState, action) {
+  switch (action.type) {
+    default:
+      return state
+  }
+}
+
+      ↓ ↓ ↓ ↓ ↓ ↓
+
+export default function (state: State = initialState, action) {
+  switch (action.type) {
+    case Actions.SET:
+      return {
+        ...state,
+        count: action.count
+      };
+
     default:
       return state;
   }
