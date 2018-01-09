@@ -55,7 +55,7 @@ cases(
 
 test('Displayed "start" on the Consle', () => {
   watcher = m(setup())
-  expect(logSpy.mock.calls.length).toBe(1)
+  expect(logSpy.mock.calls).toHaveLength(1)
   expect(logSpy.mock.calls[0][0]).toMatch('start')
 })
 
@@ -64,7 +64,7 @@ test('pluginsとtemplatesが渡されないとき', () => {
   delete opts.plugins
   delete opts.templates
   watcher = m(opts)
-  expect(logSpy.mock.calls.length).toBe(1)
+  expect(logSpy.mock.calls).toHaveLength(1)
   expect(logSpy.mock.calls[0][0]).toMatch('start')
 })
 

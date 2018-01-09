@@ -10,7 +10,7 @@ test('call hooks', () => {
   const hooks = [mockHook]
   runHooks('', '', hooks)
   runHooks('', '', hooks)
-  expect(mockHook.mock.calls.length).toBe(2)
+  expect(mockHook.mock.calls).toHaveLength(2)
 })
 
 test('return formated code when run prettierHook', () => {

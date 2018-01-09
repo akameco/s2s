@@ -39,7 +39,7 @@ test('eventPathがMatchしないとき、handlePluginは呼ばれない', () => 
   const handlers = require('.').default // eslint-disable-line global-require
   handlers(getEventPath('a.js'), 'add', { plugins: [plugin] })
   // $FlowFixMe
-  expect(handlePlugin.mock.calls.length).toBe(0)
+  expect(handlePlugin.mock.calls).toHaveLength(0)
 })
 
 test('lockされているとき、ハンドラを実行しない', () => {

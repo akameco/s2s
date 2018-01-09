@@ -35,7 +35,7 @@ test('already exist', () => {
 
   templates.default(eventPath, [template], fixturesPath)
   templates.default(eventPath, [template], fixturesPath)
-  expect(logSpy.mock.calls.length).toBe(1)
+  expect(logSpy.mock.calls).toHaveLength(1)
 })
 
 test('handle copy error', () => {

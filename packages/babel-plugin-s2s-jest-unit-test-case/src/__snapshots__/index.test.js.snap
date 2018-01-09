@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`1. s2s-jest-unit-test-case 1`] = `
+exports[`default 1. s2s-jest-unit-test-case: 1. s2s-jest-unit-test-case 1`] = `
 "
 // empty
 
@@ -16,7 +16,68 @@ test(\\"sum\\", () => {
 "
 `;
 
-exports[`1. s2s-jest-unit-test-case 2`] = `
+exports[`default when exist test("sum"): when exist test("sum") 1`] = `
+"
+test('sum', () => {
+  expect(sum(1, 1)).toBe(2)
+})
+
+      ↓ ↓ ↓ ↓ ↓ ↓
+
+import { sum } from './export-sum';
+test('sum', () => {
+  expect(sum(1, 1)).toBe(2);
+});
+"
+`;
+
+exports[`default when other source is imported: when other source is imported 1`] = `
+"
+import { add } from './other-source'
+
+      ↓ ↓ ↓ ↓ ↓ ↓
+
+import { sum } from './export-sum';
+import { add } from './other-source';
+
+test('sum', () => {
+  const result = sum();
+  expect(result).toBe(null);
+});
+"
+`;
+
+exports[`default when sum is imported: when sum is imported 1`] = `
+"
+import { sum } from './export-sum'
+
+      ↓ ↓ ↓ ↓ ↓ ↓
+
+import { sum } from './export-sum';
+
+test('sum', () => {
+  const result = sum();
+  expect(result).toBe(null);
+});
+"
+`;
+
+exports[`default when sum is not imported: when sum is not imported 1`] = `
+"
+import { add } from './export-sum'
+
+      ↓ ↓ ↓ ↓ ↓ ↓
+
+import { sum } from './export-sum';
+
+test('sum', () => {
+  const result = sum();
+  expect(result).toBe(null);
+});
+"
+`;
+
+exports[`multi-exports 1. s2s-jest-unit-test-case: 1. s2s-jest-unit-test-case 1`] = `
 "
 // empty
 
@@ -37,38 +98,7 @@ test(\\"add\\", () => {
 "
 `;
 
-exports[`1. s2s-jest-unit-test-case 3`] = `
-"
-// empty
-
-      ↓ ↓ ↓ ↓ ↓ ↓
-
-// empty
-import { add } from \\"./no-export-sum\\";
-
-test(\\"add\\", () => {
-  const result = add();
-  expect(result).toBe(null);
-});
-"
-`;
-
-exports[`when exist test("sum") 1`] = `
-"
-test('sum', () => {
-  expect(sum(1, 1)).toBe(2)
-})
-
-      ↓ ↓ ↓ ↓ ↓ ↓
-
-import { sum } from './export-sum';
-test('sum', () => {
-  expect(sum(1, 1)).toBe(2);
-});
-"
-`;
-
-exports[`when exist test("sum") 2`] = `
+exports[`multi-exports when exist test("sum"): when exist test("sum") 1`] = `
 "
 test('sum', () => {
   expect(sum(1, 1)).toBe(2)
@@ -88,47 +118,17 @@ test('add', () => {
 "
 `;
 
-exports[`when other source is imported 1`] = `
+exports[`when sum is not exported 1. s2s-jest-unit-test-case: 1. s2s-jest-unit-test-case 1`] = `
 "
-import { add } from './other-source'
+// empty
 
       ↓ ↓ ↓ ↓ ↓ ↓
 
-import { sum } from './export-sum';
-import { add } from './other-source';
+// empty
+import { add } from \\"./no-export-sum\\";
 
-test('sum', () => {
-  const result = sum();
-  expect(result).toBe(null);
-});
-"
-`;
-
-exports[`when sum is imported 1`] = `
-"
-import { sum } from './export-sum'
-
-      ↓ ↓ ↓ ↓ ↓ ↓
-
-import { sum } from './export-sum';
-
-test('sum', () => {
-  const result = sum();
-  expect(result).toBe(null);
-});
-"
-`;
-
-exports[`when sum is not imported 1`] = `
-"
-import { add } from './export-sum'
-
-      ↓ ↓ ↓ ↓ ↓ ↓
-
-import { sum } from './export-sum';
-
-test('sum', () => {
-  const result = sum();
+test(\\"add\\", () => {
+  const result = add();
   expect(result).toBe(null);
 });
 "

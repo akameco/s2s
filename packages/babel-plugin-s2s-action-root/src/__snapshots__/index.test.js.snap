@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`glob options 1`] = `
+exports[`s2s-action-root glob options: glob options 1`] = `
 "
 // show options
 
@@ -19,7 +19,7 @@ export type Action = ReduxInitAction | AppAction | BobAction;
 "
 `;
 
-exports[`options 1`] = `
+exports[`s2s-action-root options: options 1`] = `
 "
 // @flow
 

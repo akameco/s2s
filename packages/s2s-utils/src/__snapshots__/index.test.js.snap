@@ -1,12 +1,12 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`snapshot createImportDeclaration when string 1`] = `"import { local } from \\"./source\\";"`;
+exports[`snapshot createImportDeclaration when string array: snapshot createImportDeclaration when string array 1`] = `"import { local1, local2 } from \\"./source\\";"`;
 
-exports[`snapshot createImportDeclaration when string array 1`] = `"import { local1, local2 } from \\"./source\\";"`;
+exports[`snapshot createImportDeclaration when string: snapshot createImportDeclaration when string 1`] = `"import { local } from \\"./source\\";"`;
 
-exports[`snapshot defaultImport 1`] = `"import defaultlocal from \\"source\\";"`;
+exports[`snapshot defaultImport: snapshot defaultImport 1`] = `"import defaultlocal from \\"source\\";"`;
 
-exports[`snapshot typeImport 1`] = `"import type { imported as local } from \\"source\\";"`;
+exports[`snapshot typeImport: snapshot typeImport 1`] = `"import type { imported as local } from \\"source\\";"`;
 
 exports[`template 1`] = `
 Node {
