@@ -12,15 +12,20 @@
     "s2s": "./bin/s2s.js"
   },
   "main": "./lib/index.js",
-  "files": ["lib", "bin"],
-  "keywords": ["s2s"],
+  "files": [
+    "lib",
+    "bin"
+  ],
+  "keywords": [
+    "s2s"
+  ],
   "dependencies": {
     "babel-polyfill": "^6.26.0",
     "chalk": "^2.3.0",
     "chokidar": "^1.7.0",
     "cp-file": "^5.0.0",
     "find-up": "^2.1.0",
-    "key-locker": "^0.2.0",
+    "key-locker": "^0.2.1",
     "micromatch": "^2.3.11",
     "normalize-path-sep": "^0.1.1",
     "prettier": "^1.9.1",

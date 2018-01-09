@@ -1,3 +1,3 @@
 declare module 'slash' {
-  declare function exports(input: string): string
+  declare export default (input: string) => string
 }
