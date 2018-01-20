@@ -6,8 +6,11 @@
   "repository": "akameco/s2s",
   "author": "akameco <akameco.t@gmail.com> (akameco.github.io)",
   "main": "lib/index.js",
-  "files": ["lib", "src"],
+  "files": [
+    "lib",
+    "src"
+  ],
   "dependencies": {
-    "execa": "^0.8.0"
+    "execa": "^0.9.0"
   }
 }
