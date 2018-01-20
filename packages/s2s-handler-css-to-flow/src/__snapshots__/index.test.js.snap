@@ -1,0 +1,10 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`return flow definition 1`] = `
+"
+// @flow
+declare export default {|
+  +'a': string,
+|}
+  "
+`;
