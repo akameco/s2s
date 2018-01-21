@@ -1,12 +1,14 @@
 {
   "name": "s2s-utils",
-  "version": "0.6.0",
+  "version": "0.6.1",
   "description": "s2s utils",
   "license": "MIT",
   "repository": "akameco/s2s",
   "author": "akameco <akameco.t@gmail.com> (akameco.github.io)",
   "main": "lib/index.js",
-  "files": ["lib"],
+  "files": [
+    "lib"
+  ],
   "dependencies": {
     "babel-template": "^6.26.0",
     "babel-types": "^6.26.0",
