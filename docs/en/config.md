@@ -6,7 +6,7 @@ TODO: 英語化
 
 ```js
 module.exports = {
-  watch: './**/*.js', // string
+  watch: './**/*.js', // default
   plugins: [],
   templates: [],
 }
@@ -14,7 +14,7 @@ module.exports = {
 
 ### watch
 
-対象となるファイルを Glob パターンで指定します。
+対象となるファイルを Glob パターンで指定します。デフォルトは`./**/*.js`で`js`を対象に取ります。
 
 ### plugins
 

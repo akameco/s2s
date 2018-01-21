@@ -20,6 +20,7 @@ function createWatcher(rootPath: Path, ignored: AnymatchPath) {
 export default (inputConfg: Config) => {
   const config = {
     ...{
+      watch: './**/*.js',
       plugins: [],
       templates: [],
       afterHooks: [],
