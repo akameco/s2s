@@ -1,0 +1,44 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`snapshot 1`] = `
+Array [
+  Object {
+    "input": "containers.js",
+    "test": /containers\\\\/\\.\\*\\\\/index\\.js/,
+  },
+  Object {
+    "input": "components.js",
+    "test": /components\\\\/\\.\\*\\\\/index\\.js/,
+  },
+  Object {
+    "input": "component.test.js",
+    "test": /components\\\\/\\.\\*\\\\/index\\.test\\.js/,
+  },
+  Object {
+    "input": "reducer.js",
+    "test": /reducer\\.js/,
+  },
+  Object {
+    "input": "reducer.test.js",
+    "output": "reducer.test.js",
+    "test": /reducer\\.js/,
+  },
+  Object {
+    "input": "actionTypes.js",
+    "output": "actionTypes.js",
+    "test": /reducer\\.js/,
+  },
+  Object {
+    "input": "selectors.js",
+    "test": /selectors\\.js/,
+  },
+  Object {
+    "input": "selectors.test.js",
+    "test": /selectors\\.test\\.js/,
+  },
+  Object {
+    "input": "logic.js",
+    "test": /logic\\.js/,
+  },
+]
+`;
