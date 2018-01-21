@@ -8,3 +8,11 @@ declare export default {|
 |}
   "
 `;
+
+exports[`snapshot DEFAULT_CONFIG 1`] = `
+Object {
+  "handler": [Function],
+  "output": "[name].css.flow",
+  "test": /\\.\\*\\.css\\$/,
+}
+`;
