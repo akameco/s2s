@@ -1,0 +1,22 @@
+{
+  "name": "import",
+  "version": "0.0.0",
+  "private": true,
+  "description": "sample with css-to-flow",
+  "license": "MIT",
+  "repository": "https://github.com/akameco/s2s",
+  "author": "akameco <akameco.t@gmail.com> (akameco.github.io)",
+  "engines": {
+    "node": ">=6"
+  },
+  "scripts": {
+    "flow": "flow",
+    "s2s": "s2s"
+  },
+  "dependencies": {},
+  "devDependencies": {
+    "flow-bin": "^0.63.1",
+    "s2s": "^0.17.0",
+    "s2s-handler-css-to-flow": "^0.1.0"
+  }
+}

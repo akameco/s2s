@@ -1,0 +1,6 @@
+// @flow
+declare export default {|
+  +a: string,
+  +App: string,
+  +AppHeader: string,
+|}
