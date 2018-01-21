@@ -20,17 +20,17 @@ export type Action = Increment
 
 ```js
 // @flow
-export type Action = Increment
-
-export type Increment = {
-  type: typeof INCREMENT,
-}
-
 export const INCREMENT: 'app/counter/INCREMENT' = 'app/counter/INCREMENT'
 
 export const Actions = {
   INCREMENT,
 }
+
+export type Increment = {
+  type: typeof INCREMENT,
+}
+
+export type Action = Increment
 ```
 
 ### Request/Success/Failure pattern
@@ -44,19 +44,6 @@ export type Action = FetchRequest
 #### Out:
 
 ```js
-// @flow
-export type Action = FetchRequest | FetchSuccess | FetchFailure
-
-export type FetchRequest = {
-  type: typeof FETCH_REQUEST,
-}
-export type FetchSuccess = {
-  type: typeof FETCH_SUCCESS,
-}
-export type FetchFailure = {
-  type: typeof FETCH_FAILURE,
-}
-
 export const FETCH_REQUEST: 'app/counter/FETCH_REQUEST' =
   'app/counter/FETCH_REQUEST'
 export const FETCH_SUCCESS: 'app/counter/FETCH_SUCCESS' =
@@ -69,4 +56,16 @@ export const Actions = {
   FETCH_SUCCESS,
   FETCH_FAILURE,
 }
+
+export type FetchRequest = {
+  type: typeof FETCH_REQUEST,
+}
+export type FetchSuccess = {
+  type: typeof FETCH_SUCCESS,
+}
+export type FetchFailure = {
+  type: typeof FETCH_FAILURE,
+}
+
+export type Action = FetchRequest | FetchSuccess | FetchFailure
 ```
