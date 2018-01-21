@@ -12,8 +12,8 @@
   "files": ["lib"],
   "keywords": ["s2s", "prettier", "hook"],
   "peerDependencies": {
-    "tslint": ">= 5",
-    "typescript": "^>= 2"
+    "tslint": ">=5",
+    "typescript": ">=2"
   },
   "dependencies": {
     "tslint": "^5.8.0",
