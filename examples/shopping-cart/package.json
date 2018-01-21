@@ -1,6 +1,6 @@
 {
   "name": "s2s-example-shopping-cart",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "private": true,
   "scripts": {
     "start": "react-scripts start",
@@ -23,7 +23,7 @@
     "enzyme-to-json": "^3.3.0",
     "flow-bin": "^0.63.1",
     "react-test-renderer": "^16.2.0",
-    "s2s": "^0.16.0",
+    "s2s": "^0.17.0",
     "s2s-plugins-redux": "^0.4.3"
   }
 }

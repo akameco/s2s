@@ -1,6 +1,6 @@
 {
   "name": "s2s-example-getting-started",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "private": true,
   "scripts": {
     "flow": "flow",
@@ -9,6 +9,6 @@
   "devDependencies": {
     "babel-plugin-s2s-variable-initializing": "^0.1.6",
     "flow-bin": "^0.63.1",
-    "s2s": "^0.16.0"
+    "s2s": "^0.17.0"
   }
 }
