@@ -1,5 +1,6 @@
 [ignore]
 .*/examples/.*
+.*/s2s-templates-redux/templates/.*
 
 [include]
 packages/*/src
