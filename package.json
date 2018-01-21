@@ -53,12 +53,12 @@
     "husky": "^0.14.3",
     "jest": "^22.1.4",
     "jest-in-case": "^1.0.2",
-    "lerna": "^2.6.0",
-    "lint-staged": "^6.0.0",
+    "lerna": "^2.8.0",
+    "lint-staged": "^6.0.1",
     "mkdirp": "^0.5.1",
     "path-exists": "^3.0.0",
     "prettier": "^1.10.2",
-    "pretty-format": "^22.0.3",
+    "pretty-format": "^22.1.0",
     "rimraf": "^2.6.2",
     "strip-ansi": "^4.0.0"
   }
