@@ -28,7 +28,7 @@
     "key-locker": "^0.2.1",
     "micromatch": "^2.3.11",
     "normalize-path-sep": "^0.1.1",
-    "prettier": "^1.9.1",
+    "prettier": "^1.10.2",
     "s2s-handler-babel": "^0.3.0",
     "s2s-handler-typescript": "^0.3.1",
     "s2s-hook-prettier": "^0.2.2",

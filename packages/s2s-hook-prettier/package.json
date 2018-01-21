@@ -9,9 +9,15 @@
     "node": ">=6"
   },
   "main": "./lib/index.js",
-  "files": ["lib"],
-  "keywords": ["s2s", "prettier", "hook"],
+  "files": [
+    "lib"
+  ],
+  "keywords": [
+    "s2s",
+    "prettier",
+    "hook"
+  ],
   "dependencies": {
-    "prettier": "^1.9.1"
+    "prettier": "^1.10.2"
   }
 }
