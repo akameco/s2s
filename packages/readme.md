@@ -24,6 +24,7 @@ Babel のバージョンは 6 です。
 * [s2s-handler-babel](./s2s-handler-babel)
 * [s2s-handler-babel-next](./s2s-handler-babel-next)
 * [s2s-handler-typescript](./s2s-handler-typescript)
+* [s2s-handler-css-to-flow](./s2s-handler-css-to-flow)
 
 ## Plugins
 

@@ -1,0 +1,27 @@
+{
+  "name": "s2s-handler-css-to-flow",
+  "version": "0.0.0",
+  "description": "s2s handler for css to flow",
+  "license": "MIT",
+  "repository": "https://github.com/akameco/s2s",
+  "author": "akameco <akameco.t@gmail.com> (akameco.github.io)",
+  "engines": {
+    "node": ">=6"
+  },
+  "main": "./lib/index.js",
+  "files": [
+    "lib"
+  ],
+  "keywords": [
+    "s2s",
+    "css",
+    "postcss",
+    "scss",
+    "flow",
+    "flowtype",
+    "css-to-flow"
+  ],
+  "dependencies": {
+    "css-to-flow": "^0.2.1"
+  }
+}
