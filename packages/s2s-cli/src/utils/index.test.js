@@ -60,3 +60,15 @@ test('isAlreadyExist returns false when a code is empty string', () => {
   expect(utils.isAlreadyExist('hoge')).toBe(false)
   spyFs.mockRestore()
 })
+
+test('isAlreadyExist returns true when file is already exist', () => {
+  const spyFs = jest.spyOn(fs, 'readFileSync').mockReturnValue('exist')
+  expect(utils.isAlreadyExist('hoge')).toBe(true)
+  spyFs.mockRestore()
+})
+
+test('isAlreadyExist returns false when throw error', () => {
+  const spyFs = jest.spyOn(fs, 'readFileSync').mockReturnValue(new Error('err'))
+  expect(utils.isAlreadyExist('')).toBe(false)
+  spyFs.mockRestore()
+})
