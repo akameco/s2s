@@ -1,10 +1,9 @@
 ## Config の設定
 
-`s2s.config.js`をプロジェクトのルートに配置します。基本的に必要となる項目は、`watch`と`plugins`と`templates`の 3 つです。
+`s2s.config.js`をプロジェクトのルートに配置します。基本的に必要となる項目は、`plugins`と`templates`の 2 つです。
 
 ```js
 module.exports = {
-  watch: './**/*.js', // string
   plugins: [],
   templates: [],
 }
@@ -12,7 +11,7 @@ module.exports = {
 
 ### watch
 
-対象となるファイルを Glob パターンで指定します。
+対象となるファイルを Glob パターンで指定します。デフォルトは`./**/*.js`で`js`を対象に取ります。
 
 ### plugins
 
