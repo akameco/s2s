@@ -4,10 +4,10 @@ const fs = require('fs')
 const babel = require('babel-core')
 const globby = require('globby')
 const mkdirp = require('mkdirp')
+const chalk = require('chalk')
+const { getPkgs, PACKAGES_DIR } = require('./getPackages')
 const clean = require('./clean')
 
-const PACKAGES = 'packages'
-const PACKAGES_DIR = path.resolve(__dirname, '..', PACKAGES)
 const SRC_DIR = 'src'
 const LIB_DIR = 'lib'
 
@@ -20,13 +20,6 @@ function readBabelrc() {
 
 const transformOptions = JSON.parse(readBabelrc())
 transformOptions.babelrc = false
-
-function getPkgs() {
-  return fs
-    .readdirSync(PACKAGES_DIR)
-    .map(file => path.resolve(PACKAGES_DIR, file))
-    .filter(f => fs.lstatSync(path.resolve(f)).isDirectory())
-}
 
 function getPkgName(file /* : string */) {
   return path.relative(PACKAGES_DIR, file).split(path.sep)[0]
@@ -53,6 +46,12 @@ function buildFile(file /* : string */) {
   if (fs.copyFileSync) {
     fs.copyFileSync(file, `${destPath}.flow`)
   }
+
+  process.stdout.write(
+    `${path.relative(PACKAGES_DIR, file) +
+      chalk.red(' \u21D2 ') +
+      path.relative(PACKAGES_DIR, destPath)}\n`
+  )
 }
 
 function buildPkg(p) {
@@ -67,5 +66,13 @@ function build() {
   pkgs.forEach(buildPkg)
 }
 
-clean()
-build()
+const files = process.argv.slice(2)
+
+if (files.length) {
+  files.forEach(buildFile)
+} else {
+  process.stdout.write(chalk.bold.inverse(' Clean Building Files... \n'))
+  clean()
+  process.stdout.write(chalk.bold.inverse(' Building packages... \n'))
+  build()
+}

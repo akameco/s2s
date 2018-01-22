@@ -11,12 +11,14 @@
   "scripts": {
     "add-contributors": "all-contributors add",
     "build": "node ./scripts/build",
+    "prewatch": "yarn build",
+    "watch": "node ./scripts/watch",
     "lint": "eslint . --fix",
     "flow": "flow",
-    "precommit": "lint-staged",
+    "precommit": "yarn flow && lint-staged",
     "publish": "./scripts/publish.sh",
     "fmt": "prettier --write \"**/*.{md,js,json}\"",
-    "postinstall": "yarn build",
+    "postinstall": "yarn build && yarn flow stop && yarn flow",
     "test": "jest --watch --coverage",
     "test:watch": "jest --watch",
     "test:cov": "jest --coverage --ci --runInBand",
@@ -26,12 +28,7 @@
     "validate": "yarn flow && yarn lint && yarn test:cov"
   },
   "lint-staged": {
-    "*.js": [
-      "fmt",
-      "flow",
-      "git add"
-    ],
-    "*.{json,md}": [
+    "*.{js,json,md}": [
       "fmt",
       "git add"
     ]
