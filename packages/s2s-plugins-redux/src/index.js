@@ -75,3 +75,4 @@ const plugins = [
 ]
 
 module.exports = plugins
+exports.plugins = plugins
