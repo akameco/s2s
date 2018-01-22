@@ -28,7 +28,7 @@
   "lint-staged": {
     "*.js": [
       "fmt",
-      "check",
+      "flow",
       "git add"
     ],
     "*.{json,md}": [
