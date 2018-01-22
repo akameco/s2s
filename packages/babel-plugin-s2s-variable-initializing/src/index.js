@@ -8,7 +8,7 @@ import type { BabelPath, State } from 'types/babel'
 const parseFromObj = obj =>
   parseExpression(JSON.stringify(obj), { plugins: ['flow'] })
 
-export default () => {
+const plugin = () => {
   return {
     inherits: inheritsOpts,
     name: 's2s-variable-initializing',
@@ -39,3 +39,10 @@ export default () => {
     },
   }
 }
+
+export const DEFAULT_CONFIG = {
+  test: /.*.js$/,
+  plugin,
+}
+
+export default plugin
