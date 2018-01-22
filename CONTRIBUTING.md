@@ -28,6 +28,12 @@ Thanks for being willing to contribute!
 > branch. Whenever you want to update your version of `master`, do a regular
 > `git pull`.
 
+## Develop
+
+```console
+yarn run watch
+```
+
 ## Add yourself as a contributor
 
 This project follows the [all contributors][all-contributors] specification.
