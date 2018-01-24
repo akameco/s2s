@@ -18,3 +18,14 @@ module.exports = {
   ],
 }
 ```
+
+or use `DEFAULT_CONFIG`
+
+```js
+const { DEFAULT_CONFIG } = require('s2s-handler-css-to-flow')
+
+module.exports = {
+  watch: './**/*.css',
+  plugins: [DEFAULT_CONFIG],
+}
+```
