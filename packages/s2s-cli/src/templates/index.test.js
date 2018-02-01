@@ -1,7 +1,7 @@
 // @flow
+import fs from 'fs'
 import { resolve, join } from 'path'
 import rimraf from 'rimraf'
-import cpFile from 'cp-file'
 import stripAnsi from 'strip-ansi'
 import pathExists from 'path-exists'
 import * as templates from '.'
@@ -48,12 +48,12 @@ test('handle copy error', () => {
 test('handle nomal error', () => {
   const template = { test: /copy-result.js/, input: 'not-found.js' }
 
-  const cpFIleSpy = jest.spyOn(cpFile, 'sync').mockImplementation(() => {
+  const spy = jest.spyOn(fs, 'readFileSync').mockImplementation(() => {
     throw new Error('hello')
   })
   templates.default(eventPath, [template], fixturesPath)
   expect(logSpy.mock.calls[0][0]).toMatch('hello')
-  cpFIleSpy.mockRestore()
+  spy.mockRestore()
 })
 
 test('template not found', () => {
@@ -105,4 +105,11 @@ test('handlePluginsのPlugin.testオプションはglobの配列を判定でき�
 
   templates.default(eventPath, [template], fixturesPath)
   expect(logSpy).toHaveBeenCalled()
+})
+
+test('esj', () => {
+  const template = { test: ['**/*.js', '!copy'], input: 'copy.js' }
+  templates.default(eventPath, [template], fixturesPath)
+  const result = getEventPath('copy-result.js')
+  expect(fs.readFileSync(result, 'utf8')).toMatchSnapshot()
 })

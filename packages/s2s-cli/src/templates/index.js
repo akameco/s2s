@@ -1,7 +1,8 @@
 // @flow
 import path from 'path'
+import fs from 'fs'
 import chalk from 'chalk'
-import cpFile from 'cp-file'
+import ejs from 'ejs'
 import slash from 'slash'
 import type { Path, Template } from 'types'
 import { formatText, trimAndFormatPath } from '../reporters'
@@ -52,7 +53,14 @@ function handleTemplate(
   }
 
   const templatePath = path.join(templatesDir, template.input)
-  cpFile.sync(templatePath, outputPath)
+  const str = fs.readFileSync(templatePath, 'utf8')
+
+  const result = ejs.render(str, {
+    FILENAME: path.parse(outputPath).name,
+    DIRNAME: path.basename(path.dirname(outputPath)),
+  })
+
+  fs.writeFileSync(outputPath, result)
 
   console.log(
     formatText('TEMPLATE', relativeFromCwd(templatePath), slash(outputPath))
