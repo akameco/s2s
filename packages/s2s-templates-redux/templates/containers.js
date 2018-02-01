@@ -6,7 +6,7 @@ import * as selectors from './selectors'
 
 type Props = {}
 
-class Container extends React.Component<Props> {
+class <%= DIRNAME %> extends React.Component<Props> {
   render() {
     const {} = this.props
     return <div>{}</div>
@@ -19,4 +19,4 @@ const ms = (state: RootState) => ({
 
 const conn: Connector<{}, Props> = connect(ms, { TODO })
 
-export default conn(Container)
+export default conn(<%= DIRNAME %>)
