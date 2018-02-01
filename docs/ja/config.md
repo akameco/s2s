@@ -46,6 +46,18 @@ type Template = {|
 |}
 ```
 
+また、ejs 形式の埋め込みをサポートしており、デフォルトでは`FILENAME`でファイル名が、`DIRNAME`で親ディレクトリ名が渡されます。
+
+Hello/index.js
+
+```js
+console.log("<%= DIRNAME %>")
+
+↓ ↓ ↓
+
+console.log("Hello")
+```
+
 ### handlerMapper
 
 `{ [extensions: string]: Handler }`
