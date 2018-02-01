@@ -8,7 +8,7 @@
   },
   "devDependencies": {
     "babel-plugin-s2s-variable-initializing": "^0.1.6",
-    "flow-bin": "^0.63.1",
+    "flow-bin": "^0.64.0",
     "s2s": "^0.17.0"
   }
 }
