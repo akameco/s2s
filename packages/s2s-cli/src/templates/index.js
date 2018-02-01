@@ -12,7 +12,7 @@ import some from '../utils/some'
 type CopyError = Error & { path: string, code: string }
 
 function handleCopyError(err: CopyError): void {
-  if (err.name === 'CpFileError' && err.code === 'ENOENT') {
+  if (err.code === 'ENOENT') {
     const errorText = `${chalk.reset.inverse.bold.red(
       'TEMPLATE'
     )} ${trimAndFormatPath(err.path)}
