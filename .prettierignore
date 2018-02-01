@@ -3,3 +3,4 @@ lib
 coverage
 package.json
 packages/s2s-cli/src/templates/__tests__
+packages/s2s-templates-redux/templates

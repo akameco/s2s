@@ -2,6 +2,6 @@
 
 class fixtures extends React.Component {
   render() {
-    return <div>{copy - result}</div>
+    return <div>{copy-result}</div>
   }
 }
