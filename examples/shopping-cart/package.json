@@ -20,8 +20,8 @@
   "devDependencies": {
     "enzyme": "^3.3.0",
     "enzyme-adapter-react-16": "^1.1.1",
-    "enzyme-to-json": "^3.3.0",
-    "flow-bin": "^0.63.1",
+    "enzyme-to-json": "^3.3.1",
+    "flow-bin": "^0.64.0",
     "react-test-renderer": "^16.2.0",
     "s2s": "^0.17.0",
     "s2s-plugins-redux": "^0.4.3"
