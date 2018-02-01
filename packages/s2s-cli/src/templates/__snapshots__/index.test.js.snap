@@ -2,4 +2,15 @@
 
 exports[`called log with output result 1`] = `"TEMPLATE packages/s2s-cli/src/templates/__tests__/fixtures/copy.js → packages/s2s-cli/src/templates/__tests__/fixtures/copy-result.js"`;
 
+exports[`esj 1`] = `
+"// copy
+
+class fixtures extends React.Component {
+  render() {
+    return <div>{copy-result}</div>
+  }
+}
+"
+`;
+
 exports[`show output path when add output option 1`] = `"TEMPLATE packages/s2s-cli/src/templates/__tests__/fixtures/copy.js → packages/s2s-cli/src/templates/__tests__/fixtures/output.js"`;
