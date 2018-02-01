@@ -1,6 +1,6 @@
 {
   "name": "s2s",
-  "version": "0.17.0",
+  "version": "0.18.0",
   "description": "Source To Source",
   "license": "MIT",
   "repository": "https://github.com/akameco/s2s",
@@ -30,8 +30,8 @@
     "normalize-path-sep": "^0.1.1",
     "prettier": "^1.10.2",
     "s2s-handler-babel": "^0.3.0",
-    "s2s-handler-typescript": "^0.3.1",
-    "s2s-hook-prettier": "^0.2.2",
+    "s2s-handler-typescript": "^0.3.2",
+    "s2s-hook-prettier": "^0.2.3",
     "slash": "^1.0.0"
   }
 }

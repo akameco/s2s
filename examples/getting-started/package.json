@@ -1,14 +1,14 @@
 {
   "name": "s2s-example-getting-started",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "private": true,
   "scripts": {
     "flow": "flow",
     "s2s": "yarn flow && s2s"
   },
   "devDependencies": {
-    "babel-plugin-s2s-variable-initializing": "^0.1.6",
+    "babel-plugin-s2s-variable-initializing": "^0.1.7",
     "flow-bin": "^0.64.0",
-    "s2s": "^0.17.0"
+    "s2s": "^0.18.0"
   }
 }

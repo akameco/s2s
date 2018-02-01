@@ -1,6 +1,6 @@
 {
   "name": "example-css-to-flow",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "private": true,
   "description": "sample with css-to-flow",
   "license": "MIT",
@@ -13,10 +13,9 @@
     "flow": "flow",
     "s2s": "s2s"
   },
-  "dependencies": {},
   "devDependencies": {
     "flow-bin": "^0.64.0",
-    "s2s": "^0.17.0",
-    "s2s-handler-css-to-flow": "^0.1.0"
+    "s2s": "^0.18.0",
+    "s2s-handler-css-to-flow": "^0.1.1"
   }
 }

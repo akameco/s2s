@@ -1,6 +1,6 @@
 {
   "name": "s2s-handler-css-to-flow",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "s2s handler for css to flow",
   "license": "MIT",
   "repository": "https://github.com/akameco/s2s",

@@ -1,6 +1,6 @@
 {
   "name": "s2s-handler-babel-next",
-  "version": "0.3.1",
+  "version": "0.3.2",
   "description": "s2s handler for babel next",
   "license": "MIT",
   "repository": "https://github.com/akameco/s2s",
