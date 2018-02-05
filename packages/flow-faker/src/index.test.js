@@ -7,7 +7,7 @@ import flowFaker, {
   createInitialStateFromTypeInfo,
 } from '.'
 
-jest.setTimeout(18000)
+jest.setTimeout(20000)
 
 const getFixturePath = (...x) => path.resolve(__dirname, '__fixtures__', ...x)
 
