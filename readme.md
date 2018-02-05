@@ -14,9 +14,29 @@
 [![Examples](https://img.shields.io/badge/%F0%9F%92%A1-examples-8C8E93.svg?style=flat-square)](./examples)
 [![All Contributors](https://img.shields.io/badge/all_contributors-6-orange.svg?style=flat-square)](#contributors)
 
-## [日本語](./docs/ja)
+**[日本語](./docs/ja)** (readme の最新版は日本語です)
 
-(readme の最新版は日本語です)
+<!-- START doctoc generated TOC please keep comment here to allow auto update -->
+
+<!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
+
+* [Ultra-fast coding by AST assist](#ultra-fast-coding-by-ast-assist)
+* [Concept](#concept)
+* [Articles](#articles)
+  * [日本語](#%E6%97%A5%E6%9C%AC%E8%AA%9E)
+* [Users](#users)
+* [Quick Start](#quick-start)
+  * [Preparation](#preparation)
+  * [Usage](#usage)
+  * [Run](#run)
+* [Combine plugins](#combine-plugins)
+* [More Examples](#more-examples)
+* [Official Plugins](#official-plugins)
+* [Contributions](#contributions)
+* [Contributors](#contributors)
+* [License](#license)
+
+<!-- END doctoc generated TOC please keep comment here to allow auto update -->
 
 ## Ultra-fast coding by AST assist
 
