@@ -2,8 +2,7 @@
 /* eslint flowtype/require-valid-file-annotation: 0 */
 'use strict'
 
-// eslint-disable-next-line
-if (process.env.NODE_ENV == null) {
+if (!process.env.NODE_ENV) {
   process.env.NODE_ENV = 'development'
 }
 

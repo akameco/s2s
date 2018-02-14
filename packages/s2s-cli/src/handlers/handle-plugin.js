@@ -9,7 +9,7 @@ import {
   resolveInputPath,
 } from '../utils'
 import runHooks from '../hooks'
-import { formatText } from '../reporters/'
+import { formatText } from '../reporters'
 
 type Opts = {
   eventPath: Path,

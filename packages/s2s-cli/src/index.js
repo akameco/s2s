@@ -1,5 +1,5 @@
 // @flow
-import 'babel-polyfill' // eslint-disable-line
+import 'babel-polyfill' // eslint-disable-line import/no-unassigned-import
 import chalk from 'chalk'
 import chokidar from 'chokidar'
 import prettierHook from 's2s-hook-prettier'

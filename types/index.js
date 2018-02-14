@@ -10,7 +10,7 @@ export type AnymatchPath = RegExp | string | (RegExp | string)[]
 export type HandlerOpts = {
   eventPath: Path,
   filename: Path,
-  // eslint-disable-next-line
+  // eslint-disable-next-line no-use-before-define
   plugin?: Plugin,
 }
 
@@ -47,10 +47,10 @@ export type AfterHook = (code: Code, path: Path) => Code
  */
 export type Config = {
   watch: Path, // file, dir, glob, or array
-  plugins?: Plugin[], // eslint-disable-line
+  plugins?: Plugin[],
   templatesDir?: string,
-  templates?: Template[], // eslint-disable-line
-  afterHooks?: AfterHook[], // eslint-disable-line
+  templates?: Template[],
+  afterHooks?: AfterHook[],
   prettier: boolean,
   handlerMapper?: { [extensions: string]: Handler },
   ignored?: AnymatchPath, // file, dir, glob, regexp, or array

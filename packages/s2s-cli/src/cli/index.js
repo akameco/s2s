@@ -1,5 +1,5 @@
 // @flow
-import s2s from '../'
+import s2s from '..'
 import loadConfig from './loadConfig'
 
 export default function run() {

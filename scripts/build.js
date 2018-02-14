@@ -68,7 +68,7 @@ function build() {
 
 const files = process.argv.slice(2)
 
-if (files.length) {
+if (files.length > 0) {
   files.forEach(buildFile)
 } else {
   process.stdout.write(chalk.bold.inverse(' Clean Building Files... \n'))

@@ -47,7 +47,7 @@ getPkgs().forEach(p => {
 
 setInterval(() => {
   const files = Array.from(filesToBuild.keys())
-  if (files.length) {
+  if (files.length > 0) {
     filesToBuild = new Map()
     try {
       execSync(`${BUILD_CMD} ${files.join(' ')}`, { stdio: [0, 1, 2] })
