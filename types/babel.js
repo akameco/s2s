@@ -12,9 +12,9 @@ export type BabelPath = {
   get(key: string): BabelNode,
 }
 
-export type File = Object // eslint-disable-line
+export type File = Object // eslint-disable-line flowtype/no-weak-types
 
 export type State = {
-  opts: Object, // eslint-disable-line
+  opts: Object, // eslint-disable-line flowtype/no-weak-types
   file: File,
 }

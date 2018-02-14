@@ -3,7 +3,7 @@ import { transform } from '@babel/core'
 import { getPluginName } from 's2s-helper-get-plugin-name'
 import type { Handler } from 'types'
 
-// eslint-disable-next-line
+// eslint-disable-next-line flowtype/no-weak-types
 export type Opts = string | Function | [string | Function, Object]
 
 export default ((code, { eventPath, plugin, filename }) => {
