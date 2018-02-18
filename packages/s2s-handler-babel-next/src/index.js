@@ -29,6 +29,9 @@ export default ((code, { eventPath, plugin, filename }) => {
     meta: {
       handlerName: 'babel/next',
       pluginName: getPluginName(lastPlugin[0]),
+      parserOpts: {
+        plugins: ['jsx', 'flow', 'objectRestSpread', 'classProperties'],
+      },
     },
   }
 }: Handler)

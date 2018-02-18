@@ -37,10 +37,7 @@ test('pluginが渡されない場合、エラーを起こすこと', () => {
 
 test('metaデータを返す', () => {
   const result = handler(code, setup('syntax-flow'))
-  expect(result.meta).toEqual({
-    handlerName: 'babel',
-    pluginName: 'syntax-flow',
-  })
+  expect(result).toMatchSnapshot()
 })
 
 test('pluginが関数の場合、pluginNameを返す', () => {

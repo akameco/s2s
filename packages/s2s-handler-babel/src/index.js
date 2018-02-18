@@ -22,6 +22,9 @@ export default ((code, { eventPath, plugin, filename }) => {
     filename,
     babelrc: false,
     plugins: [lastPlugin],
+    parserOpts: {
+      plugins: ['jsx', 'flow', 'objectRestSpread', 'classProperties'],
+    },
   })
 
   return {
