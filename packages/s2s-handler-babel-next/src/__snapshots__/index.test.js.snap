@@ -2,4 +2,19 @@
 
 exports[`handlerは変換後のコードを返す 1`] = `"const hellofixture = \\"hello\\";"`;
 
+exports[`metaデータを返す 1`] = `
+Object {
+  "handlerName": "babel/next",
+  "parserOpts": Object {
+    "plugins": Array [
+      "jsx",
+      "flow",
+      "objectRestSpread",
+      "classProperties",
+    ],
+  },
+  "pluginName": "syntax-flow",
+}
+`;
+
 exports[`pluginがArrayの場合、変換後のCodeを返す 1`] = `"const hellofixture = \\"hello\\";"`;

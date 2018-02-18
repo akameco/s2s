@@ -2,4 +2,14 @@
 
 exports[`handlerは変換後のコードを返す 1`] = `"const hellofixture = \\"hello\\";"`;
 
+exports[`metaデータを返す 1`] = `
+Object {
+  "code": "const hello = \\"hello\\";",
+  "meta": Object {
+    "handlerName": "babel",
+    "pluginName": "syntax-flow",
+  },
+}
+`;
+
 exports[`pluginがArrayの場合、変換後のCodeを返す 1`] = `"const hellofixture = \\"hello\\";"`;
