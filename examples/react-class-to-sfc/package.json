@@ -1,0 +1,19 @@
+{
+  "name": "example-react-class-to-sfc",
+  "version": "0.0.0",
+  "private": true,
+  "description": "sample react class to sfc",
+  "license": "MIT",
+  "repository": "https://github.com/akameco/s2s",
+  "author": "akameco <akameco.t@gmail.com> (akameco.github.io)",
+  "engines": {
+    "node": ">=6"
+  },
+  "scripts": {
+    "s2s": "s2s"
+  },
+  "devDependencies": {
+    "babel-plugin-transform-react-pure-class-to-function": "^1.0.1",
+    "s2s": "^0.18.1"
+  }
+}
