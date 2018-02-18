@@ -1,13 +1,13 @@
 {
   "name": "s2s-example-getting-typescript",
-  "version": "0.0.4",
+  "version": "0.0.5",
   "private": true,
   "scripts": {
     "s2s": "s2s"
   },
   "devDependencies": {
     "babel-plugin-fizzbuzz": "^0.1.0",
-    "s2s": "^0.18.0",
-    "s2s-handler-typescript": "^0.3.2"
+    "s2s": "^0.18.1",
+    "s2s-handler-typescript": "^0.3.3"
   }
 }
