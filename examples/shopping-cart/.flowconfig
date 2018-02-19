@@ -1,5 +1,6 @@
 [ignore]
 .*/templates/.*
+.*s2s.config.js
 
 [include]
 
