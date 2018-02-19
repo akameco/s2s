@@ -1,0 +1,6 @@
+{
+  "extends": ["precure/react"],
+  "rules": {
+    "import/extensions": 0
+  }
+}

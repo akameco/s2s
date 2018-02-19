@@ -5,7 +5,7 @@ import Product from '../Product'
 
 type Props = {
   product: ProductType,
-  onAddToCartClicked: Function,
+  onAddToCartClicked: () => void,
 }
 
 const ProductItem = ({ product, onAddToCartClicked }: Props) => (

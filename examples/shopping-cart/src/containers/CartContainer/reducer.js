@@ -20,12 +20,13 @@ function addedIds<S: number[]>(state: S, action: Action): S {
 
 function quantityById<S: QuantityById>(state: S, action: Action): Exact<S> {
   switch (action.type) {
-    case Actions.ADD_TO_CART:
+    case Actions.ADD_TO_CART: {
       const { productId } = action
       return {
         ...state,
         [productId]: (state[productId] || 0) + 1,
       }
+    }
     default:
       return state
   }

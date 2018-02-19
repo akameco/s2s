@@ -8,7 +8,7 @@ const setup = props => {
   const comp = shallow(<Comp {...props} />)
 
   return {
-    comp: comp,
+    comp,
   }
 }
 

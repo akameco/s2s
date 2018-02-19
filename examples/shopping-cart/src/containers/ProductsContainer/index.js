@@ -9,7 +9,7 @@ import * as selectors from './selectors'
 
 type Props = {
   products: Product[],
-  addToCart: Function,
+  addToCart: number => void,
 }
 
 class ProductsContainer extends React.Component<Props> {

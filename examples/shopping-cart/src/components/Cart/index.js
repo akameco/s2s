@@ -6,7 +6,7 @@ import Product from '../Product'
 type Props = {
   products: ProductType[],
   total: string,
-  onCheckoutClicked: Function,
+  onCheckoutClicked: () => void,
 }
 
 const Cart = (props: Props) => {

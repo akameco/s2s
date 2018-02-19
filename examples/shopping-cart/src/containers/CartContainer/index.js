@@ -9,7 +9,7 @@ import { checkout } from './logic'
 type Props = {
   products: ProductInCart[],
   total: string,
-  checkout: Function,
+  checkout: () => void,
 }
 
 class CartContainer extends React.Component<Props> {

@@ -2,8 +2,8 @@
 import * as React from 'react'
 import { shallow } from 'enzyme'
 import toJson from 'enzyme-to-json'
-import Comp from '.'
 import Product from '../Product'
+import Comp from '.'
 
 const setup = (total = '0', products = []) => {
   const actions = {
@@ -13,7 +13,7 @@ const setup = (total = '0', products = []) => {
   const comp = shallow(<Comp products={products} total={total} {...actions} />)
 
   return {
-    comp: comp,
+    comp,
     actions,
     button: comp.find('button'),
     products: comp.find(Product),

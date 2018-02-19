@@ -3,7 +3,7 @@ import _products from './products.json'
 
 const TIMEOUT = 100
 
-export function getProducts(cb: Function, timeout: number = TIMEOUT) {
+export function getProducts(cb: (*) => void, timeout: number = TIMEOUT) {
   setTimeout(() => {
     cb(_products)
   }, timeout)
@@ -11,7 +11,7 @@ export function getProducts(cb: Function, timeout: number = TIMEOUT) {
 
 export function buyProducts(
   payload: *,
-  cb: Function,
+  cb: () => void,
   timeout: number = TIMEOUT
 ) {
   setTimeout(() => {
