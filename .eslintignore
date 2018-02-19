@@ -3,6 +3,12 @@
 **/__fixtures__/**/*.js
 **/coverage/**
 **/flow-typed/**
-**/examples/**
 **/__tests__/fixtures**
 **/s2s-templates-redux/templates/**
+s2s.config.js
+**/examples/react-class-to-sfc/**
+**/examples/import-css/**
+**/examples/getting-started/**
+**/examples/**/registerServiceWorker.js
+**/examples/**/tempPolyfills.js
+**/examples/**/setupTests.js

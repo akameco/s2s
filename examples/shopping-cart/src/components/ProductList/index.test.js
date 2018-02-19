@@ -8,7 +8,7 @@ const setup = (props: Props) => {
   const comp = shallow(<Comp {...props}>{props.children}</Comp>)
 
   return {
-    comp: comp,
+    comp,
     children: comp.children().at(1),
     h3: comp.find('h3'),
   }

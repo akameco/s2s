@@ -1,6 +1,6 @@
 // @flow
-import reducer, { initialState } from './reducer'
 import * as actions from '../ProductsContainer/actions'
+import reducer, { initialState } from './reducer'
 
 test('provide the initial state', () => {
   expect(reducer(undefined, { type: '@@INIT' })).toEqual(initialState)

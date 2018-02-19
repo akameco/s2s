@@ -9,7 +9,7 @@ export type Action = _Action
 export type GetState = () => State
 
 export type ThunkAction = (
-  dispatch: Dispatch,
+  dispatch: Dispatch, // eslint-disable-line no-use-before-define
   getState: GetState
 ) => void | Promise<void>
 
