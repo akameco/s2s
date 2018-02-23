@@ -40,6 +40,8 @@
 
 ## Ultra-fast coding by AST assist
 
+[![Greenkeeper badge](https://badges.greenkeeper.io/akameco/s2s.svg)](https://greenkeeper.io/)
+
 <img src="https://raw.githubusercontent.com/akameco/s2s-examples/master/media/demo.gif" />
 
 See Examples [examples](./examples)
