@@ -62,12 +62,12 @@ describe('when product inventory is 0', () => {
     productProps.inventory = 0
   })
 
-  test('render Sold Out message', () => {
+  it('render Sold Out message', () => {
     const { button } = setup(productProps)
     expect(button.text()).toMatch(/^Sold Out/)
   })
 
-  test('disable button', () => {
+  it('disable button', () => {
     const { button } = setup(productProps)
     expect(button.prop('disabled')).toEqual('disabled')
   })
