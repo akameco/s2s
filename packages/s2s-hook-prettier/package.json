@@ -18,6 +18,6 @@
     "hook"
   ],
   "dependencies": {
-    "prettier": "^1.10.2"
+    "prettier": "^1.11.1"
   }
 }

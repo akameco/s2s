@@ -7,10 +7,10 @@ Thanks for being willing to contribute!
 
 ## Project setup
 
-1. Fork and clone the repo
-1. `yarn` to setup your clone of the project
-1. `yarn run validate` to validate your clone of the project
-1. Create a branch for your PR
+1.  Fork and clone the repo
+1.  `yarn` to setup your clone of the project
+1.  `yarn run validate` to validate your clone of the project
+1.  Create a branch for your PR
 
 > Tip: Keep your `master` branch pointing at the original repository and make
 > pull requests from branches on your fork. To do this, run:
