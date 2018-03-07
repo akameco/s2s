@@ -52,7 +52,7 @@ export default () => {
               return
             }
 
-            const items = Array.from(actionSet).map(name => {
+            const items = [...actionSet].map(name => {
               const testAST = builder.test({ TYPE: t.identifier(name) })
                 .expression
 

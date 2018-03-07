@@ -113,14 +113,14 @@ test('対象のファイルが存在しない場合、簡潔なエラーを表�
 })
 
 describe('testオプション', () => {
-  test('globを判定できる', () => {
+  it('globを判定できる', () => {
     handlePlugins(getEventPath('a.js'), 'add', {
       plugins: [{ test: '**/*.js', plugin: _plugin }],
     })
     expect(writeSpy).toHaveBeenCalled()
   })
 
-  test('globの配列を判定できる', () => {
+  it('globの配列を判定できる', () => {
     handlePlugins(getEventPath('a.js'), 'add', {
       plugins: [{ test: ['**/*.js', '!**/b'], plugin: _plugin }],
     })

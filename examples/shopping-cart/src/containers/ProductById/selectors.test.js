@@ -23,6 +23,6 @@ test('contains the products from the action', () => {
   expect(selectros.getProduct(state, 2)).toMatchSnapshot()
 })
 
-it('contains no other products', () => {
+test('contains no other products', () => {
   expect(selectros.getProduct(state, 3)).toEqual(undefined)
 })
