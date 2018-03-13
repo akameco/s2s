@@ -69,7 +69,7 @@ export default () => {
           },
         })
 
-        const asts = Array.from(nameMap).map(name => [
+        const asts = [...nameMap].map(name => [
           t.noop(),
           builder.test({
             TITLE: t.stringLiteral(name),
