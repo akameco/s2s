@@ -47,7 +47,7 @@ describe('when given product', () => {
     },
   ]
 
-  test('render products', () => {
+  it('render products', () => {
     const { products } = setup('9.99', product)
     const props = {
       title: product[0].title,
@@ -58,12 +58,12 @@ describe('when given product', () => {
     expect(products.at(0).props()).toEqual(props)
   })
 
-  test('not disable button', () => {
+  it('not disable button', () => {
     const { button } = setup('9.99', product)
     expect(button.prop('disabled')).toEqual('')
   })
 
-  test('call action on button click', () => {
+  it('call action on button click', () => {
     const { button, actions } = setup('9.99', product)
     button.simulate('click')
     expect(actions.onCheckoutClicked).toBeCalled()

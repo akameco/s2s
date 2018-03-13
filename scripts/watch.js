@@ -46,7 +46,7 @@ getPkgs().forEach(p => {
 })
 
 setInterval(() => {
-  const files = Array.from(filesToBuild.keys())
+  const files = [...filesToBuild.keys()]
   if (files.length > 0) {
     filesToBuild = new Map()
     try {

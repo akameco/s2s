@@ -75,7 +75,7 @@ export default () => {
           const prefix = usePrefix ? getPrefix(file, removePrefix) : ''
 
           // const CONS: 'CONS' = 'prefix/CONS'
-          const typeNames = Array.from(typeNameSet.values())
+          const typeNames = [...typeNameSet.values()]
 
           const constantAST = typeNames.map(x => {
             const name = constantCase(x)
