@@ -5,6 +5,11 @@ import plugin from '.'
 
 const filename = path.resolve(process.cwd(), 'app', 'counter', 'actions.js')
 
+beforeAll(() => {
+  jest.resetModules()
+  process.env.S2S_ACTION_CONSTANTS_PREFIX = 'app'
+})
+
 pluginTester({
   title: 'default',
   plugin,

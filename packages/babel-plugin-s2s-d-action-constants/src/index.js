@@ -11,6 +11,10 @@ const builders = {
   constants: template(`export const NAME: VALUE = VALUE`),
 }
 
+const prefix = process.env.S2S_ACTION_CONSTANTS_PREFIX
+  ? `${process.env.S2S_ACTION_CONSTANTS_PREFIX}/`
+  : ''
+
 export default () => {
   return {
     inherits: flowSyntax,
@@ -50,7 +54,7 @@ export default () => {
 
           const constantAST = typeNames.map(x => {
             const name = constantCase(x)
-            const value = t.stringLiteral(name)
+            const value = t.stringLiteral(`${prefix}${name}`)
 
             const actionName = t.identifier(name)
             actionName.typeAnnotation = t.typeAnnotation(
