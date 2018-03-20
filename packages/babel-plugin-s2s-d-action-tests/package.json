@@ -1,5 +1,5 @@
 {
-  "name": "babel-plugin-s2s-d-action-test",
+  "name": "babel-plugin-s2s-d-action-tests",
   "version": "0.1.0",
   "description": "generate action test",
   "license": "MIT",

@@ -19,7 +19,7 @@
   "devDependencies": {
     "babel-plugin-s2s-d-action-constants": "^0.1.0",
     "babel-plugin-s2s-d-action-creater": "^0.1.0",
-    "babel-plugin-s2s-d-action-test": "^0.1.0",
+    "babel-plugin-s2s-d-action-tests": "^0.1.0",
     "babel-plugin-s2s-d-action-types": "^0.1.0",
     "s2s": "^0.18.2"
   }
