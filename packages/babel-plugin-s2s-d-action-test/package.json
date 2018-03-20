@@ -1,6 +1,6 @@
 {
   "name": "babel-plugin-s2s-d-action-test",
-  "version": "0.0.0",
+  "version": "0.1.0",
   "description": "generate action test",
   "license": "MIT",
   "repository": "akameco/s2s",

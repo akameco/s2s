@@ -1,6 +1,6 @@
 {
   "name": "flow-faker",
-  "version": "0.2.1",
+  "version": "0.2.2",
   "description": "create fake data from flow",
   "license": "MIT",
   "repository": "akameco/s2s",
@@ -12,7 +12,7 @@
   "dependencies": {
     "babel-traverse": "^6.26.0",
     "babylon": "^6.18.0",
-    "flow-execa": "^0.2.0"
+    "flow-execa": "^0.2.1"
   },
   "devDependencies": {
     "babel-plugin-transform-object-rest-spread": "^6.26.0"

@@ -1,6 +1,6 @@
 {
   "name": "babel-plugin-s2s-initial-state-creater",
-  "version": "0.3.3",
+  "version": "0.3.4",
   "description": "create initial state from flow info",
   "license": "MIT",
   "repository": "akameco/s2s",
@@ -15,7 +15,7 @@
   "dependencies": {
     "babel-generator": "^6.26.1",
     "babylon": "^6.18.0",
-    "flow-faker": "^0.2.1",
+    "flow-faker": "^0.2.2",
     "json5": "^0.5.1",
     "s2s-utils": "^0.6.1",
     "typed-assign": "^0.1.1"

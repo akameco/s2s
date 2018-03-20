@@ -1,6 +1,6 @@
 {
   "name": "babel-plugin-s2s-jest-unit-test-case",
-  "version": "0.2.7",
+  "version": "0.2.8",
   "description": "create jest test case from target source",
   "license": "MIT",
   "repository": "akameco/s2s",

@@ -1,6 +1,6 @@
 {
   "name": "example-react-class-to-sfc",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "private": true,
   "description": "sample react class to sfc",
   "license": "MIT",
@@ -14,6 +14,6 @@
   },
   "devDependencies": {
     "babel-plugin-transform-react-pure-class-to-function": "^1.0.1",
-    "s2s": "^0.18.1"
+    "s2s": "^0.18.2"
   }
 }
