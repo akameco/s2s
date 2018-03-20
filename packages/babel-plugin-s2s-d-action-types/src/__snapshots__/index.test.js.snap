@@ -7,6 +7,7 @@ export type Action = Increment
       ↓ ↓ ↓ ↓ ↓ ↓
 
 // @flow
+import * as constants from './constants';
 
 export type Increment = {
   type: typeof constants.INCREMENT
@@ -24,6 +25,7 @@ export type Action = Increment
       ↓ ↓ ↓ ↓ ↓ ↓
 
 // @flow
+import * as constants from './constants';
 
 export type Increment = {
   type: typeof constants.INCREMENT
@@ -40,10 +42,12 @@ export type Action = Increment | Decrement
       ↓ ↓ ↓ ↓ ↓ ↓
 
 // @flow
+import * as constants from './constants';
 
 export type Increment = {
   type: typeof constants.INCREMENT
 };
+
 export type Decrement = {
   type: typeof constants.DECREMENT
 };
@@ -59,13 +63,16 @@ export type Action = FetchRequest | FetchSuccess;
       ↓ ↓ ↓ ↓ ↓ ↓
 
 // @flow
+import * as constants from './constants';
 
 export type FetchRequest = {
   type: typeof constants.FETCH_REQUEST
 };
+
 export type FetchSuccess = {
   type: typeof constants.FETCH_SUCCESS
 };
+
 export type FetchFailure = {
   type: typeof constants.FETCH_FAILURE
 };
@@ -81,10 +88,12 @@ export type Action = FetchSuccess | FetchFailure;
       ↓ ↓ ↓ ↓ ↓ ↓
 
 // @flow
+import * as constants from './constants';
 
 export type FetchSuccess = {
   type: typeof constants.FETCH_SUCCESS
 };
+
 export type FetchFailure = {
   type: typeof constants.FETCH_FAILURE
 };
@@ -100,13 +109,16 @@ export type Action = FetchRequest;
       ↓ ↓ ↓ ↓ ↓ ↓
 
 // @flow
+import * as constants from './constants';
 
 export type FetchRequest = {
   type: typeof constants.FETCH_REQUEST
 };
+
 export type FetchSuccess = {
   type: typeof constants.FETCH_SUCCESS
 };
+
 export type FetchFailure = {
   type: typeof constants.FETCH_FAILURE
 };
@@ -126,6 +138,7 @@ export type Action = Add;
       ↓ ↓ ↓ ↓ ↓ ↓
 
 // @flow
+import * as constants from './constants';
 
 export type Add = {
   type: typeof constants.ADD
@@ -138,14 +151,14 @@ export type Action = Add;
 exports[`default default: default 1`] = `
 "
 // @flow
-import * as constants from './constants.js'
+import * as constants from './constants'
 
 export type Action = Increment
 
       ↓ ↓ ↓ ↓ ↓ ↓
 
 // @flow
-import * as constants from './constants.js';
+import * as constants from './constants';
 
 export type Increment = {
   type: typeof constants.INCREMENT
@@ -171,6 +184,8 @@ export type Action = FetchUser;
 // @flow
 import type { UserID } from './types.js';
 
+import * as constants from './constants';
+
 export type FetchUser = {
   type: typeof FETCH_USER;
   id: UserID;
@@ -192,6 +207,8 @@ export type Action = Increment
 // @flow
 import type { X } from './types';
 
+import * as constants from './constants';
+
 export type Increment = {
   type: typeof constants.INCREMENT
 };
@@ -207,6 +224,7 @@ export type Action = string
       ↓ ↓ ↓ ↓ ↓ ↓
 
 // @flow
+import * as constants from './constants';
 
 export type Action = ;
 "
@@ -219,6 +237,7 @@ exports[`default no type Action: no type Action 1`] = `
       ↓ ↓ ↓ ↓ ↓ ↓
 
 // @flow
+import * as constants from './constants';
 
 export type Action = ;
 "
@@ -235,6 +254,7 @@ export type Action = Increment;
       ↓ ↓ ↓ ↓ ↓ ↓
 
 // @flow
+import * as constants from './constants';
 
 export type Increment = { type: typeof INCREMENT; payload: number; };
 
@@ -253,6 +273,7 @@ export type Action = Decrement;
       ↓ ↓ ↓ ↓ ↓ ↓
 
 // @flow
+import * as constants from './constants';
 
 export type Decrement = {
   type: typeof constants.DECREMENT
@@ -269,6 +290,7 @@ export type Action = ThisIsAction;
       ↓ ↓ ↓ ↓ ↓ ↓
 
 // @flow
+import * as constants from './constants';
 
 export type ThisIsAction = {
   type: typeof constants.THIS_IS_ACTION
