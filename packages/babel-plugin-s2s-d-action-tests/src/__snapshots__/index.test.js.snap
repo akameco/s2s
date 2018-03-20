@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`default 1. s2s-d-action-types: 1. s2s-d-action-types 1`] = `
+exports[`default 1. s2s-d-action-tests: 1. s2s-d-action-tests 1`] = `
 "
 // @flow
 
@@ -18,7 +18,7 @@ test(\\"FETCH_USER\\", () => {
 "
 `;
 
-exports[`default 2. s2s-d-action-types: 2. s2s-d-action-types 1`] = `
+exports[`default 2. s2s-d-action-tests: 2. s2s-d-action-tests 1`] = `
 "
 // @flow
 test('a', () => {});

@@ -25,7 +25,7 @@ const createTest = name =>
 
 export default () => ({
   inherits: flowSyntax,
-  name: 's2s-d-action-types',
+  name: 's2s-d-action-tests',
   visitor: {
     Program(rootPath: BabelPath, { opts: { from } }: State) {
       if (!from) {
