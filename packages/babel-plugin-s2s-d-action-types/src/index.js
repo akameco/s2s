@@ -5,11 +5,13 @@ import * as t from 'babel-types'
 import constantCase from 'constant-case'
 import flowComment from 'babel-add-flow-comments'
 import { template } from 's2s-utils'
+import _ from 'lodash'
 // import blog from 'babel-log'
 
 const builders = {
   actionType: template(`export type NAME = { type: typeof constants.VALUE }`),
   action: template(`export type Action = UNION`),
+  constants: template(`import * as constants from './constants'`),
 }
 
 export default () => {
@@ -34,7 +36,10 @@ export default () => {
 
           programPath.traverse({
             ImportDeclaration(path: BabelPath) {
-              imports.push(path.node)
+              // blog(path)
+              if (path.get('source.value').node !== './constants') {
+                imports.push(path.node)
+              }
             },
             TypeAlias(path: BabelPath) {
               if (path.get('id').node.name === 'Action') {
@@ -57,16 +62,18 @@ export default () => {
 
           const typeNames = [...typeNameSet.values()]
 
-          const typesAst = typeNames.map(name => {
-            if (actionMap.has(name)) {
-              return actionMap.get(name)
-            }
+          const typesAst = typeNames
+            .map(name => {
+              if (actionMap.has(name)) {
+                return actionMap.get(name)
+              }
 
-            return builders.actionType({
-              NAME: t.identifier(name),
-              VALUE: t.identifier(constantCase(name)),
+              return builders.actionType({
+                NAME: t.identifier(name),
+                VALUE: t.identifier(constantCase(name)),
+              })
             })
-          })
+            .map(v => [v, t.noop()])
 
           const union = typeNames.map(name =>
             t.genericTypeAnnotation(t.identifier(name))
@@ -76,14 +83,12 @@ export default () => {
             UNION: t.unionTypeAnnotation(union),
           })
 
-          if (imports.length > 0) {
-            imports.push(t.noop())
-          }
+          imports.push(builders.constants())
 
           programPath.node.body = [
             ...imports,
             t.noop(),
-            ...typesAst,
+            ..._.flatten(typesAst),
             t.noop(),
             action,
           ]

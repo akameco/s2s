@@ -1,6 +1,7 @@
 [ignore]
 .*/examples/.*
 .*/s2s-templates-redux/templates/.*
+.*/packages/babel-plugin-s2s-d-action-test/src/__fixtures__/.*
 
 [include]
 packages/*/src

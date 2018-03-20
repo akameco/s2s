@@ -1,7 +1,7 @@
 {
-  "name": "babel-plugin-s2s-d-action-types",
+  "name": "babel-plugin-s2s-d-action-creater",
   "version": "0.0.0",
-  "description": "generate action types",
+  "description": "generate action constants",
   "license": "MIT",
   "repository": "akameco/s2s",
   "author": "akameco <akameco.t@gmail.com> (akameco.github.io)",
@@ -17,7 +17,6 @@
     "babel-plugin-syntax-flow": "^6.18.0",
     "babel-types": "^6.26.0",
     "constant-case": "^2.0.0",
-    "lodash": "^4.17.5",
     "s2s-utils": "^0.6.1"
   }
 }

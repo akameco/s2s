@@ -103,7 +103,7 @@ export type Action = FetchSuccess | FetchFailure;
       title: 'default',
       code: `
 // @flow
-import * as constants from './constants.js'
+import * as constants from './constants'
 
 export type Action = Increment
     `,
