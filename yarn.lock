@@ -3336,7 +3336,7 @@ exec-sh@^0.2.0:
   dependencies:
     merge "^1.1.3"
 
-execa@^0.7.0:
+execa@0.7.0, execa@^0.7.0:
   version "0.7.0"
   resolved "https://registry.yarnpkg.com/execa/-/execa-0.7.0.tgz#944becd34cc41ee32a63a9faf27ad5a65fc59777"
   dependencies:
