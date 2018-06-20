@@ -30,6 +30,9 @@ const ms = (state: State) => ({
   total: selectors.getTotal(state),
 })
 
-const conn: Connector<{}, Props> = connect(ms, { checkout })
+const conn: Connector<{}, Props> = connect(
+  ms,
+  { checkout }
+)
 
 export default conn(CartContainer)

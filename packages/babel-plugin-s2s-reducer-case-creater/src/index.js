@@ -17,7 +17,12 @@ export default () => {
     inherits: inheritsOpts(),
     name: 's2s-reducer-case-creater',
     visitor: {
-      Program(rootPath: BabelPath, { opts: { from } }: State) {
+      Program(
+        rootPath: BabelPath,
+        {
+          opts: { from },
+        }: State
+      ) {
         if (!from) {
           throw new Error('required from option')
         }

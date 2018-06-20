@@ -34,7 +34,10 @@ export default () => {
     visitor: {
       Program: {
         exit(programPath: BabelPath, state: State) {
-          const { file, opts: { usePrefix = true, removePrefix = '' } } = state
+          const {
+            file,
+            opts: { usePrefix = true, removePrefix = '' },
+          } = state
 
           const imports = []
           const typeNameSet: Set<string> = new Set()

@@ -10,7 +10,9 @@ export default ({ types: t }) => {
     name: 's2s-func-param-init',
     visitor: {
       Program(programPath: BabelPath, state: State) {
-        const { opts: { from } } = state
+        const {
+          opts: { from },
+        } = state
         programPath.traverse({
           FunctionDeclaration(nodePath) {
             const paramPath = nodePath.get('params.0')

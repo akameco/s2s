@@ -14,7 +14,9 @@ const plugin = () => {
     name: 's2s-variable-initializing',
     visitor: {
       Program(programPath: BabelPath, state: State) {
-        const { opts: { from } } = state
+        const {
+          opts: { from },
+        } = state
         programPath.traverse({
           VariableDeclarator(nodePath) {
             if (nodePath.get('init').node) {

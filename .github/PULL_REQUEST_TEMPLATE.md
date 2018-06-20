@@ -12,9 +12,9 @@ Thanks for your interest in the project. Bugs filed and PRs submitted are apprec
 
 **Checklist**: <!-- Have you done all of these things? to check an item, place an "x" in the box like so: "- [x] Documentation". add "N/A" to the end of each line that's irrelevant to your changes -->
 
-* [ ] Documentation
-* [ ] Tests
-* [ ] Ready to be merged <!-- In your opinion, is this ready to be merged as soon as it's reviewed? / すぐにレビューされる準備はできていますか？ -->
-* [ ] Added myself to contributors table <!-- this is optional, see the contributing guidelines for instructions / これはオプションです。コントリビューションガイドを確認してください -->
+- [ ] Documentation
+- [ ] Tests
+- [ ] Ready to be merged <!-- In your opinion, is this ready to be merged as soon as it's reviewed? / すぐにレビューされる準備はできていますか？ -->
+- [ ] Added myself to contributors table <!-- this is optional, see the contributing guidelines for instructions / これはオプションです。コントリビューションガイドを確認してください -->
 
 <!-- feel free to add additional comments. コメントを自由に追加してください-->

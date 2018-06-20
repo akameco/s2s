@@ -22,7 +22,12 @@ export default () => {
     inherits: flowSyntax,
     name: 's2s-reducer-test-case',
     visitor: {
-      Program(rootPath: BabelPath, { opts: { from } }: State) {
+      Program(
+        rootPath: BabelPath,
+        {
+          opts: { from },
+        }: State
+      ) {
         if (!from) {
           throw new Error('required from option')
         }

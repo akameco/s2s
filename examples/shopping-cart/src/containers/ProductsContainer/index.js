@@ -33,6 +33,9 @@ const ms = (state: State) => ({
   products: selectors.getVisibleProducts(state),
 })
 
-const conn: Connector<{}, Props> = connect(ms, { addToCart })
+const conn: Connector<{}, Props> = connect(
+  ms,
+  { addToCart }
+)
 
 export default conn(ProductsContainer)
