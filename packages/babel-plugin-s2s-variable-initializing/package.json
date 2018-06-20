@@ -1,6 +1,6 @@
 {
   "name": "babel-plugin-s2s-variable-initializing",
-  "version": "0.1.9",
+  "version": "0.1.10",
   "description": "variable initializing with type info",
   "license": "MIT",
   "repository": "akameco/s2s",

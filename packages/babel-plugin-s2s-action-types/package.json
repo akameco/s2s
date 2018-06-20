@@ -1,6 +1,6 @@
 {
   "name": "babel-plugin-s2s-action-types",
-  "version": "0.4.10",
+  "version": "0.4.11",
   "description": "generate action types",
   "license": "MIT",
   "repository": "akameco/s2s",

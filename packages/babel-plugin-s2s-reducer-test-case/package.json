@@ -1,6 +1,6 @@
 {
   "name": "babel-plugin-s2s-reducer-test-case",
-  "version": "0.4.10",
+  "version": "0.4.11",
   "description": "create reducer test using switch/case",
   "license": "MIT",
   "repository": "akameco/s2s",

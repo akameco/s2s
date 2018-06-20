@@ -1,6 +1,6 @@
 {
   "name": "s2s-example-react-redux-for-d",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "private": true,
   "scripts": {
     "start": "react-scripts start",
@@ -19,8 +19,8 @@
   "devDependencies": {
     "babel-plugin-s2s-d-action-constants": "^0.1.0",
     "babel-plugin-s2s-d-action-creater": "^0.1.0",
-    "babel-plugin-s2s-d-action-tests": "^0.1.0",
+    "babel-plugin-s2s-d-action-tests": "^0.1.1",
     "babel-plugin-s2s-d-action-types": "^0.1.0",
-    "s2s": "^0.18.2"
+    "s2s": "^0.18.3"
   }
 }
