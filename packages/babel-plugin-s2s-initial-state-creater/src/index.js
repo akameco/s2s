@@ -23,7 +23,9 @@ export default () => {
     name: 's2s-initial-state-creater',
     visitor: {
       Program(programPath: BabelPath, state: State) {
-        const { opts: { from } } = state
+        const {
+          opts: { from },
+        } = state
         programPath.traverse({
           VariableDeclarator(nodePath) {
             if (nodePath.get('id').node.name !== INITIAL_STATE) {

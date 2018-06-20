@@ -27,7 +27,12 @@ export default () => ({
   inherits: flowSyntax,
   name: 's2s-d-action-tests',
   visitor: {
-    Program(rootPath: BabelPath, { opts: { from } }: State) {
+    Program(
+      rootPath: BabelPath,
+      {
+        opts: { from },
+      }: State
+    ) {
       if (!from) {
         throw new Error('required from option')
       }

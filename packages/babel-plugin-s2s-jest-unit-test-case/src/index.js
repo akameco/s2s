@@ -46,7 +46,13 @@ export default () => {
     inherits: inheritsOpts(),
     name: 's2s-jest-unit-test-case',
     visitor: {
-      Program(rootPath: BabelPath, { opts: { from }, file }: State) {
+      Program(
+        rootPath: BabelPath,
+        {
+          opts: { from },
+          file,
+        }: State
+      ) {
         if (!from) {
           throw new Error('required from option')
         }

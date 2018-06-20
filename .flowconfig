@@ -2,6 +2,7 @@
 .*/examples/.*
 .*/s2s-templates-redux/templates/.*
 .*/packages/babel-plugin-s2s-d-action-tests/src/__fixtures__/.*
+.*/packages/.*/lib/.*
 
 [include]
 packages/*/src

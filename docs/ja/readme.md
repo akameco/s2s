@@ -24,15 +24,15 @@
 
 ### 利点
 
-* エディタにロックインされません。Atom でも VSCode でも使えます。
-* s2s 自体にロックインされません。単なる BabelPlugin を書くだけで拡張できます。
+- エディタにロックインされません。Atom でも VSCode でも使えます。
+- s2s 自体にロックインされません。単なる BabelPlugin を書くだけで拡張できます。
 
 ## Articles
 
 ### 日本語
 
-* [さよならボイラープレート。s2s による高速 redux アプリケーション構築](https://qiita.com/akameco/items/e1489c6bbf3439ec6ca4)
-* [s2s: redux における reducer のテスト。あなたがテストを書く必要はないかも知れない](https://qiita.com/akameco/items/66a2232df0e95e5bfe31)
+- [さよならボイラープレート。s2s による高速 redux アプリケーション構築](https://qiita.com/akameco/items/e1489c6bbf3439ec6ca4)
+- [s2s: redux における reducer のテスト。あなたがテストを書く必要はないかも知れない](https://qiita.com/akameco/items/66a2232df0e95e5bfe31)
 
 ## Users
 
@@ -97,17 +97,17 @@ $ yarn run s2s
 
 ### もっと Examples
 
-* [ショッピングカート](../../examples/shopping-cart) redux+flowtype
-* [cndlhvn/s2s-redux-actions-sample](https://github.com/cndlhvn/s2s-redux-actions-sample) redux-actions + redux-saga.
+- [ショッピングカート](../../examples/shopping-cart) redux+flowtype
+- [cndlhvn/s2s-redux-actions-sample](https://github.com/cndlhvn/s2s-redux-actions-sample) redux-actions + redux-saga.
 
 ### オフィシャルプラグイン
 
-* [**babel-plugin-s2s-action-types**<br>generate redux action types](https://github.com/akameco/s2s/tree/master/packages/babel-plugin-s2s-action-types)
-* [**babel-plugin-s2s-action-creater**<br>generate redux action creater](https://github.com/akameco/s2s/tree/master/packages/babel-plugin-s2s-action-creater)
-* [**babel-plugin-s2s-action-root**<br>compose flow + redux action types](https://github.com/akameco/s2s/tree/master/packages/babel-plugin-s2s-action-root)
-* [**babel-plugin-s2s-state-root**<br>compose flow + redux state types](https://github.com/akameco/s2s/tree/master/packages/babel-plugin-s2s-state-root)
-* [**babel-plugin-s2s-reducer-root**<br>compose redux reducer](https://github.com/akameco/s2s/tree/master/packages/babel-plugin-s2s-reducer-root)
-* [**babel-plugin-s2s-reducer-test-case**<br>create reducer test using switch/case](https://github.com/akameco/s2s/tree/master/packages/babel-plugin-s2s-reducer-test-case)
+- [**babel-plugin-s2s-action-types**<br>generate redux action types](https://github.com/akameco/s2s/tree/master/packages/babel-plugin-s2s-action-types)
+- [**babel-plugin-s2s-action-creater**<br>generate redux action creater](https://github.com/akameco/s2s/tree/master/packages/babel-plugin-s2s-action-creater)
+- [**babel-plugin-s2s-action-root**<br>compose flow + redux action types](https://github.com/akameco/s2s/tree/master/packages/babel-plugin-s2s-action-root)
+- [**babel-plugin-s2s-state-root**<br>compose flow + redux state types](https://github.com/akameco/s2s/tree/master/packages/babel-plugin-s2s-state-root)
+- [**babel-plugin-s2s-reducer-root**<br>compose redux reducer](https://github.com/akameco/s2s/tree/master/packages/babel-plugin-s2s-reducer-root)
+- [**babel-plugin-s2s-reducer-test-case**<br>create reducer test using switch/case](https://github.com/akameco/s2s/tree/master/packages/babel-plugin-s2s-reducer-test-case)
 
 ## 貢献
 

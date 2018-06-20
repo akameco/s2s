@@ -19,6 +19,7 @@ export const formatText = (
   const color = handlerType === 'TEMPLATE' ? 'cyan' : 'green'
   const input = trimAndFormatPath(inputPath)
   const output = trimAndFormatPath(relativeFromCwd(outputPath))
+  // $FlowFixMe
   const header = chalk.reset.inverse.bold[color](handlerType)
 
   return `${header} ${input} → ${output}`

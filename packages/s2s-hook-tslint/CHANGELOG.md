@@ -9,4 +9,4 @@ See [Conventional Commits](https://conventionalcommits.org) for commit guideline
 
 ### Features
 
-* **s2s-hook-tslint:** add new packages `s2s-hook-tslint` ([#114](https://github.com/akameco/s2s/issues/114)) ([66d644f](https://github.com/akameco/s2s/commit/66d644f))
+- **s2s-hook-tslint:** add new packages `s2s-hook-tslint` ([#114](https://github.com/akameco/s2s/issues/114)) ([66d644f](https://github.com/akameco/s2s/commit/66d644f))

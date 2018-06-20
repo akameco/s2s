@@ -20,21 +20,21 @@
 
 <!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
 
-* [Ultra-fast coding by AST assist](#ultra-fast-coding-by-ast-assist)
-* [Concept](#concept)
-* [Articles](#articles)
-  * [日本語](#%E6%97%A5%E6%9C%AC%E8%AA%9E)
-* [Users](#users)
-* [Quick Start](#quick-start)
-  * [Preparation](#preparation)
-  * [Usage](#usage)
-  * [Run](#run)
-* [Combine plugins](#combine-plugins)
-* [More Examples](#more-examples)
-* [Official Plugins](#official-plugins)
-* [Contributions](#contributions)
-* [Contributors](#contributors)
-* [License](#license)
+- [Ultra-fast coding by AST assist](#ultra-fast-coding-by-ast-assist)
+- [Concept](#concept)
+- [Articles](#articles)
+  - [日本語](#%E6%97%A5%E6%9C%AC%E8%AA%9E)
+- [Users](#users)
+- [Quick Start](#quick-start)
+  - [Preparation](#preparation)
+  - [Usage](#usage)
+  - [Run](#run)
+- [Combine plugins](#combine-plugins)
+- [More Examples](#more-examples)
+- [Official Plugins](#official-plugins)
+- [Contributions](#contributions)
+- [Contributors](#contributors)
+- [License](#license)
 
 <!-- END doctoc generated TOC please keep comment here to allow auto update -->
 
@@ -50,8 +50,8 @@ Monitor your coding and generate code in real time.
 
 When the file names match, a single Babel plugin is executed and the formatted code is reflected in the editor.
 
-* You can use any editor.
-* Just Babel Plugin. No lock in.
+- You can use any editor.
+- Just Babel Plugin. No lock in.
 
 <img src="https://github.com/akameco/logos/blob/master/s2s/s2s-concept.png?raw=true" height=600 />
 
@@ -59,8 +59,8 @@ When the file names match, a single Babel plugin is executed and the formatted c
 
 ### 日本語
 
-* [さよならボイラープレート。s2s による高速 redux アプリケーション構築](https://qiita.com/akameco/items/e1489c6bbf3439ec6ca4)
-* [s2s: redux における reducer のテスト。あなたがテストを書く必要はないかも知れない](https://qiita.com/akameco/items/66a2232df0e95e5bfe31)
+- [さよならボイラープレート。s2s による高速 redux アプリケーション構築](https://qiita.com/akameco/items/e1489c6bbf3439ec6ca4)
+- [s2s: redux における reducer のテスト。あなたがテストを書く必要はないかも知れない](https://qiita.com/akameco/items/66a2232df0e95e5bfe31)
 
 ## Users
 
@@ -135,19 +135,19 @@ More Info? See Examples.
 
 ## More Examples
 
-* [Shopping Cart](./examples/shopping-cart) Combination of Redux and Flow.
-* [cndlhvn/s2s-redux-actions-sample](https://github.com/cndlhvn/s2s-redux-actions-sample) redux-actions + redux-saga.
+- [Shopping Cart](./examples/shopping-cart) Combination of Redux and Flow.
+- [cndlhvn/s2s-redux-actions-sample](https://github.com/cndlhvn/s2s-redux-actions-sample) redux-actions + redux-saga.
 
 More Info? See Examples.
 
 ## Official Plugins
 
-* [**babel-plugin-s2s-action-types**<br>generate redux action types](https://github.com/akameco/s2s/tree/master/packages/babel-plugin-s2s-action-types)
-* [**babel-plugin-s2s-action-creater**<br>generate redux action creater](https://github.com/akameco/s2s/tree/master/packages/babel-plugin-s2s-action-creater)
-* [**babel-plugin-s2s-action-root**<br>compose flow + redux action types](https://github.com/akameco/s2s/tree/master/packages/babel-plugin-s2s-action-root)
-* [**babel-plugin-s2s-state-root**<br>compose flow + redux state types](https://github.com/akameco/s2s/tree/master/packages/babel-plugin-s2s-state-root)
-* [**babel-plugin-s2s-reducer-root**<br>compose redux reducer](https://github.com/akameco/s2s/tree/master/packages/babel-plugin-s2s-reducer-root)
-* [**babel-plugin-s2s-reducer-test-case**<br>create reducer test using switch/case](https://github.com/akameco/s2s/tree/master/packages/babel-plugin-s2s-reducer-test-case)
+- [**babel-plugin-s2s-action-types**<br>generate redux action types](https://github.com/akameco/s2s/tree/master/packages/babel-plugin-s2s-action-types)
+- [**babel-plugin-s2s-action-creater**<br>generate redux action creater](https://github.com/akameco/s2s/tree/master/packages/babel-plugin-s2s-action-creater)
+- [**babel-plugin-s2s-action-root**<br>compose flow + redux action types](https://github.com/akameco/s2s/tree/master/packages/babel-plugin-s2s-action-root)
+- [**babel-plugin-s2s-state-root**<br>compose flow + redux state types](https://github.com/akameco/s2s/tree/master/packages/babel-plugin-s2s-state-root)
+- [**babel-plugin-s2s-reducer-root**<br>compose redux reducer](https://github.com/akameco/s2s/tree/master/packages/babel-plugin-s2s-reducer-root)
+- [**babel-plugin-s2s-reducer-test-case**<br>create reducer test using switch/case](https://github.com/akameco/s2s/tree/master/packages/babel-plugin-s2s-reducer-test-case)
 
 ## Contributions
 

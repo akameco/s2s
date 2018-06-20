@@ -9,9 +9,9 @@ See [Conventional Commits](https://conventionalcommits.org) for commit guideline
 
 ### Bug Fixes
 
-* **s2s-cli:** cannot overwrite default handler ([#111](https://github.com/akameco/s2s/issues/111)) ([1983d51](https://github.com/akameco/s2s/commit/1983d51))
-* **s2s-cli:** short error message ([#109](https://github.com/akameco/s2s/issues/109)) ([ae3c150](https://github.com/akameco/s2s/commit/ae3c150))
+- **s2s-cli:** cannot overwrite default handler ([#111](https://github.com/akameco/s2s/issues/111)) ([1983d51](https://github.com/akameco/s2s/commit/1983d51))
+- **s2s-cli:** short error message ([#109](https://github.com/akameco/s2s/issues/109)) ([ae3c150](https://github.com/akameco/s2s/commit/ae3c150))
 
 ### Features
 
-* **watcher-ignored:** create watcher with ignored parameter. ([#96](https://github.com/akameco/s2s/issues/96)) ([4750cc1](https://github.com/akameco/s2s/commit/4750cc1))
+- **watcher-ignored:** create watcher with ignored parameter. ([#96](https://github.com/akameco/s2s/issues/96)) ([4750cc1](https://github.com/akameco/s2s/commit/4750cc1))
