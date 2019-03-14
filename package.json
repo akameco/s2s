@@ -46,7 +46,7 @@
     "eslint": "^4.19.1",
     "eslint-config-precure": "^2.7.0",
     "flow-bin": "0.65.0",
-    "globby": "^8.0.1",
+    "globby": "^9.1.0",
     "husky": "^0.14.3",
     "jest": "^23.1.0",
     "jest-in-case": "^1.0.2",
