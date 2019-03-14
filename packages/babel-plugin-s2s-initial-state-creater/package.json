@@ -16,7 +16,7 @@
     "babel-generator": "^6.26.1",
     "babylon": "^6.18.0",
     "flow-faker": "^0.2.4",
-    "json5": "^0.5.1",
+    "json5": "^2.1.0",
     "s2s-utils": "^0.6.1",
     "typed-assign": "^0.1.1"
   }
