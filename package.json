@@ -15,7 +15,6 @@
     "watch": "node ./scripts/watch",
     "lint": "eslint . --fix",
     "flow": "flow",
-    "precommit": "yarn flow && lint-staged",
     "publish": "./scripts/publish.sh",
     "fmt": "prettier --write \"**/*.{md,js,json}\"",
     "postinstall": "yarn build && yarn flow stop && yarn flow",
@@ -47,7 +46,7 @@
     "eslint-config-precure": "^2.7.0",
     "flow-bin": "0.65.0",
     "globby": "^9.1.0",
-    "husky": "^0.14.3",
+    "husky": "^1.3.1",
     "jest": "^23.1.0",
     "jest-in-case": "^1.0.2",
     "lerna": "^2.11.0",
@@ -58,5 +57,10 @@
     "pretty-format": "^23.0.1",
     "rimraf": "^2.6.3",
     "strip-ansi": "^5.1.0"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "yarn flow && lint-staged"
+    }
   }
 }
