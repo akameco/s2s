@@ -42,7 +42,7 @@
     "babel-preset-env": "^1.7.0",
     "babel-preset-flow": "^6.23.0",
     "babel-preset-stage-2": "^6.24.1",
-    "coveralls": "^3.0.1",
+    "coveralls": "^3.0.3",
     "eslint": "^4.19.1",
     "eslint-config-precure": "^2.7.0",
     "flow-bin": "0.65.0",
@@ -56,7 +56,7 @@
     "path-exists": "^3.0.0",
     "prettier": "^1.16.4",
     "pretty-format": "^23.0.1",
-    "rimraf": "^2.6.2",
+    "rimraf": "^2.6.3",
     "strip-ansi": "^4.0.0"
   }
 }
