@@ -50,7 +50,7 @@
     "jest": "^23.1.0",
     "jest-in-case": "^1.0.2",
     "lerna": "^2.11.0",
-    "lint-staged": "^7.2.0",
+    "lint-staged": "^8.1.5",
     "mkdirp": "^0.5.1",
     "path-exists": "^3.0.0",
     "prettier": "^1.16.4",
