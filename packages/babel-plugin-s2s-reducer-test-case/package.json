@@ -18,7 +18,7 @@
     "babel-plugin-syntax-flow": "^6.18.0",
     "babel-polyfill": "^6.26.0",
     "babel-types": "^6.26.0",
-    "camelcase": "^4.1.0",
+    "camelcase": "^5.2.0",
     "s2s-helper-get-initial-state": "^0.2.5",
     "s2s-helper-get-reducer-case": "^0.2.6",
     "s2s-utils": "^0.6.1"
