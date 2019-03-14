@@ -10,8 +10,8 @@
     "s2s": "s2s"
   },
   "dependencies": {
-    "react": "^16.2.0",
-    "react-dom": "^16.2.0",
+    "react": "^16.8.4",
+    "react-dom": "^16.8.4",
     "react-redux": "^5.0.7",
     "react-scripts": "1.1.1",
     "redux": "^3.7.2"
