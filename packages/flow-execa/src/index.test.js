@@ -49,7 +49,7 @@ test('typeAtPosSyncはtypeプロパティを持つオブジェクトを返す', 
 
 test('typeAtPosSync: patが見つからないのとき空オブジェクトを返す', () => {
   const info = typeAtPosSync('not-found', filePath, ...pos)
-  expect(info).toEqual({})
+  expect(info).toStrictEqual({})
 })
 
 test('getTypeFromFileはflowの型情報の文字列を返す', async () => {

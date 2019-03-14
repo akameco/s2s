@@ -4,7 +4,7 @@ import type { ProductInCart as ProductType } from '../../types'
 import Product from '../Product'
 
 type Props = {
-  products: ProductType[],
+  products: Array<ProductType>,
   total: string,
   onCheckoutClicked: () => void,
 }

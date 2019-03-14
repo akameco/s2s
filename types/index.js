@@ -3,9 +3,9 @@ export type Path = string
 export type Code = string
 
 export type EventType = 'add' | 'change' | 'unlink'
-export type Only = EventType[]
+export type Only = Array<EventType>
 
-export type AnymatchPath = RegExp | string | (RegExp | string)[]
+export type AnymatchPath = RegExp | string | Array<RegExp | string>
 
 export type HandlerOpts = {
   eventPath: Path,
@@ -25,7 +25,7 @@ export type Handler = (
 ) => { code: Code, meta: Meta }
 
 export type Plugin = {|
-  test: RegExp | string | string[],
+  test: RegExp | string | Array<string>,
   plugin?: *,
   handler?: Handler,
   only?: Only,
@@ -34,7 +34,7 @@ export type Plugin = {|
 |}
 
 export type Template = {|
-  test: RegExp | string | string[],
+  test: RegExp | string | Array<string>,
   input: Path,
   output?: Path,
 |}
@@ -47,10 +47,10 @@ export type AfterHook = (code: Code, path: Path) => Code
  */
 export type Config = {
   watch: Path, // file, dir, glob, or array
-  plugins?: Plugin[],
+  plugins?: Array<Plugin>,
   templatesDir?: string,
-  templates?: Template[],
-  afterHooks?: AfterHook[],
+  templates?: Array<Template>,
+  afterHooks?: Array<AfterHook>,
   prettier: boolean,
   handlerMapper?: { [extensions: string]: Handler },
   ignored?: AnymatchPath, // file, dir, glob, regexp, or array

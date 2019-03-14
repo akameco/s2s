@@ -36,6 +36,6 @@ export type ProductInCart = BaseProduct & {
 export type QuantityById = { [id: number]: number }
 
 export type Cart = {
-  addedIds: number[],
+  addedIds: Array<number>,
   quantityById: QuantityById,
 }

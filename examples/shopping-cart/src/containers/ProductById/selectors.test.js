@@ -24,5 +24,5 @@ test('contains the products from the action', () => {
 })
 
 test('contains no other products', () => {
-  expect(selectros.getProduct(state, 3)).toEqual(undefined)
+  expect(selectros.getProduct(state, 3)).toStrictEqual(undefined)
 })

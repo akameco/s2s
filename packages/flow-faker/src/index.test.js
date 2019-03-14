@@ -18,19 +18,19 @@ test('型情報からオブジェクトを初期化する', () => {
     id: 'number',
     name: 'string',
   })
-  expect(output).toEqual({ id: 0, name: '' })
+  expect(output).toStrictEqual({ id: 0, name: '' })
 })
 
 test('flowFakerはcwdがnullのとき、{}を返す', async () => {
   const filePath = getFixturePath('basic.js')
   const result = await flowFaker(filePath, { ...pos, cwd: 'not-found' })
-  expect(result).toEqual({})
+  expect(result).toStrictEqual({})
 })
 
 test('ファイルとポジションを受け取り、その型を初期化したオブジェクトを返す', async () => {
   const filePath = getFixturePath('basic.js')
   const result = await flowFaker(filePath, pos)
-  expect(result).toEqual({
+  expect(result).toStrictEqual({
     isOk: false,
     union: null,
     user: { id: 0, name: '', age: null },
@@ -41,7 +41,7 @@ test('ファイルとポジションを受け取り、その型を初期化し�
 test('sync: ファイルとポジションを受け取り、その型を初期化したオブジェクトを返す', () => {
   const filePath = getFixturePath('basic.js')
   const result = flowFakerSync(filePath, pos)
-  expect(result).toEqual({
+  expect(result).toStrictEqual({
     isOk: false,
     union: null,
     user: { id: 0, name: '', age: null },
@@ -52,7 +52,7 @@ test('sync: ファイルとポジションを受け取り、その型を初期�
 test('ジェネリックタイプかつパラメータがない場合nullを返す', async () => {
   const filePath = getFixturePath('basic.js')
   const result = await flowFaker(filePath, { row: 27, column: 5 })
-  expect(result).toEqual(null)
+  expect(result).toStrictEqual(null)
 })
 
 test('astToObjにnodeではないオブジェクトを渡したときnullを返す', () => {
@@ -63,7 +63,7 @@ function astTest(title: string, input: string, expected: *) {
   test(title, () => {
     const ast = getTypeAst(input)
     const output = astToObj(ast)
-    expect(output).toEqual(expected)
+    expect(output).toStrictEqual(expected)
   })
 }
 

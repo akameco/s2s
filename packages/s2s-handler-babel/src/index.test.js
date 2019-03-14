@@ -24,7 +24,7 @@ test('pluginがArrayの場合、変換後のCodeを返す', () => {
 
 test('codeが""の場合、""が返ること', () => {
   const result = handler('', setup())
-  expect(result.code).toEqual('')
+  expect(result.code).toStrictEqual('')
 })
 
 test('pluginが渡されない場合、エラーを起こすこと', () => {

@@ -6,13 +6,13 @@ import * as actions from './actions'
 
 export function getAllProducts(): ThunkAction {
   return dispatch => {
-    shop.getProducts((products: Product[]) => {
+    shop.getProducts((products: Array<Product>) => {
       dispatch(receiveProducts(products))
     })
   }
 }
 
-export function checkout(products: Product[]): ThunkAction {
+export function checkout(products: Array<Product>): ThunkAction {
   return (dispatch, getState) => {
     const cart = getState().CartContainer
     dispatch(actions.checkoutRequest())

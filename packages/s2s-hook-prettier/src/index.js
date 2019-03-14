@@ -9,7 +9,7 @@ export default function prettierHook(inputOpts: ?Object = {}) {
       const rcOpts = resolveConfig.sync(process.cwd())
       const opts = { ...rcOpts, ...inputOpts }
       return format(code, opts)
-    } catch (err) {
+    } catch (error) {
       return code
     }
   }

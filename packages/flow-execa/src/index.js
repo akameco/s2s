@@ -22,7 +22,7 @@ function execFlowSync(cwd: string, params: $ReadOnlyArray<string>): JsonType {
   try {
     const output = execa.sync(getFlowBin(cwd), params).stdout
     return JSON.parse(output)
-  } catch (err) {
+  } catch (error) {
     return {}
   }
 }

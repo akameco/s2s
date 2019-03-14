@@ -7,7 +7,7 @@ import * as selectors from './selectors'
 import { checkout } from './logic'
 
 type Props = {
-  products: ProductInCart[],
+  products: Array<ProductInCart>,
   total: string,
   checkout: () => void,
 }

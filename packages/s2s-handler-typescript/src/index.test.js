@@ -44,7 +44,7 @@ test('pluginが渡されない場合、エラーを起こすこと', () => {
 
 test('metaデータを返す', () => {
   const result = handler(code, setup('syntax-object-rest-spread'))
-  expect(result.meta).toEqual({
+  expect(result.meta).toStrictEqual({
     handlerName: 'typescript',
     pluginName: 'syntax-object-rest-spread',
   })

@@ -26,10 +26,10 @@ export default () => {
     visitor: {
       Program(programPath: BabelPath, state: State) {
         const { input, output } = state.opts
-        const globOptions = Object.assign(
-          { absolute: true },
-          state.opts.globOptions
-        )
+        const globOptions = {
+          absolute: true,
+          ...state.opts.globOptions,
+        }
 
         if (!input) {
           throw new Error('require input option')

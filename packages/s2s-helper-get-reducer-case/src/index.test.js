@@ -16,7 +16,7 @@ export default function(state, action) {
 `
 
   const actions = helper(fixture)
-  expect(actions).toEqual(['INCREMENT', 'DECREMENT'])
+  expect(actions).toStrictEqual(['INCREMENT', 'DECREMENT'])
 })
 
 test('ignore other actions', () => {
@@ -38,7 +38,7 @@ export default function(state, action) {
 `
 
   const actions = helper(fixture)
-  expect(actions).toEqual(['INCREMENT', 'DECREMENT'])
+  expect(actions).toStrictEqual(['INCREMENT', 'DECREMENT'])
 })
 
 test('allow flowtype', () => {
@@ -56,7 +56,7 @@ export default function(state, action: Action) {
 `
 
   const actions = helper(fixture)
-  expect(actions).toEqual(['INCREMENT'])
+  expect(actions).toStrictEqual(['INCREMENT'])
 })
 
 test('allow objectRestSpread', () => {
@@ -74,5 +74,5 @@ export default function(state, action: Action) {
 `
 
   const actions = helper(fixture)
-  expect(actions).toEqual(['INCREMENT'])
+  expect(actions).toStrictEqual(['INCREMENT'])
 })

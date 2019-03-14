@@ -12,7 +12,7 @@ let filesToBuild = new Map()
 const exists = filename => {
   try {
     return fs.statSync(filename).isFile()
-  } catch (e) {}
+  } catch (error) {}
   return false
 }
 
@@ -26,7 +26,7 @@ getPkgs().forEach(p => {
       const filePath = path.resolve(srcDir, filename)
 
       if ((event === 'change' || event === 'rename') && exists(filePath)) {
-        console.log(chalk.inverse.green(event.toUpperCase()), ` ${filename}`)
+        console.log(chalk.inverse.green(event.toUpperCase()), `${filename}`)
         rebuild(filePath)
       } else {
         const buildFile = path.resolve(srcDir, '..', 'lib', filename)
@@ -39,10 +39,10 @@ getPkgs().forEach(p => {
               buildFile
             )}`}\n`
           )
-        } catch (err) {}
+        } catch (error) {}
       }
     })
-  } catch (err) {}
+  } catch (error) {}
 })
 
 setInterval(() => {
@@ -51,7 +51,7 @@ setInterval(() => {
     filesToBuild = new Map()
     try {
       execSync(`${BUILD_CMD} ${files.join(' ')}`, { stdio: [0, 1, 2] })
-    } catch (e) {}
+    } catch (error) {}
   }
 }, 100)
 

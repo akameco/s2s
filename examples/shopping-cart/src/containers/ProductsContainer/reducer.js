@@ -2,7 +2,7 @@
 import type { Action } from '../../types'
 import { Actions } from './actionTypes'
 
-export type State = number[]
+export type State = Array<number>
 
 export const initialState: State = []
 

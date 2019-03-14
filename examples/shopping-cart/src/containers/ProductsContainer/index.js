@@ -8,7 +8,7 @@ import { addToCart } from '../CartContainer/logic'
 import * as selectors from './selectors'
 
 type Props = {
-  products: Product[],
+  products: Array<Product>,
   addToCart: number => void,
 }
 

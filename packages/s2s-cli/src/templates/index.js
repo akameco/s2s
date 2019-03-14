@@ -69,14 +69,14 @@ function handleTemplate(
 
 export default function handleTemplates(
   eventPath: Path,
-  templates: Template[] = [],
+  templates: Array<Template> = [],
   templatesDir: string = DEFAULT_TEMPLATES_DIR
 ) {
   for (const template of templates) {
     try {
       handleTemplate(eventPath, template, templatesDir)
-    } catch (err) {
-      handleCopyError(err)
+    } catch (error) {
+      handleCopyError(error)
     }
   }
 }

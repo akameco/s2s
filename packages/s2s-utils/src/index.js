@@ -20,7 +20,7 @@ export function getImportPath(from: string, to: string): string {
   return fomattedPath
 }
 
-export function template(code: string, plugins: ?(string[]) = ['flow']) {
+export function template(code: string, plugins: ?Array<string> = ['flow']) {
   return babelTemplate(code, { sourceType: 'module', plugins })
 }
 
@@ -57,7 +57,7 @@ export function defaultImport(local: string, source: string) {
 }
 
 export function createImportDeclaration(
-  locals: string[] | string,
+  locals: Array<string> | string,
   source: string
 ) {
   const finalLocals = [].concat(locals)

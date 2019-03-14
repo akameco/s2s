@@ -6,7 +6,7 @@ export type State = Cart
 
 export const initialState: State = { addedIds: [], quantityById: {} }
 
-function addedIds<S: number[]>(state: S, action: Action): S {
+function addedIds<S: Array<number>>(state: S, action: Action): S {
   switch (action.type) {
     case Actions.ADD_TO_CART:
       if (state.indexOf(action.productId) !== -1) {
