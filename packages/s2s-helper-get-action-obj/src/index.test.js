@@ -5,14 +5,14 @@ test('return [] when empty object', () => {
   const fixture = `
 export const Actions = {}
 `
-  expect(helper(fixture)).toEqual([])
+  expect(helper(fixture)).toStrictEqual([])
 })
 
 test('return [INCREMENT]', () => {
   const fixture = `
 export const Actions = { INCREMENT }
 `
-  expect(helper(fixture)).toEqual(['INCREMENT'])
+  expect(helper(fixture)).toStrictEqual(['INCREMENT'])
 })
 
 test('return [INCREMENT, DECREMENT]', () => {
@@ -22,21 +22,21 @@ export const Actions = {
   DECREMENT,
 }
 `
-  expect(helper(fixture)).toEqual(['INCREMENT', 'DECREMENT'])
+  expect(helper(fixture)).toStrictEqual(['INCREMENT', 'DECREMENT'])
 })
 
 test('return [] when Actions = null', () => {
   const fixture = `
 export const Actions = null
 `
-  expect(helper(fixture)).toEqual([])
+  expect(helper(fixture)).toStrictEqual([])
 })
 
 test('return [] when Actions not exist', () => {
   const fixture = `
 export const Maction = {Increment}
 `
-  expect(helper(fixture)).toEqual([])
+  expect(helper(fixture)).toStrictEqual([])
 })
 
 test('getTypeProperty', () => {
@@ -47,7 +47,7 @@ test('getTypeProperty', () => {
     }
   `
   const target = 'SetCount'
-  expect(getTypeProperty(fixture, target)).toEqual(['type', 'count'])
+  expect(getTypeProperty(fixture, target)).toStrictEqual(['type', 'count'])
 })
 
 test('getTypeProperty when empty type', () => {
@@ -55,7 +55,7 @@ test('getTypeProperty when empty type', () => {
     export type SetCount = { }
   `
   const target = 'SetCount'
-  expect(getTypeProperty(fixture, target)).toEqual([])
+  expect(getTypeProperty(fixture, target)).toStrictEqual([])
 })
 
 test('getTypeProperty when no target', () => {
@@ -63,7 +63,7 @@ test('getTypeProperty when no target', () => {
     export type SetCount = { }
   `
   const target = 'Woooooo'
-  expect(getTypeProperty(fixture, target)).toEqual([])
+  expect(getTypeProperty(fixture, target)).toStrictEqual([])
 })
 
 test('getTypeProperty when no object type', () => {
@@ -71,7 +71,7 @@ test('getTypeProperty when no object type', () => {
     export type SetCount = number
   `
   const target = 'SetCount'
-  expect(getTypeProperty(fixture, target)).toEqual([])
+  expect(getTypeProperty(fixture, target)).toStrictEqual([])
 })
 
 test('getAllTypeProperty', () => {
@@ -81,7 +81,9 @@ test('getAllTypeProperty', () => {
       count: number,
     }
   `
-  expect(getAllTypeProperty(fixture)).toEqual({ SetCount: ['type', 'count'] })
+  expect(getAllTypeProperty(fixture)).toStrictEqual({
+    SetCount: ['type', 'count'],
+  })
 })
 
 test('getAllTypeProperty when some types', () => {
@@ -98,7 +100,7 @@ test('getAllTypeProperty when some types', () => {
     type Opps = string
   `
 
-  expect(getAllTypeProperty(fixture)).toEqual({
+  expect(getAllTypeProperty(fixture)).toStrictEqual({
     Increment: ['type'],
     SetCount: ['type', 'count'],
   })

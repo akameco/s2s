@@ -34,7 +34,7 @@ test('display add some products message', () => {
 
 test('should disable button', () => {
   const { button } = setup()
-  expect(button.prop('disabled')).toEqual('disabled')
+  expect(button.prop('disabled')).toStrictEqual('disabled')
 })
 
 describe('when given product', () => {
@@ -55,17 +55,17 @@ describe('when given product', () => {
       quantity: product[0].quantity,
     }
 
-    expect(products.at(0).props()).toEqual(props)
+    expect(products.at(0).props()).toStrictEqual(props)
   })
 
   it('not disable button', () => {
     const { button } = setup('9.99', product)
-    expect(button.prop('disabled')).toEqual('')
+    expect(button.prop('disabled')).toStrictEqual('')
   })
 
   it('call action on button click', () => {
     const { button, actions } = setup('9.99', product)
     button.simulate('click')
-    expect(actions.onCheckoutClicked).toBeCalled()
+    expect(actions.onCheckoutClicked).toHaveBeenCalled()
   })
 })

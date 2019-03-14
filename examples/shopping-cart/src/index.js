@@ -10,7 +10,7 @@ import { getAllProducts } from './containers/CartContainer/logic'
 const store = configureStore()
 store.dispatch(getAllProducts())
 
-const rootEl = document.getElementById('root')
+const rootEl = document.querySelector('#root')
 
 if (rootEl) {
   ReactDOM.render(

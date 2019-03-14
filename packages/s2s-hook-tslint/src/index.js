@@ -29,8 +29,8 @@ export default function(argOptions: ?TslintHookOptions = {}): AfterHook {
         .results
       linter.lint(path, code, conf)
       return fs.readFileSync(path, 'utf8')
-    } catch (e) {
-      console.error('tslint error', e)
+    } catch (error) {
+      console.error('tslint error', error)
     }
 
     return code

@@ -3,7 +3,7 @@ import { selectHandler } from './select-handler'
 
 test('ハンドラが渡された場合、そのハンドラを返す', () => {
   const handler = x => ({ code: x, meta: { handlerName: 'x' } })
-  expect(selectHandler({}, handler, 'a.ejs').name).toEqual('handler')
+  expect(selectHandler({}, handler, 'a.ejs').name).toStrictEqual('handler')
 })
 
 test('任意のハンドラーを渡すことができる', () => {

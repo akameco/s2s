@@ -10,7 +10,7 @@ export const Actions = {
 
 export type ReceiveProducts = {
   type: typeof RECEIVE_PRODUCTS,
-  products: Product[],
+  products: Array<Product>,
 }
 
 export type Action = ReceiveProducts

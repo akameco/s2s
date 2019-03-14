@@ -37,7 +37,7 @@ function buildFile(file /* : string */) {
   const destPath = getBuildPath(file)
   mkdirp.sync(path.dirname(destPath))
 
-  const opts = Object.assign({}, transformOptions)
+  const opts = { ...transformOptions }
   const { code } = babel.transformFileSync(file, opts)
   fs.writeFileSync(destPath, code)
 

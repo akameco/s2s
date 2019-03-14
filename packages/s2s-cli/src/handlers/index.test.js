@@ -78,7 +78,7 @@ test('handlerが渡されたとき、優先して呼ばれる', () => {
   const handler = jest.fn()
   const plugin = { test: /a.js/, plugin: _plugin, handler }
   handlePlugins(getEventPath('a.js'), 'add', { plugins: [plugin] })
-  expect(handler).toBeCalled()
+  expect(handler).toHaveBeenCalled()
 })
 
 test('拡張子が.tsのとき、s2s-handler-typescriptを実行する', () => {

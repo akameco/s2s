@@ -40,11 +40,11 @@ export default function handlePlugins(
       try {
         const handler = selectHandler(handlerMapper, plugin.handler, eventPath)
         handlePlugin(handler, { eventPath, plugin, hooks })
-      } catch (err) {
-        if (err.code === 'ENOENT') {
-          console.error(err.message)
+      } catch (error) {
+        if (error.code === 'ENOENT') {
+          console.error(error.message)
         } else {
-          console.error(toErrorStack(err))
+          console.error(toErrorStack(error))
         }
       }
     }

@@ -6,7 +6,7 @@ export default function run() {
   try {
     const opts = loadConfig()
     s2s(opts)
-  } catch (err) {
-    console.error(err)
+  } catch (error) {
+    console.error(error)
   }
 }

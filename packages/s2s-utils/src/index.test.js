@@ -26,7 +26,7 @@ test('template', () => {
 test('inheritsOpts', () => {
   const parserOpts = { plugins: [] }
   utils.inheritsOpts().manipulateOptions({}, parserOpts)
-  expect(parserOpts).toEqual({ plugins: ['flow', 'objectRestSpread'] })
+  expect(parserOpts).toStrictEqual({ plugins: ['flow', 'objectRestSpread'] })
 })
 
 test('return parent path name', () => {

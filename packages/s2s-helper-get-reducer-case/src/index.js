@@ -4,7 +4,7 @@ import traverse from 'babel-traverse'
 import type { Code } from 'types'
 // import blog from 'babel-log'
 
-export default function getReducerCase(code: Code): string[] {
+export default function getReducerCase(code: Code): Array<string> {
   const ast = parse(code, {
     sourceType: 'module',
     plugins: ['flow', 'objectRestSpread'],

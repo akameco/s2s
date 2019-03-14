@@ -112,7 +112,7 @@ test('hooksが渡されない場合', () => {
   const opts = setup(plugin)
   delete opts[1].hooks
   handlePlugin(opts[0], { ...opts[1] })
-  expect(writeSpy).toBeCalled()
+  expect(writeSpy).toHaveBeenCalled()
 })
 
 test('hookに渡されるパスはoutput', () => {
@@ -123,6 +123,6 @@ test('hookに渡されるパスはoutput', () => {
   const mockHook = jest.fn(code => code)
   opts[1].hooks = [mockHook]
   handlePlugin(...opts)
-  expect(mockHook).toBeCalled()
+  expect(mockHook).toHaveBeenCalled()
   expect(mockHook.mock.calls[0][1]).toBe(output)
 })

@@ -48,13 +48,13 @@ test('render Add To Cart message', () => {
 
 test('not disable button', () => {
   const { button } = setup(productProps)
-  expect(button.prop('disabled')).toEqual('')
+  expect(button.prop('disabled')).toStrictEqual('')
 })
 
 test('call action on button click', () => {
   const { button, actions } = setup(productProps)
   button.simulate('click')
-  expect(actions.onAddToCartClicked).toBeCalled()
+  expect(actions.onAddToCartClicked).toHaveBeenCalled()
 })
 
 describe('when product inventory is 0', () => {
@@ -69,6 +69,6 @@ describe('when product inventory is 0', () => {
 
   it('disable button', () => {
     const { button } = setup(productProps)
-    expect(button.prop('disabled')).toEqual('disabled')
+    expect(button.prop('disabled')).toStrictEqual('disabled')
   })
 })

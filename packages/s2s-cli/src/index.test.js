@@ -80,7 +80,7 @@ test('ファイルが追加されたときhandlePluginsが呼ばれる', () => {
 test('pluginsがない場合、ファイルが追加されたときhandlePluginsは呼ばれない', () => {
   watcher = m(setup({ plugins: [] }))
   watcher.emit('add', 'hello')
-  expect(handlePluginsSpy).not.toBeCalled()
+  expect(handlePluginsSpy).not.toHaveBeenCalled()
 })
 
 test('ファイルが追加されたときhandleTemplatesが呼ばれる', () => {
@@ -88,23 +88,23 @@ test('ファイルが追加されたときhandleTemplatesが呼ばれる', () =>
   watcher.emit('add', 'hello')
   const result = handleTemplateSpy.mock.calls[0]
   const expected = ['hello', [{ input: 'dummy', test: /dummy/ }], undefined]
-  expect(result).toEqual(expected)
+  expect(result).toStrictEqual(expected)
 })
 
 test('templatesがない場合、ファイルが追加されたときhandleTemplatesは呼ばれない', () => {
   watcher = m(setup({ templates: [] }))
   watcher.emit('add', 'hello')
-  expect(handleTemplateSpy).not.toBeCalled()
+  expect(handleTemplateSpy).not.toHaveBeenCalled()
 })
 
 test('prettier = falseのとき、 afterHooksが空配列でhandlePluginが呼ばれる', () => {
   watcher = m(setup({ prettier: false }))
   watcher.emit('add', 'hello')
   const result = handlePluginsSpy.mock.calls[0]
-  expect(result[2].afterHooks).toEqual([])
+  expect(result[2].afterHooks).toStrictEqual([])
 })
 
 test('ignoredに指定されたパターンに該当するファイルは、呼ばれない', () => {
   watcher = m(setup({ ignored: ['hoge'] }))
-  expect(watcher.options.ignored).toEqual(['hoge'])
+  expect(watcher.options.ignored).toStrictEqual(['hoge'])
 })

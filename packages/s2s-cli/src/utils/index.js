@@ -48,7 +48,7 @@ export function isAlreadyExist(input: Path) {
       return false
     }
     return true
-  } catch (err) {
+  } catch (error) {
     return false
   }
 }

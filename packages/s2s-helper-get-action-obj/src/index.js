@@ -6,7 +6,7 @@ import type { Code } from 'types'
 
 const ACTIONS = 'Actions'
 
-export default function getActionObj(code: Code): string[] {
+export default function getActionObj(code: Code): Array<string> {
   const ast = parse(code, {
     sourceType: 'module',
     plugins: ['flow', 'objectRestSpread'],
@@ -32,7 +32,7 @@ export default function getActionObj(code: Code): string[] {
   return actions
 }
 
-export function getTypeProperty(code: Code, target: string): string[] {
+export function getTypeProperty(code: Code, target: string): Array<string> {
   const ast = parse(code, {
     sourceType: 'module',
     plugins: ['flow', 'objectRestSpread'],
@@ -61,7 +61,9 @@ export function getTypeProperty(code: Code, target: string): string[] {
   return properties
 }
 
-export function getAllTypeProperty(code: Code): { [key: string]: string[] } {
+export function getAllTypeProperty(
+  code: Code
+): { [key: string]: Array<string> } {
   const ast = parse(code, {
     sourceType: 'module',
     plugins: ['flow', 'objectRestSpread'],

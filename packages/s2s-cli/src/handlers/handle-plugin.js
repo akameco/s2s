@@ -14,7 +14,7 @@ import { formatText } from '../reporters'
 type Opts = {
   eventPath: Path,
   plugin: Plugin,
-  hooks: AfterHook[],
+  hooks: Array<AfterHook>,
 }
 
 export function handlePlugin(
