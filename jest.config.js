@@ -16,7 +16,7 @@ module.exports = {
     '/s2s-templates-redux/templates',
   ],
   snapshotSerializers: [
-    '<rootDir>/node_modules/pretty-format/build/plugins/convert_ansi.js',
+    '<rootDir>/node_modules/pretty-format/build/plugins/ConvertAnsi.js',
   ],
   modulePathIgnorePatterns: ['examples/.*'],
 }

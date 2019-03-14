@@ -54,7 +54,7 @@
     "mkdirp": "^0.5.1",
     "path-exists": "^3.0.0",
     "prettier": "^1.16.4",
-    "pretty-format": "^23.0.1",
+    "pretty-format": "^24.5.0",
     "rimraf": "^2.6.3",
     "strip-ansi": "^5.1.0"
   },
