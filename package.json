@@ -57,6 +57,6 @@
     "prettier": "^1.16.4",
     "pretty-format": "^23.0.1",
     "rimraf": "^2.6.3",
-    "strip-ansi": "^4.0.0"
+    "strip-ansi": "^5.1.0"
   }
 }
