@@ -2081,10 +2081,12 @@ babel-plugin-dynamic-import-node@2.2.0:
   dependencies:
     object.assign "^4.1.0"
 
-babel-plugin-fizzbuzz@^0.1.0:
-  version "0.1.0"
-  resolved "https://registry.yarnpkg.com/babel-plugin-fizzbuzz/-/babel-plugin-fizzbuzz-0.1.0.tgz#466b571965f2790ad891868ba9e00d85b410bcac"
-  integrity sha512-y938+JyaQflg8NoRhaJoDiujfeKxXWDYJPP8h6tKn/W3dstsVnaj+GZo6XFbr0SzfJsTMwJbAkRRSo/+9sXVkw==
+babel-plugin-fizzbuzz@^0.2.0:
+  version "0.2.0"
+  resolved "https://registry.yarnpkg.com/babel-plugin-fizzbuzz/-/babel-plugin-fizzbuzz-0.2.0.tgz#301783d3dcaa3322f88096ccc486896136e109b3"
+  integrity sha512-B9tZpvgZ76t2rNAQFQKDMo+q3/c3wofUU2IiiHefc+2JG8fQ3gKPZvgBBB1ZA1l/6W2AlhrKs2B8usz85Rn4QQ==
+  dependencies:
+    babel-looks-like "^0.1.0"
 
 babel-plugin-istanbul@^4.1.6:
   version "4.1.6"
