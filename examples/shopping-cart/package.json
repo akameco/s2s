@@ -12,17 +12,17 @@
   "dependencies": {
     "react": "^16.8.4",
     "react-dom": "^16.8.4",
-    "react-redux": "^5.0.7",
-    "react-scripts": "1.1.1",
-    "redux": "^3.7.2",
+    "react-redux": "^6.0.1",
+    "react-scripts": "2.1.8",
+    "redux": "^4.0.1",
     "redux-thunk": "^2.2.0"
   },
   "devDependencies": {
-    "enzyme": "^3.3.0",
-    "enzyme-adapter-react-16": "^1.1.1",
-    "enzyme-to-json": "^3.3.1",
+    "enzyme": "^3.9.0",
+    "enzyme-adapter-react-16": "^1.11.2",
+    "enzyme-to-json": "^3.3.5",
     "flow-bin": "^0.65.0",
-    "react-test-renderer": "^16.2.0",
+    "react-test-renderer": "^16.8.4",
     "s2s": "^0.18.3",
     "s2s-plugins-redux": "^0.4.8"
   }
