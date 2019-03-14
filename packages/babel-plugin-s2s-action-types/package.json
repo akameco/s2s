@@ -18,6 +18,6 @@
     "babel-types": "^6.26.0",
     "lodash.snakecase": "^4.1.1",
     "s2s-utils": "^0.6.1",
-    "slash": "^1.0.0"
+    "slash": "^2.0.0"
   }
 }
