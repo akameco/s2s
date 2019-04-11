@@ -2133,6 +2133,18 @@ babel-plugin-s2s-d-action-types@^0.1.0:
     lodash "^4.17.5"
     s2s-utils "^0.6.1"
 
+babel-plugin-s2s-initial-state-creater@^0.3.6:
+  version "0.3.6"
+  resolved "https://registry.yarnpkg.com/babel-plugin-s2s-initial-state-creater/-/babel-plugin-s2s-initial-state-creater-0.3.6.tgz#251f81cb9d9ff324ea15b6af55f9962cf8b2ae7c"
+  integrity sha512-IM6py52rie67MHK9ZAOXoqNHP8DyBbTw91oiDEKJwDsJBZefwg8yiPgXZfR5Y/Oq/bdIzURZOP/fMCUPzPWPdQ==
+  dependencies:
+    babel-generator "^6.26.1"
+    babylon "^6.18.0"
+    flow-faker "^0.2.4"
+    json5 "^0.5.1"
+    s2s-utils "^0.6.1"
+    typed-assign "^0.1.1"
+
 babel-plugin-syntax-async-functions@^6.8.0:
   version "6.13.0"
   resolved "https://registry.yarnpkg.com/babel-plugin-syntax-async-functions/-/babel-plugin-syntax-async-functions-6.13.0.tgz#cad9cad1191b5ad634bf30ae0872391e0647be95"
@@ -5698,6 +5710,22 @@ flow-bin@0.65.0, flow-bin@^0.65.0:
   version "0.65.0"
   resolved "https://registry.yarnpkg.com/flow-bin/-/flow-bin-0.65.0.tgz#64ffeca27211c786e2d68508c65686ba1b8a2169"
   integrity sha512-/Ny7pElDdmwgxq8ALf87/MylzXWAh2Kny1kxGUOG1TxwGEQMctgENtLpuwx8fwvlIUebgJWF8ylhWOcmiNKDpA==
+
+flow-execa@^0.2.1:
+  version "0.2.1"
+  resolved "https://registry.yarnpkg.com/flow-execa/-/flow-execa-0.2.1.tgz#7da5d06ccac77b2fe5c9c1ac496eea122f84f871"
+  integrity sha1-faXQbMrHey/lycGsSW7qEi+E+HE=
+  dependencies:
+    execa "0.7.0"
+
+flow-faker@^0.2.4:
+  version "0.2.4"
+  resolved "https://registry.yarnpkg.com/flow-faker/-/flow-faker-0.2.4.tgz#f45a75e93e427df75decb4a87d42c1b9626277ed"
+  integrity sha512-kSMZ6I+/Ja+5mTX5oPrbqVBlrzXyjH/v+wXMTkyopPFiqouHlb8Rf5Q0upQFwh05aMgLg4QI3eubn5tcCaOOCA==
+  dependencies:
+    babel-traverse "^6.26.0"
+    babylon "^6.18.0"
+    flow-execa "^0.2.1"
 
 flush-write-stream@^1.0.0:
   version "1.1.1"

@@ -3,7 +3,7 @@
 #### 1. Move to example
 
 ```
-cd examples/getting-started
+cd examples/shopping-cart
 ```
 
 #### 2. Install example
