@@ -1,11 +1,12 @@
 // @flow
 const path = require('path')
 const fs = require('fs')
-const babel = require('babel-core')
+const babel = require('@babel/core')
 const globby = require('globby')
 const mkdirp = require('mkdirp')
 const chalk = require('chalk')
 const { getPkgs, PACKAGES_DIR } = require('./getPackages')
+const babelrc = require('../babel.config.js')
 const clean = require('./clean')
 
 const SRC_DIR = 'src'
@@ -14,47 +15,41 @@ const LIB_DIR = 'lib'
 const IGNORE = ['**/*.test.js', '**/__fixtures__/**', '**/__tests__/**']
 const IGNORE_PATTERN = IGNORE.map(v => `!${v}`)
 
-function readBabelrc() {
-  return fs.readFileSync(path.resolve(__dirname, '..', '.babelrc'), 'utf8')
-}
-
-const transformOptions = JSON.parse(readBabelrc())
-transformOptions.babelrc = false
-
-function getPkgName(file /* : string */) {
+function getPackageName(file /* : string */) {
   return path.relative(PACKAGES_DIR, file).split(path.sep)[0]
 }
 
 function getBuildPath(file /* : string */, buildFolder = LIB_DIR) {
-  const pkgName = getPkgName(file)
-  const pkgSrcPath = path.resolve(PACKAGES_DIR, pkgName, SRC_DIR)
+  const pkgName = getPackageName(file)
+  const packageSourcePath = path.resolve(PACKAGES_DIR, pkgName, SRC_DIR)
   const pkgLibPath = path.resolve(PACKAGES_DIR, pkgName, buildFolder)
-  const relativeToSrcPath = path.relative(pkgSrcPath, file)
+  const relativeToSrcPath = path.relative(packageSourcePath, file)
   return path.resolve(pkgLibPath, relativeToSrcPath)
 }
 
 function buildFile(file /* : string */) {
-  const destPath = getBuildPath(file)
-  mkdirp.sync(path.dirname(destPath))
+  const destinationPath = getBuildPath(file)
+  mkdirp.sync(path.dirname(destinationPath))
 
-  const opts = { ...transformOptions }
-  const { code } = babel.transformFileSync(file, opts)
-  fs.writeFileSync(destPath, code)
+  babel.loadOptions(babelrc)
+  const { code } = babel.transformFileSync(file)
+  // const { code } = babel.transformFileSync(file, opts)
+  fs.writeFileSync(destinationPath, code)
 
   // node v8以上でPublishするのでcp-fileなどは使わない
 
   if (fs.copyFileSync) {
-    fs.copyFileSync(file, `${destPath}.flow`)
+    fs.copyFileSync(file, `${destinationPath}.flow`)
   }
 
   process.stdout.write(
     `${path.relative(PACKAGES_DIR, file) +
       chalk.red(' \u21D2 ') +
-      path.relative(PACKAGES_DIR, destPath)}\n`
+      path.relative(PACKAGES_DIR, destinationPath)}\n`
   )
 }
 
-function buildPkg(p) {
+function buildPackage(p) {
   const srcDir = path.resolve(p, SRC_DIR)
   const pattern = path.resolve(srcDir, '**/*.js')
   const files = globby.sync([pattern, ...IGNORE_PATTERN], { nodir: true })
@@ -63,7 +58,7 @@ function buildPkg(p) {
 
 function build() {
   const pkgs = getPkgs()
-  pkgs.forEach(buildPkg)
+  pkgs.forEach(buildPackage)
 }
 
 const files = process.argv.slice(2)

@@ -10,19 +10,19 @@
     "s2s": "s2s"
   },
   "dependencies": {
-    "react": "^16.8.4",
-    "react-dom": "^16.8.4",
-    "react-redux": "^6.0.1",
+    "react": "^16.8.6",
+    "react-dom": "^16.8.6",
+    "react-redux": "^7.0.1",
     "react-scripts": "2.1.8",
     "redux": "^4.0.1",
     "redux-thunk": "^2.2.0"
   },
   "devDependencies": {
     "enzyme": "^3.9.0",
-    "enzyme-adapter-react-16": "^1.11.2",
+    "enzyme-adapter-react-16": "^1.12.1",
     "enzyme-to-json": "^3.3.5",
     "flow-bin": "^0.96.0",
-    "react-test-renderer": "^16.8.4",
+    "react-test-renderer": "^16.8.6",
     "s2s": "^0.18.3",
     "s2s-plugins-redux": "^0.4.8"
   }
