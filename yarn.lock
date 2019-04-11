@@ -2085,6 +2085,54 @@ babel-plugin-named-asset-import@^0.3.1:
   resolved "https://registry.yarnpkg.com/babel-plugin-named-asset-import/-/babel-plugin-named-asset-import-0.3.1.tgz#5ec13ec446d0a1e5bb6c57a1f94c9cdedb0c50d6"
   integrity sha512-vzZlo+yEB5YHqI6CRRTDojeT43J3Wf3C/MVkZW5UlbSeIIVUYRKtxaFT2L/VTv9mbIyatCW39+9g/SZolvwRUQ==
 
+babel-plugin-s2s-d-action-constants@^0.1.0:
+  version "0.1.0"
+  resolved "https://registry.yarnpkg.com/babel-plugin-s2s-d-action-constants/-/babel-plugin-s2s-d-action-constants-0.1.0.tgz#563b359e9a3db7a8331d1870d1819a20d8750794"
+  integrity sha1-Vjs1npo9t6gzHRhw0YGaINh1B5Q=
+  dependencies:
+    babel-add-flow-comments "^0.3.0"
+    babel-plugin-syntax-flow "^6.18.0"
+    babel-types "^6.26.0"
+    constant-case "^2.0.0"
+    s2s-utils "^0.6.1"
+
+babel-plugin-s2s-d-action-creater@^0.1.0:
+  version "0.1.0"
+  resolved "https://registry.yarnpkg.com/babel-plugin-s2s-d-action-creater/-/babel-plugin-s2s-d-action-creater-0.1.0.tgz#c6a2a6672125b150b5ff265918eb1332bb1535ba"
+  integrity sha1-xqKmZyElsVC1/yZZGOsTMrsVNbo=
+  dependencies:
+    babel-add-flow-comments "^0.3.0"
+    babel-plugin-syntax-flow "^6.18.0"
+    babel-types "^6.26.0"
+    constant-case "^2.0.0"
+    s2s-utils "^0.6.1"
+
+babel-plugin-s2s-d-action-tests@^0.1.1:
+  version "0.1.1"
+  resolved "https://registry.yarnpkg.com/babel-plugin-s2s-d-action-tests/-/babel-plugin-s2s-d-action-tests-0.1.1.tgz#0f3f75d370cf3064a0607394e17e503da861e3fd"
+  integrity sha1-Dz9103DPMGSgYHOU4X5QPahh4/0=
+  dependencies:
+    babel-add-flow-comments "^0.3.0"
+    babel-plugin-syntax-flow "^6.18.0"
+    babel-traverse "^6.26.0"
+    babel-types "^6.26.0"
+    babylon "^6.18.0"
+    constant-case "^2.0.0"
+    lodash "^4.17.5"
+    s2s-utils "^0.6.1"
+
+babel-plugin-s2s-d-action-types@^0.1.0:
+  version "0.1.0"
+  resolved "https://registry.yarnpkg.com/babel-plugin-s2s-d-action-types/-/babel-plugin-s2s-d-action-types-0.1.0.tgz#546bffab7a485d27d843e256ba4161e29111a032"
+  integrity sha1-VGv/q3pIXSfYQ+JWukFh4pERoDI=
+  dependencies:
+    babel-add-flow-comments "^0.3.0"
+    babel-plugin-syntax-flow "^6.18.0"
+    babel-types "^6.26.0"
+    constant-case "^2.0.0"
+    lodash "^4.17.5"
+    s2s-utils "^0.6.1"
+
 babel-plugin-syntax-async-functions@^6.8.0:
   version "6.13.0"
   resolved "https://registry.yarnpkg.com/babel-plugin-syntax-async-functions/-/babel-plugin-syntax-async-functions-6.13.0.tgz#cad9cad1191b5ad634bf30ae0872391e0647be95"

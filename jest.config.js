@@ -18,5 +18,5 @@ module.exports = {
   snapshotSerializers: [
     '<rootDir>/node_modules/pretty-format/build/plugins/ConvertAnsi.js',
   ],
-  modulePathIgnorePatterns: ['examples/.*'],
+  modulePathIgnorePatterns: ['examples/.*', '.deprecated/.*'],
 }
