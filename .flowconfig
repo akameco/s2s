@@ -1,7 +1,6 @@
 [ignore]
 .*/examples/.*
 .*/s2s-templates-redux/templates/.*
-.*/packages/babel-plugin-s2s-d-action-tests/src/__fixtures__/.*
 .*/packages/.*/lib/.*
 .*/.deprecated/.*
 
@@ -15,7 +14,5 @@ module.name_mapper='^types$' -> '<PROJECT_ROOT>/types/index.js'
 module.name_mapper='^types/\(.*\)$' -> '<PROJECT_ROOT>/types/\1.js'
 module.name_mapper='\(s2s-[^/]*\)' -> '<PROJECT_ROOT>/packages/\1/src/index.js'
 module.name_mapper='\(babel-plugin-s2s-[^/]*\)' -> '<PROJECT_ROOT>/packages/\1/src/index.js'
-module.name_mapper='^flow-execa$' -> '<PROJECT_ROOT>/packages/flow-execa/src/index.js'
-module.name_mapper='^flow-faker$' -> '<PROJECT_ROOT>/packages/flow-faker/src/index.js'
 include_warnings=true
 emoji=true

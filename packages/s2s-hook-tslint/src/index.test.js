@@ -28,8 +28,7 @@ const fn = x => x
 beforeEach(() => {
   jest.runAllTimers()
   errorSpy = jest.spyOn(console, 'error').mockImplementation(fn)
-  // $FlowFixMe
-  fs.copyFileSync(actualPath, tmpPath) // Node v8.5.0~
+  fs.copyFileSync(actualPath, tmpPath)
 })
 
 afterEach(() => {

@@ -16,7 +16,6 @@
     "babel-plugin-s2s-action-creater": "^0.3.1",
     "babel-plugin-s2s-action-root": "^0.4.2",
     "babel-plugin-s2s-action-types": "^0.4.11",
-    "babel-plugin-s2s-initial-state-creater": "^0.3.6",
     "babel-plugin-s2s-reducer-case-creater": "^0.1.10",
     "babel-plugin-s2s-reducer-root": "^0.3.4",
     "babel-plugin-s2s-reducer-test-case": "^0.4.11",

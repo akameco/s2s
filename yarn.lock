@@ -1835,7 +1835,7 @@ babel-extract-comments@^1.0.0:
   dependencies:
     babylon "^6.18.0"
 
-babel-generator@^6.18.0, babel-generator@^6.26.0, babel-generator@^6.26.1:
+babel-generator@^6.18.0, babel-generator@^6.26.0:
   version "6.26.1"
   resolved "https://registry.yarnpkg.com/babel-generator/-/babel-generator-6.26.1.tgz#1844408d3b8f0d35a404ea7ac180f087a601bd90"
   integrity sha512-HyfwY6ApZj7BYTcJURpM5tznulaBvyio7/0d4zFOeMPUmfxkCjHocCuoLa2SAGzBI8AREcH3eP3758F672DppA==
@@ -2084,66 +2084,6 @@ babel-plugin-named-asset-import@^0.3.1:
   version "0.3.1"
   resolved "https://registry.yarnpkg.com/babel-plugin-named-asset-import/-/babel-plugin-named-asset-import-0.3.1.tgz#5ec13ec446d0a1e5bb6c57a1f94c9cdedb0c50d6"
   integrity sha512-vzZlo+yEB5YHqI6CRRTDojeT43J3Wf3C/MVkZW5UlbSeIIVUYRKtxaFT2L/VTv9mbIyatCW39+9g/SZolvwRUQ==
-
-babel-plugin-s2s-d-action-constants@^0.1.0:
-  version "0.1.0"
-  resolved "https://registry.yarnpkg.com/babel-plugin-s2s-d-action-constants/-/babel-plugin-s2s-d-action-constants-0.1.0.tgz#563b359e9a3db7a8331d1870d1819a20d8750794"
-  integrity sha1-Vjs1npo9t6gzHRhw0YGaINh1B5Q=
-  dependencies:
-    babel-add-flow-comments "^0.3.0"
-    babel-plugin-syntax-flow "^6.18.0"
-    babel-types "^6.26.0"
-    constant-case "^2.0.0"
-    s2s-utils "^0.6.1"
-
-babel-plugin-s2s-d-action-creater@^0.1.0:
-  version "0.1.0"
-  resolved "https://registry.yarnpkg.com/babel-plugin-s2s-d-action-creater/-/babel-plugin-s2s-d-action-creater-0.1.0.tgz#c6a2a6672125b150b5ff265918eb1332bb1535ba"
-  integrity sha1-xqKmZyElsVC1/yZZGOsTMrsVNbo=
-  dependencies:
-    babel-add-flow-comments "^0.3.0"
-    babel-plugin-syntax-flow "^6.18.0"
-    babel-types "^6.26.0"
-    constant-case "^2.0.0"
-    s2s-utils "^0.6.1"
-
-babel-plugin-s2s-d-action-tests@^0.1.1:
-  version "0.1.1"
-  resolved "https://registry.yarnpkg.com/babel-plugin-s2s-d-action-tests/-/babel-plugin-s2s-d-action-tests-0.1.1.tgz#0f3f75d370cf3064a0607394e17e503da861e3fd"
-  integrity sha1-Dz9103DPMGSgYHOU4X5QPahh4/0=
-  dependencies:
-    babel-add-flow-comments "^0.3.0"
-    babel-plugin-syntax-flow "^6.18.0"
-    babel-traverse "^6.26.0"
-    babel-types "^6.26.0"
-    babylon "^6.18.0"
-    constant-case "^2.0.0"
-    lodash "^4.17.5"
-    s2s-utils "^0.6.1"
-
-babel-plugin-s2s-d-action-types@^0.1.0:
-  version "0.1.0"
-  resolved "https://registry.yarnpkg.com/babel-plugin-s2s-d-action-types/-/babel-plugin-s2s-d-action-types-0.1.0.tgz#546bffab7a485d27d843e256ba4161e29111a032"
-  integrity sha1-VGv/q3pIXSfYQ+JWukFh4pERoDI=
-  dependencies:
-    babel-add-flow-comments "^0.3.0"
-    babel-plugin-syntax-flow "^6.18.0"
-    babel-types "^6.26.0"
-    constant-case "^2.0.0"
-    lodash "^4.17.5"
-    s2s-utils "^0.6.1"
-
-babel-plugin-s2s-initial-state-creater@^0.3.6:
-  version "0.3.6"
-  resolved "https://registry.yarnpkg.com/babel-plugin-s2s-initial-state-creater/-/babel-plugin-s2s-initial-state-creater-0.3.6.tgz#251f81cb9d9ff324ea15b6af55f9962cf8b2ae7c"
-  integrity sha512-IM6py52rie67MHK9ZAOXoqNHP8DyBbTw91oiDEKJwDsJBZefwg8yiPgXZfR5Y/Oq/bdIzURZOP/fMCUPzPWPdQ==
-  dependencies:
-    babel-generator "^6.26.1"
-    babylon "^6.18.0"
-    flow-faker "^0.2.4"
-    json5 "^0.5.1"
-    s2s-utils "^0.6.1"
-    typed-assign "^0.1.1"
 
 babel-plugin-syntax-async-functions@^6.8.0:
   version "6.13.0"
@@ -3559,14 +3499,6 @@ console-control-strings@^1.0.0, console-control-strings@~1.1.0:
   version "1.1.0"
   resolved "https://registry.yarnpkg.com/console-control-strings/-/console-control-strings-1.1.0.tgz#3d7cf4464db6446ea644bf4b39507f9851008e8e"
   integrity sha1-PXz0Rk22RG6mRL9LOVB/mFEAjo4=
-
-constant-case@^2.0.0:
-  version "2.0.0"
-  resolved "https://registry.yarnpkg.com/constant-case/-/constant-case-2.0.0.tgz#4175764d389d3fa9c8ecd29186ed6005243b6a46"
-  integrity sha1-QXV2TTidP6nI7NKRhu1gBSQ7akY=
-  dependencies:
-    snake-case "^2.1.0"
-    upper-case "^1.1.1"
 
 constants-browserify@^1.0.0:
   version "1.0.0"
@@ -5223,12 +5155,12 @@ exec-sh@^0.2.0:
   dependencies:
     merge "^1.1.3"
 
-execa@0.7.0, execa@^0.7.0:
-  version "0.7.0"
-  resolved "https://registry.yarnpkg.com/execa/-/execa-0.7.0.tgz#944becd34cc41ee32a63a9faf27ad5a65fc59777"
-  integrity sha1-lEvs00zEHuMqY6n68nrVpl/Fl3c=
+execa@^0.10.0:
+  version "0.10.0"
+  resolved "https://registry.yarnpkg.com/execa/-/execa-0.10.0.tgz#ff456a8f53f90f8eccc71a96d11bdfc7f082cb50"
+  integrity sha512-7XOMnz8Ynx1gGo/3hyV9loYNPWM94jG3+3T3Y8tsfSstFmETmENCMU/A/zj8Lyaj1lkgEepKepvd6240tBRvlw==
   dependencies:
-    cross-spawn "^5.0.1"
+    cross-spawn "^6.0.0"
     get-stream "^3.0.0"
     is-stream "^1.1.0"
     npm-run-path "^2.0.0"
@@ -5236,12 +5168,12 @@ execa@0.7.0, execa@^0.7.0:
     signal-exit "^3.0.0"
     strip-eof "^1.0.0"
 
-execa@^0.10.0:
-  version "0.10.0"
-  resolved "https://registry.yarnpkg.com/execa/-/execa-0.10.0.tgz#ff456a8f53f90f8eccc71a96d11bdfc7f082cb50"
-  integrity sha512-7XOMnz8Ynx1gGo/3hyV9loYNPWM94jG3+3T3Y8tsfSstFmETmENCMU/A/zj8Lyaj1lkgEepKepvd6240tBRvlw==
+execa@^0.7.0:
+  version "0.7.0"
+  resolved "https://registry.yarnpkg.com/execa/-/execa-0.7.0.tgz#944becd34cc41ee32a63a9faf27ad5a65fc59777"
+  integrity sha1-lEvs00zEHuMqY6n68nrVpl/Fl3c=
   dependencies:
-    cross-spawn "^6.0.0"
+    cross-spawn "^5.0.1"
     get-stream "^3.0.0"
     is-stream "^1.1.0"
     npm-run-path "^2.0.0"
@@ -5706,26 +5638,10 @@ flatten@^1.0.2:
   resolved "https://registry.yarnpkg.com/flatten/-/flatten-1.0.2.tgz#dae46a9d78fbe25292258cc1e780a41d95c03782"
   integrity sha1-2uRqnXj74lKSJYzB54CkHZXAN4I=
 
-flow-bin@0.65.0, flow-bin@^0.65.0:
-  version "0.65.0"
-  resolved "https://registry.yarnpkg.com/flow-bin/-/flow-bin-0.65.0.tgz#64ffeca27211c786e2d68508c65686ba1b8a2169"
-  integrity sha512-/Ny7pElDdmwgxq8ALf87/MylzXWAh2Kny1kxGUOG1TxwGEQMctgENtLpuwx8fwvlIUebgJWF8ylhWOcmiNKDpA==
-
-flow-execa@^0.2.1:
-  version "0.2.1"
-  resolved "https://registry.yarnpkg.com/flow-execa/-/flow-execa-0.2.1.tgz#7da5d06ccac77b2fe5c9c1ac496eea122f84f871"
-  integrity sha1-faXQbMrHey/lycGsSW7qEi+E+HE=
-  dependencies:
-    execa "0.7.0"
-
-flow-faker@^0.2.4:
-  version "0.2.4"
-  resolved "https://registry.yarnpkg.com/flow-faker/-/flow-faker-0.2.4.tgz#f45a75e93e427df75decb4a87d42c1b9626277ed"
-  integrity sha512-kSMZ6I+/Ja+5mTX5oPrbqVBlrzXyjH/v+wXMTkyopPFiqouHlb8Rf5Q0upQFwh05aMgLg4QI3eubn5tcCaOOCA==
-  dependencies:
-    babel-traverse "^6.26.0"
-    babylon "^6.18.0"
-    flow-execa "^0.2.1"
+flow-bin@0.96.0, flow-bin@^0.96.0:
+  version "0.96.0"
+  resolved "https://registry.yarnpkg.com/flow-bin/-/flow-bin-0.96.0.tgz#3b0379d97304dc1879ae6db627cd2d6819998661"
+  integrity sha512-OSxERs0EdhVxEVCst/HmlT/RcnXsQQIRqcfK9J9wC8/93JQj+xQz4RtlsmYe1PSRYaozuDLyPS5pIA81Zwzaww==
 
 flush-write-stream@^1.0.0:
   version "1.1.1"
@@ -12087,13 +12003,6 @@ slice-ansi@^2.1.0:
     astral-regex "^1.0.0"
     is-fullwidth-code-point "^2.0.0"
 
-snake-case@^2.1.0:
-  version "2.1.0"
-  resolved "https://registry.yarnpkg.com/snake-case/-/snake-case-2.1.0.tgz#41bdb1b73f30ec66a04d4e2cad1b76387d4d6d9f"
-  integrity sha1-Qb2xtz8w7GagTU4srRt2OH1NbZ8=
-  dependencies:
-    no-case "^2.2.0"
-
 snapdragon-node@^2.0.1:
   version "2.1.1"
   resolved "https://registry.yarnpkg.com/snapdragon-node/-/snapdragon-node-2.1.1.tgz#6c175f86ff14bdb0724563e8f3c1b021a286853b"
@@ -12983,11 +12892,6 @@ type-is@~1.6.16:
   dependencies:
     media-typer "0.3.0"
     mime-types "~2.1.18"
-
-typed-assign@^0.1.1:
-  version "0.1.1"
-  resolved "https://registry.yarnpkg.com/typed-assign/-/typed-assign-0.1.1.tgz#d8fcd427423e2c65fc8db77055a3a503acae429e"
-  integrity sha512-mOFdQJMKTX/ykWpHunjf9z50TrfIJ5J7CsLlun6njTmWR0AG5A9B+IBk1edRHISfGlERP5MOPuLnFzvMarpe9w==
 
 typedarray@^0.0.6:
   version "0.0.6"

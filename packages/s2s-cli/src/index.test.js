@@ -10,7 +10,7 @@ let handlePluginsSpy
 let handleTemplateSpy
 let watcher
 
-function setup(opts: $Shape<Config>): Config {
+function setup(opts: $Shape<Config> = {}): Config {
   return {
     watch: 'app',
     plugins: [{ test: /dummy/, plugin: 'dummy' }],

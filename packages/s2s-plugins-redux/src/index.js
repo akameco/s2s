@@ -6,7 +6,6 @@ import actionCreaterPlugin from 'babel-plugin-s2s-action-creater'
 import reducerCaseCreaterPlugin from 'babel-plugin-s2s-reducer-case-creater'
 import actionRootPlugin from 'babel-plugin-s2s-action-root'
 import reducerTestCasePlugin from 'babel-plugin-s2s-reducer-test-case'
-import initilaStetePlugin from 'babel-plugin-s2s-initial-state-creater'
 import stateRootPlugin from 'babel-plugin-s2s-state-root'
 import reducerRootPlugin from 'babel-plugin-s2s-reducer-root'
 
@@ -43,10 +42,6 @@ const plugins = [
       actionRootPlugin,
       { input: 'src/**/actionTypes.js', output: rootActionPath },
     ],
-  },
-  {
-    test: /containers\/.+reducer.js/,
-    plugin: [initilaStetePlugin],
   },
   {
     test: /containers\/.+reducer.js/,
