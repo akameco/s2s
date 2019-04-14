@@ -8,11 +8,11 @@ import reducer, {initialState} from './actions'
 
 import reducer, { initialState } from './actions';
 
-test('handle INCREMENT', () => {
+test(\\"handle INCREMENT\\", () => {
   expect(reducer(initialState, actions.increment())).toEqual(null);
 });
 
-test('handle DECREMENT', () => {
+test(\\"handle DECREMENT\\", () => {
   expect(reducer(initialState, actions.decrement())).toEqual(null);
 });
 "
@@ -31,12 +31,11 @@ test('handle INCREMENT', () => {
 
 import reducer, { initialState } from './actions';
 import * as actions from './actions';
-
 test('handle INCREMENT', () => {
   expect(actions.sample()).toEqual(null);
 });
 
-test('handle DECREMENT', () => {
+test(\\"handle DECREMENT\\", () => {
   expect(reducer(initialState, actions.decrement())).toEqual(null);
 });
 "
@@ -50,12 +49,16 @@ import reducer, {initialState} from './actions'
 
 import reducer, { initialState } from './actions';
 
-test('handle INCREMENT', () => {
-  expect(reducer(initialState, actions.increment())).toEqual({ count: 0 });
+test(\\"handle INCREMENT\\", () => {
+  expect(reducer(initialState, actions.increment())).toEqual({
+    count: 0
+  });
 });
 
-test('handle DECREMENT', () => {
-  expect(reducer(initialState, actions.decrement())).toEqual({ count: 0 });
+test(\\"handle DECREMENT\\", () => {
+  expect(reducer(initialState, actions.decrement())).toEqual({
+    count: 0
+  });
 });
 "
 `;
@@ -73,13 +76,14 @@ test('handle INCREMENT', () => {
 
 import reducer, { initialState } from './actions';
 import * as actions from './actions';
-
 test('handle INCREMENT', () => {
   expect(actions.sample()).toEqual(null);
 });
 
-test('handle DECREMENT', () => {
-  expect(reducer(initialState, actions.decrement())).toEqual({ count: 0 });
+test(\\"handle DECREMENT\\", () => {
+  expect(reducer(initialState, actions.decrement())).toEqual({
+    count: 0
+  });
 });
 "
 `;
