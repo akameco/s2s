@@ -21,7 +21,7 @@
     "enzyme": "^3.9.0",
     "enzyme-adapter-react-16": "^1.12.1",
     "enzyme-to-json": "^3.3.5",
-    "flow-bin": "^0.96.0",
+    "flow-bin": "^0.97.0",
     "react-test-renderer": "^16.8.6",
     "s2s": "^0.18.3",
     "s2s-plugins-redux": "^0.4.8"
