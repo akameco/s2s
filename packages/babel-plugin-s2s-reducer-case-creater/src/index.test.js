@@ -12,6 +12,7 @@ pluginTester({
   title: 'default',
   plugin,
   snapshot: true,
+  babelOptions: { configFile: false },
   pluginOptions: { from: fromPath },
   tests: [
     {
@@ -44,7 +45,7 @@ export default function(state: State = initialState, action) {
       `,
     },
     {
-      title: 'basic',
+      title: 'basic2',
       code: `
 function update(state: State = initialState, action) {
   switch (action.type) {
@@ -72,6 +73,7 @@ pluginTester({
   title: 'when actionTypes.js is empty',
   plugin,
   snapshot: true,
+  babelOptions: { configFile: false },
   pluginOptions: { from: noopPath },
   tests: [
     `
@@ -90,6 +92,7 @@ export default function(state: State = initialState, action) {
 
 pluginTester({
   plugin,
+  babelOptions: { configFile: false },
   tests: [
     {
       title: 'throw error',
@@ -103,6 +106,7 @@ pluginTester({
   title: 'when has same property',
   plugin,
   snapshot: true,
+  babelOptions: { configFile: false },
   pluginOptions: { from: withParamsPath },
   tests: [
     `

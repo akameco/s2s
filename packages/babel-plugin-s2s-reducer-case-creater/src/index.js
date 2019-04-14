@@ -1,6 +1,6 @@
 // @flow
 import fs from 'fs'
-import * as t from 'babel-types'
+import * as t from '@babel/types'
 import getActionObj, { getAllTypeProperty } from 's2s-helper-get-action-obj'
 import { template, inheritsOpts } from 's2s-utils'
 import type { BabelPath, State } from 'types/babel'
@@ -14,7 +14,7 @@ const builder = {
 
 export default () => {
   return {
-    inherits: inheritsOpts(),
+    inherits: inheritsOpts,
     name: 's2s-reducer-case-creater',
     visitor: {
       Program(
@@ -60,8 +60,7 @@ export default () => {
             const items = [...actionSet].map(name => {
               const testAST = builder.test({ TYPE: t.identifier(name) })
                 .expression
-
-              const propsAST = actionMap[upperCamelCase(name)]
+              const propertiesAst = actionMap[upperCamelCase(name)]
                 .filter(v => v !== 'type')
                 .map(v =>
                   t.objectProperty(t.identifier(v), t.identifier(`action.${v}`))
@@ -70,7 +69,7 @@ export default () => {
               const returnStatement = builder.consequent()
               returnStatement.argument.properties = [
                 ...returnStatement.argument.properties,
-                ...propsAST,
+                ...propertiesAst,
               ]
 
               return t.switchCase(testAST, [returnStatement])
