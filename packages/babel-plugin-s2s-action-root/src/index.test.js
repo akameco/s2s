@@ -11,7 +11,7 @@ const output = path.resolve(cwd, 'src', 'types', 'actions.js')
 pluginTester({
   plugin,
   snapshot: true,
-  babelOptions: { filename },
+  babelOptions: { filename, configFile: false },
   pluginOptions: {
     input: 'src/__fixtures__/**/*.js',
     output,
@@ -27,7 +27,7 @@ pluginTester({
 
 pluginTester({
   plugin,
-  babelOptions: { filename },
+  babelOptions: { filename, configFile: false },
   tests: [
     {
       title: 'error',
@@ -39,7 +39,7 @@ pluginTester({
 
 pluginTester({
   plugin,
-  babelOptions: { filename },
+  babelOptions: { filename, configFile: false },
   pluginOptions: {
     input: 'src/__fixtures__/**/*.js',
   },
@@ -54,7 +54,7 @@ pluginTester({
 
 pluginTester({
   plugin,
-  babelOptions: { filename },
+  babelOptions: { filename, configFile: false },
   snapshot: true,
   pluginOptions: {
     input: 'src/**/actionTypes.js',
