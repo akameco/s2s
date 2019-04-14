@@ -1,6 +1,6 @@
 // @flow
 import micromatch from 'micromatch'
-import handlerBabel from 's2s-handler-babel'
+import handlerBabel from 's2s-handler-babel-next'
 import hanlderTypeScript from 's2s-handler-typescript'
 import type { Path, Handler } from 'types'
 

@@ -6,7 +6,7 @@ exports[`metaデータを返す 1`] = `
 Object {
   "code": "const hello = \\"hello\\";",
   "meta": Object {
-    "handlerName": "babel",
+    "handlerName": "babel6",
     "pluginName": "syntax-flow",
   },
 }

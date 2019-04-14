@@ -12,8 +12,8 @@ import type { State as App } from \\"../../__fixtures__/app/reducer\\";
 import type { State as Bob } from \\"../../__fixtures__/bob/reducer\\";
 
 export type State = {
-  App: App;
-  Bob: Bob;
+  App: App,
+  Bob: Bob,
 };
 "
 `;
@@ -30,8 +30,8 @@ import type { State as App } from \\"../../__fixtures__/app/reducer\\";
 import type { State as Bob } from \\"../../__fixtures__/bob/reducer\\";
 
 export type State = {
-      App: App;
-      Bob: Bob;
+  App: App,
+  Bob: Bob,
 };
 "
 `;
@@ -47,8 +47,8 @@ import type { State as App } from \\"../../__fixtures__/app/reducer\\";
 import type { State as Bob } from \\"../../__fixtures__/bob/reducer\\";
 
 export type State = {
-  App: App;
-  Bob: Bob;
+  App: App,
+  Bob: Bob,
 };
 "
 `;

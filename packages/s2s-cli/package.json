@@ -26,10 +26,10 @@
     "ejs": "^2.5.7",
     "find-up": "^3.0.0",
     "key-locker": "^0.2.1",
-    "micromatch": "^4.0.1",
+    "micromatch": "3.1.10",
     "normalize-path-sep": "^0.1.1",
     "prettier": "^1.16.4",
-    "s2s-handler-babel": "^0.4.0",
+    "s2s-handler-babel-next": "^0.4.0",
     "s2s-handler-typescript": "^0.3.3",
     "s2s-hook-prettier": "^0.2.4",
     "slash": "^2.0.0"

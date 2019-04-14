@@ -5,7 +5,7 @@ import babelTemplate from '@babel/template'
 import normalizePathSeq from 'normalize-path-sep'
 import * as t from '@babel/types'
 
-export function trimExtension(filename: string, extension = '.js') {
+export function trimExtension(filename: string, extension?: any = '.js') {
   return path.extname(filename) === extension
     ? filename.replace(extension, '')
     : filename
@@ -29,7 +29,7 @@ export function template(code: string, plugins: ?Array<string> = ['flow']) {
 export function inheritsOpts() {
   return {
     // eslint-disable-next-line flowtype/no-weak-types
-    manipulateOptions(options, parserOptions) {
+    manipulateOptions(options: any, parserOptions: any) {
       ;['flow', 'objectRestSpread'].forEach(plugin => {
         parserOptions.plugins.push(plugin)
       })
