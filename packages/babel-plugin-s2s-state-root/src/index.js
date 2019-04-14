@@ -1,21 +1,15 @@
 // @flow
-import * as t from 'babel-types'
+import * as t from '@babel/types'
 import flowComment from 'babel-add-flow-comments'
 import globby from 'globby'
 import upperCamelCase from 'uppercamelcase'
 import type { BabelPath, State } from 'types/babel'
 import {
   getImportPath,
-  template,
   inheritsOpts,
   getParentDirName,
   typeImport,
 } from 's2s-utils'
-
-const createObjectType = input =>
-  template(`export type State = STATE`)({
-    STATE: t.objectTypeAnnotation(input, null, null),
-  })
 
 const getTypeName = (path: string) => upperCamelCase(getParentDirName(path))
 
@@ -45,14 +39,24 @@ export default () => {
           typeImport(getTypeName(f), 'State', getImportPath(output, f))
         )
 
-        const props = files
+        const properties = files
           .map(getTypeName)
           .map(x => t.identifier(x))
           .map(name =>
             t.objectTypeProperty(name, t.genericTypeAnnotation(name))
           )
 
-        programPath.node.body = [...imports, t.noop(), createObjectType(props)]
+        // export type State = ...
+        const exportTypeStateAst = t.exportNamedDeclaration(
+          t.typeAlias(
+            t.identifier('State'),
+            null,
+            t.objectTypeAnnotation(properties, null, null)
+          ),
+          []
+        )
+
+        programPath.node.body = [...imports, t.noop(), exportTypeStateAst]
 
         flowComment(programPath)
       },

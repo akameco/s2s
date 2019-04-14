@@ -5,7 +5,7 @@
 ## API
 
 ```js
-import helper from 's2s-helper-get-initial-staet'
+import helper from 's2s-helper-get-initial-state'
 
 const fixture = `
 export const initialState = {

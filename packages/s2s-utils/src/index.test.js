@@ -1,6 +1,6 @@
 // @flow
 import path from 'path'
-import generate from 'babel-generator'
+import generate from '@babel/generator'
 import * as utils from '.'
 
 test('getImportPath same folder', () => {
@@ -19,14 +19,14 @@ test('getImportPath parent folder', () => {
 })
 
 test('template', () => {
-  const ast = utils.template(`type Action = A`)()
+  const ast = utils.template(`type Action = 'a'`)()
   expect(ast).toMatchSnapshot()
 })
 
 test('inheritsOpts', () => {
-  const parserOpts = { plugins: [] }
-  utils.inheritsOpts().manipulateOptions({}, parserOpts)
-  expect(parserOpts).toStrictEqual({ plugins: ['flow', 'objectRestSpread'] })
+  const parserOptions = { plugins: [] }
+  utils.inheritsOpts().manipulateOptions({}, parserOptions)
+  expect(parserOptions).toStrictEqual({ plugins: ['flow', 'objectRestSpread'] })
 })
 
 test('return parent path name', () => {

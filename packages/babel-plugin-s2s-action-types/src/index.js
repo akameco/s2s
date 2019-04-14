@@ -1,25 +1,20 @@
 // @flow
 import { relative, join, dirname } from 'path'
-import flowSyntax from 'babel-plugin-syntax-flow'
-import * as t from 'babel-types'
-import template from 'babel-template'
+import flowSyntax from '@babel/plugin-syntax-flow'
+import * as t from '@babel/types'
+import { template } from 's2s-utils'
 import snakeCase from 'lodash.snakecase'
 import flowComment from 'babel-add-flow-comments'
 import slash from 'slash'
 import type { BabelPath, State, File } from 'types/babel'
 // import blog from 'babel-log'
 
-const constantCase = (str: string) => snakeCase(str).toUpperCase()
-
-const babylonOpts = { sourceType: 'module', plugins: ['flow'] }
-
-const wrapTemp = (tmpl: string) => template(tmpl, babylonOpts)
+const constantCase = (input: string) => snakeCase(input).toUpperCase()
 
 const builders = {
-  constants: wrapTemp(`export const NAME: VALUE = VALUE`),
-  actions: wrapTemp(`export const Actions = VALUE`),
-  actionType: wrapTemp(`export type NAME = { type: typeof VALUE }`),
-  action: wrapTemp(`export type Action = UNION`),
+  constants: template(`export const NAME = VALUE`),
+  actions: template(`export const Actions = VALUE`),
+  actionType: template(`export type NAME = { type: typeof VALUE }`),
 }
 
 function getPrefix({ opts: { filename } }: File, removePrefix: string) {
@@ -86,19 +81,18 @@ export default () => {
 
             const actionName = t.identifier(name)
             actionName.typeAnnotation = t.typeAnnotation(
-              t.genericTypeAnnotation(value)
+              t.stringLiteralTypeAnnotation(prefix + name)
             )
-
             return builders.constants({ NAME: actionName, VALUE: value })
           })
 
-          const propsAST = typeNames.map(name => {
+          const propertiesAst = typeNames.map(name => {
             const x = t.identifier(constantCase(name))
             return t.objectProperty(x, x, false, true)
           })
 
           const actionsAST = builders.actions({
-            VALUE: t.objectExpression(propsAST),
+            VALUE: t.objectExpression(propertiesAst),
           })
 
           // type ActionA = { typeof ACTION_A }
@@ -113,13 +107,19 @@ export default () => {
             })
           })
 
-          const union = typeNames.map(name =>
-            t.genericTypeAnnotation(t.identifier(name))
+          // export type Action = ...
+          const exportTypeActionAst = t.exportNamedDeclaration(
+            t.typeAlias(
+              t.identifier('Action'),
+              null,
+              t.createUnionTypeAnnotation(
+                typeNames.map(name =>
+                  t.genericTypeAnnotation(t.identifier(name))
+                )
+              )
+            ),
+            []
           )
-
-          const action = builders.action({
-            UNION: t.unionTypeAnnotation(union),
-          })
 
           if (imports.length > 0) {
             imports.push(t.noop())
@@ -133,7 +133,7 @@ export default () => {
             t.noop(),
             ...typesAst,
             t.noop(),
-            action,
+            exportTypeActionAst,
           ]
 
           flowComment(programPath)

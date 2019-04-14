@@ -10,8 +10,8 @@
     "lib"
   ],
   "dependencies": {
-    "babel-template": "^6.26.0",
-    "babel-types": "^6.26.0",
+    "@babel/template": "^7.4.0",
+    "@babel/types": "^7.4.0",
     "normalize-path-sep": "^0.1.1",
     "slash": "^2.0.0"
   }

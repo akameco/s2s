@@ -31,6 +31,7 @@ pluginTester({
   title: 'default',
   plugin,
   snapshot: true,
+  babelOptions: { configFile: false },
   pluginOptions: { from: fromPath },
   tests: testCases,
 })
@@ -39,12 +40,14 @@ pluginTester({
   title: 'with initial state',
   plugin,
   snapshot: true,
+  babelOptions: { configFile: false },
   pluginOptions: { from: fromWithStatePath },
   tests: testCases,
 })
 
 pluginTester({
   plugin,
+  babelOptions: { configFile: false },
   tests: [
     {
       title: 'throw error',

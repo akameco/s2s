@@ -2,7 +2,7 @@ module.exports = {
   plugins: [
     {
       test: /.*.js$/,
-      plugin: ['transform-react-pure-class-to-function'],
+      plugin: ['babel-plugin-transform-react-class-to-function'],
     },
   ],
 }

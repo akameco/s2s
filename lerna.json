@@ -4,7 +4,7 @@
   "version": "independent",
   "command": {
     "publish": {
-      "ignore": ["*.md"]
+      "ignoreChanges": ["*.md"]
     }
   },
   "npmClient": "yarn",

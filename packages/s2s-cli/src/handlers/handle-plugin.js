@@ -11,7 +11,7 @@ import {
 import runHooks from '../hooks'
 import { formatText } from '../reporters'
 
-type Opts = {
+type Options = {
   eventPath: Path,
   plugin: Plugin,
   hooks: Array<AfterHook>,
@@ -19,7 +19,7 @@ type Opts = {
 
 export function handlePlugin(
   handler: Handler,
-  { eventPath, plugin, hooks = [] }: Opts
+  { eventPath, plugin, hooks = [] }: Options
 ) {
   const filename = resolveInputPath(plugin.input, eventPath)
   const content = fs.readFileSync(filename, 'utf8')

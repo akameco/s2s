@@ -51,8 +51,8 @@ test('lockされているとき、ハンドラを実行しない', () => {
 })
 
 test('testがマッチしないとき、ハンドラを実行しない', () => {
-  const opts = { test: /not-found.js/, plugin: _plugin }
-  handlePlugins(getEventPath('a.js'), 'add', { plugins: [opts] })
+  const options = { test: /not-found.js/, plugin: _plugin }
+  handlePlugins(getEventPath('a.js'), 'add', { plugins: [options] })
   expect(writeSpy).not.toHaveBeenCalled()
 })
 

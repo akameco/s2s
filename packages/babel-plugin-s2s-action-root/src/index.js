@@ -12,11 +12,6 @@ import {
 } from 's2s-utils'
 import type { BabelPath, State } from 'types/babel'
 
-const createUnion = union =>
-  template(`export type Action = UNION`)({
-    UNION: t.unionTypeAnnotation(union),
-  })
-
 const createInitAction = template(
   `export type ReduxInitAction = { type: '@@INIT' }`
 )
@@ -31,6 +26,7 @@ export default () => {
     name: 's2s-action-root',
     visitor: {
       Program: {
+        // eslint-disable-next-line unicorn/prevent-abbreviations
         exit(programPath: BabelPath, { opts }: State) {
           const { input, output } = opts
           const globOptions = {
@@ -52,21 +48,27 @@ export default () => {
             typeImport(createActionName(f), 'Action', getImportPath(output, f))
           )
 
-          const union = files
-            .map(createActionName)
-            .map(name => t.genericTypeAnnotation(t.identifier(name)))
-
-          const initAction = 'ReduxInitAction'
-          union.unshift(t.genericTypeAnnotation(t.identifier(initAction)))
-
-          const action = createUnion(union)
+          // export type Action = ...
+          const exportTypeActionAst = t.exportNamedDeclaration(
+            t.typeAlias(
+              t.identifier('Action'),
+              null,
+              t.createUnionTypeAnnotation([
+                t.genericTypeAnnotation(t.identifier('ReduxInitAction')),
+                ...files
+                  .map(createActionName)
+                  .map(name => t.genericTypeAnnotation(t.identifier(name))),
+              ])
+            ),
+            []
+          )
 
           programPath.node.body = [
             ...imports,
             t.noop(),
             createInitAction(),
             t.noop(),
-            action,
+            exportTypeActionAst,
           ]
 
           flowComment(programPath)

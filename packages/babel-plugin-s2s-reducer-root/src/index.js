@@ -1,5 +1,5 @@
 // @flow
-import * as t from 'babel-types'
+import * as t from '@babel/types'
 import flowComment from 'babel-add-flow-comments'
 import globby from 'globby'
 import upperCamelCase from 'uppercamelcase'
@@ -46,7 +46,7 @@ export default () => {
           defaultImport(getTypeName(f), getImportPath(output, f))
         )
 
-        const props = files
+        const properties = files
           .map(getTypeName)
           .map(x => t.identifier(x))
           .map(name => t.objectProperty(name, name, false, true))
@@ -55,7 +55,7 @@ export default () => {
           createImportDeclaration('combineReducers', combineReducers),
           ...imports,
           t.noop(),
-          builders.root({ OBJ: t.objectExpression(props) }),
+          builders.root({ OBJ: t.objectExpression(properties) }),
         ]
 
         flowComment(programPath)

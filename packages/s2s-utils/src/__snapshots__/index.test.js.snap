@@ -9,39 +9,22 @@ exports[`snapshot defaultImport: snapshot defaultImport 1`] = `"import defaultlo
 exports[`snapshot typeImport: snapshot typeImport 1`] = `"import type { imported as local } from \\"source\\";"`;
 
 exports[`template 1`] = `
-Node {
-  "__clone": undefined,
-  "_fromTemplate": true,
-  "end": undefined,
-  "id": Node {
-    "__clone": undefined,
-    "_fromTemplate": true,
-    "end": undefined,
+Object {
+  "id": Object {
     "loc": undefined,
     "name": "Action",
-    "start": undefined,
     "type": "Identifier",
   },
   "loc": undefined,
-  "right": Node {
-    "__clone": undefined,
-    "_fromTemplate": true,
-    "end": undefined,
-    "id": Node {
-      "__clone": undefined,
-      "_fromTemplate": true,
-      "end": undefined,
-      "loc": undefined,
-      "name": "A",
-      "start": undefined,
-      "type": "Identifier",
+  "right": Object {
+    "extra": Object {
+      "raw": "'a'",
+      "rawValue": "a",
     },
     "loc": undefined,
-    "start": undefined,
-    "type": "GenericTypeAnnotation",
-    "typeParameters": null,
+    "type": "StringLiteralTypeAnnotation",
+    "value": "a",
   },
-  "start": undefined,
   "type": "TypeAlias",
   "typeParameters": null,
 }

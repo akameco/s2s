@@ -23,9 +23,8 @@ export type Action = Add
 
 // @flow
 import type { Count } from './types';
-
-import { ADD } from './actionTypes';
-import type { Add } from './actionTypes';
+import { ADD } from \\"./actionTypes\\";
+import type { Add } from \\"./actionTypes\\";
 
 export function add(n: number, payload: Count): Add {
   return {
@@ -56,8 +55,8 @@ export type Action = Add
       ↓ ↓ ↓ ↓ ↓ ↓
 
 // @flow
-import { ADD } from './actionTypes';
-import type { Add } from './actionTypes';
+import { ADD } from \\"./actionTypes\\";
+import type { Add } from \\"./actionTypes\\";
 
 export function add(payload: number): Add {
   return {
@@ -120,8 +119,8 @@ export type Action = Increment | Decrement
       ↓ ↓ ↓ ↓ ↓ ↓
 
 // @flow
-import { INCREMENT, DECREMENT } from './actionTypes';
-import type { Increment, Decrement } from './actionTypes';
+import { INCREMENT, DECREMENT } from \\"./actionTypes\\";
+import type { Increment, Decrement } from \\"./actionTypes\\";
 
 export function increment(): Increment {
   return {

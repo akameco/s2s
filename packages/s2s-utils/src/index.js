@@ -1,12 +1,14 @@
 // @flow
 import path from 'path'
 import slash from 'slash'
-import babelTemplate from 'babel-template'
+import babelTemplate from '@babel/template'
 import normalizePathSeq from 'normalize-path-sep'
-import * as t from 'babel-types'
+import * as t from '@babel/types'
 
-export function trimExtension(filename: string, ext: string = '.js') {
-  return path.extname(filename) === ext ? filename.replace(ext, '') : filename
+export function trimExtension(filename: string, extension?: any = '.js') {
+  return path.extname(filename) === extension
+    ? filename.replace(extension, '')
+    : filename
 }
 
 export function getImportPath(from: string, to: string): string {
@@ -21,15 +23,15 @@ export function getImportPath(from: string, to: string): string {
 }
 
 export function template(code: string, plugins: ?Array<string> = ['flow']) {
-  return babelTemplate(code, { sourceType: 'module', plugins })
+  return babelTemplate(code, { plugins })
 }
 
 export function inheritsOpts() {
   return {
     // eslint-disable-next-line flowtype/no-weak-types
-    manipulateOptions(opts: Object, parserOpts: Object) {
+    manipulateOptions(options: any, parserOptions: any) {
       ;['flow', 'objectRestSpread'].forEach(plugin => {
-        parserOpts.plugins.push(plugin)
+        parserOptions.plugins.push(plugin)
       })
     },
   }

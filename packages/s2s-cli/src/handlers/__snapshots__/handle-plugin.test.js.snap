@@ -2,9 +2,9 @@
 
 exports[`Codeを返す旧ハンドラーの場合はS2Sと表示させる 1`] = `"S2S packages/s2s-cli/src/handlers/__tests__/fixtures/a.js → packages/s2s-cli/src/handlers/__tests__/fixtures/a.js"`;
 
-exports[`handlePlugin when eventPath match 1`] = `"babel packages/s2s-cli/src/handlers/__tests__/fixtures/a.js → packages/s2s-cli/src/handlers/__tests__/fixtures/a.js"`;
+exports[`handlePlugin when eventPath match 1`] = `"babel7 packages/s2s-cli/src/handlers/__tests__/fixtures/a.js → packages/s2s-cli/src/handlers/__tests__/fixtures/a.js"`;
 
-exports[`pluginNameが与えられたとき、それを表示する 1`] = `"babel:syntax-flow packages/s2s-cli/src/handlers/__tests__/fixtures/a.js → packages/s2s-cli/src/handlers/__tests__/fixtures/a.js"`;
+exports[`pluginNameが与えられたとき、それを表示する 1`] = `"babel7:syntax-flow packages/s2s-cli/src/handlers/__tests__/fixtures/a.js → packages/s2s-cli/src/handlers/__tests__/fixtures/a.js"`;
 
 exports[`with input option 1`] = `
 "// @flow

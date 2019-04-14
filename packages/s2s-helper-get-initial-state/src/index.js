@@ -1,6 +1,6 @@
 // @flow
-import { parse } from 'babylon'
-import traverse from 'babel-traverse'
+import { parse } from '@babel/parser'
+import traverse from '@babel/traverse'
 import type { Code } from 'types'
 import type { BabelNode } from 'types/babel'
 // import blog from 'babel-log'

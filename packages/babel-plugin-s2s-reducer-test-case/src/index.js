@@ -1,8 +1,7 @@
 // @flow
-import 'babel-polyfill' // eslint-disable-line import/no-unassigned-import
 import fs from 'fs'
-import * as t from 'babel-types'
-import flowSyntax from 'babel-plugin-syntax-flow'
+import * as t from '@babel/types'
+import flowSyntax from '@babel/plugin-syntax-flow'
 import camelCase from 'camelcase'
 import looksLike from 'babel-looks-like'
 import getReducerCase from 's2s-helper-get-reducer-case'

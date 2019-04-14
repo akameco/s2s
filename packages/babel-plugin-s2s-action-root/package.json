@@ -13,11 +13,14 @@
     "lib"
   ],
   "dependencies": {
-    "babel-add-flow-comments": "^0.3.0",
+    "@babel/plugin-syntax-flow": "^7.2.0",
+    "@babel/template": "^7.4.0",
+    "@babel/types": "^7.4.0",
+    "babel-add-flow-comments": "^0.4.0",
     "babel-plugin-syntax-flow": "^6.18.0",
     "babel-template": "^6.26.0",
     "babel-types": "^6.26.0",
-    "globby": "^9.1.0",
+    "globby": "^9.2.0",
     "s2s-utils": "^0.6.1",
     "uppercamelcase": "^3.0.0"
   }

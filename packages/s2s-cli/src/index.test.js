@@ -10,12 +10,12 @@ let handlePluginsSpy
 let handleTemplateSpy
 let watcher
 
-function setup(opts: $Shape<Config> = {}): Config {
+function setup(options = {}): Config {
   return {
     watch: 'app',
     plugins: [{ test: /dummy/, plugin: 'dummy' }],
     templates: [{ test: /dummy/, input: 'dummy' }],
-    ...opts,
+    ...options,
   }
 }
 
@@ -36,9 +36,9 @@ afterEach(() => {
 
 cases(
   'throw errors',
-  opts => {
+  options => {
     expect(() => {
-      m(setup(opts.input))
+      m(setup(options.input))
     }).toThrowErrorMatchingSnapshot()
   },
   [
@@ -48,7 +48,6 @@ cases(
     { name: 'opts.plugins !== Array', input: { plugins: 'not array' } },
     // $FlowFixMe
     { name: 'opts.templates !== Array', input: { templates: 'string' } },
-    // $FlowFixMe
     { name: 'opts.after !== Array', input: { afterHooks: 'string' } },
   ]
 )
@@ -60,10 +59,10 @@ test('Displayed "start" on the Consle', () => {
 })
 
 test('pluginsとtemplatesが渡されないとき', () => {
-  const opts = setup()
-  delete opts.plugins
-  delete opts.templates
-  watcher = m(opts)
+  const options = setup()
+  delete options.plugins
+  delete options.templates
+  watcher = m(options)
   expect(logSpy.mock.calls).toHaveLength(1)
   expect(logSpy.mock.calls[0][0]).toMatch('start')
 })
@@ -87,8 +86,18 @@ test('ファイルが追加されたときhandleTemplatesが呼ばれる', () =>
   watcher = m(setup())
   watcher.emit('add', 'hello')
   const result = handleTemplateSpy.mock.calls[0]
-  const expected = ['hello', [{ input: 'dummy', test: /dummy/ }], undefined]
-  expect(result).toStrictEqual(expected)
+  expect(result).toMatchInlineSnapshot(`
+    Array [
+      "hello",
+      Array [
+        Object {
+          "input": "dummy",
+          "test": /dummy/,
+        },
+      ],
+      undefined,
+    ]
+  `)
 })
 
 test('templatesがない場合、ファイルが追加されたときhandleTemplatesは呼ばれない', () => {
