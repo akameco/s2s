@@ -10,7 +10,7 @@ const output = path.resolve(cwd, 'reducer.js')
 pluginTester({
   plugin,
   snapshot: true,
-  babelOptions: { filename },
+  babelOptions: { filename, configFile: false },
   pluginOptions: {
     input: '__fixtures__/**/reducer.js',
     output,
@@ -32,7 +32,7 @@ pluginTester({
 
 pluginTester({
   plugin,
-  babelOptions: { filename },
+  babelOptions: { filename, configFile: false },
   snapshot: true,
   pluginOptions: {
     input: './**/reducer.js',
@@ -50,7 +50,7 @@ pluginTester({
 pluginTester({
   plugin,
   snapshot: true,
-  babelOptions: { filename },
+  babelOptions: { filename, configFile: false },
   pluginOptions: {
     input: '__fixtures__/**/reducer.js',
     output,
@@ -67,7 +67,7 @@ pluginTester({
 
 pluginTester({
   plugin,
-  babelOptions: { filename },
+  babelOptions: { filename, configFile: false },
   tests: [
     {
       title: 'error',
@@ -79,7 +79,7 @@ pluginTester({
 
 pluginTester({
   plugin,
-  babelOptions: { filename },
+  babelOptions: { filename, configFile: false },
   pluginOptions: { input: '__fixtures__/**/*.js', globOptions: { cwd } },
   tests: [
     {

@@ -32,8 +32,8 @@ import App from \\"./__fixtures__/app/reducer\\";
 import Bob from \\"./__fixtures__/bob/reducer\\";
 
 export default combineReducers({
-      App,
-      Bob
+  App,
+  Bob
 });
 "
 `;
