@@ -9,7 +9,7 @@ pluginTester({
   title: 'default',
   plugin,
   snapshot: true,
-  babelOptions: { filename },
+  babelOptions: { filename, configFile: false },
   // pluginOptions: { usePrefix: true },
   tests: [
     `export type Action = Increment`,
@@ -104,7 +104,7 @@ pluginTester({
   title: 'remove prefix',
   plugin,
   snapshot: true,
-  babelOptions: { filename },
+  babelOptions: { filename, configFile: false },
   pluginOptions: { removePrefix: 'app' },
   tests: [`export type Action = Increment`],
 })
@@ -113,7 +113,7 @@ pluginTester({
   title: 'use prefix === false',
   plugin,
   snapshot: true,
-  babelOptions: { filename },
+  babelOptions: { filename, configFile: false },
   pluginOptions: { usePrefix: false },
   tests: [`export type Action = Increment`],
 })

@@ -168,7 +168,7 @@ export type Action = Add;
       ↓ ↓ ↓ ↓ ↓ ↓
 
 // @flow
-export const ADD: 'app/counter/ADD' = 'app/counter/ADD';
+export const ADD: \\"app/counter/ADD\\" = \\"app/counter/ADD\\";
 
 export const Actions = {
   ADD
@@ -198,15 +198,15 @@ export type Action = FetchUser;
 // @flow
 import type { UserID } from './types.js';
 
-export const FETCH_USER: 'app/counter/FETCH_USER' = 'app/counter/FETCH_USER';
+export const FETCH_USER: \\"app/counter/FETCH_USER\\" = \\"app/counter/FETCH_USER\\";
 
 export const Actions = {
   FETCH_USER
 };
 
 export type FetchUser = {
-  type: typeof FETCH_USER;
-  id: UserID;
+  type: typeof FETCH_USER,
+  id: UserID,
 };
 
 export type Action = FetchUser;
@@ -225,7 +225,7 @@ export type Action = Increment
 // @flow
 import type { X } from './types';
 
-export const INCREMENT: 'app/counter/INCREMENT' = 'app/counter/INCREMENT';
+export const INCREMENT: \\"app/counter/INCREMENT\\" = \\"app/counter/INCREMENT\\";
 
 export const Actions = {
   INCREMENT
@@ -278,13 +278,16 @@ export type Action = Increment;
       ↓ ↓ ↓ ↓ ↓ ↓
 
 // @flow
-export const INCREMENT: 'app/counter/INCREMENT' = 'app/counter/INCREMENT';
+export const INCREMENT: \\"app/counter/INCREMENT\\" = \\"app/counter/INCREMENT\\";
 
 export const Actions = {
   INCREMENT
 };
 
-export type Increment = { type: typeof INCREMENT; payload: number; };
+export type Increment = {
+  type: typeof INCREMENT,
+  payload: number,
+};
 
 export type Action = Increment;
 "
@@ -301,7 +304,7 @@ export type Action = Decrement;
       ↓ ↓ ↓ ↓ ↓ ↓
 
 // @flow
-export const DECREMENT: 'app/counter/DECREMENT' = 'app/counter/DECREMENT';
+export const DECREMENT: \\"app/counter/DECREMENT\\" = \\"app/counter/DECREMENT\\";
 
 export const Actions = {
   DECREMENT
