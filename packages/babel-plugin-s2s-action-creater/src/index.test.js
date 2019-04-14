@@ -3,13 +3,14 @@ import path from 'path'
 import pluginTester from 'babel-plugin-tester'
 import plugin from '.'
 
-const filename = path.resolve(process.cwd(), 'app', 'counter', 'actionTypes.js')
+// const filename = path.resolve(process.cwd(), 'app', 'counter', 'actionTypes.js')
+const filename = path.resolve(__dirname, '__fixtures__', 'actionTypes.js')
 
 pluginTester({
   title: 'default',
   plugin,
   snapshot: true,
-  babelOptions: { filename },
+  babelOptions: { filename, configFile: false },
   tests: [
     {
       title: 'one function',
