@@ -9,7 +9,7 @@ export const initialState: State = { addedIds: [], quantityById: {} }
 function addedIds<S: Array<number>>(state: S, action: Action): S {
   switch (action.type) {
     case Actions.ADD_TO_CART:
-      if (state.indexOf(action.productId) !== -1) {
+      if (state.includes(action.productId)) {
         return state
       }
       return [...state, action.productId]

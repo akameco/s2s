@@ -5,8 +5,8 @@ const babel = require('@babel/core')
 const globby = require('globby')
 const mkdirp = require('mkdirp')
 const chalk = require('chalk')
-const { getPkgs, PACKAGES_DIR } = require('./getPackages')
 const babelrc = require('../babel.config.js')
+const { getPkgs, PACKAGES_DIR } = require('./getPackages')
 const clean = require('./clean')
 
 const SRC_DIR = 'src'

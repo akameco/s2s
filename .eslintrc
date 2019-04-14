@@ -11,6 +11,7 @@
     "require-unicode-regexp": 0,
     "jest/prefer-called-with": 0,
     "prefer-named-capture-group": 0,
-    "max-lines-per-function": 0
+    "max-lines-per-function": 0,
+    "unicorn/prevent-abbreviations": 0
   }
 }

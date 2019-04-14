@@ -3,12 +3,11 @@ import { relative, join, dirname } from 'path'
 import flowSyntax from '@babel/plugin-syntax-flow'
 import * as t from '@babel/types'
 import { template } from 's2s-utils'
-import babelTemplate from '@babel/template'
 import snakeCase from 'lodash.snakecase'
 import flowComment from 'babel-add-flow-comments'
 import slash from 'slash'
 import type { BabelPath, State, File } from 'types/babel'
-import blog from 'babel-log'
+// import blog from 'babel-log'
 
 const constantCase = (input: string) => snakeCase(input).toUpperCase()
 
