@@ -1,6 +1,6 @@
 {
   "name": "babel-plugin-s2s-action-types",
-  "version": "0.4.11",
+  "version": "1.0.0",
   "description": "generate action types",
   "license": "MIT",
   "repository": "akameco/s2s",
@@ -17,7 +17,7 @@
     "@babel/types": "^7.4.0",
     "babel-add-flow-comments": "^0.4.0",
     "lodash.snakecase": "^4.1.1",
-    "s2s-utils": "^0.6.1",
+    "s2s-utils": "^1.0.0",
     "slash": "^2.0.0"
   }
 }

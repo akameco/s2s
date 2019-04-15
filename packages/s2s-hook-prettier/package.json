@@ -1,6 +1,6 @@
 {
   "name": "s2s-hook-prettier",
-  "version": "0.2.4",
+  "version": "1.0.0",
   "description": "s2s hooks for prettier",
   "license": "MIT",
   "repository": "https://github.com/akameco/s2s",

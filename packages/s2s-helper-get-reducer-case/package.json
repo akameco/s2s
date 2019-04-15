@@ -1,6 +1,6 @@
 {
   "name": "s2s-helper-get-reducer-case",
-  "version": "0.2.6",
+  "version": "1.0.0",
   "description": "Helper function to get reducer case",
   "license": "MIT",
   "repository": "akameco/s2s",
