@@ -17,7 +17,7 @@
     "flow": "flow",
     "publish": "./scripts/publish.sh",
     "fmt": "prettier --write \"**/*.{md,js,json}\"",
-    "postinstall": "yarn build && yarn flow",
+    "postinstall": "yarn build",
     "test": "jest --watch --coverage",
     "test:watch": "jest --watch",
     "test:cov": "jest --coverage --ci --runInBand",
