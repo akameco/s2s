@@ -22,7 +22,8 @@ test_script:
   - node --version
   - npm --version
   # Run tests
-  - yarn run test:ci
+  - yarn run test:cov
+  - yarn lint
 
 # Don't actually build.
 build: off
