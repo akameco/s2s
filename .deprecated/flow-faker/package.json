@@ -15,6 +15,6 @@
     "flow-execa": "^0.2.1"
   },
   "devDependencies": {
-    "babel-plugin-transform-object-rest-spread": "^6.26.0"
+    "babel-plugin-transform-object-rest-spread": "6.26.0"
   }
 }
