@@ -22,7 +22,7 @@
     "typescript": ">=3"
   },
   "dependencies": {
-    "tslint": "^5.15.0",
-    "typescript": "^3.4.3"
+    "tslint": "^5.16.0",
+    "typescript": "^3.4.5"
   }
 }

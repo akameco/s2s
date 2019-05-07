@@ -13,7 +13,7 @@
     "lib"
   ],
   "dependencies": {
-    "@babel/types": "^7.4.0",
+    "@babel/types": "^7.4.4",
     "babel-add-flow-comments": "^0.4.0",
     "globby": "^9.2.0",
     "s2s-utils": "^1.0.0",

@@ -14,7 +14,7 @@
     "s2s": "s2s"
   },
   "devDependencies": {
-    "flow-bin": "^0.97.0",
+    "flow-bin": "^0.98.1",
     "s2s": "^0.19.0",
     "s2s-handler-css-to-flow": "^0.1.1"
   }

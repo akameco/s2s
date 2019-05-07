@@ -13,7 +13,7 @@
     "lib"
   ],
   "dependencies": {
-    "@babel/types": "^7.4.0",
+    "@babel/types": "^7.4.4",
     "s2s-helper-get-action-obj": "^1.0.0",
     "s2s-utils": "^1.0.0",
     "uppercamelcase": "^3.0.0"
