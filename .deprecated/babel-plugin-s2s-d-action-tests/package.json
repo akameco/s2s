@@ -23,7 +23,7 @@
     "s2s-utils": "^0.6.1"
   },
   "devDependencies": {
-    "babel-log": "^2.0.0",
-    "babel-looks-like": "^0.1.0"
+    "babel-log": "2.0.0",
+    "babel-looks-like": "0.1.0"
   }
 }
