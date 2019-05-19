@@ -2879,10 +2879,10 @@ babel-plugin-syntax-object-rest-spread@^6.8.0:
   resolved "https://registry.yarnpkg.com/babel-plugin-syntax-object-rest-spread/-/babel-plugin-syntax-object-rest-spread-6.13.0.tgz#fd6536f2bce13836ffa3a5458c4903a597bb3bf5"
   integrity sha1-/WU28rzhODb/o6VFjEkDpZe7O/U=
 
-babel-plugin-tester@6.2.0:
-  version "6.2.0"
-  resolved "https://registry.yarnpkg.com/babel-plugin-tester/-/babel-plugin-tester-6.2.0.tgz#539dfa078f59bcc10d3cf5b2536dfee79d7bb974"
-  integrity sha512-x5b1z8nTImMwXC9QGdJoeD04fOZfjbA6oFBtBH9KLfHkX3CpoiMxWeRzrTFvQ6i35Pa08hW4hryEWeLGi8OAYA==
+babel-plugin-tester@6.2.1:
+  version "6.2.1"
+  resolved "https://registry.yarnpkg.com/babel-plugin-tester/-/babel-plugin-tester-6.2.1.tgz#b9195bfb3c868bd8316a1108c0f35b7f3fb84fcc"
+  integrity sha512-ELsxMOKGzgVkxWnbd4g9nnbbymQFjGrV9bMO3isuc7KIcdoVm8JoSf252DCoFr4iuS/mMmemM9Q8x+UD37U+6g==
   dependencies:
     common-tags "^1.4.0"
     invariant "^2.2.2"
