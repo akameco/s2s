@@ -20,7 +20,7 @@
     "babylon": "^6.18.0",
     "constant-case": "^2.0.0",
     "lodash": "^4.17.11",
-    "s2s-utils": "^0.6.1"
+    "s2s-utils": "^1.0.0"
   },
   "devDependencies": {
     "babel-log": "2.0.0",
