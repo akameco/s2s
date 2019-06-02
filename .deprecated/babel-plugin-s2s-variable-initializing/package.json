@@ -15,6 +15,6 @@
   "dependencies": {
     "babylon": "^6.18.0",
     "flow-faker": "^0.2.4",
-    "s2s-utils": "^0.6.1"
+    "s2s-utils": "^1.0.0"
   }
 }
