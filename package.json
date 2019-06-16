@@ -42,7 +42,7 @@
     "babel-plugin-tester": "6.4.0",
     "coveralls": "3.0.4",
     "eslint": "5.16.0",
-    "eslint-config-precure": "4.16.1",
+    "eslint-config-precure": "4.17.0",
     "flow-bin": "0.100.0",
     "globby": "9.2.0",
     "husky": "2.4.1",

@@ -5055,10 +5055,10 @@ eslint-config-kentcdodds@^14.3.2:
     semver "^5.5.1"
     webpack "^4.29.0"
 
-eslint-config-precure@4.16.1:
-  version "4.16.1"
-  resolved "https://registry.yarnpkg.com/eslint-config-precure/-/eslint-config-precure-4.16.1.tgz#6a6ca0b3ba2a1d317166cc12081ef5d6b9abc48a"
-  integrity sha512-AW26UEpuogMJcKhAYGaKhliSFtOSX5AVKrNTrXfsAcoVqf/d9+dJeuBIkYekntXalfoqBqvNsUpuxl0RolLU4A==
+eslint-config-precure@4.17.0:
+  version "4.17.0"
+  resolved "https://registry.yarnpkg.com/eslint-config-precure/-/eslint-config-precure-4.17.0.tgz#3c1e9911a847f8f2eac1e95e78689b101d03400b"
+  integrity sha512-PExVFBCg2t5Jjqb2eqUCI+wEyanU4g5rx/X9jr6JgF9DbbMl3prxGxag5nTET6DbO079UnrIPvBb3EDftnwrAg==
   dependencies:
     "@typescript-eslint/eslint-plugin" "^1.7.0"
     "@typescript-eslint/parser" "^1.7.0"
