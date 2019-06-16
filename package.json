@@ -39,7 +39,7 @@
     "all-contributors-cli": "6.7.0",
     "babel-jest": "24.8.0",
     "babel-log": "2.0.0",
-    "babel-plugin-tester": "6.2.1",
+    "babel-plugin-tester": "6.4.0",
     "coveralls": "3.0.4",
     "eslint": "5.16.0",
     "eslint-config-precure": "4.16.1",
