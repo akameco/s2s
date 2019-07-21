@@ -41,7 +41,7 @@
     "babel-log": "2.0.0",
     "babel-plugin-tester": "6.4.0",
     "coveralls": "3.0.5",
-    "eslint": "6.0.1",
+    "eslint": "6.1.0",
     "eslint-config-precure": "4.17.0",
     "flow-bin": "0.102.0",
     "globby": "9.2.0",
