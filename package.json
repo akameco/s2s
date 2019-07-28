@@ -43,7 +43,7 @@
     "coveralls": "3.0.5",
     "eslint": "6.1.0",
     "eslint-config-precure": "4.17.0",
-    "flow-bin": "0.103.0",
+    "flow-bin": "0.104.0",
     "globby": "9.2.0",
     "husky": "3.0.1",
     "jest": "24.8.0",
