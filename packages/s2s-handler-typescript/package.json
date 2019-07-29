@@ -16,7 +16,7 @@
     "s2s"
   ],
   "dependencies": {
-    "@babel/core": "^7.4.4",
+    "@babel/core": "^7.5.5",
     "@babel/plugin-syntax-typescript": "^7.3.3",
     "s2s-helper-get-plugin-name": "^0.1.0"
   }
