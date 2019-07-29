@@ -18,9 +18,12 @@ export function getOutputPath(output: Path, input: Path): Path {
     return output
   }
 
-  return slash(
-    path.join(path.dirname(normalizePathSeq(input)), normalizePathSeq(output))
-  )
+  const inputPath =
+    path.extname(input) === ''
+      ? normalizePathSeq(input)
+      : path.dirname(normalizePathSeq(input))
+
+  return slash(path.join(inputPath, normalizePathSeq(output)))
 }
 
 export function writeFileSync(outputPath: Path, code: string) {
