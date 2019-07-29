@@ -42,6 +42,11 @@ test('getOutputPath when output = relative path', () => {
   expect(result).toBe('/src/actions.js')
 })
 
+test('getOutputPath when input is directroy', () => {
+  const result = utils.getOutputPath('actions.js', './src/actions')
+  expect(result).toBe('src/actions/actions.js')
+})
+
 test('getDirAndBaseName', () => {
   const result = utils.getDirAndBaseName('/src/fuga/hoge.js')
   expect(result.basename).toBe('hoge.js')
