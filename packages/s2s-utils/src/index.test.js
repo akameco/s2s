@@ -30,6 +30,7 @@ test('inheritsOpts', () => {
 })
 
 test('return parent path name', () => {
+  // eslint-disable-next-line jest/no-if
   const filePath = path.sep === '\\' ? 'ok\\hello\\world' : 'ok/hello/world'
   expect(utils.getParentDirName(filePath)).toBe('hello')
 })
