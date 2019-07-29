@@ -20,7 +20,7 @@
     "babel-plugin-syntax-flow": "^6.18.0",
     "babel-template": "^6.26.0",
     "babel-types": "^6.26.0",
-    "globby": "^9.2.0",
+    "globby": "^10.0.0",
     "s2s-utils": "^1.0.1",
     "uppercamelcase": "^3.0.0"
   }
