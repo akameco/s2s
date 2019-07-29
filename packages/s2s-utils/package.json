@@ -13,6 +13,6 @@
     "@babel/template": "^7.4.4",
     "@babel/types": "^7.4.4",
     "normalize-path-sep": "^0.1.1",
-    "slash": "^2.0.0"
+    "slash": "^3.0.0"
   }
 }

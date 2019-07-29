@@ -18,6 +18,6 @@
     "babel-add-flow-comments": "^0.4.0",
     "lodash.snakecase": "^4.1.1",
     "s2s-utils": "^1.0.1",
-    "slash": "^2.0.0"
+    "slash": "^3.0.0"
   }
 }
