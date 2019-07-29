@@ -22,7 +22,7 @@
   "dependencies": {
     "babel-polyfill": "^6.26.0",
     "chalk": "^2.4.2",
-    "chokidar": "^2.1.5",
+    "chokidar": "^3.0.0",
     "ejs": "^2.5.7",
     "find-up": "^4.0.0",
     "key-locker": "^0.2.1",
