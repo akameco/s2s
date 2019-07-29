@@ -11,6 +11,6 @@
     "src"
   ],
   "dependencies": {
-    "execa": "1.0.0"
+    "execa": "2.0.3"
   }
 }
