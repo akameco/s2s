@@ -1,5 +1,0 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
-
-exports[`getTypeFromFileSyncはflowの型情報の文字列を返す 1`] = `"{age: ?number, id: number, name: string, sex?: string}"`;
-
-exports[`getTypeFromFileはflowの型情報の文字列を返す 1`] = `"{age: ?number, id: number, name: string, sex?: string}"`;
