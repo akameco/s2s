@@ -68,6 +68,17 @@
       "contributions": [
         "doc"
       ]
+    },
+    {
+      "login": "ygkn",
+      "name": "ygkn",
+      "avatar_url": "https://avatars2.githubusercontent.com/u/14973783?v=4",
+      "profile": "https://github.com/ygkn",
+      "contributions": [
+        "code"
+      ]
     }
-  ]
+  ],
+  "repoType": "github",
+  "commitConvention": "none"
 }
