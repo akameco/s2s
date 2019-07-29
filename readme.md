@@ -12,7 +12,7 @@
 [![Donate](https://img.shields.io/badge/%EF%BC%84-support-green.svg?style=flat-square)](http://amzn.asia/bO78HzR)
 [![Code of Conduct](https://img.shields.io/badge/code%20of-conduct-ff69b4.svg?style=flat-square)](./CODE_OF_CONDUCT.md)
 [![Examples](https://img.shields.io/badge/%F0%9F%92%A1-examples-8C8E93.svg?style=flat-square)](./examples)
-[![All Contributors](https://img.shields.io/badge/all_contributors-6-orange.svg?style=flat-square)](#contributors)
+[![All Contributors](https://img.shields.io/badge/all_contributors-7-orange.svg?style=flat-square)](#contributors-)
 
 **[日本語](./docs/ja)** (readme の最新版は日本語です)
 
@@ -174,8 +174,22 @@ We will be welcome your contributions!
 Thanks goes to these wonderful people ([emoji key](https://github.com/kentcdodds/all-contributors#emoji-key)):
 
 <!-- ALL-CONTRIBUTORS-LIST:START - Do not remove or modify this section -->
-<!-- prettier-ignore -->
-<table><tr><td align="center"><a href="http://akameco.github.io"><img src="https://avatars2.githubusercontent.com/u/4002137?v=4" width="100px;" alt="akameco"/><br /><sub><b>akameco</b></sub></a><br /><a href="https://github.com/akameco/s2s/commits?author=akameco" title="Code">💻</a> <a href="https://github.com/akameco/s2s/commits?author=akameco" title="Tests">⚠️</a> <a href="#question-akameco" title="Answering Questions">💬</a> <a href="#ideas-akameco" title="Ideas, Planning, & Feedback">🤔</a> <a href="#infra-akameco" title="Infrastructure (Hosting, Build-Tools, etc)">🚇</a></td><td align="center"><a href="https://elzup.com"><img src="https://avatars3.githubusercontent.com/u/2284908?v=4" width="100px;" alt="elzup"/><br /><sub><b>elzup</b></sub></a><br /><a href="#ideas-elzup" title="Ideas, Planning, & Feedback">🤔</a> <a href="https://github.com/akameco/s2s/commits?author=elzup" title="Code">💻</a></td><td align="center"><a href="http://www.amazon.co.jp/gp/registry/wishlist/JQ28X5KI9FRY"><img src="https://avatars3.githubusercontent.com/u/84027?v=4" width="100px;" alt="erukiti"/><br /><sub><b>erukiti</b></sub></a><br /><a href="#blog-erukiti" title="Blogposts">📝</a> <a href="https://github.com/akameco/s2s/commits?author=erukiti" title="Code">💻</a> <a href="https://github.com/akameco/s2s/commits?author=erukiti" title="Tests">⚠️</a></td><td align="center"><a href="https://asciian.github.io/"><img src="https://avatars2.githubusercontent.com/u/5019902?v=4" width="100px;" alt="asciian"/><br /><sub><b>asciian</b></sub></a><br /><a href="https://github.com/akameco/s2s/commits?author=asciian" title="Documentation">📖</a></td><td align="center"><a href="https://twitter.com/kamijin_fanta"><img src="https://avatars0.githubusercontent.com/u/1541187?v=4" width="100px;" alt="kamijin_fanta"/><br /><sub><b>kamijin_fanta</b></sub></a><br /><a href="https://github.com/akameco/s2s/commits?author=kamijin-fanta" title="Code">💻</a> <a href="https://github.com/akameco/s2s/commits?author=kamijin-fanta" title="Documentation">📖</a></td><td align="center"><a href="https://twitter.com/pocketberserker"><img src="https://avatars0.githubusercontent.com/u/911952?v=4" width="100px;" alt="pocketberserker"/><br /><sub><b>pocketberserker</b></sub></a><br /><a href="https://github.com/akameco/s2s/commits?author=pocketberserker" title="Documentation">📖</a></td></tr></table>
+<!-- prettier-ignore-start -->
+<!-- markdownlint-disable -->
+<table>
+  <tr>
+    <td align="center"><a href="http://akameco.github.io"><img src="https://avatars2.githubusercontent.com/u/4002137?v=4" width="100px;" alt="akameco"/><br /><sub><b>akameco</b></sub></a><br /><a href="https://github.com/akameco/s2s/commits?author=akameco" title="Code">💻</a> <a href="https://github.com/akameco/s2s/commits?author=akameco" title="Tests">⚠️</a> <a href="#question-akameco" title="Answering Questions">💬</a> <a href="#ideas-akameco" title="Ideas, Planning, & Feedback">🤔</a> <a href="#infra-akameco" title="Infrastructure (Hosting, Build-Tools, etc)">🚇</a></td>
+    <td align="center"><a href="https://elzup.com"><img src="https://avatars3.githubusercontent.com/u/2284908?v=4" width="100px;" alt="elzup"/><br /><sub><b>elzup</b></sub></a><br /><a href="#ideas-elzup" title="Ideas, Planning, & Feedback">🤔</a> <a href="https://github.com/akameco/s2s/commits?author=elzup" title="Code">💻</a></td>
+    <td align="center"><a href="http://www.amazon.co.jp/gp/registry/wishlist/JQ28X5KI9FRY"><img src="https://avatars3.githubusercontent.com/u/84027?v=4" width="100px;" alt="erukiti"/><br /><sub><b>erukiti</b></sub></a><br /><a href="#blog-erukiti" title="Blogposts">📝</a> <a href="https://github.com/akameco/s2s/commits?author=erukiti" title="Code">💻</a> <a href="https://github.com/akameco/s2s/commits?author=erukiti" title="Tests">⚠️</a></td>
+    <td align="center"><a href="https://asciian.github.io/"><img src="https://avatars2.githubusercontent.com/u/5019902?v=4" width="100px;" alt="asciian"/><br /><sub><b>asciian</b></sub></a><br /><a href="https://github.com/akameco/s2s/commits?author=asciian" title="Documentation">📖</a></td>
+    <td align="center"><a href="https://twitter.com/kamijin_fanta"><img src="https://avatars0.githubusercontent.com/u/1541187?v=4" width="100px;" alt="kamijin_fanta"/><br /><sub><b>kamijin_fanta</b></sub></a><br /><a href="https://github.com/akameco/s2s/commits?author=kamijin-fanta" title="Code">💻</a> <a href="https://github.com/akameco/s2s/commits?author=kamijin-fanta" title="Documentation">📖</a></td>
+    <td align="center"><a href="https://twitter.com/pocketberserker"><img src="https://avatars0.githubusercontent.com/u/911952?v=4" width="100px;" alt="pocketberserker"/><br /><sub><b>pocketberserker</b></sub></a><br /><a href="https://github.com/akameco/s2s/commits?author=pocketberserker" title="Documentation">📖</a></td>
+    <td align="center"><a href="https://github.com/ygkn"><img src="https://avatars2.githubusercontent.com/u/14973783?v=4" width="100px;" alt="ygkn"/><br /><sub><b>ygkn</b></sub></a><br /><a href="https://github.com/akameco/s2s/commits?author=ygkn" title="Code">💻</a></td>
+  </tr>
+</table>
+
+<!-- markdownlint-enable -->
+<!-- prettier-ignore-end -->
 
 <!-- ALL-CONTRIBUTORS-LIST:END -->
 
