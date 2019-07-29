@@ -62,9 +62,11 @@ export default (inputConfg: Config) => {
   }
 
   if (templates.length > 0) {
-    watcher.on('add', (input: Path) => {
-      handleTemplates(input, templates, config.templatesDir)
-    })
+    for (const type of ['add', 'addDir']) {
+      watcher.on(type, (input: Path) => {
+        handleTemplates(input, templates, config.templatesDir)
+      })
+    }
   }
 
   const msg = `${chalk.bold(
