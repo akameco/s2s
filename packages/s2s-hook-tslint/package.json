@@ -1,6 +1,6 @@
 {
   "name": "s2s-hook-tslint",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "s2s hooks for tslint",
   "license": "MIT",
   "repository": "https://github.com/akameco/s2s",
