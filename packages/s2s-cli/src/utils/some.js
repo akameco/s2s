@@ -6,8 +6,8 @@ export default function(
   patterns: string | Array<string>
 ) {
   list = [].concat(list)
-  for (let i = 0; i < list.length; i++) {
-    if (micromatch(list[i], patterns).length === 1) {
+  for (const element of list) {
+    if (micromatch(element, patterns).length === 1) {
       return true
     }
   }
